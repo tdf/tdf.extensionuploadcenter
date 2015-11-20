@@ -30,6 +30,8 @@
 
   <!-- -*- extra stuff goes here -*- -->
 
+  <include file="permissions.zcml" />
+
   <browser:page
       name="view"
       for="tdf.extensionuploadcenter.eupcenter.IEUpCenter"
