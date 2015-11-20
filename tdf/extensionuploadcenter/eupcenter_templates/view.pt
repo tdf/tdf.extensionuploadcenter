@@ -1,0 +1,87 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="tdf.extensionuploadcenter">
+
+
+<head>
+    <metal:block fill-slot="top_slot">
+        <link rel="stylesheet" type="text/css"
+            tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+            tal:attributes="href string:${navroot}/++resource++tdf.extensionsuploadcenter/extuploadcenter.css"
+            />
+        <tal:noborder condition="python:not user.has_permission('Modify portal content', context)">
+            <tal:noborderset tal:define="dummy python:request.set('disable_border', 1)" />
+        </tal:noborder>
+    </metal:block>
+</head>
+
+
+<body>
+
+<metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main"
+            tal:define="catalog nocall:context/portal_catalog;
+                        toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                        currentCategory request/getCategories |string:;
+                        currentVersion request/getCompatibility |view/get_latest_program_release;
+                        SearchableText request/SearchableText | string:;
+                        sort_on   request/sort_on | string:positive_ratings;
+                        cropText nocall:context/@@plone/cropText;
+                        isAnon context/@@plone_portal_state/anonymous;
+                        herePath python:'/'.join(context.getPhysicalPath());
+                        getCategoryName nocall:view/category_name;
+                        searchForProducts python:request['QUERY_STRING']">
+
+
+        <div class="grid-row">
+            <div class="grid-cell position-leftmost width-two-thirds">
+                <div tal:condition="python: searchForProducts.find('getCategories')">
+                    <div class="" id="mostpopular">
+                        <h2 i18n:translate="">Most popular <span tal:content="context/product_title" i18n:name="product_title" /></h2>
+
+
+                    </div>
+                </div>
+
+            </div>
+         </div>
+        <div tal:condition="python: searchForProducts.find('getCategories') != -1">
+            <div class="paneeuc">
+                    <h2 tal:condition="context/product_title" i18n:translate="">Search
+                        <span tal:content="context/product_title" i18n:name="product_title" />
+                    </h2>
+                    <div id="sort-by">
+
+                    </div>
+             </div>
+
+        </div>
+
+        <div class="grid-cell position-two-thirds width-third">
+                	<div class="splash pullout" id="sidebar-downloads">
+                        	<h1 tal:condition="context/product_title" i18n:translate="">
+                                <span tal:content="context/product_title" i18n:name="product_title" />
+                            </h1>
+                        	<h1 tal:condition="not:context/product_title" i18n:translate="">Extensions</h1>
+                        	<span tal:content="structure context/addon_description | nothing"/>
+                        <p class="current-projects" i18n:translate="">Currently there are
+                            <span tal:content="view/eupproject_count" i18n:name="eup_project_count" /> project(s) with
+                            <span tal:content="view/euprelease_count" /> release(s) available.</p>
+                        <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.extensionsuploadcenter.eupproject" i18n:translate="">
+                            <img src="++resource++tdf.extensionsuploadcenter/yellowarrow.png"  alt=""/> Submit your
+                            <span tal:content="context/product_title | string:extension_project" i18n:name="product_title_eupproject" />
+                        </a>
+
+                	</div>
+
+         </div>
+
+
+</tal:main-macro>
+</metal:main>
+</body>
+</html>

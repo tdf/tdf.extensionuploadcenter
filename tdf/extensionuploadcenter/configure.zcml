@@ -1,0 +1,41 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="tdf.extensionuploadcenter">
+
+  <!-- Include configuration for dependencies listed in setup.py -->
+  <includeDependencies package="." />
+
+  <!-- Register a resource directory from which we can deploy static
+   resource files. -->
+  <browser:resourceDirectory
+    name="tdf.extensionuploadcenter"
+    directory="resources" />
+
+  <i18n:registerTranslations directory="locales" />
+
+  <!-- Register an extension profile to make the product installable
+       in Plone -->
+  <genericsetup:registerProfile
+      name="default"
+      title="TDF Extension Upload Center"
+      directory="profiles/default"
+      description="Extension profile for TDF Extension Upload Center"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <!-- -*- extra stuff goes here -*- -->
+
+  <browser:page
+      name="view"
+      for="tdf.extensionuploadcenter.eupcenter.IEUpCenter"
+      class="tdf.extensionuploadcenter.eupcenter.EUpCenterView"
+      template="eupcenter_templates/view.pt"
+      permission="zope2.View"
+      />
+
+</configure>
