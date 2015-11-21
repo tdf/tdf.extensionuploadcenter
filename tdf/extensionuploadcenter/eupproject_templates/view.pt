@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="tdf.extensionuploadcenter">
+
+
+
+<head>
+    <metal:block fill-slot="top_slot">
+        <link rel="stylesheet" type="text/css"
+            tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+            tal:attributes="href string:${navroot}/++resource++tdf.extensionsuploadcenter/extuploadcenter.css"
+            />
+        <tal:noborder condition="python:not user.has_permission('Modify portal content', context)">
+            <tal:noborderset tal:define="dummy python:request.set('disable_border', 1)" />
+        </tal:noborder>
+    </metal:block>
+</head>
+
+<body>
+
+<metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main" tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                                                          is_editable context/@@plone_context_state/is_editable;
+                                                          wf_tool here/portal_workflow;
+                                                          review_state python:wf_tool.getInfoFor( here, 'review_state', '');">
+
+
+<h1>Test</h1>
+
+    </tal:main-macro>
+</metal:main>
+</body>
+</html>
