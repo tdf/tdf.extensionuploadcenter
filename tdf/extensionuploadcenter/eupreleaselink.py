@@ -3,7 +3,7 @@ from plone.app.textfield import RichText
 from plone.supermodel import model
 from zope import schema
 from plone.autoform import directives as form
-from Products.Five import BrowserView
+from plone.dexterity.browser.view import DefaultView
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from zope.interface import directlyProvides
@@ -70,6 +70,9 @@ yesnochoice = SimpleVocabulary(
     )
 
 
+
+class AcceptLegalDeclaration(Invalid):
+    __doc__ = _(u"It is necessary that you accept the Legal Declaration")
 
 
 
@@ -327,8 +330,77 @@ class IEUpReleaseLink(model.Schema):
 
 
 
+    @invariant
+    def licensenotchoosen(value):
+        if value.licenses_choice == []:
+            raise Invalid(_(u"Please choose a license for your release."))
+
+    @invariant
+    def compatibilitynotchoosen(data):
+        if data.compatibility_choice == []:
+            raise Invalid(_(u"Please choose one or more compatible product versions for your release"))
+
+    @invariant
+    def legaldeclarationaccepted(data):
+        if data.accept_legal_declaration is not True:
+           raise AcceptLegalDeclaration(_(u"Please accept the Legal Declaration about your Release and your linked File"))
+
+    @invariant
+    def testingvalue(data):
+        if data.source_code_inside is not 1 and data.link_to_source is None:
+            raise Invalid(_(u"Please fill in the Link (URL) to the Source Code."))
+
+    @invariant
+    def noOSChosen(data):
+        if data.link_to_file is not None and data.platform_choice ==[]:
+            raise Invalid(_(u"Please choose a compatible platform for the linked file."))
 
 
 
-class EUpReleaseLinkView(BrowserView):
-    pass
+@form.default_value(field=IEUpReleaseLink['declaration_legal'])
+def LegalTextDefaultValue(data):
+    # To get hold of the folder, do: context = data.context
+    return data.context.__parent__.legal_disclaimer
+
+@form.default_value(field=IEUpReleaseLink['title_declaration_legal'])
+def legal_declaration_title_default(data):
+    # To get hold of the folder, do: context = data.context
+    return data.context.aq_inner.aq_parent.title_legaldisclaimer
+
+@form.default_value(field=IEUpReleaseLink['contact_address2'])
+def contactinfoDefaultValue(data):
+    return data.context.contactAddress
+
+
+@form.default_value(field=IEUpReleaseLink['title'])
+def releaseDefaultTitleValue(self):
+    title= self.context.title
+    return (title)
+
+@form.default_value(field=IEUpReleaseLink['licenses_choice'])
+def defaultLicense(self):
+    licenses = list( self.context.available_licenses)
+    defaultlicenses = licenses[0]
+    return [defaultlicenses]
+
+@form.default_value(field=IEUpReleaseLink['compatibility_choice'])
+def defaultcompatibility(self):
+    compatibility = list( self.context.available_versions)
+    defaultcompatibility = compatibility[0]
+    return [defaultcompatibility]
+
+@form.default_value(field=IEUpReleaseLink['platform_choice'])
+def defaultplatform(self):
+    platform = list( self.context.available_platforms)
+    defaultplatform = platform[0]
+    return [defaultplatform]
+
+
+
+
+
+class EUpReleaseLinkView(DefaultView):
+
+
+    def canPublishContent(self):
+        return checkPermission('cmf.ModifyPortalContent', self.context)
