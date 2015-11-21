@@ -57,6 +57,14 @@
       permission="zope2.View"
       />
 
+  <browser:page
+      name="view"
+      for="tdf.extensionuploadcenter.eupreleaselink.IEUpReleaseLink"
+      class="tdf.extensionuploadcenter.eupreleaselink.EUpReleaseLinkView"
+      template="eupreleaselink_templates/view.pt"
+      permission="zope2.View"
+      />
+
   <subscriber
     for=".eupcenter.IEUpCenter
                zope.lifecycleevent.interfaces.IObjectAddedEvent"
