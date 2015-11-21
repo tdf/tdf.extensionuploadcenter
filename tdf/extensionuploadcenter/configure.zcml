@@ -40,4 +40,27 @@
       permission="zope2.View"
       />
 
+
+  <browser:page
+      name="view"
+      for="tdf.extensionuploadcenter.eupproject.IEUpProject"
+      class="tdf.extensionuploadcenter.eupproject.EUpProjectView"
+      template="eupproject_templates/view.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="view"
+      for="tdf.extensionuploadcenter.euprelease.IEUpRelease"
+      class="tdf.extensionuploadcenter.euprelease.EUpReleaseView"
+      template="euprelease_templates/view.pt"
+      permission="zope2.View"
+      />
+
+  <subscriber
+    for=".eupcenter.IEUpCenter
+               zope.lifecycleevent.interfaces.IObjectAddedEvent"
+    handler=".eupcenter.notifyAboutNewProject"
+    />
+
 </configure>
