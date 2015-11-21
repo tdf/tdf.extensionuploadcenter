@@ -2,7 +2,7 @@ from tdf.extensionuploadcenter import MessageFactory as _
 from plone.app.textfield import RichText
 from plone.supermodel import model
 from zope import schema
-from Products.Five import BrowserView
+from plone.dexterity.browser.view import DefaultView
 from Acquisition import aq_inner
 from plone import api
 from collective import dexteritytextindexer
@@ -12,6 +12,7 @@ from zope.interface import directlyProvides
 import re
 from plone.namedfile.field import NamedBlobImage
 from zope.interface import Invalid, invariant
+
 
 
 
@@ -137,7 +138,55 @@ class IEUpProject(model.Schema):
 
 
 
-class EUpProjectView(BrowserView):
-    pass
+class EUpProjectView(DefaultView):
+
+
+
+
+    def all_releases(self):
+        """Get a list of all releases, ordered by version, starting with the latest.
+        """
+        proj = self.context
+
+        catalog = api.portal.get_tool(name='portal_catalog')
+        res = catalog.searchResults(
+            portal_type = ('tdf.extensionuploadcenter.euprelease', 'tdf.extensionuploadcenter.eupreleaselink'),
+            path = '/'.join(proj.getPhysicalPath()),
+            sort_on = 'id',
+            sort_order = 'reverse')
+        return [r.getObject() for r in res]
+
+
+    def latest_release(self):
+        """Get the most recent final release or None if none can be found.
+        """
+
+        proj = self.context
+        res = None
+        catalog = api.portal.get_tool('portal_catalog')
+
+        res = catalog.searchResults(
+            portal_type = ('tdf.extensionuploadcenter.euprelease', 'tdf.extensionuploadcenter.eupreleaselink'),
+            path = '/'.join(proj.getPhysicalPath()),
+            review_state = 'final',
+            sort_on = 'id',
+            sort_order = 'reverse')
+
+        if not res:
+            return None
+        else:
+            return res[0].getObject()
+
+
+    def latest_release_date(self):
+        """Get the date of the latest release
+        """
+
+        latest_release = self.latest_release()
+        if latest_release:
+            return self.context.toLocalizedTime(latest_release.effective())
+        else:
+            return None
+
 
 
