@@ -8,5 +8,7 @@
   -->
 <object name="portal_types" meta_type="Plone Types Tool">
   <!-- -*- extra stuff goes here -*- -->
-     <object name="tdf.extensionuploadcenter.eupcenter" meta_type="Dexterity FTI" />
+    <object name="tdf.extensionuploadcenter.eupcenter" meta_type="Dexterity FTI" />
+    <object name="tdf.extensionuploadcenter.eupproject" meta_type="Dexterity FTI" />
+    <object name="tdf.extensionuploadcenter.euprelease" meta_type="Dexterity FTI" />
 </object>
