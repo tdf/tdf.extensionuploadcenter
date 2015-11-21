@@ -1,35 +1,33 @@
 <?xml version="1.0"?>
-<object name="tdf.extensionuploadcenter.euproject" meta_type="Dexterity FTI"
+<object name="tdf.extensionuploadcenter.eupreleaselink" meta_type="Dexterity FTI"
         i18n:domain="tdf.extensionuploadcenter" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
     <!-- Basic metadata -->
-    <property name="title" i18n:translate="">Extension Project</property>
-    <property name="description" i18n:translate="">An extension project</property>
+    <property name="title" i18n:translate="">Extension Linked Release</property>
+    <property name="description" i18n:translate="">A linked extension release</property>
 
     <property name="allow_discussion">True</property>
     <property name="global_allow">False</property>
     <property name="filter_content_types">True</property>
     <property name="allowed_content_types">
-        <element value="tdf.extensionuploadcenter.euprelease" />
-        <element value="tdf.extensionuploadcenter.eupreleaselink" />
 
     </property>
 
     <!-- schema interface -->
-    <property name="schema">tdf.extensionuploadcenter.eupproject.IEUpProject</property>
+    <property name="schema">tdf.extensionuploadcenter.eupreleaselink.IEUpReleaseLink</property>
 
     <!-- class used for content items -->
-    <property name="klass">plone.dexterity.content.Container</property>
+    <property name="klass">plone.dexterity.content.Item</property>
 
     <!-- add permission -->
     <property name="add_permission">tdf.extensionuploadcenter.AddExtProject</property>
 
     <!-- enabled behaviors -->
     <property name="behaviors">
-        <element value="plone.app.content.interfaces.INameFromTitle" />
+        <element value="tdf.extensionuploadcenter.interfaces.INameForRelease" />
         <!-- IReferenceable might not be available, but it will not break. -->
         <element value="plone.app.referenceablebehavior.referenceable.IReferenceable" />
-
+        <element value="plone.app.multilingual.dx.interfaces.IDexterityTranslatable" />
         <element value="plone.app.dexterity.behaviors.metadata.IOwnership" />
         <element value="plone.app.dexterity.behaviors.metadata.IPublication" />
         <element value="collective.dexteritytextindexer.behavior.IDexterityTextIndexer" />
