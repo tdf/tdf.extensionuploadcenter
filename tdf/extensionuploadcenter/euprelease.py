@@ -3,7 +3,7 @@ from plone.app.textfield import RichText
 from plone.supermodel import model
 from zope import schema
 from plone.autoform import directives as form
-from Products.Five import BrowserView
+from plone.dexterity.browser.view import DefaultView
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from zope.interface import directlyProvides
@@ -281,5 +281,8 @@ class IEUpRelease(model.Schema):
 
 
 
-class EUpReleaseView(BrowserView):
-    pass
+class EUpReleaseView(DefaultView):
+
+
+     def canPublishContent(self):
+        return checkPermission('cmf.ModifyPortalContent', self.context)
