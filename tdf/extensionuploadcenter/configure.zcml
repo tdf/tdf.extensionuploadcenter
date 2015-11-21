@@ -65,10 +65,30 @@
       permission="zope2.View"
       />
 
+  <browser:viewlet
+      name="ownprojects"
+      for="tdf.extensionuploadcenter.eupcenter.IEUpCenter"
+      view="plone.app.layout.globals.interfaces.IViewView"
+      manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+      class="tdf.extensionuploadcenter.eupcenter.EUpCenterOwnProjectsViewlet"
+      template="eupcenter_templates/own_project.pt"
+      permission="zope2.View"
+      />
+
+
+  <plone:behavior
+
+      title="Name from product name and release number"
+      description="generates a name from product name and release number"
+      for="plone.dexterity.interfaces.IDexterityContent"
+      provides=".behaviors.INameForRelease"
+      factory=".behaviors.NameForRelease"
+      />
+
   <subscriber
-    for=".eupcenter.IEUpCenter
+    for="tdf.extensionuploadcenter.eupcenter.IEUpCenter
                zope.lifecycleevent.interfaces.IObjectAddedEvent"
-    handler=".eupcenter.notifyAboutNewProject"
+    handler="tdf.extensionuploadcenter.eupcenter.notifyAboutNewProject"
     />
 
 </configure>
