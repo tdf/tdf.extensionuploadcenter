@@ -29,6 +29,8 @@ setup(name='tdf.extensionuploadcenter',
           'plone.app.dexterity',
           'plone.namedfile [blobs]',
           # -*- Extra requirements: -*-
+          'collective.dexteritytextindexer',
+          'cioppino.twothumbs',
       ],
       entry_points="""
       # -*- Entry points: -*-
