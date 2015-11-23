@@ -68,6 +68,11 @@ yesnochoice = SimpleVocabulary(
     )
 
 
+class AcceptLegalDeclaration(Invalid):
+    __doc__ = _(u"It is necessary that you accept the Legal Declaration")
+
+
+
 
 class IEUpRelease(model.Schema):
 
