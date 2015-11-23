@@ -91,4 +91,10 @@
     handler="tdf.extensionuploadcenter.eupcenter.notifyAboutNewProject"
     />
 
+  <subscriber
+    for="tdf.extensionuploadcenter.eupproject.IEUpProject
+               Products.CMFCore.interfaces.IActionSucceededEvent"
+    handler="tdf.extensionuploadcenter.eupproject.notifyProjectManager"
+    />
+
 </configure>
