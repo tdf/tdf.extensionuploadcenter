@@ -12,6 +12,8 @@ from zope.interface import directlyProvides
 import re
 from plone.namedfile.field import NamedBlobImage
 from zope.interface import Invalid, invariant
+from plone import api
+
 
 
 
@@ -135,6 +137,17 @@ class IEUpProject(model.Schema):
     def missingScreenshotOrLogo(data):
         if not data.screenshot and not data.project_logo:
             raise ProvideScreenshotLogo(_(u'Please add a Screenshot or a Logo to your project page'))
+
+
+
+
+def notifyProjectManager (eupproject, event):
+    api.portal.send_email(
+        recipient ="%s" % (eupproject.contactAddress),
+        sender = "%s <%s>" % ('Admin of the LibreOffice Extensions site', 'extensions@libreoffice.org'),
+        subject = "Your Project %s" % (eupproject.title),
+        body = "The status of your LibreOffice extension project changed"
+    )
 
 
 
