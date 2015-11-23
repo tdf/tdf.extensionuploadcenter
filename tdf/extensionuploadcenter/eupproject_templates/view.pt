@@ -11,7 +11,7 @@
     <metal:block fill-slot="top_slot">
         <link rel="stylesheet" type="text/css"
             tal:define="navroot context/@@plone_portal_state/navigation_root_url"
-            tal:attributes="href string:${navroot}/++resource++tdf.extensionsuploadcenter/extuploadcenter.css"
+            tal:attributes="href string:${navroot}/++resource++tdf.extensionuploadcenter/extuploadcenter.css"
             />
         <tal:noborder condition="python:not user.has_permission('Modify portal content', context)">
             <tal:noborderset tal:define="dummy python:request.set('disable_border', 1)" />
@@ -39,15 +39,15 @@
         <p tal:condition="python: is_editable and len(context.getFolderContents()) is 0">Your next step: add a first release to your project please.</p>
         <div tal:condition="python: is_editable">
         <p >Please submit:</p>
-        <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.extensionsuploadcenter.euprelease" i18n:translate="">
-                            <img src="++resource++tdf.extensionsuploadcenter/yellowarrow.png"  alt=""/> a Release to your
+        <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.extensionuploadcenter.euprelease" i18n:translate="">
+                            <img src="++resource++tdf.extensionuploadcenter/yellowarrow.png"  alt=""/> a Release to your
                             <span tal:content="context/product_title | string:extension_project" i18n:name="product_title_eupproject" /> Project
 
                         </a>
         <p>or:</p>
 
-        <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.extensionsuploadcenter.eupreleaselink" i18n:translate="">
-                            <img src="++resource++tdf.extensionsuploadcenter/yellowarrow.png"  alt=""/> a linked Release to your
+        <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.extensionuploadcenter.eupreleaselink" i18n:translate="">
+                            <img src="++resource++tdf.extensionuploadcenter/yellowarrow.png"  alt=""/> a linked Release to your
                             <span tal:content="context/product_title | string:extension_project" i18n:name="product_title_eupproject" /> Project
 
         </a>
@@ -128,10 +128,10 @@
                    tal:attributes="href latestRelease/absolute_url">More about this release&hellip;</a>
                 </p>
             <dl>
-                <span tal:condition="not:python:latestRelease.portal_type == 'tdf.extensionsuploadcenter.eupreleaselink'">
+                <span tal:condition="not:python:latestRelease.portal_type == 'tdf.extensionuploadcenter.eupreleaselink'">
                     <span tal:condition="latestRelease/file">
                          <a i18n:translate="label_extension_file" tal:attributes="href string:${latestRelease/absolute_url}/@@download/file/${latestRelease/file/filename}">
-                        <img src="++resource++tdf.extensionsuploadcenter/download_icon.gif" /></a>
+                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" /></a>
                         <tal:loop repeat="platform_choice latestRelease/platform_choice">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
@@ -141,7 +141,7 @@
                      </span>
                     <span tal:condition="latestRelease/file1">
                          <a i18n:translate="label_extension_file" tal:attributes="href string:${latestRelease/absolute_url}/@@download/file1/${latestRelease/file1/filename}">
-                        <img src="++resource++tdf.extensionsuploadcenter/download_icon.gif" /></a>
+                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" /></a>
                         <tal:loop repeat="platform_choice latestRelease/platform_choice1">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
@@ -151,7 +151,7 @@
                     </span>
                     <span tal:condition="latestRelease/file2">
                          <a i18n:translate="label_extension_file" tal:attributes="href string:${latestRelease/absolute_url}/@@download/file2/${latestRelease/file2/filename}">
-                        <img src="++resource++tdf.extensionsuploadcenter/download_icon.gif" /></a>
+                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" /></a>
                         <tal:loop repeat="platform_choice latestRelease/platform_choice2">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
@@ -161,7 +161,7 @@
                     </span>
                     <span tal:condition="latestRelease/file3">
                          <a i18n:translate="label_extension_file" tal:attributes="href string:${latestRelease/absolute_url}/@@download/file3/${latestRelease/file3/filename}">
-                        <img src="++resource++tdf.extensionsuploadcenter/download_icon.gif" /></a>
+                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" /></a>
                         <tal:loop repeat="platform_choice latestRelease/platform_choice3">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
@@ -171,7 +171,7 @@
                     </span>
                     <span tal:condition="latestRelease/file4">
                          <a i18n:translate="label_extension_file" tal:attributes="href string:${latestRelease/absolute_url}/@@download/file4/{latestRelease/file4/filename}">
-                        <img src="++resource++tdf.extensionsuploadcenter/download_icon.gif" /></a>
+                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" /></a>
                         <tal:loop repeat="platform_choice latestRelease/platform_choice4">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
@@ -181,7 +181,7 @@
                     </span>
                     <span tal:condition="latestRelease/file5">
                          <a i18n:translate="label_extension_file" tal:attributes="href string:${latestRelease/absolute_url}/@@download/file5/${latestRelease/file5/filename}">
-                        <img src="++resource++tdf.extensionsuploadcenter/download_icon.gif" /></a>
+                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" /></a>
                         <tal:loop repeat="platform_choice latestRelease/platform_choice5">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
@@ -193,42 +193,42 @@
                 <span tal:condition="python:latestRelease.portal_type == 'tdf.templateuploadcenter.tupreleaselink'">
                     <span tal:condition="latestRelease/link_to_file">
                         <a i18n:translate="label_extension_file" tal:attributes=" href latestRelease/link_to_file">
-                        <img src="++resource++tdf.extensionsuploadcenter/download_icon.gif" /></a>
+                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" /></a>
                         <tal:loop repeat="platform_choice latestRelease/platform_choice">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
                     </span>
                     <span tal:condition="latestRelease/link_to_file1">
                         <a i18n:translate="label_extension_file" tal:attributes=" href latestRelease/link_to_file1">
-                        <img src="++resource++tdf.extensionsuploadcenter/download_icon.gif" /></a>
+                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" /></a>
                         <tal:loop repeat="platform_choice latestRelease/platform_choice1">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
                     </span>
                     <span tal:condition="latestRelease/link_to_file2">
                         <a i18n:translate="label_extension_file" tal:attributes=" href latestRelease/link_to_file2">
-                        <img src="++resource++tdf.extensionsuploadcenter/download_icon.gif" /></a>
+                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" /></a>
                         <tal:loop repeat="platform_choice latestRelease/platform_choice2">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
                     </span>
                     <span tal:condition="latestRelease/link_to_file3">
                         <a i18n:translate="label_extension_file" tal:attributes=" href latestRelease/link_to_file3">
-                        <img src="++resource++tdf.extensionsuploadcenter/download_icon.gif" /></a>
+                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" /></a>
                         <tal:loop repeat="platform_choice latestRelease/platform_choice3">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
                     </span>
                     <span tal:condition="latestRelease/link_to_file4">
                         <a i18n:translate="label_extension_file" tal:attributes=" href latestRelease/link_to_file4">
-                        <img src="++resource++tdf.extensionsuploadcenter/download_icon.gif" /></a>
+                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" /></a>
                         <tal:loop repeat="platform_choice latestRelease/platform_choice4">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
                     </span>
                     <span tal:condition="latestRelease/link_to_file5">
                         <a i18n:translate="label_extension_file" tal:attributes=" href latestRelease/link_to_file5">
-                        <img src="++resource++tdf.extensionsuploadcenter/download_icon.gif" /></a>
+                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" /></a>
                         <tal:loop repeat="platform_choice latestRelease/platform_choice5">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
@@ -257,7 +257,7 @@
              <tal:loop repeat="release all_releases">
              <tr>
                  <td>
-                 <h4><a tal:attributes="href release/getId">
+                 <h4><a tal:attributes="href release/absolute_url">
                      <span tal:content="release/Title" /> - <span tal:content="release/releasenumber" /></a></h4>
                  </td>
                  <td>
