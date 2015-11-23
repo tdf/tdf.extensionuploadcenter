@@ -146,12 +146,12 @@ class EUpProjectView(DefaultView):
     def all_releases(self):
         """Get a list of all releases, ordered by version, starting with the latest.
         """
-        proj = self.context
 
         catalog = api.portal.get_tool(name='portal_catalog')
+        current_path = "/".join(self.context.getPhysicalPath())
         res = catalog.searchResults(
             portal_type = ('tdf.extensionuploadcenter.euprelease', 'tdf.extensionuploadcenter.eupreleaselink'),
-            path = '/'.join(proj.getPhysicalPath()),
+            path =current_path,
             sort_on = 'id',
             sort_order = 'reverse')
         return [r.getObject() for r in res]
@@ -161,13 +161,13 @@ class EUpProjectView(DefaultView):
         """Get the most recent final release or None if none can be found.
         """
 
-        proj = self.context
+        context = self.context
         res = None
         catalog = api.portal.get_tool('portal_catalog')
 
         res = catalog.searchResults(
             portal_type = ('tdf.extensionuploadcenter.euprelease', 'tdf.extensionuploadcenter.eupreleaselink'),
-            path = '/'.join(proj.getPhysicalPath()),
+            path = '/'.join(context.getPhysicalPath()),
             review_state = 'final',
             sort_on = 'id',
             sort_order = 'reverse')
