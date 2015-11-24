@@ -17,6 +17,9 @@ from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from plone.directives import form
 from zope import schema
 
+from zope.interface import provider
+from zope.schema.interfaces import IContextAwareDefaultFactory
+
 
 
 def vocabDevelopmentStatus(context):
@@ -68,6 +71,12 @@ yesnochoice = SimpleVocabulary(
     )
 
 
+
+@provider(IContextAwareDefaultFactory)
+def getContainerTitle(context):
+    return context.title
+
+
 class AcceptLegalDeclaration(Invalid):
     __doc__ = _(u"It is necessary that you accept the Legal Declaration")
 
@@ -80,7 +89,8 @@ class IEUpRelease(model.Schema):
     title = schema.TextLine(
         title=_(u"Title"),
         description=_(u"Release Title"),
-        min_length=5
+        min_length=5,
+        defaultFactory= getContainerTitle
     )
 
 
