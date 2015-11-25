@@ -77,6 +77,11 @@ def getContainerTitle(context):
     return context.title
 
 
+@provider(IContextAwareDefaultFactory)
+def contactinfoDefault(context):
+    return context.contactAddress
+
+
 class AcceptLegalDeclaration(Invalid):
     __doc__ = _(u"It is necessary that you accept the Legal Declaration")
 
@@ -151,7 +156,7 @@ class IEUpRelease(model.Schema):
     form.mode(title_declaration_legal='display')
     title_declaration_legal=schema.TextLine(
         title=_(u""),
-        required=False
+        required=False,
     )
 
     form.mode(declaration_legal='display')
@@ -170,7 +175,8 @@ class IEUpRelease(model.Schema):
     contact_address2 = schema.ASCIILine(
         title=_(u"Contact email-address"),
         description=_(u"Contact email-address for the project."),
-        required=False
+        required=False,
+        defaultFactory = contactinfoDefault
     )
 
     source_code_inside = schema.Choice(
