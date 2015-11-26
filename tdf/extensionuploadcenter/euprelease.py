@@ -82,6 +82,14 @@ def contactinfoDefault(context):
     return context.contactAddress
 
 
+@provider(IContextAwareDefaultFactory)
+def legal_declaration_title(context):
+    context = context.aq_inner.aq_parent
+    return context.title_legaldisclaimer
+
+
+
+
 class AcceptLegalDeclaration(Invalid):
     __doc__ = _(u"It is necessary that you accept the Legal Declaration")
 
@@ -157,13 +165,14 @@ class IEUpRelease(model.Schema):
     title_declaration_legal=schema.TextLine(
         title=_(u""),
         required=False,
+        defaultFactory = legal_declaration_title
     )
 
     form.mode(declaration_legal='display')
     form.primary('declaration_legal')
     declaration_legal = RichText(
         title=_(u""),
-        required=False
+        required=False,
     )
 
     accept_legal_declaration=schema.Bool(
