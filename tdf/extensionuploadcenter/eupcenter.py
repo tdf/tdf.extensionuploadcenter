@@ -5,6 +5,11 @@ from zope import schema
 from Products.Five import BrowserView
 from Acquisition import aq_inner
 from plone import api
+from plone.directives import form
+from zope import schema
+
+from plone.app.layout.viewlets import ViewletBase
+
 
 
 class IEUpCenter(model.Schema):
@@ -98,14 +103,14 @@ class IEUpCenter(model.Schema):
 
 
 
-    model.primary('install_instructions')
+    form.primary('install_instructions')
     install_instructions = RichText(
         title=_(u"Extension Installation Instructions"),
         default=_(u"Fill in the install instructions"),
         required=False
     )
 
-    model.primary('reporting_bugs')
+    form.primary('reporting_bugs')
     reporting_bugs = RichText(
         title=_(u"Instruction how to report Bugs"),
         required=False
@@ -118,19 +123,35 @@ class IEUpCenter(model.Schema):
     )
 
 
+
+    form.primary('legal_disclaimer')
+    legal_disclaimer = RichText(
+        title=_(u"Text of the Legal Disclaimer and Limitations"),
+        description=_(u"Enter the text of the legal disclaimer and limitations that should be displayed to the project creator and should be accepted by the owner of the project."),
+        default=_(u"Fill in the legal disclaimer, that had to be accepted by the project owner"),
+        required=False
+    )
+
+
     title_legaldownloaddisclaimer = schema.TextLine(
         title=_(u"Title of the Legal Disclaimer and Limitations for Downloads"),
         default=_(u"Legal Disclaimer and Limitations for Downloads"),
         required=False
     )
 
-    model.primary('legal_downloaddisclaimer')
+    form.primary('legal_downloaddisclaimer')
     legal_downloaddisclaimer = RichText(
         title=_(u"Text of the Legal Disclaimer and Limitations for Downlaods"),
         description=_(u"Enter any legal disclaimer and limitations for downloads that should appear on each page for dowloadable files."),
         default=_(u"Fill in the text for the legal download disclaimer"),
         required=False
     )
+
+
+def notifyAboutNewProject(eupproject, event):
+
+
+    print ('pass')
 
 
 # Views
@@ -181,3 +202,34 @@ class EUpCenterView(BrowserView):
         catalog = api.portal.get_tool(name='portal_catalog')
 
         return len(catalog(portal_type='tdf.extensionuploadcenter.euprelease'))
+
+
+
+
+    def get_most_popular_products(self):
+        catalog = api.portal.get_tool(name='portal_catalog')
+        sort_on = 'positive_ratings'
+        contentFilter = {
+                         'sort_on' : sort_on,
+                         'sort_order': 'reverse',
+                         'review_state': 'published',
+                         'portal_type' : 'tdf.extensionuploadcenter.eupproject'}
+        return catalog(**contentFilter)
+
+
+    def get_newest_products(self):
+        self.catalog = api.portal.get_tool(name='portal_catalog')
+        sort_on = 'created'
+        contentFilter = {
+                          'sort_on' : sort_on,
+                          'sort_order' : 'reverse',
+                          'review_state': 'published',
+                          'portal_type':'tdf.extensionuploadcenter.eupproject'}
+
+        results = self.catalog(**contentFilter)
+
+        return results
+
+
+class EUpCenterOwnProjectsViewlet(ViewletBase):
+    pass
