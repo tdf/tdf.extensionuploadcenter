@@ -344,25 +344,9 @@ class IEUpRelease(model.Schema):
             raise Invalid(_(u"Please choose a compatible platform for the uploaded file."))
 
 
-@form.default_value(field=IEUpRelease['declaration_legal'])
-def LegalTextDefaultValue(data):
-    # To get hold of the folder, do: context = data.context
-    return data.context.__parent__.legal_disclaimer
-
-@form.default_value(field=IEUpRelease['title_declaration_legal'])
-def legal_declaration_title_default(data):
-    # To get hold of the folder, do: context = data.context
-    return data.context.aq_inner.aq_parent.title_legaldisclaimer
-
-@form.default_value(field=IEUpRelease['contact_address2'])
-def contactinfoDefaultValue(data):
-    return data.context.contactAddress
 
 
-@form.default_value(field=IEUpRelease['title'])
-def releaseDefaultTitleValue(self):
-    title= self.context.title
-    return (title)
+
 
 @form.default_value(field=IEUpRelease['licenses_choice'])
 def defaultLicense(self):
