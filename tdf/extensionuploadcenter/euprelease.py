@@ -88,6 +88,10 @@ def legal_declaration_title(context):
     return context.title_legaldisclaimer
 
 
+@provider(IContextAwareDefaultFactory)
+def legal_declaration_text(context):
+    context = context.aq_inner.aq_parent
+    return context.legal_disclaimer
 
 
 class AcceptLegalDeclaration(Invalid):
@@ -168,11 +172,13 @@ class IEUpRelease(model.Schema):
         defaultFactory = legal_declaration_title
     )
 
+
     form.mode(declaration_legal='display')
-    form.primary('declaration_legal')
-    declaration_legal = RichText(
+    declaration_legal = schema.Text(
         title=_(u""),
         required=False,
+        defaultFactory = legal_declaration_text
+
     )
 
     accept_legal_declaration=schema.Bool(

@@ -124,8 +124,8 @@ class IEUpCenter(model.Schema):
 
 
 
-    form.primary('legal_disclaimer')
-    legal_disclaimer = RichText(
+
+    legal_disclaimer = schema.Text(
         title=_(u"Text of the Legal Disclaimer and Limitations"),
         description=_(u"Enter the text of the legal disclaimer and limitations that should be displayed to the project creator and should be accepted by the owner of the project."),
         default=_(u"Fill in the legal disclaimer, that had to be accepted by the project owner"),
