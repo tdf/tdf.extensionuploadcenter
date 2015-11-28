@@ -10,6 +10,8 @@ from zope import schema
 
 from plone.app.layout.viewlets import ViewletBase
 
+from Products.CMFCore.utils import getToolByName
+
 
 
 class IEUpCenter(model.Schema):
@@ -229,6 +231,27 @@ class EUpCenterView(BrowserView):
         results = self.catalog(**contentFilter)
 
         return results
+
+
+    def get_products(self, category, version, sort_on, SearchableText=None):
+        self.catalog = getToolByName(self.context, 'portal_catalog')
+
+        sort_on = 'positive_ratings'
+
+        contentFilter = {
+	                     'sort_on' : sort_on,
+
+                         'SearchableText': SearchableText,
+	                     'sort_order': 'reverse',
+                         'portal_type': 'tdf.extensionuploadcenter.eupproject'}
+
+        if version != 'any':
+            contentFilter['getCompatibility'] = version
+
+        if category:
+            contentFilter['getCategories'] = category
+
+        return self.catalog(**contentFilter)
 
 
 class EUpCenterOwnProjectsViewlet(ViewletBase):
