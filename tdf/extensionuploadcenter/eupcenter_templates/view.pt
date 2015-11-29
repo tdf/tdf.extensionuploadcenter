@@ -30,7 +30,7 @@
                         currentVersion request/getCompatibility |view/get_latest_program_release;
                         SearchableText request/SearchableText | string:;
                         sort_on   request/sort_on | string:positive_ratings;
-                        cropText nocall:context/@@plone/cropText;
+
                         isAnon context/@@plone_portal_state/anonymous;
                         herePath python:'/'.join(context.getPhysicalPath());
                         getCategoryName nocall:view/category_name;
@@ -94,7 +94,7 @@
                             <span tal:replace="python:', '.join(result.getObject().category_choice)"></span>
                             </span>
 							<p class="product-description"
-								>
+								tal:content="structure project/description">
 								<tal:comment replace="nothing">Project Description.</tal:comment>
 							</p>
 
@@ -125,13 +125,11 @@
                                 <tal:block tal:repeat="category context/available_category">
                                     <option tal:content="category" tal:attributes="value category; selected python:(currentCategory==category, 'selected', nothing)" />
                                 </tal:block>
-
                             </select>
                             <select name="getCompatibility" onchange="this.form.submit()">
                                 <tal:block tal:repeat="version context/available_versions">
                                     <option tal:content="version"
                                            tal:attributes="value version; selected python: (currentVersion==version, 'selected', nothing)" />
-
                                 </tal:block>
                                 <option value="any" tal:attributes="selected python: (currentVersion in ['', 'any'],'selected',nothing)"
                                           i18n:translate="label_any_version"> Any version</option>
@@ -147,15 +145,13 @@
                             <input type="hidden" name="portal_type" value="tdf.extensionsuploadcenter.eupproject" />
                             <input type="search" name="SearchableText" tal:attributes="value SearchableText" value="" class="inputLabel" size="20" />
                             <input type="submit" value="Search" i18n:attributes="value" />
-
                         </form>
 
                     </div>
                     <div class="" id="categories"
                             tal:define="results python:view.get_products(currentCategory, currentVersion, sort_on, SearchableText);
                                         Batch python:modules['Products.CMFPlone'].Batch;
-				                        b_size python:10;b_start python:0;b_start request/b_start | b_start;
-				                        ">
+				                        b_size python:10;b_start python:0;b_start request/b_start | b_start;">
 
                         <p tal:condition="not: results">
                             <strong i18n:translate="description_no_results_found">No results were found.</strong>
@@ -192,7 +188,7 @@
 				           </a>
 						</div>
                                         <span class="project-thumb"
-						      tal:condition="not:screenshot">
+						                      tal:condition="not:screenshot">
 
 <img tal:condition="project/project_logo|nothing"
                     tal:define="scales project/@@images;
@@ -210,8 +206,8 @@
 								<span i18n:translate="">in</span>
                             <span tal:replace="python:', '.join(result.getObject().category_choice)"></span>
                             </span>
-							<p class="product-description">
-
+							<p class="product-description"
+                                    tal:content="structure project/description">
 								<tal:comment replace="nothing">Project Description.</tal:comment>
 							</p>
 
@@ -222,13 +218,15 @@
     </tal:entry>
      </li>
 </ul>
+                            <div metal:use-macro="here/batch_macros/macros/navigation" />
 </tal:results>
                      </div>
              </div>
 
         </div>
 
-        < class="grid-cell position-two-thirds width-third">
+
+        <div class="grid-cell position-two-thirds width-third">
                 	<div class="splash pullout" id="sidebar-downloads">
                         	<h1 tal:condition="context/product_title" i18n:translate="">
                                 <span tal:content="context/product_title" i18n:name="product_title" />
@@ -313,6 +311,7 @@
             <h3>About</h3>
             <p tal:content="structure context/product_description" />
         </div>
+            </div>
 
 
 </tal:main-macro>
