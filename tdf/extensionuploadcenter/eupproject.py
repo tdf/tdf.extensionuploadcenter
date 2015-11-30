@@ -13,6 +13,8 @@ import re
 from plone.namedfile.field import NamedBlobImage
 from zope.interface import Invalid, invariant
 from plone import api
+from tdf.extensionuploadcenter.euprelease import IEUpRelease
+from tdf.extensionuploadcenter.eupreleaselink import IEUpReleaseLink
 
 
 
@@ -149,11 +151,18 @@ def notifyProjectManager (eupproject, event):
         body = "The status of your LibreOffice extension project changed"
     )
 
+def notifyProjectManagerReleaseAdd (eupproject, event):
+    api.portal.send_email(
+        recipient ="%s" % (eupproject.contactAddress),
+        sender = "%s <%s>" % ('Admin of the LibreOffice Extensions site', 'extensions@libreoffice.org'),
+        subject = "Your Project %s: ew Release added"  % (eupproject.title),
+        body = "A new new release was added to your project: '%s'" % (eupproject.title),
+         )
+
+
 
 
 class EUpProjectView(DefaultView):
-
-
 
 
     def all_releases(self):
