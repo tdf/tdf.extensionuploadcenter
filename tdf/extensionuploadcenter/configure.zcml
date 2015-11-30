@@ -86,15 +86,27 @@
       />
 
   <subscriber
-    for="tdf.extensionuploadcenter.eupcenter.IEUpCenter
+    for="tdf.extensionuploadcenter.eupproject.IEUpProject
                zope.lifecycleevent.interfaces.IObjectAddedEvent"
     handler="tdf.extensionuploadcenter.eupcenter.notifyAboutNewProject"
+    />
+
+  <subscriber
+    for="tdf.extensionuploadcenter.eupcenter.IEUpCenter
+               zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+    handler="tdf.extensionuploadcenter.eupcenter.notifiyAboutNewVersion"
     />
 
   <subscriber
     for="tdf.extensionuploadcenter.eupproject.IEUpProject
                Products.CMFCore.interfaces.IActionSucceededEvent"
     handler="tdf.extensionuploadcenter.eupproject.notifyProjectManager"
+    />
+
+  <subscriber
+    for="tdf.extensionuploadcenter.euprelease.IEUpRelease
+              zope.lifecycleevent.interfaces.IObjectAddedEvent"
+    handler="tdf.extensionuploadcenter.eupproject.notifyProjectManagerReleaseAdd"
     />
 
 </configure>
