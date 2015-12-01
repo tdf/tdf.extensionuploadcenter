@@ -109,4 +109,16 @@
     handler="tdf.extensionuploadcenter.eupproject.notifyProjectManagerReleaseAdd"
     />
 
+  <subscriber
+    for="tdf.extensionuploadcenter.eupreleaselink.IEUpReleaseLink
+             zope.lifecycleevent.interfaces.IObjectAddedEvent"
+    handler="tdf.extensionuploadcenter.eupproject.notifyProjectManagerReleaseLinkedAdd"
+    />
+
+  <adapter
+
+    factory=".eupproject.ValidateEUpProjectUniqueness"
+    />
+
+
 </configure>

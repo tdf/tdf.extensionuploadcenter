@@ -15,6 +15,9 @@ from zope.interface import Invalid, invariant
 from plone import api
 from tdf.extensionuploadcenter.euprelease import IEUpRelease
 from tdf.extensionuploadcenter.eupreleaselink import IEUpReleaseLink
+from z3c.form import validator
+from plone.uuid.interfaces import IUUID
+from Products.CMFCore.utils import getToolByName
 
 
 
@@ -155,11 +158,42 @@ def notifyProjectManagerReleaseAdd (eupproject, event):
     api.portal.send_email(
         recipient ="%s" % (eupproject.contactAddress),
         sender = "%s <%s>" % ('Admin of the LibreOffice Extensions site', 'extensions@libreoffice.org'),
-        subject = "Your Project %s: ew Release added"  % (eupproject.title),
-        body = "A new new release was added to your project: '%s'" % (eupproject.title),
+        subject = "Your Project %s: new Release added"  % (eupproject.title),
+        body = "A new release was added to your project: '%s'" % (eupproject.title),
+         )
+
+def notifyProjectManagerReleaseLinkedAdd (eupproject, event):
+    api.portal.send_email(
+        recipient ="%s" % (eupproject.contactAddress),
+        sender = "%s <%s>" % ('Admin of the LibreOffice Extensions site', 'extensions@libreoffice.org'),
+        subject = "Your Project %s: new linked Release added"  % (eupproject.title),
+        body = "A new linked release was added to your project: '%s'" % (eupproject.title),
          )
 
 
+
+class ValidateEUpProjectUniqueness(validator.SimpleFieldValidator):
+    #Validate site-wide uniqueness of project titles.
+
+
+    def validate(self, value):
+        # Perform the standard validation first
+        super(ValidateEUpProjectUniqueness, self).validate(value)
+
+        if value is not None:
+            catalog = getToolByName(self.context, 'portal_catalog')
+            results = catalog({'Title': value,
+                               'object_provides': IEUpProject.__identifier__})
+
+            contextUUID = IUUID(self.context, None)
+            for result in results:
+                if result.UID != contextUUID:
+                    raise Invalid(_(u"The project title is already in use"))
+
+validator.WidgetValidatorDiscriminators(
+    ValidateEUpProjectUniqueness,
+    field=IEUpProject['title'],
+)
 
 
 class EUpProjectView(DefaultView):

@@ -17,6 +17,8 @@ from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from plone.directives import form
 from zope import schema
 
+from zope.interface import provider
+from zope.schema.interfaces import IContextAwareDefaultFactory
 
 
 
@@ -71,6 +73,28 @@ yesnochoice = SimpleVocabulary(
 
 
 
+@provider(IContextAwareDefaultFactory)
+def getContainerTitle(context):
+    return context.title
+
+
+@provider(IContextAwareDefaultFactory)
+def contactinfoDefault(context):
+    return context.contactAddress
+
+
+@provider(IContextAwareDefaultFactory)
+def legal_declaration_title(context):
+    context = context.aq_inner.aq_parent
+    return context.title_legaldisclaimer
+
+
+@provider(IContextAwareDefaultFactory)
+def legal_declaration_text(context):
+    context = context.aq_inner.aq_parent
+    return context.legal_disclaimer
+
+
 class AcceptLegalDeclaration(Invalid):
     __doc__ = _(u"It is necessary that you accept the Legal Declaration")
 
@@ -84,7 +108,8 @@ class IEUpReleaseLink(model.Schema):
     title = schema.TextLine(
         title=_(u"Title"),
         description=_(u"Release Title"),
-        min_length=5
+        min_length=5,
+        defaultFactory= getContainerTitle
     )
 
     releasenumber=schema.TextLine(
@@ -144,14 +169,15 @@ class IEUpReleaseLink(model.Schema):
     form.mode(title_declaration_legal='display')
     title_declaration_legal=schema.TextLine(
         title=_(u""),
-        required=False
+        required=False,
+        defaultFactory = legal_declaration_title
     )
 
     form.mode(declaration_legal='display')
-    form.primary('declaration_legal')
-    declaration_legal = RichText(
+    declaration_legal = schema.Text(
         title=_(u""),
-        required=False
+        required=False,
+        defaultFactory = legal_declaration_text
     )
 
     accept_legal_declaration=schema.Bool(
@@ -163,7 +189,8 @@ class IEUpReleaseLink(model.Schema):
     contact_address2 = schema.ASCIILine(
         title=_(u"Contact email-address"),
         description=_(u"Contact email-address for the project."),
-        required=False
+        required=False,
+        defaultFactory = contactinfoDefault
     )
 
     source_code_inside = schema.Choice(
