@@ -17,7 +17,6 @@ from tdf.extensionuploadcenter.euprelease import IEUpRelease
 from tdf.extensionuploadcenter.eupreleaselink import IEUpReleaseLink
 from z3c.form import validator
 from plone.uuid.interfaces import IUUID
-from Products.CMFCore.utils import getToolByName
 
 
 
@@ -171,7 +170,6 @@ def notifyProjectManagerReleaseLinkedAdd (eupproject, event):
          )
 
 
-
 class ValidateEUpProjectUniqueness(validator.SimpleFieldValidator):
     #Validate site-wide uniqueness of project titles.
 
@@ -181,7 +179,7 @@ class ValidateEUpProjectUniqueness(validator.SimpleFieldValidator):
         super(ValidateEUpProjectUniqueness, self).validate(value)
 
         if value is not None:
-            catalog = getToolByName(self.context, 'portal_catalog')
+            catalog = api.portal.get_tool(name='portal_catalog')
             results = catalog({'Title': value,
                                'object_provides': IEUpProject.__identifier__})
 

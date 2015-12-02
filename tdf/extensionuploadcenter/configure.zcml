@@ -116,9 +116,7 @@
     />
 
   <adapter
-
     factory=".eupproject.ValidateEUpProjectUniqueness"
     />
-
 
 </configure>
