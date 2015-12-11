@@ -17,6 +17,7 @@ from tdf.extensionuploadcenter.euprelease import IEUpRelease
 from tdf.extensionuploadcenter.eupreleaselink import IEUpReleaseLink
 from z3c.form import validator
 from plone.uuid.interfaces import IUUID
+from plone.directives import form
 
 
 
@@ -88,7 +89,7 @@ class IEUpProject(model.Schema):
     )
 
     dexteritytextindexer.searchable('details')
-    model.primary('details')
+    form.primary('details')
     details = RichText(
         title=_(u"Full Project Description"),
         required=False
