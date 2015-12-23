@@ -58,6 +58,12 @@
 							                                zoomid   python:project.id.replace('.', '_');
 							                                screenshot   project/getScreenshot | nothing">
 
+                                                 <h3 style="border-top: none">
+                                                    <a href="" tal:attributes="href projectURL;" 	tal:content="project/pretty_title_or_id">
+                                                        <tal:comment replace="nothing">Extension One</tal:comment></a>
+                                                </h3>
+                                                <div tal:content="structure project/@@rate-if-you-dare" />
+
                                                 <div class="project-thumb thumbzoom"
                                                         tal:condition="screenshot">
                                                     <a tal:attributes="href projectURL">
@@ -73,11 +79,8 @@
                                                                     scale python:scales.scale('project_logo', 'tile')"
                                                             tal:replace="structure python:scale and scale.tag(css_class='eupcenterprojectlogo') or None" />
                                                 </span>
-                                                <h3 style="border-top: none">
-                                                    <a href="" tal:attributes="href projectURL;" 	tal:content="project/pretty_title_or_id">
-                                                        <tal:comment replace="nothing">Extension One</tal:comment></a>
-                                                </h3>
-                                                <div tal:content="structure project/@@rate-if-you-dare" />
+
+
                                                 <div class="product-details">
                                                     <span class="product-leadin">
                                                         <!---
