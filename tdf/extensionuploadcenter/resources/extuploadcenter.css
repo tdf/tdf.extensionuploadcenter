@@ -93,3 +93,34 @@ div.sidebar {
     margin-left: 1em;
     padding-top: 0.5em;
 }
+
+.paneeuc{
+    width: 90%;
+    float: left;
+}
+
+.paneeuc h2{
+    margin-top: 1em;
+}
+
+#mostpopular {
+    width: 90%;
+    float: left;
+}
+
+ul.popularproducts {
+    list-style-type: none;
+}
+
+span.product-leadin {
+    display: block;
+    font-size: 0.7em;
+    font-color: #999;
+}
+
+
+#mostpopular img.eupcenterprojectlogo {
+    float: left;
+    margin-right: 2em;
+}
+
