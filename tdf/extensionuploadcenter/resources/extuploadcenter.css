@@ -108,9 +108,26 @@ div.sidebar {
     float: left;
 }
 
-ul.popularproducts {
+ul.popularproducts,
+ul.userprojects,
+ul.newestproducts
+{
     list-style-type: none;
 }
+
+#ownprojects h3,
+#mostrecent h3
+{
+    font-size: 150%;
+    line-height: 0.5em;
+}
+
+#by-category ol {
+    list-style-type: none;
+    list-style-image: none;
+    list-style-position: outside;
+}
+
 
 span.product-leadin {
     display: block;
