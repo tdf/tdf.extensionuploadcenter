@@ -118,8 +118,43 @@ ul.newestproducts
 #ownprojects h3,
 #mostrecent h3
 {
-    font-size: 150%;
+    font-size: 1.5em;
     line-height: 0.5em;
+}
+
+#ownProjects h4 {
+    margin-top: 1.5em;
+    margin-left: -0.5em;
+    background-color: #C0C0C0;
+    border-radius: 0.3em;
+    padding-top:0.3em;
+    padding-bottom: 0.3em;
+    padding-left: 0.3em;
+}
+
+#ownProjects h2,
+#mostrecent h2,
+#by-category h2
+{
+    font-size: 1.75em;
+    background-color:#C0C0C0;
+    border-radius: 0.3em;
+    padding-left: 0.3em;
+    padding-bottom: 0.3em;
+    padding-top: 0.3em;
+    margin-left: -0.5em;
+}
+
+div.installinstructions h3,
+div.aboutproduct h3
+{
+    font-size: 1.5em;
+    background-color:#C0C0C0;
+    border-radius: 0.3em;
+    padding-left: 0.3em;
+    padding-bottom: 0.3em;
+    padding-top: 0.3em;
+    margin-left: -0.5em;
 }
 
 #by-category ol {
