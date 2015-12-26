@@ -13,6 +13,8 @@ from plone.app.layout.viewlets import ViewletBase
 from Products.CMFCore.utils import getToolByName
 from tdf.extensionuploadcenter.eupproject import IEUpProject
 
+from plone.app.multilingual.dx import directives
+
 
 
 class IEUpCenter(model.Schema):
@@ -145,7 +147,10 @@ def notifyAboutNewProject(eupproject, event):
         body =  "A member added a new project"
     )
 
-
+directives.languageindependent('available_category')
+directives.languageindependent('available_licenses')
+directives.languageindependent('available_versions')
+directives.languageindependent('available_platforms')
 
 # Views
 
