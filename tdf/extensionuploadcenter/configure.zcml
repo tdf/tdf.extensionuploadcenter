@@ -76,13 +76,10 @@
       />
 
 
-  <plone:behavior
 
-      title="Name from product name and release number"
-      description="generates a name from product name and release number"
-      for="plone.dexterity.interfaces.IDexterityContent"
-      provides=".behaviors.INameForRelease"
+  <adapter for="tdf.extensionuploadcenter.euprelease.IEUpRelease"
       factory=".behaviors.NameForRelease"
+      provides=".behaviors.INameForRelease"
       />
 
   <subscriber
