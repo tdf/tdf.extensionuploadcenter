@@ -245,7 +245,7 @@
 <table class="eupcenterprojecttable" border="1" width="100%">
             <thead>
             <tr bgcolor="#40FB27">
-                <td><h4 i18n:translate="title_extension">Extension Version</h4></td>
+                <td><h4 i18n:translate="title_extension">Version</h4></td>
                 <td><h4 i18n:translate="title_platform">Platform(s)</h4></td>
                 <td><h4 i18n:translate="title_compatiblity">Compatibility</h4></td>
                 <td><h4 i18n:translate="title_description">Description</h4></td>
@@ -259,7 +259,7 @@
                              maturity python: wtool.getInfoFor(release, 'review_state')">
                  <td>
                  <h4><a tal:attributes="href release/absolute_url">
-                     <span tal:content="release/Title" /> - <span tal:content="release/releasenumber" /></a></h4>
+                     <span tal:content="release/releasenumber" /></a></h4>
                  </td>
                  <td>
                      <ul><tal:loop repeat="platform_choice release/platform_choice">

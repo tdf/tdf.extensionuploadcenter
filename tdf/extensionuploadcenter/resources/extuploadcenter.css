@@ -176,3 +176,11 @@ span.product-leadin {
     margin-right: 2em;
 }
 
+
+table.eupcenterprojecttable ul{
+    list-style-type: none;
+}
+
+table.eupcenterprojecttable td {
+    padding: 1em;
+}
