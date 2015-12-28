@@ -82,6 +82,13 @@
       provides=".behaviors.INameForRelease"
       />
 
+
+  <adapter for="tdf.extensionuploadcenter.eupreleaselink.IEUpReleaseLink"
+      factory=".behaviors.NameForLinkedRelease"
+      provides=".behaviors.INameForLinkedRelease"
+      />
+
+
   <subscriber
     for="tdf.extensionuploadcenter.eupproject.IEUpProject
                zope.lifecycleevent.interfaces.IObjectAddedEvent"

@@ -94,7 +94,7 @@ class AcceptLegalDeclaration(Invalid):
 class IEUpReleaseLink(model.Schema):
 
 
-
+    form.mode(title='hidden')
     title = schema.TextLine(
         title=_(u"Title"),
         description=_(u"Release Title"),
