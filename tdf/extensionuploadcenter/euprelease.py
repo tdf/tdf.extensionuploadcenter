@@ -333,26 +333,6 @@ class IEUpRelease(model.Schema):
 
 
 
-@form.default_value(field=IEUpRelease['licenses_choice'])
-def defaultLicense(self):
-    licenses = list( self.context.available_licenses)
-    defaultlicenses = licenses[0]
-    return [defaultlicenses]
-
-@form.default_value(field=IEUpRelease['compatibility_choice'])
-def defaultcompatibility(self):
-    compatibility = list( self.context.available_versions)
-    defaultcompatibility = compatibility[0]
-    return [defaultcompatibility]
-
-@form.default_value(field=IEUpRelease['platform_choice'])
-def defaultplatform(self):
-    platform = list( self.context.available_platforms)
-    defaultplatform = platform[0]
-    return [defaultplatform]
-
-
-
 
 class EUpReleaseView(DefaultView):
 
