@@ -18,6 +18,7 @@ from tdf.extensionuploadcenter.eupreleaselink import IEUpReleaseLink
 from z3c.form import validator
 from plone.uuid.interfaces import IUUID
 from plone.directives import form
+from z3c.form.browser.checkbox import CheckBoxFieldWidget
 
 
 
@@ -98,6 +99,7 @@ class IEUpProject(model.Schema):
 
 
     dexteritytextindexer.searchable('category_choice')
+    form.widget(category_choice=CheckBoxFieldWidget)
     category_choice = schema.List(
         title=_(u"Choose your categories"),
         description=_(u"Please mark one or using the 'CTRL' key two and more entry on the left side and use the arrows in the middle to choose them and get them into the selected items box on the right side."),
