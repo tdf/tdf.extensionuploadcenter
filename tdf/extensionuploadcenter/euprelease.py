@@ -22,6 +22,8 @@ from zope.schema.interfaces import IContextAwareDefaultFactory
 
 
 
+
+
 def vocabAvailLicenses(context):
     """ pick up licenses list from parent """
 
@@ -63,9 +65,8 @@ yesnochoice = SimpleVocabulary(
 
 
 @provider(IContextAwareDefaultFactory)
-def getContainerTitle(context):
-    return context.title
-
+def getContainerTitle(self):
+    return (self.aq_inner.title)
 
 @provider(IContextAwareDefaultFactory)
 def contactinfoDefault(context):
@@ -92,14 +93,12 @@ class AcceptLegalDeclaration(Invalid):
 
 class IEUpRelease(model.Schema):
 
-    form.mode(title='hidden')
-    title = schema.TextLine(
-        title=_(u"Title"),
-        description=_(u"Release Title"),
-        min_length=5,
+    form.mode(projecttitle='hidden')
+    projecttitle=schema.TextLine(
+        title=_(u"The Computed Project Title"),
+        description=_(u"The project title will be computed from the parent project title"),
         defaultFactory= getContainerTitle
     )
-
 
     releasenumber=schema.TextLine(
         title=_(u"Release Number"),

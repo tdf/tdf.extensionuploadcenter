@@ -17,14 +17,14 @@
     <property name="schema">tdf.extensionuploadcenter.euprelease.IEUpRelease</property>
 
     <!-- class used for content items -->
-    <property name="klass">plone.dexterity.content.Item</property>
+    <property name="klass">tdf.extensionuploadcenter.customreleasename.ReleaseCustomName</property>
 
     <!-- add permission -->
     <property name="add_permission">tdf.extensionuploadcenter.AddExtProject</property>
 
     <!-- enabled behaviors -->
     <property name="behaviors">
-        <element value="tdf.extensionuploadcenter.interfaces.INameForRelease" />
+
         <!-- IReferenceable might not be available, but it will not break. -->
         <element value="plone.app.multilingual.dx.interfaces.IDexterityTranslatable" />
         <element value="plone.app.dexterity.behaviors.metadata.IOwnership" />
