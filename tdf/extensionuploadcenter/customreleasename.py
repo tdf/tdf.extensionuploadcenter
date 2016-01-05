@@ -13,3 +13,6 @@ class ReleaseCustomName(Item):
         else:
             return ''
 
+
+    def setTitle(self, value):
+        return
