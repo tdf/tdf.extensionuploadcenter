@@ -78,8 +78,8 @@
 
 
   <adapter for="tdf.extensionuploadcenter.euprelease.IEUpRelease"
-      factory=".behaviors.NameForRelease"
-      provides=".behaviors.INameForRelease"
+      factory="tdf.extensionuploadcenter.releasecustomurl.NameForReleaseURL"
+      provides="tdf.extensionuploadcenter.releasecustomurl.INameForReleaseURL"
       />
 
 
