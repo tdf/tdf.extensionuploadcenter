@@ -367,42 +367,6 @@ class IEUpReleaseLink(model.Schema):
 
 
 
-@form.default_value(field=IEUpReleaseLink['declaration_legal'])
-def LegalTextDefaultValue(data):
-    # To get hold of the folder, do: context = data.context
-    return data.context.__parent__.legal_disclaimer
-
-@form.default_value(field=IEUpReleaseLink['title_declaration_legal'])
-def legal_declaration_title_default(data):
-    # To get hold of the folder, do: context = data.context
-    return data.context.aq_inner.aq_parent.title_legaldisclaimer
-
-@form.default_value(field=IEUpReleaseLink['contact_address2'])
-def contactinfoDefaultValue(data):
-    return data.context.contactAddress
-
-
-@form.default_value(field=IEUpReleaseLink['licenses_choice'])
-def defaultLicense(self):
-    licenses = list( self.context.available_licenses)
-    defaultlicenses = licenses[0]
-    return [defaultlicenses]
-
-@form.default_value(field=IEUpReleaseLink['compatibility_choice'])
-def defaultcompatibility(self):
-    compatibility = list( self.context.available_versions)
-    defaultcompatibility = compatibility[0]
-    return [defaultcompatibility]
-
-@form.default_value(field=IEUpReleaseLink['platform_choice'])
-def defaultplatform(self):
-    platform = list( self.context.available_platforms)
-    defaultplatform = platform[0]
-    return [defaultplatform]
-
-
-
-
 
 class EUpReleaseLinkView(DefaultView):
 
