@@ -12,6 +12,11 @@ tdf.extensionuploadcenter.egg-info/paster_plugins.txt
 tdf.extensionuploadcenter.egg-info/requires.txt
 tdf.extensionuploadcenter.egg-info/top_level.txt
 tdf/extensionuploadcenter/__init__.py
+tdf/extensionuploadcenter/customreleasename.py
 tdf/extensionuploadcenter/eupcenter.py
 tdf/extensionuploadcenter/eupproject.py
+tdf/extensionuploadcenter/euprelease.py
+tdf/extensionuploadcenter/eupreleaselink.py
+tdf/extensionuploadcenter/notifications.py
+tdf/extensionuploadcenter/releasecustomurl.py
 tdf/extensionuploadcenter/tests.py
