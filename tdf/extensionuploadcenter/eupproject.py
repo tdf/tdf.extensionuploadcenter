@@ -19,6 +19,7 @@ from z3c.form import validator
 from plone.uuid.interfaces import IUUID
 from plone.directives import form
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
+from Products.validation import V_REQUIRED
 
 
 
