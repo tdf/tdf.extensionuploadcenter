@@ -27,8 +27,10 @@
 
 
          <dl class="portalinfomessage"
-            tal:define="is_editable context/@@plone_context_state/is_editable;"
-            tal:condition="python: is_editable">
+            tal:define="is_editable context/@@plone_context_state/is_editable;
+                        wf_tool here/portal_workflow;
+                        review_state python:wf_tool.getInfoFor( here, 'review_state', '')"
+            tal:condition="python: is_editable and not review_state == 'Unreleased' ">
             <dt i18n:translate="">Info</dt>
             <dd>
                 <span i18n:translate="help_message_remember_is_editable">Remember to publish your release once all files have been added.</span>
