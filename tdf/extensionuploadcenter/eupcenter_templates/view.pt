@@ -58,7 +58,7 @@
 							                                projectURL project/absolute_url;
 							                                result_type result/portal_type;
 							                                zoomid   python:project.id.replace('.', '_');
-							                                screenshot   project/getScreenshot | nothing">
+							                                screenshot   project/screenshot">
 
                                                  <h3 style="border-top: none">
                                                     <a href="" tal:attributes="href projectURL;" 	tal:content="project/pretty_title_or_id">
@@ -69,8 +69,8 @@
                                                 <div class="project-thumb thumbzoom"
                                                         tal:condition="screenshot">
                                                     <a tal:attributes="href projectURL">
-                                                        <img tal:condition="project/screenshot_thumb|nothing"
-                                                                tal:replace="structure project/screenshot_thumb" />
+                                                        <img tal:condition="screenshot"
+                                                                tal:replace="structure project/@@images/screenshot/thumb" />
                                                     </a>
                                                 </div>
                                                 <span class="project-thumb"
@@ -85,11 +85,12 @@
 
                                                 <div class="product-details">
                                                     <span class="product-leadin">
-                                                        <!---
-                                                        <span tal:replace="python:toLocalizedTime(result.getLatestReleaseDate or result.modified, long_format=0)">
-                                                        Sept. 3, 2008
+
+                                                        <span tal:define="LatestReleaseDate project/view/latest_release_date;"
+                                                                tal:replace="python:toLocalizedTime(LatestReleaseDate , long_format=0)">
+                                                            Jan. 22, 2016
                                                         </span>
-                                                        -->
+
                                                         <span i18n:translate="">in</span>
                                                         <span tal:replace="python:', '.join(result.getObject().category_choice)"></span>
                                                     </span>
