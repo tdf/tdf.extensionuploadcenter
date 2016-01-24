@@ -47,7 +47,6 @@
 
                         </a>
         <p>or:</p>
-
         <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.extensionuploadcenter.eupreleaselink" i18n:translate="">
                             <img src="++resource++tdf.extensionuploadcenter/yellowarrow.png"  alt=""/> a linked Release to your
                             <span tal:content="context/product_title | string:extension_project" i18n:name="product_title_eupproject" /> Project
