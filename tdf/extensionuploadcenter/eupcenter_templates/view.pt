@@ -162,7 +162,7 @@
 							                        projectURL project/absolute_url;
 							                        result_type result/portal_type;
 							                        zoomid   python:project.id.replace('.', '_');
-							                        screenshot   project/getScreenshot | nothing">
+							                        screenshot   project/screenshot">
                                          <h3 style="border-top: none">
 							<a href=""
 								tal:attributes="href projectURL;"
@@ -173,8 +173,8 @@
                                         <div tal:content="structure project/@@rate-if-you-dare"/>
                                         <div class="project-thumb thumbzoom" tal:condition="screenshot">
                                             <a tal:attributes="href projectURL">
-                                                <img tal:condition="project/screenshot_thumb|nothing"
-                                                        tal:replace="structure project/screenshot_thumb" />
+                                                <img tal:condition="screenshot"
+                                                                tal:replace="structure project/@@images/screenshot/thumb" />
                                             </a>
                                         </div>
                                         <span class="project-thumb" tal:condition="not:screenshot">
