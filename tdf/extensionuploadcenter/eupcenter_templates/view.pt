@@ -166,7 +166,7 @@
                                          <h3 style="border-top: none">
 							<a href=""
 								tal:attributes="href projectURL;"
-								tal:content="result/pretty_title_or_id">
+								tal:content="project/pretty_title_or_id">
 								<tal:comment replace="nothing">Product One</tal:comment>
 							</a>
 						</h3>
@@ -197,11 +197,8 @@
                                     tal:content="structure project/description">
 								<tal:comment replace="nothing">Project Description.</tal:comment>
 							</p>
-
-
-						</div>
+                                        </div>
                                         <div class="visualClear" ></div>
-
     </tal:entry>
      </li>
 </ul>
@@ -257,15 +254,10 @@
                                            <a href="" tal:attributes="href projectURL;" 	tal:content="project/pretty_title_or_id">
 								           <tal:comment replace="nothing">Extension One</tal:comment></a>
                                        </h3>
-
 						  </tal:entry>
-
                         </li>
-
-
                     </ul>
                 </tal:results>
-
             </div>
         </div>
         <div id="by-category">
