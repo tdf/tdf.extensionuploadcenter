@@ -41,16 +41,19 @@ class IEUpCenter(model.Schema):
 
 
     available_category = schema.List(title=_(u"Available Categories"),
-        default=['Gallery Contents',
+        default=['Dictionary',
+                 'Makro',
+                 'Clipart',
+                 'Template Extension',
+                 'Gallery Contents',
                  'Language Tools',
-                 'Dictionary',
-                 'Writer_Extension',
-                 'Calc_Extension',
-                 'Impress_Extension',
-                 'Draw_Extension',
-                 'Base_Extension',
-                 'Math_Extension',
-                 'Extension_Building',],
+                 'Writer Extension',
+                 'Calc Extension',
+                 'Impress Extension',
+                 'Draw Extension',
+                 'Base Extension',
+                 'Math Extension',
+                 'Extension Building',],
         value_type=schema.TextLine())
 
 
