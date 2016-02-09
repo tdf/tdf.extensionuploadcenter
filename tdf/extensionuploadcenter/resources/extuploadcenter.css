@@ -177,10 +177,26 @@ span.product-leadin {
 }
 
 
+
 table.eupcenterprojecttable ul{
     list-style-type: none;
 }
 
 table.eupcenterprojecttable td {
     padding: 1em;
+}
+
+#mostpopular img{
+    float: left;
+    margin-right: 2em;
+}
+
+#mostpopular li {
+    margin-bottom:8em;
+}
+
+
+.product-details .product-leadin{
+    font-size: .8em;
+    color: #999;
 }
