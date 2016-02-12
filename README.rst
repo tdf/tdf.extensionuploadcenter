@@ -3,7 +3,7 @@
    This text does not appear on pypi or github. It is a comment.
 
 ==============================================================================
-tdf.extensionsuploadcenter
+tdf.extensionuploadcenter
 ==============================================================================
 
 A Plone add-on for the LibreOffice extension uploadcenter that will make the publishing of extensions for LibreOffice much easier.
