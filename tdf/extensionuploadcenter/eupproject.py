@@ -103,7 +103,7 @@ class IEUpProject(model.Schema):
     form.widget(category_choice=CheckBoxFieldWidget)
     category_choice = schema.List(
         title=_(u"Choose your categories"),
-        description=_(u"Please check one or more categories for your project."),
+        description=_(u"Please select the appropriate categories (one or more) for your project."),
         value_type=schema.Choice(source=vocabCategories),
         constraint = isNotEmptyCategory,
         required=True
