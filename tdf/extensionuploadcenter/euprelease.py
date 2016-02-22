@@ -20,6 +20,7 @@ from zope import schema
 from zope.interface import provider
 from zope.schema.interfaces import IContextAwareDefaultFactory
 from Products.validation import V_REQUIRED
+from plone import api
 
 
 
@@ -328,6 +329,19 @@ class IEUpRelease(model.Schema):
             raise Invalid(_(u"Please choose a compatible platform for the uploaded file."))
 
 
+def notifyExtensionHubReleaseAdd (euprelease, event):
+    portal = api.portal.get()
+    state = api.content.get_state(euprelease)
+
+    if state == 'final':
+        api.portal.send_email(
+            recipient = "plonetest@libreoffice.org",
+            subject = "New Release added",
+            body = "A new release was added and published with the title: %s" % (euprelease.title),
+            )
+
+    else:
+        return
 
 
 
