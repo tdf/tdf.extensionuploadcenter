@@ -119,6 +119,12 @@
     handler="tdf.extensionuploadcenter.eupproject.notifyProjectManagerReleaseLinkedAdd"
     />
 
+  <subscriber
+    for="tdf.extensionuploadcenter.euprelease.IEUpRelease
+             Products.CMFCore.interfaces.IActionSucceededEvent"
+    handler="tdf.extensionuploadcenter.euprelease.notifyExtensionHubReleaseAdd"
+    />
+
   <adapter
     factory=".eupproject.ValidateEUpProjectUniqueness"
     />
