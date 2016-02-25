@@ -329,19 +329,27 @@ class IEUpRelease(model.Schema):
             raise Invalid(_(u"Please choose a compatible platform for the uploaded file."))
 
 
-def notifyExtensionHubReleaseAdd (euprelease, event):
+def notifyExtensionHubReleaseAdd (self, event):
     portal = api.portal.get()
-    state = api.content.get_state(euprelease)
+    state = api.content.get_state(self)
+    catalog = api.portal.get_tool(name='portal_catalog')
+    results = catalog(Title=self.title)
+    for brain in results:
+        url = brain.getURL()
+
+        category = list(self.category_choice)
+        compatibility = list(self.compatibility_choice)
+        licenses = list(self.licenses_choice)
 
     if state == 'final':
         api.portal.send_email(
             recipient = "plonetest@libreoffice.org",
             subject = "New Release added",
-            body = "A new release was added and published with the title: %s" % (euprelease.title),
+            body = "A new release was added and published with\n title: %s\n URL: %s\n Compatibility:%s\n Categories: %s\n Licenses: %s" % (self.title, url, compatibility, category, licenses),
             )
 
     else:
-        return
+        return None
 
 
 
