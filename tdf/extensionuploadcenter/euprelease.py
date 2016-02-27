@@ -340,12 +340,16 @@ def notifyExtensionHubReleaseAdd (self, event):
         category = list(self.category_choice)
         compatibility = list(self.compatibility_choice)
         licenses = list(self.licenses_choice)
+        platform = list(self.platform_choice) + list(self.platform_choice1) +\
+                   list(self.platform_choice2) + list(self.platform_choice3) +\
+                   list(self.platform_choice4) + list(self.platform_choice5)
 
     if state == 'final':
         api.portal.send_email(
             recipient = "plonetest@libreoffice.org",
             subject = "New Release added",
-            body = "A new release was added and published with\n title: %s\n URL: %s\n Compatibility:%s\n Categories: %s\n Licenses: %s" % (self.title, url, compatibility, category, licenses),
+            body = "A new release was added and published with\ntitle: %s\nURL: %s\nCompatibility:%s\n"
+                   "Categories: %s\nLicenses: %s\nPlatforms: %s" % (self.title, url, compatibility, category, licenses, platform),
             )
 
     else:
