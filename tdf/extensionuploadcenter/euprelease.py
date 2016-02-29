@@ -332,6 +332,7 @@ class IEUpRelease(model.Schema):
 def notifyExtensionHubReleaseAdd (self, event):
     portal = api.portal.get()
     state = api.content.get_state(self)
+    releasemessagereceipient = self.releaseAllert
     catalog = api.portal.get_tool(name='portal_catalog')
     results = catalog(Title=self.title)
     for brain in results:
@@ -347,9 +348,9 @@ def notifyExtensionHubReleaseAdd (self, event):
         platform = list(pf_set)
         platform.sort()
 
-    if state == 'final':
+    if state == 'final' and releasemessagereceipient is not None:
         api.portal.send_email(
-            recipient = "plonetest@libreoffice.org",
+            recipient = releasemessagereceipient,
             subject = "New Release added",
             body = "A new release was added and published with\ntitle: %s\nURL: %s\nCompatibility:%s\n"
                    "Categories: %s\nLicenses: %s\nPlatforms: %s" % (self.title, url, compatibility, category, licenses, platform),

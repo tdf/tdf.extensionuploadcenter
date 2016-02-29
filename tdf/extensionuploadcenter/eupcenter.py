@@ -139,6 +139,12 @@ class IEUpCenter(model.Schema):
         required=False
     )
 
+    releaseAllert=schema.ASCIILine(
+        title=_(u"EMail address for the messages about new releases"),
+        description=_(u"Enter a email address to which information about a new release should be send"),
+        required=False
+    )
+
 
 def notifyAboutNewProject(eupproject, event):
     api.portal.send_email(
