@@ -11,7 +11,20 @@ A Plone add-on for the LibreOffice extension uploadcenter that will make the pub
 Features
 --------
 
--
+- The add-on creates four content objects: Extension Upload Center, Extension Project, Extension Release, Extension Linked Release
+- The Center is used for the configuration:
+   + Name of the Extensions Center
+   + Description of the center
+   + Product description
+   + Product title
+   + (Product) Categories
+   + (Product) Lizenses
+   + (Product) Versions
+   + Platforms
+   + (Product) Install instructions
+   + Instructions for bug reports
+   + Legal Disclaimer for contributions and downloads
+   + Email-Address for the optional messaging of new releases to a hub
 
 
 Examples
@@ -32,7 +45,7 @@ Translations
 
 This product has been translated into
 
--
+- (currently no translations)
 
 
 Installation
