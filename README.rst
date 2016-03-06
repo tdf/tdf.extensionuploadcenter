@@ -24,7 +24,13 @@ Features
    + (Product) Install instructions
    + Instructions for bug reports
    + Legal Disclaimer for contributions and downloads
-   + Email-Address for the optional messaging of new releases to a hub
+   + Email-Address for the optional messaging of new releases to a
+
+- The Project contains all the necessary information about the contributor and the project:
+   + Project description and details
+   + Links to external homepage and documentation of the project
+   + Project contact email address
+   + Project screenshot and logo
 
 
 Examples
