@@ -7,12 +7,6 @@ Changelog
 - Nothing changed yet.
 
 
-0.2 (2016-03-07)
-----------------
-
-- Nothing changed yet.
-
-
 0.1 (2016-03-07)
 ----------------
 
