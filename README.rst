@@ -43,6 +43,12 @@ Features
    + Form fields for file upload or the links to the files
    + Release platform compatibility
 
+- Messaging:
+   + to all project owner once a new product version is added
+   + to a project owner if the status of his project changed
+   + to a project owner if a release was added (to his project)
+   + to the administrator email if a new project was added
+   + to a hub email address if a new release was published in final state
 
 Examples
 --------
