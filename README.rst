@@ -32,6 +32,17 @@ Features
    + Project contact email address
    + Project screenshot and logo
 
+- The Release and the linked Release provide fields for the necessary information for downloadable and linked extensions files:
+   + Release title, created from project title and release number
+   + Description and details of the release
+   + Changelog
+   + Release license
+   + Release compatibility
+   + Legal declaration for contributors
+   + Optional link to the source code
+   + Form fields for file upload or the links to the files
+   + Release platform compatibility
+
 
 Examples
 --------
