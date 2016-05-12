@@ -164,12 +164,12 @@
 							                        zoomid   python:project.id.replace('.', '_');
 							                        screenshot   project/screenshot">
                                          <h3 style="border-top: none">
-							<a href=""
-								tal:attributes="href projectURL;"
-								tal:content="project/pretty_title_or_id">
-								<tal:comment replace="nothing">Product One</tal:comment>
-							</a>
-						</h3>
+                                             <a href=""
+                                                     tal:attributes="href projectURL;"
+                                                     tal:content="project/pretty_title_or_id">
+                                                 <tal:comment replace="nothing">Product One</tal:comment>
+                                             </a>
+                                         </h3>
                                         <div tal:content="structure project/@@rate-if-you-dare"/>
                                         <div class="project-thumb thumbzoom" tal:condition="screenshot">
                                             <a tal:attributes="href projectURL">
