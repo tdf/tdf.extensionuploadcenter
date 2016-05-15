@@ -29,8 +29,7 @@
                                                           all_releases view/all_releases;
                                                           latestRelease view/latest_release;
                                                           review_state python:wf_tool.getInfoFor( here, 'review_state', '');">
-<div class="grid-row">
-    <div class="grid-cell position-leftmost width-two-thirds">
+
         <span tal:replace="structure context/@@authenticator/authenticator"/>
 
                   <p class="portalinfomessage"
@@ -53,6 +52,10 @@
                             <span tal:content="context/product_title | string:extension_project" i18n:name="product_title_eupproject" /> Project
 
         </a>
+
+<div class="grid-row">
+    <div class="grid-cell position-leftmost width-two-thirds">
+
 
 </div>
 
