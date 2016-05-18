@@ -4,6 +4,7 @@ Changelog
 0.4 (unreleased)
 ----------------
 
+- Reordering of the project view template [Andreas Mantke]
 - Removing the navtree from project and releases view [Andreas Mantke]
 - Update of strings in the internationalisation template file (*.pot) [Andreas Mantke]
 
