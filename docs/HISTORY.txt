@@ -4,7 +4,8 @@ Changelog
 0.5 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Changed the compatibility list in the project view to a text line [Andreas Mantke]
+- Removed an obsolet div from the project view [Andreas Mantke]
 
 0.4 (2016-05-21)
 ----------------

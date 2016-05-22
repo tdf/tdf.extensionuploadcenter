@@ -147,16 +147,16 @@
 
                 <tal:compatibility condition="latestRelease/compatibility_choice">
                     &mdash; <span i18n:translate="">tested with:</span>
-</tal:compatibility>
+                </tal:compatibility>
 
-</p>
+            </p>
             <tal:compatibility condition="latestRelease/compatibility_choice">
- <ul class="latestreleasecompatiblity">
+                <p class="latestreleasecompatibility">
                          <tal:loop repeat="compatibility_choice latestRelease/compatibility_choice">
-                            <li><div tal:content="compatibility_choice" /></li>
+                            <span tal:content="compatibility_choice" />,
                          </tal:loop>
-                     </ul>
-</tal:compatibility>
+                </p>
+            </tal:compatibility>
 
 <p tal:condition="latestRelease/description">
                 <span tal:replace="latestRelease/description">
