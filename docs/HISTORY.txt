@@ -4,6 +4,7 @@ Changelog
 0.5 (unreleased)
 ----------------
 
+- Added a validator for the release name uniqueness and it's adapter [Andreas Mantke]
 - Changed the compatibility list in the project view to a text line [Andreas Mantke]
 - Removed an obsolet div from the project view [Andreas Mantke]
 

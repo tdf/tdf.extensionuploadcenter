@@ -137,4 +137,8 @@
     factory=".eupproject.ValidateEUpProjectUniqueness"
     />
 
+  <adapter
+    factory=".euprelease.ValidateEUpReleaseUniqueness"
+    />
+
 </configure>
