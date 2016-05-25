@@ -4,6 +4,8 @@ Changelog
 0.5 (unreleased)
 ----------------
 
+- Updated the translation template file [Andreas Mantke]
+- Added a missing closing div to the project view [Andreas Mantke]
 - Added a validator for the release and linked release name uniqueness and it's adapters [Andreas Mantke]
 - Changed the compatibility list in the project view to a text line [Andreas Mantke]
 - Removed an obsolet div from the project view [Andreas Mantke]
