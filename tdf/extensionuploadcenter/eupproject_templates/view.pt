@@ -52,6 +52,7 @@
                             <span tal:content="context/product_title | string:extension_project" i18n:name="product_title_eupproject" /> Project
 
         </a>
+            </div>
 
 <div class="grid-row">
 
