@@ -141,4 +141,8 @@
     factory=".euprelease.ValidateEUpReleaseUniqueness"
     />
 
+  <adapter
+    factory=".eupreleaselink.ValidateEUpReleaseLinkUniqueness"
+    />
+
 </configure>

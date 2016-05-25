@@ -21,6 +21,8 @@ from zope.interface import provider
 from zope.schema.interfaces import IContextAwareDefaultFactory
 from Products.validation import V_REQUIRED
 from plone import api
+from z3c.form import validator
+from plone.uuid.interfaces import IUUID
 
 
 
@@ -398,6 +400,33 @@ def notifyExtensionHubReleaseLinkAdd (self, event):
 
     else:
         return None
+
+
+
+class ValidateEUpReleaseLinkUniqueness(validator.SimpleFieldValidator):
+    # Validate site-wide uniqueness of release titles.
+
+
+    def validate(self, value):
+        # Perform the standard validation first
+        super(ValidateEUpReleaseLinkUniqueness, self).validate(value)
+
+        if value is not None:
+            catalog = api.portal.get_tool(name='portal_catalog')
+            results = catalog({'Title': value,
+                               'portal_type': ('tdf.extensionuploadcenter.euprelease', 'tdf.extensionuploadcenter.eupreleaselink'),})
+
+            contextUUID = IUUID(self.context, None)
+            for result in results:
+                if result.UID != contextUUID:
+                    raise Invalid(_(u"The release number is already in use. Please choose another one."))
+
+
+validator.WidgetValidatorDiscriminators(
+    ValidateEUpReleaseLinkUniqueness,
+    field=IEUpReleaseLink['releasenumber'],
+)
+
 
 
 class EUpReleaseLinkView(DefaultView):
