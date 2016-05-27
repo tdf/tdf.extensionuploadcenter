@@ -4,7 +4,7 @@ Changelog
 0.6 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Adding a MANIFEST.in file [Andreas Mantke]
 
 
 0.5 (2016-05-25)
