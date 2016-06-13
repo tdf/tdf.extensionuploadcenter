@@ -12,7 +12,6 @@ from tdf.extensionuploadcenter.eupproject import IEUpProject
 from plone.app.multilingual.dx import directives
 
 
-
 class IEUpCenter(model.Schema):
 
     """ An Extension Upload Center for LibreOffice extensions.

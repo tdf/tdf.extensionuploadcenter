@@ -2,7 +2,6 @@ from plone import api
 from tdf.extensionuploadcenter.eupcenter import IEUpCenter
 
 
-
 def notifiyAboutNewVersion(eupproject, event):
    if hasattr(event, 'descriptions') and event.descriptions:
        for d in event.descriptions:
