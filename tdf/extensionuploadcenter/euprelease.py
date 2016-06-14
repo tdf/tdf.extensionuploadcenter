@@ -26,7 +26,6 @@ from plone.uuid.interfaces import IUUID
 from tdf.extensionuploadcenter.eupreleaselink import IEUpReleaseLink
 
 
-
 def vocabAvailLicenses(context):
     """ pick up licenses list from parent """
 

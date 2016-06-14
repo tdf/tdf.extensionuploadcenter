@@ -25,8 +25,6 @@ from z3c.form import validator
 from plone.uuid.interfaces import IUUID
 
 
-
-
 def vocabAvailLicenses(context):
     """ pick up licenses list from parent """
 

@@ -22,16 +22,13 @@ from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from Products.validation import V_REQUIRED
 
 
-
-
-
 def vocabCategories(context):
     # For add forms
 
     # For other forms edited or displayed
     from tdf.extensionuploadcenter.eupcenter import IEUpCenter
     while context is not None and not IEUpCenter.providedBy(context):
-        #context = aq_parent(aq_inner(context))
+        # context = aq_parent(aq_inner(context))
         context = context.__parent__
 
     category_list = []
@@ -44,7 +41,6 @@ def vocabCategories(context):
 
     return SimpleVocabulary(terms)
 directlyProvides(vocabCategories, IContextSourceBinder)
-
 
 
 def isNotEmptyCategory(value):

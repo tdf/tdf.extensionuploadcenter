@@ -23,7 +23,7 @@ class TestCase(ptc.PloneTestCase):
         @classmethod
         def setUp(cls):
             zcml.load_config('configure.zcml',
-              tdf.extensionuploadcenter)
+                             tdf.extensionuploadcenter)
 
         @classmethod
         def tearDown(cls):
@@ -34,11 +34,11 @@ def test_suite():
     return unittest.TestSuite([
 
         # Unit tests
-        #doctestunit.DocFileSuite(
+        # doctestunit.DocFileSuite(
         #    'README.txt', package='tdf.extensionuploadcenter',
         #    setUp=testing.setUp, tearDown=testing.tearDown),
 
-        #doctestunit.DocTestSuite(
+        # doctestunit.DocTestSuite(
         #    module='tdf.extensionuploadcenter.mymodule',
         #    setUp=testing.setUp, tearDown=testing.tearDown),
 

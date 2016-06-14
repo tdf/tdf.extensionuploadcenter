@@ -18,19 +18,17 @@ class IEUpCenter(model.Schema):
     """
 
 
-
-    title= schema.TextLine(
+    title = schema.TextLine(
         title=_(u"Name of the Extensions Center"),
     )
 
-    description=schema.Text(
+    description = schema.Text(
         description=_(u"Description of the Extensions Center"),
     )
 
-    product_description=schema.Text(
+    product_description = schema.Text(
         description=_(u"Description of the features of extensions")
     )
-
 
     product_title = schema.TextLine(
         title=_(u"Extension Product Name"),
@@ -38,22 +36,21 @@ class IEUpCenter(model.Schema):
     )
 
 
-
     available_category = schema.List(title=_(u"Available Categories"),
-        default=['Dictionary',
-                 'Makro',
-                 'Clipart',
-                 'Template Extension',
-                 'Gallery Contents',
-                 'Language Tools',
-                 'Writer Extension',
-                 'Calc Extension',
-                 'Impress Extension',
-                 'Draw Extension',
-                 'Base Extension',
-                 'Math Extension',
-                 'Extension Building',],
-        value_type=schema.TextLine())
+         default=['Dictionary',
+                  'Makro',
+                  'Clipart',
+                  'Template Extension',
+                  'Gallery Contents',
+                  'Language Tools',
+                  'Writer Extension',
+                  'Calc Extension',
+                  'Impress Extension',
+                  'Draw Extension',
+                  'Base Extension',
+                  'Math Extension',
+                  'Extension Building',],
+         value_type=schema.TextLine())
 
 
     available_licenses =schema.List(title=_(u"Available Licenses"),
