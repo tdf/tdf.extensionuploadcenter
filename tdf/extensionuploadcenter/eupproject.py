@@ -49,10 +49,9 @@ def isNotEmptyCategory(value):
     return True
 
 
-
-
 checkEmail = re.compile(
     r"[a-zA-Z0-9._%-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}").match
+
 
 def validateEmail(value):
     if not checkEmail(value):
@@ -61,17 +60,14 @@ def validateEmail(value):
 
 
 class ProvideScreenshotLogo(Invalid):
-    __doc__ =  _(u"Please add a Screenshot or a Logo to your project")
-
+    __doc__ = _(u"Please add a Screenshot or a Logo to your project")
 
 
 class MissingCategory(Invalid):
     __doc__ = _(u"You have not chosen a category for the project")
 
 
-
 class IEUpProject(model.Schema):
-
 
     dexteritytextindexer.searchable('title')
     title = schema.TextLine(
@@ -93,20 +89,17 @@ class IEUpProject(model.Schema):
         required=False
     )
 
-
-
     dexteritytextindexer.searchable('category_choice')
     form.widget(category_choice=CheckBoxFieldWidget)
     category_choice = schema.List(
         title=_(u"Choose your categories"),
         description=_(u"Please select the appropriate categories (one or more) for your project."),
         value_type=schema.Choice(source=vocabCategories),
-        constraint = isNotEmptyCategory,
+        constraint=isNotEmptyCategory,
         required=True
     )
 
-
-    contactAddress=schema.ASCIILine(
+    contactAddress = schema.ASCIILine(
         title=_(u"Contact email-address"),
         description=_(u"Contact email-address for the project."),
         constraint=validateEmail
@@ -136,13 +129,10 @@ class IEUpProject(model.Schema):
         required=False,
     )
 
-
     @invariant
     def missingScreenshotOrLogo(data):
         if not data.screenshot and not data.project_logo:
             raise ProvideScreenshotLogo(_(u'Please add a Screenshot or a Logo to your project page'))
-
-
 
 
 def notifyProjectManager (eupproject, event):
@@ -153,6 +143,7 @@ def notifyProjectManager (eupproject, event):
         body = "The status of your LibreOffice extension project changed"
     )
 
+
 def notifyProjectManagerReleaseAdd (eupproject, event):
     api.portal.send_email(
         recipient ="%s" % (eupproject.contactAddress),
@@ -160,6 +151,7 @@ def notifyProjectManagerReleaseAdd (eupproject, event):
         subject = "Your Project %s: new Release added"  % (eupproject.title),
         body = "A new release was added to your project: '%s'" % (eupproject.title),
          )
+
 
 def notifyProjectManagerReleaseLinkedAdd (eupproject, event):
     api.portal.send_email(
@@ -171,8 +163,7 @@ def notifyProjectManagerReleaseLinkedAdd (eupproject, event):
 
 
 class ValidateEUpProjectUniqueness(validator.SimpleFieldValidator):
-    #Validate site-wide uniqueness of project titles.
-
+    # Validate site-wide uniqueness of project titles.
 
     def validate(self, value):
         # Perform the standard validation first
@@ -196,7 +187,6 @@ validator.WidgetValidatorDiscriminators(
 
 class EUpProjectView(DefaultView):
 
-
     def all_releases(self):
         """Get a list of all releases, ordered by version, starting with the latest.
         """
@@ -209,7 +199,6 @@ class EUpProjectView(DefaultView):
             sort_on = 'id',
             sort_order = 'reverse')
         return [r.getObject() for r in res]
-
 
     def latest_release(self):
         """Get the most recent final release or None if none can be found.
@@ -230,7 +219,6 @@ class EUpProjectView(DefaultView):
             return None
         else:
             return res[0].getObject()
-
 
     def latest_release_date(self):
         """Get the date of the latest release

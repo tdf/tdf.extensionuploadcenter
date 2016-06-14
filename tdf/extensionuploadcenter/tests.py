@@ -47,7 +47,7 @@ def test_suite():
         ztc.ZopeDocFileSuite(
             'INTEGRATION.txt',
             package='tdf.extensionuploadcenter',
-            optionflags = OPTION_FLAGS,
+            optionflags=OPTION_FLAGS,
             test_class=TestCase),
 
         # -*- extra stuff goes here -*-

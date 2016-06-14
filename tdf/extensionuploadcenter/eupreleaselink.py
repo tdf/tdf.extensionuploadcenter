@@ -60,9 +60,8 @@ directlyProvides(vocabAvailPlatforms, IContextSourceBinder)
 
 yesnochoice = SimpleVocabulary(
     [SimpleTerm(value=0, title=_(u'No')),
-     SimpleTerm(value=1, title=_(u'Yes')),]
+     SimpleTerm(value=1, title=_(u'Yes')), ]
     )
-
 
 
 @provider(IContextAwareDefaultFactory)
@@ -91,31 +90,25 @@ class AcceptLegalDeclaration(Invalid):
     __doc__ = _(u"It is necessary that you accept the Legal Declaration")
 
 
-
-
 class IEUpReleaseLink(model.Schema):
 
-
     form.mode(projecttitle='hidden')
-    projecttitle=schema.TextLine(
+    projecttitle = schema.TextLine(
         title=_(u"The Computed Project Title"),
         description=_(u"The project title will be computed from the parent project title"),
-        defaultFactory= getContainerTitle
+        defaultFactory=getContainerTitle
     )
 
-    releasenumber=schema.TextLine(
+    releasenumber = schema.TextLine(
         title=_(u"Release Number"),
         description=_(u"Release Number (up to eight chars)"),
         default=_(u"1.0"),
         max_length=8
     )
 
-
     description = schema.Text(
         title=_(u"Release Summary"),
     )
-
-
 
     form.primary('details')
     details = RichText(
@@ -123,15 +116,12 @@ class IEUpReleaseLink(model.Schema):
         required=False
     )
 
-
-
     form.primary('changelog')
     changelog = RichText(
         title=_(u"Changelog"),
         description=_(u"A detailed log of what has changed since the previous release."),
         required=False,
     )
-
 
     form.widget(licenses_choice=CheckBoxFieldWidget)
     licenses_choice= schema.List(
@@ -148,8 +138,6 @@ class IEUpReleaseLink(model.Schema):
         value_type=schema.Choice(source=vocabAvailVersions),
         required=True,
     )
-
-
 
     form.mode(title_declaration_legal='display')
     title_declaration_legal=schema.TextLine(
@@ -189,7 +177,6 @@ class IEUpReleaseLink(model.Schema):
         required=False
     )
 
-
     link_to_file = schema.URI(
         title=_(u"The Link to the file of the release"),
         description=_(u"Please insert a link to your extension file."),
@@ -202,7 +189,6 @@ class IEUpReleaseLink(model.Schema):
         required=False
     )
 
-
     form.widget(platform_choice=CheckBoxFieldWidget)
     platform_choice= schema.List(
         title=_(u" First linked file is compatible with the Platform(s)"),
@@ -210,7 +196,6 @@ class IEUpReleaseLink(model.Schema):
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
     )
-
 
     form.mode(information_further_file_uploads='display')
     form.primary('information_further_file_uploads')
@@ -220,13 +205,10 @@ class IEUpReleaseLink(model.Schema):
         required = False
      )
 
-
-
     form.fieldset('fileset1',
         label=u"Further linked files for this release",
         fields=['link_to_file1', 'platform_choice1', 'link_to_file2', 'platform_choice2', 'link_to_file3', 'platform_choice3']
     )
-
 
     link_to_file1 = schema.URI(
         title=_(u"The Link to the file of the release"),
@@ -248,14 +230,11 @@ class IEUpReleaseLink(model.Schema):
         required=True,
     )
 
-
-
     link_to_file2 = schema.URI(
         title=_(u"The Link to the file of the release"),
         description=_(u"Please insert a link to your extension file."),
         required=False
     )
-
 
     external_file_size2 = schema.Float(
         title=_(u"The size of the external hosted file"),
@@ -271,15 +250,11 @@ class IEUpReleaseLink(model.Schema):
         required=True
     )
 
-
-
     link_to_file3 = schema.URI(
         title=_(u"The Link to the file of the release"),
         description=_(u"Please insert a link to your extension file."),
         required=False
     )
-
-
 
     external_file_size3 = schema.Float(
         title=_(u"The size of the external hosted file"),
@@ -301,8 +276,6 @@ class IEUpReleaseLink(model.Schema):
         required=False
     )
 
-
-
     external_file_size4 = schema.Float(
         title=_(u"The size of the external hosted file"),
         description=_(u"Please fill in the size in kilobyte of the external hosted file (e.g. 633, if the size is 633 kb)"),
@@ -317,14 +290,11 @@ class IEUpReleaseLink(model.Schema):
         required=True,
     )
 
-
     link_to_file5 = schema.URI(
         title=_(u"The Link to the file of the release"),
         description=_(u"Please insert a link to your extension file."),
         required=False
     )
-
-
 
     external_file_size5 = schema.Float(
         title=_(u"The size of the external hosted file"),
@@ -339,8 +309,6 @@ class IEUpReleaseLink(model.Schema):
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
     )
-
-
 
     @invariant
     def licensenotchoosen(value):
@@ -366,7 +334,6 @@ class IEUpReleaseLink(model.Schema):
     def noOSChosen(data):
         if data.link_to_file is not None and data.platform_choice ==[]:
             raise Invalid(_(u"Please choose a compatible platform for the linked file."))
-
 
 
 def notifyExtensionHubReleaseLinkAdd (self, event):
@@ -400,10 +367,8 @@ def notifyExtensionHubReleaseLinkAdd (self, event):
         return None
 
 
-
 class ValidateEUpReleaseLinkUniqueness(validator.SimpleFieldValidator):
     # Validate site-wide uniqueness of release titles.
-
 
     def validate(self, value):
         # Perform the standard validation first
@@ -426,9 +391,7 @@ validator.WidgetValidatorDiscriminators(
 )
 
 
-
 class EUpReleaseLinkView(DefaultView):
-
 
     def canPublishContent(self):
         return checkPermission('cmf.ModifyPortalContent', self.context)

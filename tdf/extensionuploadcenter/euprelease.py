@@ -61,14 +61,14 @@ directlyProvides(vocabAvailPlatforms, IContextSourceBinder)
 
 yesnochoice = SimpleVocabulary(
     [SimpleTerm(value=0, title=_(u'No')),
-     SimpleTerm(value=1, title=_(u'Yes')),]
+     SimpleTerm(value=1, title=_(u'Yes')), ]
     )
-
 
 
 @provider(IContextAwareDefaultFactory)
 def getContainerTitle(self):
     return (self.aq_inner.title)
+
 
 @provider(IContextAwareDefaultFactory)
 def contactinfoDefault(context):
@@ -91,30 +91,25 @@ class AcceptLegalDeclaration(Invalid):
     __doc__ = _(u"It is necessary that you accept the Legal Declaration")
 
 
-
-
 class IEUpRelease(model.Schema):
 
     form.mode(projecttitle='hidden')
-    projecttitle=schema.TextLine(
+    projecttitle = schema.TextLine(
         title=_(u"The Computed Project Title"),
         description=_(u"The project title will be computed from the parent project title"),
-        defaultFactory= getContainerTitle
-    )
+        defaultFactory=getContainerTitle
 
-    releasenumber=schema.TextLine(
-        title=_(u"Release Number"),
-        description=_(u"Release Number (up to eight chars)"),
-        default=_(u"1.0"),
-        max_length=8
-    )
 
+    releasenumber = schema.TextLine(
+        title =_(u"Release Number"),
+        description = _(u"Release Number (up to eight chars)"),
+        default = _(u"1.0"),
+        max_length = 8
+    )
 
     description = schema.Text(
         title=_(u"Release Summary"),
     )
-
-
 
     form.primary('details')
     details = RichText(
@@ -122,16 +117,12 @@ class IEUpRelease(model.Schema):
         required=False
     )
 
-
-
     form.primary('changelog')
     changelog = RichText(
         title=_(u"Changelog"),
         description=_(u"A detailed log of what has changed since the previous release."),
         required=False,
     )
-
-
 
     form.widget(licenses_choice=CheckBoxFieldWidget)
     licenses_choice= schema.List(
@@ -149,8 +140,6 @@ class IEUpRelease(model.Schema):
         required=True,
     )
 
-
-
     form.mode(title_declaration_legal='display')
     title_declaration_legal=schema.TextLine(
         title=_(u""),
@@ -158,13 +147,11 @@ class IEUpRelease(model.Schema):
         defaultFactory = legal_declaration_title
     )
 
-
     form.mode(declaration_legal='display')
     declaration_legal = schema.Text(
         title=_(u""),
         required=False,
         defaultFactory = legal_declaration_text
-
     )
 
     accept_legal_declaration=schema.Bool(
@@ -191,13 +178,11 @@ class IEUpRelease(model.Schema):
         required=False
     )
 
-
     file = NamedBlobFile(
         title=_(u"The first file you want to upload"),
         description=_(u"Please upload your file."),
         required=True,
     )
-
 
     form.widget(platform_choice=CheckBoxFieldWidget)
     platform_choice= schema.List(
@@ -206,7 +191,6 @@ class IEUpRelease(model.Schema):
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
     )
-
 
     form.mode(information_further_file_uploads='display')
     model.primary('information_further_file_uploads')
@@ -227,7 +211,6 @@ class IEUpRelease(model.Schema):
         required=False,
     )
 
-
     form.widget(platform_choice1=CheckBoxFieldWidget)
     platform_choice1= schema.List(
         title=_(u"Second uploaded file is compatible with the Platform(s)"),
@@ -236,13 +219,11 @@ class IEUpRelease(model.Schema):
         required=True,
     )
 
-
     file2 = NamedBlobFile(
         title=_(u"The third file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
         required=False,
     )
-
 
     form.widget(platform_choice2=CheckBoxFieldWidget)
     platform_choice2= schema.List(
@@ -266,12 +247,10 @@ class IEUpRelease(model.Schema):
         required=True,
     )
 
-
     form.fieldset('fileset2',
         label=u"File Upload 2",
         fields=['file4', 'platform_choice4', 'file5', 'platform_choice5']
     )
-
 
     file4 = NamedBlobFile(
         title=_(u"The fifth file you want to upload (this is optional)"),
@@ -300,9 +279,6 @@ class IEUpRelease(model.Schema):
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
     )
-
-
-
 
     @invariant
     def licensenotchoosen(value):
@@ -364,7 +340,6 @@ def notifyExtensionHubReleaseAdd (self, event):
 class ValidateEUpReleaseUniqueness(validator.SimpleFieldValidator):
     # Validate site-wide uniqueness of release titles.
 
-
     def validate(self, value):
         # Perform the standard validation first
         super(ValidateEUpReleaseUniqueness, self).validate(value)
@@ -386,9 +361,7 @@ validator.WidgetValidatorDiscriminators(
 )
 
 
-
 class EUpReleaseView(DefaultView):
-
 
      def canPublishContent(self):
         return checkPermission('cmf.ModifyPortalContent', self.context)
