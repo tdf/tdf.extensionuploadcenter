@@ -124,7 +124,7 @@ class IEUpReleaseLink(model.Schema):
     )
 
     form.widget(licenses_choice=CheckBoxFieldWidget)
-    licenses_choice= schema.List(
+    licenses_choice = schema.List(
         title=_(u'License of the uploaded file'),
         description=_(u"Please mark one or more licenses you publish your release."),
         value_type=schema.Choice(source=vocabAvailLicenses),
@@ -218,7 +218,8 @@ class IEUpReleaseLink(model.Schema):
 
     external_file_size1 = schema.Float(
         title=_(u"The size of the external hosted file"),
-        description=_(u"Please fill in the size in kilobyte of the external hosted file (e.g. 633, if the size is 633 kb)"),
+        description=_(u"Please fill in the size in kilobyte of the external "
+                      u"hosted file (e.g. 633, if the size is 633 kb)"),
         required=False
     )
 
@@ -323,7 +324,8 @@ class IEUpReleaseLink(model.Schema):
     @invariant
     def legaldeclarationaccepted(data):
         if data.accept_legal_declaration is not True:
-           raise AcceptLegalDeclaration(_(u"Please accept the Legal Declaration about your Release and your linked File"))
+           raise AcceptLegalDeclaration(_(u"Please accept the Legal Declaration about "
+                                          U"your Release and your linked File"))
 
     @invariant
     def testingvalue(data):
@@ -336,7 +338,7 @@ class IEUpReleaseLink(model.Schema):
             raise Invalid(_(u"Please choose a compatible platform for the linked file."))
 
 
-def notifyExtensionHubReleaseLinkAdd (self, event):
+def notifyExtensionHubReleaseLinkAdd(self, event):
     portal = api.portal.get()
     state = api.content.get_state(self)
     releasemessagereceipient = self.releaseAllert
@@ -357,10 +359,11 @@ def notifyExtensionHubReleaseLinkAdd (self, event):
 
     if state == 'final' and releasemessagereceipient is not None:
         api.portal.send_email(
-            recipient = releasemessagereceipient,
-            subject = "New Release added",
-            body = "A new linked release was added and published with\ntitle: %s\nURL: %s\nCompatibility:%s\n"
-                   "Categories: %s\nLicenses: %s\nPlatforms: %s" % (self.title, url, compatibility, category, licenses, platform),
+            recipient=releasemessagereceipient,
+            subject="New Release added",
+            body="A new linked release was added and published with\ntitle: %s\nURL: %s\nCompatibility:%s\n"
+                   "Categories: %s\nLicenses: %s\nPlatforms: %s"
+                   % (self.title, url, compatibility, category, licenses, platform),
             )
 
     else:
@@ -377,7 +380,8 @@ class ValidateEUpReleaseLinkUniqueness(validator.SimpleFieldValidator):
         if value is not None:
             catalog = api.portal.get_tool(name='portal_catalog')
             results = catalog({'Title': value,
-                               'portal_type': ('tdf.extensionuploadcenter.euprelease', 'tdf.extensionuploadcenter.eupreleaselink'),})
+                               'portal_type': ('tdf.extensionuploadcenter.euprelease',
+                                               'tdf.extensionuploadcenter.eupreleaselink'), })
 
             contextUUID = IUUID(self.context, None)
             for result in results:

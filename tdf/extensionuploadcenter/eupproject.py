@@ -105,15 +105,17 @@ class IEUpProject(model.Schema):
         constraint=validateEmail
     )
 
-    homepage=schema.URI(
+    homepage = schema.URI(
         title=_(u"Homepage"),
         description=_(u"If the project has an external home page, enter its URL (example: 'http://www.mysite.org')."),
         required=False
     )
 
-    documentation_link=schema.URI(
+    documentation_link = schema.URI(
         title=_(u"URL of documentation repository "),
-        description=_(u"If the project has externally hosted documentation, enter its URL (example: 'http://www.mysite.org')."),
+        description=_(u"If the project has externally hosted "
+                      u"documentation, enter its URL "
+                      u"(example: 'http://www.mysite.org')."),
         required=False
     )
 
@@ -135,7 +137,7 @@ class IEUpProject(model.Schema):
             raise ProvideScreenshotLogo(_(u'Please add a Screenshot or a Logo to your project page'))
 
 
-def notifyProjectManager (eupproject, event):
+def notifyProjectManager(eupproject, event):
     api.portal.send_email(
         recipient ="%s" % (eupproject.contactAddress),
         sender = "%s <%s>" % ('Admin of the LibreOffice Extensions site', 'extensions@libreoffice.org'),

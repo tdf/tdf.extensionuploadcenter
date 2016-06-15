@@ -34,6 +34,8 @@ def vocabAvailLicenses(context):
     for value in license_list:
         terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
     return SimpleVocabulary(terms)
+
+
 directlyProvides(vocabAvailLicenses, IContextSourceBinder)
 
 
@@ -45,6 +47,8 @@ def vocabAvailVersions(context):
     for value in versions_list:
         terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
     return SimpleVocabulary(terms)
+
+
 directlyProvides(vocabAvailVersions, IContextSourceBinder)
 
 
@@ -56,13 +60,14 @@ def vocabAvailPlatforms(context):
     for value in platforms_list:
         terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
     return SimpleVocabulary(terms)
-directlyProvides(vocabAvailPlatforms, IContextSourceBinder)
 
+
+directlyProvides(vocabAvailPlatforms, IContextSourceBinder)
 
 yesnochoice = SimpleVocabulary(
     [SimpleTerm(value=0, title=_(u'No')),
      SimpleTerm(value=1, title=_(u'Yes')), ]
-    )
+)
 
 
 @provider(IContextAwareDefaultFactory)
@@ -92,19 +97,18 @@ class AcceptLegalDeclaration(Invalid):
 
 
 class IEUpRelease(model.Schema):
-
     form.mode(projecttitle='hidden')
     projecttitle = schema.TextLine(
         title=_(u"The Computed Project Title"),
         description=_(u"The project title will be computed from the parent project title"),
         defaultFactory=getContainerTitle
-
+    )
 
     releasenumber = schema.TextLine(
-        title =_(u"Release Number"),
-        description = _(u"Release Number (up to eight chars)"),
-        default = _(u"1.0"),
-        max_length = 8
+        title=_(u"Release Number"),
+        description=_(u"Release Number (up to eight chars)"),
+        default=_(u"1.0"),
+        max_length=8,
     )
 
     description = schema.Text(
@@ -125,7 +129,7 @@ class IEUpRelease(model.Schema):
     )
 
     form.widget(licenses_choice=CheckBoxFieldWidget)
-    licenses_choice= schema.List(
+    licenses_choice = schema.List(
         title=_(u'License of the uploaded file'),
         description=_(u"Please mark one or more licenses you publish your release."),
         value_type=schema.Choice(source=vocabAvailLicenses),
@@ -133,7 +137,7 @@ class IEUpRelease(model.Schema):
     )
 
     form.widget(compatibility_choice=CheckBoxFieldWidget)
-    compatibility_choice= schema.List(
+    compatibility_choice = schema.List(
         title=_(u"Compatible with versions of LibreOffice"),
         description=_(u"Please mark one or more program versions with which this release is compatible with."),
         value_type=schema.Choice(source=vocabAvailVersions),
@@ -141,20 +145,20 @@ class IEUpRelease(model.Schema):
     )
 
     form.mode(title_declaration_legal='display')
-    title_declaration_legal=schema.TextLine(
+    title_declaration_legal = schema.TextLine(
         title=_(u""),
         required=False,
-        defaultFactory = legal_declaration_title
+        defaultFactory=legal_declaration_title
     )
 
     form.mode(declaration_legal='display')
     declaration_legal = schema.Text(
         title=_(u""),
         required=False,
-        defaultFactory = legal_declaration_text
+        defaultFactory=legal_declaration_text
     )
 
-    accept_legal_declaration=schema.Bool(
+    accept_legal_declaration = schema.Bool(
         title=_(u"Accept the above legal disclaimer"),
         description=_(u"Please declare that you accept the above legal disclaimer"),
         required=True
@@ -164,7 +168,7 @@ class IEUpRelease(model.Schema):
         title=_(u"Contact email-address"),
         description=_(u"Contact email-address for the project."),
         required=False,
-        defaultFactory = contactinfoDefault
+        defaultFactory=contactinfoDefault
     )
 
     source_code_inside = schema.Choice(
@@ -185,7 +189,7 @@ class IEUpRelease(model.Schema):
     )
 
     form.widget(platform_choice=CheckBoxFieldWidget)
-    platform_choice= schema.List(
+    platform_choice = schema.List(
         title=_(u" First uploaded file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
@@ -195,15 +199,18 @@ class IEUpRelease(model.Schema):
     form.mode(information_further_file_uploads='display')
     model.primary('information_further_file_uploads')
     information_further_file_uploads = RichText(
-        title = _(u"Further File Uploads for this Release"),
-        description = _(u"If you want to upload more files for this release, e.g. because there are files for other operating systems, you'll find the upload fields on the register 'File Upload 1' and 'File Upload 2'."),
-        required = False
-     )
+        title=_(u"Further File Uploads for this Release"),
+        description=_(u"If you want to upload more files for this release, "
+                      u"e.g. because there are files for other operating "
+                      u"systems, you'll find the upload fields on the "
+                      u"register 'File Upload 1' and 'File Upload 2'."),
+        required=False
+    )
 
     form.fieldset('fileset1',
-        label=u"File Upload 1",
-        fields=['file1', 'platform_choice1', 'file2', 'platform_choice2', 'file3', 'platform_choice3']
-    )
+                  label=u"File Upload 1",
+                  fields=['file1', 'platform_choice1', 'file2', 'platform_choice2', 'file3', 'platform_choice3']
+                  )
 
     file1 = NamedBlobFile(
         title=_(u"The second file you want to upload (this is optional)"),
@@ -212,7 +219,7 @@ class IEUpRelease(model.Schema):
     )
 
     form.widget(platform_choice1=CheckBoxFieldWidget)
-    platform_choice1= schema.List(
+    platform_choice1 = schema.List(
         title=_(u"Second uploaded file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
@@ -226,7 +233,7 @@ class IEUpRelease(model.Schema):
     )
 
     form.widget(platform_choice2=CheckBoxFieldWidget)
-    platform_choice2= schema.List(
+    platform_choice2 = schema.List(
         title=_(u"Third uploaded file is compatible with the Platform(s))"),
         description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
@@ -240,7 +247,7 @@ class IEUpRelease(model.Schema):
     )
 
     form.widget(platform_choice3=CheckBoxFieldWidget)
-    platform_choice3= schema.List(
+    platform_choice3 = schema.List(
         title=_(u"Fourth uploaded file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
@@ -248,9 +255,9 @@ class IEUpRelease(model.Schema):
     )
 
     form.fieldset('fileset2',
-        label=u"File Upload 2",
-        fields=['file4', 'platform_choice4', 'file5', 'platform_choice5']
-    )
+                  label=u"File Upload 2",
+                  fields=['file4', 'platform_choice4', 'file5', 'platform_choice5']
+                  )
 
     file4 = NamedBlobFile(
         title=_(u"The fifth file you want to upload (this is optional)"),
@@ -259,7 +266,7 @@ class IEUpRelease(model.Schema):
     )
 
     form.widget(platform_choice4=CheckBoxFieldWidget)
-    platform_choice4= schema.List(
+    platform_choice4 = schema.List(
         title=_(u"Fifth uploaded file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
@@ -273,7 +280,7 @@ class IEUpRelease(model.Schema):
     )
 
     form.widget(platform_choice5=CheckBoxFieldWidget)
-    platform_choice5= schema.List(
+    platform_choice5 = schema.List(
         title=_(u"Sixth uploaded file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
@@ -293,7 +300,8 @@ class IEUpRelease(model.Schema):
     @invariant
     def legaldeclarationaccepted(data):
         if data.accept_legal_declaration is not True:
-           raise AcceptLegalDeclaration(_(u"Please accept the Legal Declaration about your Release and your Uploaded File"))
+            raise AcceptLegalDeclaration(
+                _(u"Please accept the Legal Declaration about your Release and your Uploaded File"))
 
     @invariant
     def testingvalue(data):
@@ -302,11 +310,11 @@ class IEUpRelease(model.Schema):
 
     @invariant
     def noOSChosen(data):
-        if data.file is not None and data.platform_choice ==[]:
+        if data.file is not None and data.platform_choice == []:
             raise Invalid(_(u"Please choose a compatible platform for the uploaded file."))
 
 
-def notifyExtensionHubReleaseAdd (self, event):
+def notifyExtensionHubReleaseAdd(self, event):
     portal = api.portal.get()
     state = api.content.get_state(self)
     releasemessagereceipient = self.releaseAllert
@@ -318,20 +326,21 @@ def notifyExtensionHubReleaseAdd (self, event):
         category = list(self.category_choice)
         compatibility = list(self.compatibility_choice)
         licenses = list(self.licenses_choice)
-        pf_list = list(self.platform_choice) + list(self.platform_choice1) +\
-                   list(self.platform_choice2) + list(self.platform_choice3) +\
-                   list(self.platform_choice4) + list(self.platform_choice5)
+        pf_list = list(self.platform_choice) + list(self.platform_choice1) + \
+                  list(self.platform_choice2) + list(self.platform_choice3) + \
+                  list(self.platform_choice4) + list(self.platform_choice5)
         pf_set = set(pf_list)
         platform = list(pf_set)
         platform.sort()
 
     if state == 'final' and releasemessagereceipient is not None:
         api.portal.send_email(
-            recipient = releasemessagereceipient,
-            subject = "New Release added",
-            body = "A new release was added and published with\ntitle: %s\nURL: %s\nCompatibility:%s\n"
-                   "Categories: %s\nLicenses: %s\nPlatforms: %s" % (self.title, url, compatibility, category, licenses, platform),
-            )
+            recipient=releasemessagereceipient,
+            subject="New Release added",
+            body="A new release was added and published with\ntitle: %s\nURL: %s\nCompatibility:%s\n"
+                 "Categories: %s\nLicenses: %s\nPlatforms: %s" % (
+                     self.title, url, compatibility, category, licenses, platform),
+        )
 
     else:
         return None
@@ -347,7 +356,7 @@ class ValidateEUpReleaseUniqueness(validator.SimpleFieldValidator):
         if value is not None:
             catalog = api.portal.get_tool(name='portal_catalog')
             results = catalog({'Title': value,
-                               'object_provides': (IEUpRelease.__identifier__, IEUpReleaseLink.__identifier__),})
+                               'object_provides': (IEUpRelease.__identifier__, IEUpReleaseLink.__identifier__), })
 
             contextUUID = IUUID(self.context, None)
             for result in results:
@@ -362,6 +371,5 @@ validator.WidgetValidatorDiscriminators(
 
 
 class EUpReleaseView(DefaultView):
-
-     def canPublishContent(self):
+    def canPublishContent(self):
         return checkPermission('cmf.ModifyPortalContent', self.context)

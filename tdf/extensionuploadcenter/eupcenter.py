@@ -13,7 +13,6 @@ from plone.app.multilingual.dx import directives
 
 
 class IEUpCenter(model.Schema):
-
     """ An Extension Upload Center for LibreOffice extensions.
     """
 
@@ -107,8 +106,12 @@ class IEUpCenter(model.Schema):
 
     legal_disclaimer = schema.Text(
         title=_(u"Text of the Legal Disclaimer and Limitations"),
-        description=_(u"Enter the text of the legal disclaimer and limitations that should be displayed to the project creator and should be accepted by the owner of the project."),
-        default=_(u"Fill in the legal disclaimer, that had to be accepted by the project owner"),
+        description=_(u"Enter the text of the legal disclaimer and "
+                      u"limitations that should be displayed to the "
+                      u"project creator and should be accepted by "
+                      u"the owner of the project."),
+        default=_(u"Fill in the legal disclaimer, that had to be "
+                  u"accepted by the project owner"),
         required=False
     )
 
@@ -121,12 +124,14 @@ class IEUpCenter(model.Schema):
     form.primary('legal_downloaddisclaimer')
     legal_downloaddisclaimer = RichText(
         title=_(u"Text of the Legal Disclaimer and Limitations for Downlaods"),
-        description=_(u"Enter any legal disclaimer and limitations for downloads that should appear on each page for dowloadable files."),
+        description=_(u"Enter any legal disclaimer and limitations for "
+                      u"downloads that should appear on each page for "
+                      u"dowloadable files."),
         default=_(u"Fill in the text for the legal download disclaimer"),
         required=False
     )
 
-    releaseAllert=schema.ASCIILine(
+    releaseAllert = schema.ASCIILine(
         title=_(u"EMail address for the messages about new releases"),
         description=_(u"Enter a email address to which information about a new release should be send"),
         required=False
@@ -135,28 +140,29 @@ class IEUpCenter(model.Schema):
 
 def notifyAboutNewProject(eupproject, event):
     api.portal.send_email(
-        recipient = "extensions@libreoffice.org",
-        subject = "A Project with the title %s was added" % (eupproject.title),
-        body =  "A member added a new project"
+        recipient="extensions@libreoffice.org",
+        subject="A Project with the title %s was added" % (eupproject.title),
+        body="A member added a new project"
     )
+
 
 directives.languageindependent('available_category')
 directives.languageindependent('available_licenses')
 directives.languageindependent('available_versions')
 directives.languageindependent('available_platforms')
 
+
 # Views
 
 
 class EUpCenterView(BrowserView):
-
     def eupprojects(self):
         context = aq_inner(self.context)
         catalog = api.portal.get_tool(name='portal_catalog')
 
         return catalog(object_provides=IEUpProject.__identifier__,
-             path='/'.join(context.getPhysicalPath()),
-             sort_order='sortable_title')
+                       path='/'.join(context.getPhysicalPath()),
+                       sort_order='sortable_title')
 
     def get_latest_program_release(self):
         """Get the latest version from the vocabulary. This only
@@ -191,20 +197,20 @@ class EUpCenterView(BrowserView):
         catalog = api.portal.get_tool(name='portal_catalog')
         sort_on = 'positive_ratings'
         contentFilter = {
-                         'sort_on' : sort_on,
-                         'sort_order': 'reverse',
-                         'review_state': 'published',
-                         'portal_type' : 'tdf.extensionuploadcenter.eupproject'}
+            'sort_on': sort_on,
+            'sort_order': 'reverse',
+            'review_state': 'published',
+            'portal_type': 'tdf.extensionuploadcenter.eupproject'}
         return catalog(**contentFilter)
 
     def get_newest_products(self):
         self.catalog = api.portal.get_tool(name='portal_catalog')
         sort_on = 'created'
         contentFilter = {
-                          'sort_on' : sort_on,
-                          'sort_order' : 'reverse',
-                          'review_state': 'published',
-                          'portal_type':'tdf.extensionuploadcenter.eupproject'}
+            'sort_on': sort_on,
+            'sort_order': 'reverse',
+            'review_state': 'published',
+            'portal_type': 'tdf.extensionuploadcenter.eupproject'}
 
         results = self.catalog(**contentFilter)
 
@@ -214,11 +220,11 @@ class EUpCenterView(BrowserView):
         self.catalog = api.portal.get_tool(name='portal_catalog')
         sort_on = 'positive_ratings'
         contentFilter = {
-	                     'sort_on' : sort_on,
+            'sort_on': sort_on,
 
-                         'SearchableText': SearchableText,
-	                     'sort_order': 'reverse',
-                         'portal_type': 'tdf.extensionuploadcenter.eupproject'}
+            'SearchableText': SearchableText,
+            'sort_order': 'reverse',
+            'portal_type': 'tdf.extensionuploadcenter.eupproject'}
 
         if version != 'any':
             contentFilter['getCompatibility'] = version
