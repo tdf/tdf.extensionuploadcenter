@@ -139,28 +139,28 @@ class IEUpProject(model.Schema):
 
 def notifyProjectManager(eupproject, event):
     api.portal.send_email(
-        recipient ="%s" % (eupproject.contactAddress),
-        sender = "%s <%s>" % ('Admin of the LibreOffice Extensions site', 'extensions@libreoffice.org'),
-        subject = "Your Project %s" % (eupproject.title),
-        body = "The status of your LibreOffice extension project changed"
+        recipient="%s" % (eupproject.contactAddress),
+        sender="%s <%s>" % ('Admin of the LibreOffice Extensions site', 'extensions@libreoffice.org'),
+        subject="Your Project %s" % (eupproject.title),
+        body="The status of your LibreOffice extension project changed"
     )
 
 
-def notifyProjectManagerReleaseAdd (eupproject, event):
+def notifyProjectManagerReleaseAdd(eupproject, event):
     api.portal.send_email(
-        recipient ="%s" % (eupproject.contactAddress),
-        sender = "%s <%s>" % ('Admin of the LibreOffice Extensions site', 'extensions@libreoffice.org'),
-        subject = "Your Project %s: new Release added"  % (eupproject.title),
-        body = "A new release was added to your project: '%s'" % (eupproject.title),
+        recipient="%s" % (eupproject.contactAddress),
+        sender="%s <%s>" % ('Admin of the LibreOffice Extensions site', 'extensions@libreoffice.org'),
+        subject="Your Project %s: new Release added" % (eupproject.title),
+        body="A new release was added to your project: '%s'" % (eupproject.title),
          )
 
 
-def notifyProjectManagerReleaseLinkedAdd (eupproject, event):
+def notifyProjectManagerReleaseLinkedAdd(eupproject, event):
     api.portal.send_email(
-        recipient ="%s" % (eupproject.contactAddress),
-        sender = "%s <%s>" % ('Admin of the LibreOffice Extensions site', 'extensions@libreoffice.org'),
-        subject = "Your Project %s: new linked Release added"  % (eupproject.title),
-        body = "A new linked release was added to your project: '%s'" % (eupproject.title),
+        recipient="%s" % (eupproject.contactAddress),
+        sender="%s <%s>" % ('Admin of the LibreOffice Extensions site', 'extensions@libreoffice.org'),
+        subject="Your Project %s: new linked Release added" % (eupproject.title),
+        body="A new linked release was added to your project: '%s'" % (eupproject.title),
          )
 
 
@@ -196,10 +196,10 @@ class EUpProjectView(DefaultView):
         catalog = api.portal.get_tool(name='portal_catalog')
         current_path = "/".join(self.context.getPhysicalPath())
         res = catalog.searchResults(
-            portal_type = ('tdf.extensionuploadcenter.euprelease', 'tdf.extensionuploadcenter.eupreleaselink'),
-            path =current_path,
-            sort_on = 'id',
-            sort_order = 'reverse')
+            portal_type=('tdf.extensionuploadcenter.euprelease', 'tdf.extensionuploadcenter.eupreleaselink'),
+            path=current_path,
+            sort_on='id',
+            sort_order='reverse')
         return [r.getObject() for r in res]
 
     def latest_release(self):
@@ -211,11 +211,11 @@ class EUpProjectView(DefaultView):
         catalog = api.portal.get_tool('portal_catalog')
 
         res = catalog.searchResults(
-            portal_type = ('tdf.extensionuploadcenter.euprelease', 'tdf.extensionuploadcenter.eupreleaselink'),
-            path = '/'.join(context.getPhysicalPath()),
-            review_state = 'final',
-            sort_on = 'id',
-            sort_order = 'reverse')
+            portal_type=('tdf.extensionuploadcenter.euprelease', 'tdf.extensionuploadcenter.eupreleaselink'),
+            path='/'.join(context.getPhysicalPath()),
+            review_state='final',
+            sort_on='id',
+            sort_order='reverse')
 
         if not res:
             return None
