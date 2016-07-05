@@ -4,7 +4,9 @@ Changelog
 0.7 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Shorten boolean testing expressions [Andreas Mantke]
+- CSS list style optimisation and style fixes [Andreas Mantke]
+- PEP-8-Fixes [Andreas Mantke]
 
 
 0.6 (2016-05-28)
