@@ -24,6 +24,16 @@ from plone import api
 from z3c.form import validator
 from plone.uuid.interfaces import IUUID
 from tdf.extensionuploadcenter.eupreleaselink import IEUpReleaseLink
+import re
+
+
+checkfileextension = re.compile(
+    r"^.*\.(oxt|OXT)").match
+
+def validatefileextension(value):
+    if not checkfileextension(value.filename):
+        raise Invalid(u'You could only upload LibreOffice extension files with a proper file extension.')
+    return True
 
 
 def vocabAvailLicenses(context):
@@ -186,6 +196,7 @@ class IEUpRelease(model.Schema):
         title=_(u"The first file you want to upload"),
         description=_(u"Please upload your file."),
         required=True,
+        constraint=validatefileextension,
     )
 
     form.widget(platform_choice=CheckBoxFieldWidget)
@@ -216,6 +227,7 @@ class IEUpRelease(model.Schema):
         title=_(u"The second file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
         required=False,
+        constraint=validatefileextension,
     )
 
     form.widget(platform_choice1=CheckBoxFieldWidget)
@@ -230,6 +242,7 @@ class IEUpRelease(model.Schema):
         title=_(u"The third file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
         required=False,
+        constraint=validatefileextension,
     )
 
     form.widget(platform_choice2=CheckBoxFieldWidget)
@@ -244,6 +257,7 @@ class IEUpRelease(model.Schema):
         title=_(u"The fourth file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
         required=False,
+        constraint=validatefileextension,
     )
 
     form.widget(platform_choice3=CheckBoxFieldWidget)
@@ -263,6 +277,7 @@ class IEUpRelease(model.Schema):
         title=_(u"The fifth file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
         required=False,
+        constraint=validatefileextension,
     )
 
     form.widget(platform_choice4=CheckBoxFieldWidget)
@@ -277,6 +292,7 @@ class IEUpRelease(model.Schema):
         title=_(u"The sixth file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
         required=False,
+        constraint=validatefileextension,
     )
 
     form.widget(platform_choice5=CheckBoxFieldWidget)
