@@ -4,6 +4,7 @@ Changelog
 0.8 (unreleased)
 ----------------
 
+- Adding file extension validation for linked extension releases [Andreas Mantke]
 - Adding image extension validation to project module [Andreas Mantke]
 - Adding file extension validation to release module [Andreas Mantke]
 
