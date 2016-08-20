@@ -23,6 +23,16 @@ from Products.validation import V_REQUIRED
 from plone import api
 from z3c.form import validator
 from plone.uuid.interfaces import IUUID
+import re
+
+
+checkfileextension = re.compile(
+    r"^.*\.(oxt|OXT)").match
+
+def validatelinkedfileextension(value):
+    if not checkfileextension(value):
+        raise Invalid(u'You could only link to an URL (a file) that is a LibreOffice extension file with a proper file extension.')
+    return True
 
 
 def vocabAvailLicenses(context):
@@ -184,7 +194,8 @@ class IEUpReleaseLink(model.Schema):
     link_to_file = schema.URI(
         title=_(u"The Link to the file of the release"),
         description=_(u"Please insert a link to your extension file."),
-        required=True
+        required=True,
+        constraint=validatelinkedfileextension
     )
 
     external_file_size = schema.Float(
@@ -227,7 +238,8 @@ class IEUpReleaseLink(model.Schema):
     link_to_file1 = schema.URI(
         title=_(u"The Link to the file of the release"),
         description=_(u"Please insert a link to your extension file."),
-        required=False
+        required=False,
+        constraint=validatelinkedfileextension
     )
 
     external_file_size1 = schema.Float(
@@ -248,7 +260,8 @@ class IEUpReleaseLink(model.Schema):
     link_to_file2 = schema.URI(
         title=_(u"The Link to the file of the release"),
         description=_(u"Please insert a link to your extension file."),
-        required=False
+        required=False,
+        constraint=validatelinkedfileextension
     )
 
     external_file_size2 = schema.Float(
@@ -269,7 +282,8 @@ class IEUpReleaseLink(model.Schema):
     link_to_file3 = schema.URI(
         title=_(u"The Link to the file of the release"),
         description=_(u"Please insert a link to your extension file."),
-        required=False
+        required=False,
+        constraint=validatelinkedfileextension
     )
 
     external_file_size3 = schema.Float(
@@ -290,7 +304,8 @@ class IEUpReleaseLink(model.Schema):
     link_to_file4 = schema.URI(
         title=_(u"The Link to the file of the release"),
         description=_(u"Please insert a link to your extension file."),
-        required=False
+        required=False,
+        constraint=validatelinkedfileextension
     )
 
     external_file_size4 = schema.Float(
@@ -311,7 +326,8 @@ class IEUpReleaseLink(model.Schema):
     link_to_file5 = schema.URI(
         title=_(u"The Link to the file of the release"),
         description=_(u"Please insert a link to your extension file."),
-        required=False
+        required=False,
+        constraint = validatelinkedfileextension
     )
 
     external_file_size5 = schema.Float(
