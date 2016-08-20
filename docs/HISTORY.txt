@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.8 (unreleased)
+0.8 (2016-08-20)
 ----------------
 
 - Adding file extension validation for linked extension releases [Andreas Mantke]
