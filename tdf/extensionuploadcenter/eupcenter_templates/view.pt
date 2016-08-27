@@ -223,7 +223,7 @@
                             <span tal:content="view/euprelease_count" /> release(s) available.</p>
                         <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.extensionuploadcenter.eupproject" i18n:translate="">
                             <img src="++resource++tdf.extensionuploadcenter/yellowarrow.png"  alt=""/> Submit your
-                            <span tal:content="context/product_title | string:extension_project" i18n:name="product_title_eupproject" />
+                            <span tal:content="context/product_title | string:extension_project" i18n:name="" />
                         </a>
 
                 	</div>
@@ -231,7 +231,7 @@
 
        <div tal:condition="not: isAnon" tal:replace="structure provider:plone.abovecontenttitle" />
         <div id="mostrecent">
-            <h2 i18n:translate="">Most recent <span tal:content="context/product_title" i18n:name="product_title" /></h2>
+            <h2 i18n:translate="">Most recent <span tal:content="context/product_title" i18n:name="" /></h2>
             <div class=""
                     tal:define="results python:view.get_newest_products();
                                 Batch python:modules['Products.CMFPlone'].Batch;

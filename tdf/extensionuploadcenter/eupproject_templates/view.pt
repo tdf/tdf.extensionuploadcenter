@@ -59,7 +59,7 @@
 	<div class="grid-cell position-two-thirds width-third">
 		<div class="sidebar">
             <div id="projectresources">
-            <h2 i18n:translate="title_project_resources">Project Resources</h2>
+            <h2 i18n:translate="">Project Resources</h2>
             <ul>
             <li tal:condition="context/documentation_link">
                 <a href="" tal:attributes="href context/documentation_link">External Documentation</a>
@@ -70,7 +70,7 @@
             </ul>
 
         <div tal:condition="context/screenshot">
-            <h4 i18n:translate="title_screenshot">Screenshot</h4>
+            <h4 i18n:translate="">Screenshot</h4>
               <div class="eupcenterprojectscreenshot" width="250px" tal:define="screenshot nocall:context/screenshot"
                    tal:condition="nocall:screenshot">
               <img tal:define="scales context/@@images"
@@ -133,7 +133,7 @@
              <h2 i18n:translate="">Current Release</h2>
             <h3>
               <a href="#" title="Current release for the project"
-               i18n:attributes="title title_latest_release_project"
+               i18n:attributes="title"
                tal:attributes="href latestRelease/absolute_url">
                <span tal:content="latestRelease/Title" />
               </a>
@@ -285,12 +285,12 @@
 <table class="eupcenterprojecttable" border="1" width="100%">
             <thead>
             <tr bgcolor="#40FB27">
-                <td><h4 i18n:translate="title_version">Version</h4></td>
-                <td><h4 i18n:translate="title_released">Released</h4></td>
-                <td><h4 i18n:translate="title_platform">Platform(s)</h4></td>
-                <td><h4 i18n:translate="title_compatiblity">Compatibility</h4></td>
-                <td><h4 i18n:translate="title_description">Description</h4></td>
-                <td><h4 i18n:translate="title_lisenses">License(s)</h4></td>
+                <td><h4 i18n:translate="">Version</h4></td>
+                <td><h4 i18n:translate="">Released</h4></td>
+                <td><h4 i18n:translate="">Platform(s)</h4></td>
+                <td><h4 i18n:translate="">Compatibility</h4></td>
+                <td><h4 i18n:translate="">Description</h4></td>
+                <td><h4 i18n:translate="">License(s)</h4></td>
                 <td><h4>Status</h4></td>
             </tr>
             </thead>
