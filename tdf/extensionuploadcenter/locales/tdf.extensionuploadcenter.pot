@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-08-23 21:05+0000\n"
+"POT-Creation-Date: 2016-08-27 11:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,11 +56,11 @@ msgid "1.0"
 msgstr ""
 
 #: ./eupcenter_templates/own_project.pt:64
-msgid "<img src=\"++resource++tdf.extensionuploadcenter/yellowarrow.png\" alt=\"\" /> ${product_title_eupproject}"
+msgid "<img src=\"++resource++tdf.extensionuploadcenter/yellowarrow.png\" alt=\"\" /> <span>${DYNAMIC_CONTENT}</span>"
 msgstr ""
 
 #: ./eupcenter_templates/view.pt:226
-msgid "<img src=\"++resource++tdf.extensionuploadcenter/yellowarrow.png\" alt=\"\" /> Submit your ${product_title_eupproject}"
+msgid "<img src=\"++resource++tdf.extensionuploadcenter/yellowarrow.png\" alt=\"\" /> Submit your <span>${DYNAMIC_CONTENT}</span>"
 msgstr ""
 
 #: ./eupproject_templates/view.pt:46
@@ -122,6 +122,11 @@ msgstr ""
 msgid "Available Categories"
 msgstr ""
 
+#: ./euprelease_templates/view.pt:62
+#: ./eupreleaselink_templates/view.pt:62
+msgid "Available Downloads"
+msgstr ""
+
 #: ./eupcenter.py:52
 msgid "Available Licenses"
 msgstr ""
@@ -166,6 +171,12 @@ msgstr ""
 msgid "Choose your categories"
 msgstr ""
 
+#: ./eupproject_templates/view.pt:291
+#: ./euprelease_templates/view.pt:56
+#: ./eupreleaselink_templates/view.pt:57
+msgid "Compatibility"
+msgstr ""
+
 #: ./euprelease.py:151
 #: ./eupreleaselink.py:150
 msgid "Compatible with versions of LibreOffice"
@@ -187,8 +198,16 @@ msgstr ""
 msgid "Current Release"
 msgstr ""
 
+#: ./eupproject_templates/view.pt:135
+msgid "Current release for the project"
+msgstr ""
+
 #: ./eupcenter_templates/view.pt:223
 msgid "Currently there are ${eup_project_count} project(s) with <span>${DYNAMIC_CONTENT}</span> release(s) available."
+msgstr ""
+
+#: ./eupproject_templates/view.pt:292
+msgid "Description"
 msgstr ""
 
 #: ./eupcenter.py:24
@@ -374,6 +393,17 @@ msgstr ""
 msgid "License of the uploaded file"
 msgstr ""
 
+#: ./eupproject_templates/view.pt:293
+#: ./euprelease_templates/view.pt:54
+#: ./eupreleaselink_templates/view.pt:55
+msgid "License(s)"
+msgstr ""
+
+#: ./euprelease_templates/view.pt:121
+#: ./eupreleaselink_templates/view.pt:158
+msgid "Link to Source Code"
+msgstr ""
+
 #: ./eupproject.py:131
 msgid "Logo"
 msgstr ""
@@ -383,7 +413,7 @@ msgid "Most popular ${product_title}"
 msgstr ""
 
 #: ./eupcenter_templates/view.pt:234
-msgid "Most recent ${product_title}"
+msgid "Most recent <span>${DYNAMIC_CONTENT}</span>"
 msgstr ""
 
 #: ./eupcenter.py:33
@@ -401,6 +431,10 @@ msgstr ""
 #: ./euprelease.py:78
 #: ./eupreleaselink.py:77
 msgid "No"
+msgstr ""
+
+#: ./eupproject_templates/view.pt:290
+msgid "Platform(s)"
 msgstr ""
 
 #: ./euprelease.py:320
@@ -487,6 +521,12 @@ msgstr ""
 msgid "Please upload your file."
 msgstr ""
 
+#: ./eupproject_templates/view.pt:62
+#: ./euprelease_templates/view.pt:96
+#: ./eupreleaselink_templates/view.pt:133
+msgid "Project Resources"
+msgstr ""
+
 #: ./eupproject.py:90
 msgid "Project Summary"
 msgstr ""
@@ -503,6 +543,11 @@ msgstr ""
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
 msgid "Release Candidate"
+msgstr ""
+
+#: ./euprelease_templates/view.pt:50
+#: ./eupreleaselink_templates/view.pt:51
+msgid "Release Details"
 msgstr ""
 
 #: ./euprelease.py:118
@@ -540,6 +585,10 @@ msgstr ""
 msgid "Release-Candidate"
 msgstr ""
 
+#: ./eupproject_templates/view.pt:289
+msgid "Released"
+msgstr ""
+
 #: ./eupproject_templates/view.pt:145
 msgid "Released ${latest_release_date}"
 msgstr ""
@@ -556,6 +605,12 @@ msgstr ""
 
 #: ./eupproject.py:138
 msgid "Screemshot of the Extension"
+msgstr ""
+
+#: ./eupproject_templates/view.pt:73
+#: ./euprelease_templates/view.pt:109
+#: ./eupreleaselink_templates/view.pt:146
+msgid "Screenshot"
 msgstr ""
 
 #: ./eupcenter_templates/view.pt:141
@@ -695,6 +750,10 @@ msgstr ""
 msgid "Unreleased"
 msgstr ""
 
+#: ./eupproject_templates/view.pt:288
+msgid "Version"
+msgstr ""
+
 #: ./euprelease.py:79
 #: ./eupreleaselink.py:78
 msgid "Yes"
@@ -768,28 +827,6 @@ msgstr ""
 msgid "tested with:"
 msgstr ""
 
-#. Default: "Available Downloads"
-#: ./euprelease_templates/view.pt:62
-#: ./eupreleaselink_templates/view.pt:62
-msgid "title_available_downloads"
-msgstr ""
-
-#. Default: "Compatibility"
-#: ./euprelease_templates/view.pt:56
-#: ./eupreleaselink_templates/view.pt:57
-msgid "title_compatibility"
-msgstr ""
-
-#. Default: "Compatibility"
-#: ./eupproject_templates/view.pt:291
-msgid "title_compatiblity"
-msgstr ""
-
-#. Default: "Description"
-#: ./eupproject_templates/view.pt:292
-msgid "title_description"
-msgstr ""
-
 #. Default: "Release alpha"
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
@@ -836,61 +873,4 @@ msgstr ""
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
 msgid "title_euc_wf_unhide_release"
-msgstr ""
-
-#. Default: "Current release for the project"
-#: ./eupproject_templates/view.pt:135
-msgid "title_latest_release_project"
-msgstr ""
-
-#. Default: "License(s)"
-#: ./euprelease_templates/view.pt:54
-#: ./eupreleaselink_templates/view.pt:55
-msgid "title_license_s"
-msgstr ""
-
-#. Default: "Link to Source Code"
-#: ./euprelease_templates/view.pt:121
-#: ./eupreleaselink_templates/view.pt:158
-msgid "title_link_to_sourcecode"
-msgstr ""
-
-#. Default: "License(s)"
-#: ./eupproject_templates/view.pt:293
-msgid "title_lisenses"
-msgstr ""
-
-#. Default: "Platform(s)"
-#: ./eupproject_templates/view.pt:290
-msgid "title_platform"
-msgstr ""
-
-#. Default: "Project Resources"
-#: ./eupproject_templates/view.pt:62
-#: ./euprelease_templates/view.pt:96
-#: ./eupreleaselink_templates/view.pt:133
-msgid "title_project_resources"
-msgstr ""
-
-#. Default: "Release Details"
-#: ./euprelease_templates/view.pt:50
-#: ./eupreleaselink_templates/view.pt:51
-msgid "title_release_details"
-msgstr ""
-
-#. Default: "Released"
-#: ./eupproject_templates/view.pt:289
-msgid "title_released"
-msgstr ""
-
-#. Default: "Screenshot"
-#: ./eupproject_templates/view.pt:73
-#: ./euprelease_templates/view.pt:109
-#: ./eupreleaselink_templates/view.pt:146
-msgid "title_screenshot"
-msgstr ""
-
-#. Default: "Version"
-#: ./eupproject_templates/view.pt:288
-msgid "title_version"
 msgstr ""
