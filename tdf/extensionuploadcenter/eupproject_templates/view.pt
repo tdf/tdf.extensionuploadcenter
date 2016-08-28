@@ -119,9 +119,9 @@
              <div class="visualClear"></div>
 
         <tal:nostable condition="nocall:not:latestRelease">
-            <h2 i18n:translate="label_current_stable_release">Current Release</h2>
+            <h2 i18n:translate="">Current Release</h2>
 
-                <p i18n:translate="help_not_stable_release">
+                <p i18n:translate="">
                     No stable release available yet.
                 </p>
             <tal:noreleases tal:condition="python:latestRelease is None">
