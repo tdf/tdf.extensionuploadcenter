@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-08-27 11:00+0000\n"
+"POT-Creation-Date: 2016-08-28 07:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -118,6 +118,10 @@ msgstr ""
 msgid "An extension release"
 msgstr ""
 
+#: ./eupcenter_templates/view.pt:129
+msgid "Any version"
+msgstr ""
+
 #: ./eupcenter.py:36
 msgid "Available Categories"
 msgstr ""
@@ -194,7 +198,7 @@ msgstr ""
 msgid "Contact email-address for the project."
 msgstr ""
 
-#: ./eupproject_templates/view.pt:133
+#: ./eupproject_templates/view.pt:122
 msgid "Current Release"
 msgstr ""
 
@@ -431,6 +435,14 @@ msgstr ""
 #: ./euprelease.py:78
 #: ./eupreleaselink.py:77
 msgid "No"
+msgstr ""
+
+#: ./eupcenter_templates/view.pt:150
+msgid "No results were found."
+msgstr ""
+
+#: ./eupproject_templates/view.pt:124
+msgid "No stable release available yet."
 msgstr ""
 
 #: ./eupproject_templates/view.pt:290
@@ -684,14 +696,14 @@ msgstr ""
 msgid "The project title is already in use"
 msgstr ""
 
-#: ./euprelease.py:113
-#: ./eupreleaselink.py:112
-msgid "The project title will be computed from the parent project title"
-msgstr ""
-
 #: ./euprelease.py:381
 #: ./eupreleaselink.py:424
 msgid "The release number is already in use. Please choose another one."
+msgstr ""
+
+#: ./euprelease.py:113
+#: ./eupreleaselink.py:112
+msgid "The release title will be computed from the parent project title"
 msgstr ""
 
 #: ./euprelease.py:227
@@ -763,34 +775,14 @@ msgstr ""
 msgid "You have not chosen a category for the project"
 msgstr ""
 
-#. Default: "No results were found."
-#: ./eupcenter_templates/view.pt:150
-msgid "description_no_results_found"
-msgstr ""
-
 #. Default: "Remember to publish your release once all files have been added."
 #: ./euprelease_templates/view.pt:37
 #: ./eupreleaselink_templates/view.pt:38
 msgid "help_message_remember_is_editable"
 msgstr ""
 
-#. Default: "No stable release available yet."
-#: ./eupproject_templates/view.pt:124
-msgid "help_not_stable_release"
-msgstr ""
-
 #: ./eupcenter_templates/view.pt:94
 msgid "in"
-msgstr ""
-
-#. Default: "Any version"
-#: ./eupcenter_templates/view.pt:129
-msgid "label_any_version"
-msgstr ""
-
-#. Default: "Current Release"
-#: ./eupproject_templates/view.pt:122
-msgid "label_current_stable_release"
 msgstr ""
 
 #. Default: "The Extension file"
