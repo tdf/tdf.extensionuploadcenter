@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: 2016-08-28 09:33+0200\n"
+"PO-Revision-Date: 2016-08-28 10:47+0200\n"
 "Last-Translator: Andreas Mantke <maand@gmx.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -52,16 +52,16 @@ msgstr "1.0"
 msgid "<img src=\"++resource++tdf.extensionuploadcenter/yellowarrow.png\" alt=\"\" /> <span>${DYNAMIC_CONTENT}</span>"
 msgstr ""
 
-#: eupcenter_templates/view.pt:226
-msgid "<img src=\"++resource++tdf.extensionuploadcenter/yellowarrow.png\" alt=\"\" /> Submit your <span>${DYNAMIC_CONTENT}</span>"
-msgstr ""
-
 #: eupproject_templates/view.pt:46
 msgid "<img src=\"++resource++tdf.extensionuploadcenter/yellowarrow.png\" alt=\"\" /> a Release to your ${product_title_eupproject} Project"
 msgstr ""
 
 #: eupproject_templates/view.pt:52
 msgid "<img src=\"++resource++tdf.extensionuploadcenter/yellowarrow.png\" alt=\"\" /> a linked Release to your ${product_title_eupproject} Project"
+msgstr ""
+
+#: eupcenter_templates/view.pt:226
+msgid "<img src=\"++resource++tdf.extensionuploadcenter/yellowarrow.png\" alt=\"\" /><span>x</span> <span>${DYNAMIC_CONTENT}</span>"
 msgstr ""
 
 #: euprelease.py:137 eupreleaselink.py:136
@@ -140,11 +140,15 @@ msgstr "Beta Release"
 
 #: eupcenter_templates/view.pt:266
 msgid "Browse ${product_title} by Category"
-msgstr "Suchen  ${product_title} nach Kategorie"
+msgstr "${product_title} nach Kategorie"
 
 #: eupcenter_templates/view.pt:268
 msgid "Browse Extensions by Category"
 msgstr "Suchen Sie Extensions nach Kategorien"
+
+#: eupproject_templates/view.pt:106
+msgid "Category/Categories"
+msgstr "Kategorie/Kategorien"
 
 #: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
 #: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
@@ -189,9 +193,9 @@ msgstr "Aktuelles Release"
 msgid "Current release for the project"
 msgstr "Aktuelles Release des Projekts"
 
-#: eupcenter_templates/view.pt:223
-msgid "Currently there are ${eup_project_count} project(s) with <span>${DYNAMIC_CONTENT}</span> release(s) available."
-msgstr "Aktuell sind hier ${eup_project_count} Projekte mit <span>${DYNAMIC_CONTENT}</span> Releases verfügbar."
+#: eupcenter_templates/view.pt:221
+msgid "Currently there are"
+msgstr "Aktuell sind hier"
 
 #: eupproject_templates/view.pt:292
 msgid "Description"
@@ -347,6 +351,11 @@ msgstr "Falls Sie weitere Dateien für dieses Release hochladen wollen, z.B. wei
 msgid "Info"
 msgstr "Info"
 
+#: eupcenter_templates/view.pt:281 eupproject_templates/view.pt:84
+#: euprelease_templates/view.pt:125
+msgid "Install Instructions"
+msgstr "Installationsanleitung"
+
 #: eupcenter.py:97
 msgid "Instruction how to report Bugs"
 msgstr "Anleitung, wie ein Fehler gemeldet wird."
@@ -393,8 +402,8 @@ msgid "Most popular ${product_title}"
 msgstr "Beliebteste ${product_title}"
 
 #: eupcenter_templates/view.pt:234
-msgid "Most recent <span>${DYNAMIC_CONTENT}</span>"
-msgstr "Neueste <span>${DYNAMIC_CONTENT}</span>"
+msgid "Most recent"
+msgstr "Aktuellste"
 
 #: eupcenter.py:33
 msgid "Name of the Extension product, e.g. only Extensions or LibreOffice Extensions"
@@ -610,6 +619,10 @@ msgstr "Die sechste hochgeladene Datei ist kompatibel mit den Plattformen"
 msgid "Sort On"
 msgstr "Sortieren nach"
 
+#: eupcenter_templates/view.pt:225
+msgid "Submit your"
+msgstr "Übermitteln Sie Ihre"
+
 #: configure.zcml:29
 msgid "TDF Extension Upload Center"
 msgstr "TDF Extension Upload Center"
@@ -766,10 +779,18 @@ msgstr ""
 msgid "label_release_details"
 msgstr ""
 
+#: eupcenter_templates/view.pt:222
+msgid "project(s) with"
+msgstr "Projekte mit"
+
 #: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
 #: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
 msgid "re-release"
 msgstr "Erneut veröffentlichen"
+
+#: eupcenter_templates/view.pt:223
+msgid "release(s) available."
+msgstr "Releases verfügbar"
 
 #: eupproject_templates/view.pt:150
 msgid "tested with:"
