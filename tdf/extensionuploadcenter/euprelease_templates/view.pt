@@ -122,7 +122,7 @@
             <p tal:content="context/link_to_source">The Link to the Source Code</p>
         </div>
             <div class="eupcenterreleaseinstallinstructions" tal:condition="context/install_instructions">
-            <h3>Install Instructions</h3>
+            <h3 i18n:translate="">Install Instructions</h3>
             <span tal:content="structure context/install_instructions/output" />
         </div>
             <div class="eupcenterreleasereportingbugs" tal:condition="context/reporting_bugs">

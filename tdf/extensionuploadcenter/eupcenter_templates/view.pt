@@ -219,11 +219,11 @@
                         	<h1 tal:condition="not:context/product_title" i18n:translate="">Extensions</h1>
                         	<span tal:content="structure context/product_description | nothing"/>
                         <p class="current-projects" i18n:translate="">Currently there are
-                            <span tal:content="view/eupproject_count" i18n:name="eup_project_count" /> project(s) with
-                            <span tal:content="view/euprelease_count" /> release(s) available.</p>
+                            <span tal:content="view/eupproject_count" /> <span i18n:translate="">project(s) with</span>
+                            <span tal:content="view/euprelease_count" /> <span i18n:translate="">release(s) available.</span></p>
                         <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.extensionuploadcenter.eupproject" i18n:translate="">
-                            <img src="++resource++tdf.extensionuploadcenter/yellowarrow.png"  alt=""/> Submit your
-                            <span tal:content="context/product_title | string:extension_project" i18n:name="" />
+                            <img src="++resource++tdf.extensionuploadcenter/yellowarrow.png"  alt=""/><span i18n:translate=""> Submit your </span>
+                            <span tal:content="context/product_title | string:extension_project" />
                         </a>
 
                 	</div>
@@ -278,7 +278,7 @@
 			</ol>
         </div>
             <div class="installinstructions" tal:condition="context/install_instructions">
-            <h3>Install Instructions</h3>
+            <h3 i18n:translate="">Install Instructions</h3>
             <p tal:replace="structure context/install_instructions/output" />
 
         </div>
