@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-08-28 07:31+0000\n"
+"POT-Creation-Date: 2016-08-28 08:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,16 +59,16 @@ msgstr ""
 msgid "<img src=\"++resource++tdf.extensionuploadcenter/yellowarrow.png\" alt=\"\" /> <span>${DYNAMIC_CONTENT}</span>"
 msgstr ""
 
-#: ./eupcenter_templates/view.pt:226
-msgid "<img src=\"++resource++tdf.extensionuploadcenter/yellowarrow.png\" alt=\"\" /> Submit your <span>${DYNAMIC_CONTENT}</span>"
-msgstr ""
-
 #: ./eupproject_templates/view.pt:46
 msgid "<img src=\"++resource++tdf.extensionuploadcenter/yellowarrow.png\" alt=\"\" /> a Release to your ${product_title_eupproject} Project"
 msgstr ""
 
 #: ./eupproject_templates/view.pt:52
 msgid "<img src=\"++resource++tdf.extensionuploadcenter/yellowarrow.png\" alt=\"\" /> a linked Release to your ${product_title_eupproject} Project"
+msgstr ""
+
+#: ./eupcenter_templates/view.pt:226
+msgid "<img src=\"++resource++tdf.extensionuploadcenter/yellowarrow.png\" alt=\"\" /><span>x</span> <span>${DYNAMIC_CONTENT}</span>"
 msgstr ""
 
 #: ./euprelease.py:137
@@ -156,6 +156,10 @@ msgstr ""
 msgid "Browse Extensions by Category"
 msgstr ""
 
+#: ./eupproject_templates/view.pt:106
+msgid "Category/Categories"
+msgstr ""
+
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
 msgid "Change the release stage to 'Release alpha'"
@@ -206,8 +210,8 @@ msgstr ""
 msgid "Current release for the project"
 msgstr ""
 
-#: ./eupcenter_templates/view.pt:223
-msgid "Currently there are ${eup_project_count} project(s) with <span>${DYNAMIC_CONTENT}</span> release(s) available."
+#: ./eupcenter_templates/view.pt:221
+msgid "Currently there are"
 msgstr ""
 
 #: ./eupproject_templates/view.pt:292
@@ -366,6 +370,12 @@ msgstr ""
 msgid "Info"
 msgstr ""
 
+#: ./eupcenter_templates/view.pt:281
+#: ./eupproject_templates/view.pt:84
+#: ./euprelease_templates/view.pt:125
+msgid "Install Instructions"
+msgstr ""
+
 #: ./eupcenter.py:97
 msgid "Instruction how to report Bugs"
 msgstr ""
@@ -417,7 +427,7 @@ msgid "Most popular ${product_title}"
 msgstr ""
 
 #: ./eupcenter_templates/view.pt:234
-msgid "Most recent <span>${DYNAMIC_CONTENT}</span>"
+msgid "Most recent"
 msgstr ""
 
 #: ./eupcenter.py:33
@@ -649,6 +659,10 @@ msgstr ""
 msgid "Sort On"
 msgstr ""
 
+#: ./eupcenter_templates/view.pt:225
+msgid "Submit your"
+msgstr ""
+
 #: ./configure.zcml:29
 msgid "TDF Extension Upload Center"
 msgstr ""
@@ -810,9 +824,17 @@ msgstr ""
 msgid "label_release_details"
 msgstr ""
 
+#: ./eupcenter_templates/view.pt:222
+msgid "project(s) with"
+msgstr ""
+
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
 msgid "re-release"
+msgstr ""
+
+#: ./eupcenter_templates/view.pt:223
+msgid "release(s) available."
 msgstr ""
 
 #: ./eupproject_templates/view.pt:150
