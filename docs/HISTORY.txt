@@ -4,7 +4,9 @@ Changelog
 0.9 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Adding German localisation [Andreas Mantke]
+- Update of localisation template file (*.pot) [Andreas Mantke]
+- Fixes for localisation tags [Andreas Mantke]
 
 
 0.8 (2016-08-20)
