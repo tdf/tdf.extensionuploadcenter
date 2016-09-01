@@ -55,7 +55,7 @@
       <div class="tucenterlicense" tal:content="structure view/w/licenses_choice/render" />
       <h4 class="tucentercompatibility" i18n:translate="">Compatibility</h4>
       <div class="tucentercompatibility" tal:content="structure view/w/compatibility_choice/render" />
-        <h4 class="documentSecondheading">Changelog</h4>
+        <h4 class="documentSecondheading" i18n:translate="">Changelog</h4>
         <div class="eupcenterchangelog" tal:content="structure view/w/changelog/render" />
 
 
