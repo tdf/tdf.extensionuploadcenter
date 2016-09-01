@@ -56,7 +56,7 @@
       <div class="tupcenterlicense" tal:content="structure view/w/licenses_choice/render" />
       <h4 class="tupcentercompatibility" i18n:translate="">Compatibility</h4>
       <div class="tupcentercompatibility" tal:content="structure view/w/compatibility_choice/render" />
-        <h4 class="documentSecondheading">Changelog</h4>
+        <h4 class="documentSecondheading" i18n:translate="">Changelog</h4>
         <div class="tupcenterchangelog" tal:content="structure view/w/changelog/render" />
 
         <h2 class="tupcenter" i18n:translate="">Available Downloads</h2>
