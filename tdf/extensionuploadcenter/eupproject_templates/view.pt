@@ -165,7 +165,7 @@
                 </span><br />
                 <a href="#"
                    i18n:translate="label_release_details"
-                   tal:attributes="href latestRelease/absolute_url">More about this release&hellip;</a>
+                   tal:attributes="href latestRelease/absolute_url"><span i18n:translate="">More about this release&hellip;</span></a>
                 </p>
             <dl>
                 <span tal:condition="not:python:latestRelease.portal_type == 'tdf.extensionuploadcenter.eupreleaselink'">
