@@ -287,7 +287,7 @@
             <p tal:replace="structure context/reporting_bugs/output" />
         </div>
         <div class="aboutproduct" tal:condition="context/product_description">
-            <h3>About</h3>
+            <h3 i18n:translate="">About</h3>
             <p tal:content="structure context/product_description" />
         </div>
             </div>
