@@ -4,7 +4,9 @@ Changelog
 0.11 (unreleased)
 -----------------
 
-- Spanish localisation (Adolfo Jayme Barrientos)
+- Update localisation template and translation into German [Andreas Mantke]
+- Fix and add some translation tags [Andreas Mantke]
+- Spanish localisation [Adolfo Jayme Barrientos]
 
 
 0.9 (2016-08-28)
