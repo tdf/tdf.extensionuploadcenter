@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-08-28 08:46+0000\n"
+"POT-Creation-Date: 2016-09-02 20:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -78,6 +78,10 @@ msgstr ""
 
 #: ./profiles/default/types/tdf.extensionuploadcenter.eupreleaselink.xml
 msgid "A linked extension release"
+msgstr ""
+
+#: ./eupcenter_templates/view.pt:290
+msgid "About"
 msgstr ""
 
 #: ./euprelease.py:172
@@ -171,6 +175,7 @@ msgid "Change the release stage to 'Release beta'"
 msgstr ""
 
 #: ./euprelease.py:136
+#: ./euprelease_templates/view.pt:58
 #: ./eupreleaselink.py:135
 msgid "Changelog"
 msgstr ""
@@ -420,6 +425,10 @@ msgstr ""
 
 #: ./eupproject.py:131
 msgid "Logo"
+msgstr ""
+
+#: ./eupproject_templates/view.pt:168
+msgid "More about this release&hellip;"
 msgstr ""
 
 #: ./eupcenter_templates/view.pt:44
@@ -819,8 +828,8 @@ msgstr ""
 msgid "label_linked_extension_file"
 msgstr ""
 
-#. Default: "More about this release…"
-#: ./eupproject_templates/view.pt:166
+#. Default: "<span>x</span>"
+#: ./eupproject_templates/view.pt:168
 msgid "label_release_details"
 msgstr ""
 
