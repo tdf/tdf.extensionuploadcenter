@@ -4,7 +4,7 @@ Changelog
 0.12 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Fix of ressource registry css URL [Victor Fernandez de Alba]
 
 
 0.11 (2016-09-02)
