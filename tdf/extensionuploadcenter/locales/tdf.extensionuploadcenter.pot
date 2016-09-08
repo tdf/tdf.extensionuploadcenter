@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-09-02 20:43+0000\n"
+"POT-Creation-Date: 2016-09-08 08:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,22 +53,6 @@ msgstr ""
 #: ./euprelease.py:120
 #: ./eupreleaselink.py:119
 msgid "1.0"
-msgstr ""
-
-#: ./eupcenter_templates/own_project.pt:64
-msgid "<img src=\"++resource++tdf.extensionuploadcenter/yellowarrow.png\" alt=\"\" /> <span>${DYNAMIC_CONTENT}</span>"
-msgstr ""
-
-#: ./eupproject_templates/view.pt:46
-msgid "<img src=\"++resource++tdf.extensionuploadcenter/yellowarrow.png\" alt=\"\" /> a Release to your ${product_title_eupproject} Project"
-msgstr ""
-
-#: ./eupproject_templates/view.pt:52
-msgid "<img src=\"++resource++tdf.extensionuploadcenter/yellowarrow.png\" alt=\"\" /> a linked Release to your ${product_title_eupproject} Project"
-msgstr ""
-
-#: ./eupcenter_templates/view.pt:226
-msgid "<img src=\"++resource++tdf.extensionuploadcenter/yellowarrow.png\" alt=\"\" /><span>x</span> <span>${DYNAMIC_CONTENT}</span>"
 msgstr ""
 
 #: ./euprelease.py:137
@@ -160,7 +144,7 @@ msgstr ""
 msgid "Browse Extensions by Category"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:106
+#: ./eupproject_templates/view.pt:107
 msgid "Category/Categories"
 msgstr ""
 
@@ -207,11 +191,11 @@ msgstr ""
 msgid "Contact email-address for the project."
 msgstr ""
 
-#: ./eupproject_templates/view.pt:122
+#: ./eupproject_templates/view.pt:123
 msgid "Current Release"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:135
+#: ./eupproject_templates/view.pt:136
 msgid "Current release for the project"
 msgstr ""
 
@@ -279,8 +263,22 @@ msgstr ""
 msgid "Extensions"
 msgstr ""
 
+#: ./eupreleaselink_templates/view.pt:144
+msgid "External Documentation"
+msgstr ""
+
+#: ./eupreleaselink_templates/view.pt:149
+msgid "External Project Page"
+msgstr ""
+
 #: ./euprelease.py:285
 msgid "Fifth uploaded file is compatible with the Platform(s)"
+msgstr ""
+
+#: ./eupproject_templates/view.pt:179
+#: ./euprelease_templates/view.pt:74
+#: ./eupreleaselink_templates/view.pt:69
+msgid "File size:"
 msgstr ""
 
 #: ./eupcenter.py:91
@@ -362,6 +360,10 @@ msgstr ""
 msgid "If the project has externally hosted documentation, enter its URL (example: 'http://www.mysite.org')."
 msgstr ""
 
+#: ./eupcenter_templates/own_project.pt:61
+msgid "If you already created a new"
+msgstr ""
+
 #: ./eupreleaselink.py:220
 msgid "If you want to link more files for this release, e.g. because there are files for other operating systems, you'll find the fields to link this files on the register 'Further linked files for this Release'."
 msgstr ""
@@ -376,8 +378,8 @@ msgid "Info"
 msgstr ""
 
 #: ./eupcenter_templates/view.pt:281
-#: ./eupproject_templates/view.pt:84
-#: ./euprelease_templates/view.pt:125
+#: ./eupproject_templates/view.pt:85
+#: ./euprelease_templates/view.pt:155
 msgid "Install Instructions"
 msgstr ""
 
@@ -418,8 +420,8 @@ msgstr ""
 msgid "License(s)"
 msgstr ""
 
-#: ./euprelease_templates/view.pt:121
-#: ./eupreleaselink_templates/view.pt:158
+#: ./euprelease_templates/view.pt:151
+#: ./eupreleaselink_templates/view.pt:167
 msgid "Link to Source Code"
 msgstr ""
 
@@ -460,7 +462,7 @@ msgstr ""
 msgid "No results were found."
 msgstr ""
 
-#: ./eupproject_templates/view.pt:124
+#: ./eupproject_templates/view.pt:125
 msgid "No stable release available yet."
 msgstr ""
 
@@ -552,9 +554,13 @@ msgstr ""
 msgid "Please upload your file."
 msgstr ""
 
-#: ./eupproject_templates/view.pt:62
-#: ./euprelease_templates/view.pt:96
-#: ./eupreleaselink_templates/view.pt:133
+#: ./eupproject_templates/view.pt:47
+msgid "Project"
+msgstr ""
+
+#: ./eupproject_templates/view.pt:63
+#: ./euprelease_templates/view.pt:126
+#: ./eupreleaselink_templates/view.pt:140
 msgid "Project Resources"
 msgstr ""
 
@@ -620,8 +626,13 @@ msgstr ""
 msgid "Released"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:145
+#: ./eupproject_templates/view.pt:146
 msgid "Released ${latest_release_date}"
+msgstr ""
+
+#: ./euprelease_templates/view.pt:37
+#: ./eupreleaselink_templates/view.pt:38
+msgid "Remember to publish your release once all files have been added."
 msgstr ""
 
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
@@ -638,9 +649,9 @@ msgstr ""
 msgid "Screemshot of the Extension"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:73
-#: ./euprelease_templates/view.pt:109
-#: ./eupreleaselink_templates/view.pt:146
+#: ./eupproject_templates/view.pt:74
+#: ./euprelease_templates/view.pt:139
+#: ./eupreleaselink_templates/view.pt:155
 msgid "Screenshot"
 msgstr ""
 
@@ -689,6 +700,10 @@ msgstr ""
 msgid "The Computed Project Title"
 msgstr ""
 
+#: ./euprelease_templates/view.pt:72
+msgid "The Extension file"
+msgstr ""
+
 #: ./eupreleaselink.py:195
 msgid "The Link to the file of the release"
 msgstr ""
@@ -713,6 +728,10 @@ msgstr ""
 
 #: ./euprelease.py:257
 msgid "The fourth file you want to upload (this is optional)"
+msgstr ""
+
+#: ./eupreleaselink_templates/view.pt:66
+msgid "The linked Extension file"
 msgstr ""
 
 #: ./eupproject.py:192
@@ -798,39 +817,24 @@ msgstr ""
 msgid "You have not chosen a category for the project"
 msgstr ""
 
-#. Default: "Remember to publish your release once all files have been added."
-#: ./euprelease_templates/view.pt:37
-#: ./eupreleaselink_templates/view.pt:38
-msgid "help_message_remember_is_editable"
+#: ./eupproject_templates/view.pt:46
+msgid "a Release to your"
+msgstr ""
+
+#: ./eupproject_templates/view.pt:52
+msgid "a linked Release to your"
 msgstr ""
 
 #: ./eupcenter_templates/view.pt:94
 msgid "in"
 msgstr ""
 
-#. Default: "The Extension file"
-#: ./euprelease_templates/view.pt:68
-msgid "label_downloadable_extension_file"
+#: ./eupproject_templates/view.pt:49
+msgid "or:"
 msgstr ""
 
-#. Default: "<img src=\"++resource++tdf.extensionuploadcenter/download_icon.gif\" />"
-#: ./euprelease_templates/view.pt:68
-msgid "label_extension_file"
-msgstr ""
-
-#. Default: "<img src=\"++resource++tdf.extensionuploadcenter/download_icon.gif\" />"
-#: ./eupproject_templates/view.pt:173
-msgid "label_latest_release_extension_file"
-msgstr ""
-
-#. Default: "The linked Extension file"
-#: ./eupreleaselink_templates/view.pt:65
-msgid "label_linked_extension_file"
-msgstr ""
-
-#. Default: "<span>x</span>"
-#: ./eupproject_templates/view.pt:168
-msgid "label_release_details"
+#: ./eupcenter_templates/own_project.pt:63
+msgid "please submit your new"
 msgstr ""
 
 #: ./eupcenter_templates/view.pt:222
@@ -846,7 +850,7 @@ msgstr ""
 msgid "release(s) available."
 msgstr ""
 
-#: ./eupproject_templates/view.pt:150
+#: ./eupproject_templates/view.pt:151
 msgid "tested with:"
 msgstr ""
 
