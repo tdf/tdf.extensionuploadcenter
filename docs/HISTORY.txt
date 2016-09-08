@@ -4,6 +4,7 @@ Changelog
 0.12 (unreleased)
 -----------------
 
+- Fix and add some more localization tags.
 - Fix of ressource registry css URL [Victor Fernandez de Alba]
 
 
@@ -11,7 +12,7 @@ Changelog
 -----------------
 
 - Update localisation template and translation into German [Andreas Mantke]
-- Fix and add some translation tags [Andreas Mantke]
+- Fix and add some localization tags [Andreas Mantke]
 - Spanish localisation [Adolfo Jayme Barrientos]
 
 
