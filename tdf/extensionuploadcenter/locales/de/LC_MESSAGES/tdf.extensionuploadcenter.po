@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: 2016-09-02 22:49+0200\n"
+"PO-Revision-Date: 2016-09-08 10:44+0200\n"
 "Last-Translator: Andreas Mantke <maand@gmx.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -47,22 +47,6 @@ msgstr "${results_eupprojects} Projekte stimmen mit Ihren Kriterien überein."
 #: euprelease.py:120 eupreleaselink.py:119
 msgid "1.0"
 msgstr "1.0"
-
-#: eupcenter_templates/own_project.pt:64
-msgid "<img src=\"++resource++tdf.extensionuploadcenter/yellowarrow.png\" alt=\"\" /> <span>${DYNAMIC_CONTENT}</span>"
-msgstr ""
-
-#: eupproject_templates/view.pt:46
-msgid "<img src=\"++resource++tdf.extensionuploadcenter/yellowarrow.png\" alt=\"\" /> a Release to your ${product_title_eupproject} Project"
-msgstr ""
-
-#: eupproject_templates/view.pt:52
-msgid "<img src=\"++resource++tdf.extensionuploadcenter/yellowarrow.png\" alt=\"\" /> a linked Release to your ${product_title_eupproject} Project"
-msgstr ""
-
-#: eupcenter_templates/view.pt:226
-msgid "<img src=\"++resource++tdf.extensionuploadcenter/yellowarrow.png\" alt=\"\" /><span>x</span> <span>${DYNAMIC_CONTENT}</span>"
-msgstr ""
 
 #: euprelease.py:137 eupreleaselink.py:136
 msgid "A detailed log of what has changed since the previous release."
@@ -150,7 +134,7 @@ msgstr "${product_title} nach Kategorie"
 msgid "Browse Extensions by Category"
 msgstr "Suchen Sie Extensions nach Kategorien"
 
-#: eupproject_templates/view.pt:106
+#: eupproject_templates/view.pt:107
 msgid "Category/Categories"
 msgstr "Kategorie/Kategorien"
 
@@ -189,11 +173,11 @@ msgstr "Kontakt-Email-Adresse"
 msgid "Contact email-address for the project."
 msgstr "Kontakt-Email-Adresse für das Projekt"
 
-#: eupproject_templates/view.pt:122
+#: eupproject_templates/view.pt:123
 msgid "Current Release"
 msgstr "Aktuelles Release"
 
-#: eupproject_templates/view.pt:135
+#: eupproject_templates/view.pt:136
 msgid "Current release for the project"
 msgstr "Aktuelles Release des Projekts"
 
@@ -261,9 +245,22 @@ msgstr "Extension Profil für TDF Extension Upload Center"
 msgid "Extensions"
 msgstr "Extensions"
 
+#: eupreleaselink_templates/view.pt:144
+msgid "External Documentation"
+msgstr "Externe Dokumentation"
+
+#: eupreleaselink_templates/view.pt:149
+msgid "External Project Page"
+msgstr "Externe Projektseite"
+
 #: euprelease.py:285
 msgid "Fifth uploaded file is compatible with the Platform(s)"
 msgstr "Die fünfte hochgeladene Datei ist kompatibel mit den Plattformen"
+
+#: eupproject_templates/view.pt:179 euprelease_templates/view.pt:74
+#: eupreleaselink_templates/view.pt:69
+msgid "File size:"
+msgstr "Dateigröße:"
 
 #: eupcenter.py:91
 msgid "Fill in the install instructions"
@@ -343,6 +340,10 @@ msgstr "Falls das Projekt eine externe Homepage hat, füllen Sie hier die URL (B
 msgid "If the project has externally hosted documentation, enter its URL (example: 'http://www.mysite.org')."
 msgstr "Falls Ihr Projekt eine extern verfügbare Dokumentation besitzt, fügen Sie hier die entsprechende URL (Beispiel: \"http://www.mysite.org\") ein."
 
+#: eupcenter_templates/own_project.pt:61
+msgid "If you already created a new"
+msgstr "Falls Sie bereits ein neues"
+
 #: eupreleaselink.py:220
 msgid "If you want to link more files for this release, e.g. because there are files for other operating systems, you'll find the fields to link this files on the register 'Further linked files for this Release'."
 msgstr "Falls Sie weitere Dateien für dieses Release verlinken wollen, z.B. weil es Dateien für andere Betriebssysteme gibt, finden Sie die entsprechenden Felder auf dem Register \"Weitere verlinkte Dateien für dieses Release\"."
@@ -355,8 +356,8 @@ msgstr "Falls Sie weitere Dateien für dieses Release hochladen wollen, z.B. wei
 msgid "Info"
 msgstr "Info"
 
-#: eupcenter_templates/view.pt:281 eupproject_templates/view.pt:84
-#: euprelease_templates/view.pt:125
+#: eupcenter_templates/view.pt:281 eupproject_templates/view.pt:85
+#: euprelease_templates/view.pt:155
 msgid "Install Instructions"
 msgstr "Installationsanleitung"
 
@@ -393,7 +394,7 @@ msgstr "Lizenz der hochgeladenen Datei"
 msgid "License(s)"
 msgstr "Lizenz(en)"
 
-#: euprelease_templates/view.pt:121 eupreleaselink_templates/view.pt:158
+#: euprelease_templates/view.pt:151 eupreleaselink_templates/view.pt:167
 msgid "Link to Source Code"
 msgstr "Link zum Quellcode"
 
@@ -433,7 +434,7 @@ msgstr "Nein"
 msgid "No results were found."
 msgstr "Keine Ergebnisse gefunden"
 
-#: eupproject_templates/view.pt:124
+#: eupproject_templates/view.pt:125
 msgid "No stable release available yet."
 msgstr "Aktuell kein stabiles Release verfügbar."
 
@@ -517,8 +518,12 @@ msgstr "Bitte wählen Sie eine passende Kategorie (eine oder mehrere) für ihre 
 msgid "Please upload your file."
 msgstr "Bitte laden Sie Ihre Datei hoch."
 
-#: eupproject_templates/view.pt:62 euprelease_templates/view.pt:96
-#: eupreleaselink_templates/view.pt:133
+#: eupproject_templates/view.pt:47
+msgid "Project"
+msgstr "Projekt"
+
+#: eupproject_templates/view.pt:63 euprelease_templates/view.pt:126
+#: eupreleaselink_templates/view.pt:140
 msgid "Project Resources"
 msgstr "Projekt Ressourcen"
 
@@ -580,9 +585,13 @@ msgstr "Release-Kandidat"
 msgid "Released"
 msgstr "Released"
 
-#: eupproject_templates/view.pt:145
+#: eupproject_templates/view.pt:146
 msgid "Released ${latest_release_date}"
 msgstr "Veröffentlicht ${latest_release_date}"
+
+#: euprelease_templates/view.pt:37 eupreleaselink_templates/view.pt:38
+msgid "Remember to publish your release once all files have been added."
+msgstr "Denken Sie daran Ihr Release zu veröffentlichen, sobald Sie alle Dateien ergänzt haben."
 
 #: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
 #: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
@@ -598,8 +607,8 @@ msgstr "Release zurückziehen"
 msgid "Screemshot of the Extension"
 msgstr "Bildschirmfoto der Extension"
 
-#: eupproject_templates/view.pt:73 euprelease_templates/view.pt:109
-#: eupreleaselink_templates/view.pt:146
+#: eupproject_templates/view.pt:74 euprelease_templates/view.pt:139
+#: eupreleaselink_templates/view.pt:155
 msgid "Screenshot"
 msgstr "Bildschirmfoto"
 
@@ -647,6 +656,10 @@ msgstr "Text der rechtlichen Hinweise und -begrenzungen für Downloads"
 msgid "The Computed Project Title"
 msgstr "Der berechnete Projekt-Titel"
 
+#: euprelease_templates/view.pt:72
+msgid "The Extension file"
+msgstr "Die Extension-Datei"
+
 #: eupreleaselink.py:195
 msgid "The Link to the file of the release"
 msgstr "Der Link zu der Datei dieses Release"
@@ -672,6 +685,10 @@ msgstr "Die erste Stufe eines Extension-Release"
 #: euprelease.py:257
 msgid "The fourth file you want to upload (this is optional)"
 msgstr "Die vierte Datei, die Sie hochladen wollen (dies ist optional)"
+
+#: eupreleaselink_templates/view.pt:66
+msgid "The linked Extension file"
+msgstr "Die verlinkte Extension-Datei"
 
 #: eupproject.py:192
 msgid "The project title is already in use"
@@ -753,39 +770,25 @@ msgstr "Ja"
 msgid "You have not chosen a category for the project"
 msgstr "Sie haben noch keine Kategorie für Ihr Projekt gewählt."
 
-#. Default: "Remember to publish your release once all files have been added."
-#: euprelease_templates/view.pt:37 eupreleaselink_templates/view.pt:38
-msgid "help_message_remember_is_editable"
-msgstr ""
+#: eupproject_templates/view.pt:46
+msgid "a Release to your"
+msgstr "ein Release zu Ihrem"
+
+#: eupproject_templates/view.pt:52
+msgid "a linked Release to your"
+msgstr "ein verlinktes Release zu Ihrem"
 
 #: eupcenter_templates/view.pt:94
 msgid "in"
 msgstr "in"
 
-#. Default: "The Extension file"
-#: euprelease_templates/view.pt:68
-msgid "label_downloadable_extension_file"
-msgstr ""
+#: eupproject_templates/view.pt:49
+msgid "or:"
+msgstr "oder:"
 
-#. Default: "<img src=\"++resource++tdf.extensionuploadcenter/download_icon.gif\" />"
-#: euprelease_templates/view.pt:68
-msgid "label_extension_file"
-msgstr ""
-
-#. Default: "<img src=\"++resource++tdf.extensionuploadcenter/download_icon.gif\" />"
-#: eupproject_templates/view.pt:173
-msgid "label_latest_release_extension_file"
-msgstr ""
-
-#. Default: "The linked Extension file"
-#: eupreleaselink_templates/view.pt:65
-msgid "label_linked_extension_file"
-msgstr ""
-
-#. Default: "<span>x</span>"
-#: eupproject_templates/view.pt:168
-msgid "label_release_details"
-msgstr ""
+#: eupcenter_templates/own_project.pt:63
+msgid "please submit your new"
+msgstr "bitte übermitteln Sie Ihre neue"
 
 #: eupcenter_templates/view.pt:222
 msgid "project(s) with"
@@ -800,7 +803,7 @@ msgstr "Erneut veröffentlichen"
 msgid "release(s) available."
 msgstr "Releases verfügbar"
 
-#: eupproject_templates/view.pt:150
+#: eupproject_templates/view.pt:151
 msgid "tested with:"
 msgstr "getestet mit"
 
