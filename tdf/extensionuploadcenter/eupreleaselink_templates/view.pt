@@ -35,7 +35,7 @@
             tal:condition="python: is_editable and review_state == 'pre-release' ">
             <dt i18n:translate="">Info</dt>
             <dd>
-                <span i18n:translate="help_message_remember_is_editable">Remember to publish your release once all files have been added.</span>
+                <span i18n:translate="">Remember to publish your release once all files have been added.</span>
             </dd>
         </dl>
 
@@ -62,60 +62,67 @@
         <h2 class="tupcenter" i18n:translate="">Available Downloads</h2>
 
       <div  class="tupcenterfile">
-          <p tal:condition="context/link_to_file"> <a i18n:translate="label_linked_extension_file" tal:attributes=" href context/link_to_file">
-        The linked Extension file</a><span class="eupcenterplatform" tal:content="structure view/w/platform_choice/render" />
-          <span tal:condition="context/external_file_size">
-             <br />File size: <span tal:content="structure context/external_file_size" /> kb
+          <p tal:condition="context/link_to_file"> <a tal:attributes=" href context/link_to_file">
+              <span i18n:translate="">The linked Extension file</span></a>
+              <span class="eupcenterplatform" tal:content="structure view/w/platform_choice/render" />
+              <span tal:condition="context/external_file_size"><br />
+                  <span i18n:translate="">File size:</span>
+                  <span tal:content="structure context/external_file_size" /> kb
           </span>
           </p>
 
-          <p tal:condition="context/link_to_file1"> <a i18n:translate="label_linked_extension_file" tal:attributes=" href context/link_to_file1">
-        The linked Extension file</a>
+          <p tal:condition="context/link_to_file1"> <a tal:attributes=" href context/link_to_file1">
+              <span i18n:translate="">The linked Extension file</span></a>
               <span tal:condition="context/platform_choice1">
               <span class="eupcenterplatform" tal:content="structure view/w/platform_choice1/render" />
                   </span>
-          <span tal:condition="context/external_file_size1">
-             <br />File size: <span tal:content="structure context/external_file_size1" /> kb
+          <span tal:condition="context/external_file_size1"><br />
+              <span i18n:translate="">File size:</span>
+              <span tal:content="structure context/external_file_size1" /> kb
           </span>
           </p>
 
-          <p tal:condition="context/link_to_file2"> <a i18n:translate="label_linked_extension_file" tal:attributes=" href context/link_to_file2">
-        The linked Extension file</a>
+          <p tal:condition="context/link_to_file2"> <a tal:attributes=" href context/link_to_file2">
+              <span i18n:translate="">The linked Extension file</span></a>
               <span tal:condition="context/platform_choice2">
               <span class="eupcenterplatform" tal:content="structure view/w/platform_choice2/render" />
               </span>
-          <span tal:condition="context/external_file_size2">
-             <br />File size: <span tal:content="structure context/external_file_size2" /> kb
+          <span tal:condition="context/external_file_size2"><br />
+              <span i18n:translate="">File size:</span>
+              <span tal:content="structure context/external_file_size2" /> kb
           </span>
           </p>
 
-          <p tal:condition="context/link_to_file3"> <a i18n:translate="label_linked_extension_file" tal:attributes=" href context/link_to_file3">
-        The linked Extension file</a>
+          <p tal:condition="context/link_to_file3"> <a tal:attributes=" href context/link_to_file3">
+              <span i18n:translate="">The linked Extension file</span></a>
               <span tal:condition="context/platform_choice3">
               <span class="eupcenterplatform" tal:content="structure view/w/platform_choice3/render" />
               </span>
-          <span tal:condition="context/external_file_size3">
-             <br />File size: <span tal:content="structure context/external_file_size3" /> kb
+          <span tal:condition="context/external_file_size3"><br />
+              <span i18n:translate="">File size:</span>
+              <span tal:content="structure context/external_file_size3" /> kb
           </span>
           </p>
 
-          <p tal:condition="context/link_to_file4"> <a i18n:translate="label_linked_extension_file" tal:attributes=" href context/link_to_file4">
-        The linked Extension file</a>
+          <p tal:condition="context/link_to_file4"> <a tal:attributes=" href context/link_to_file4">
+              <span i18n:translate="">The linked Extension file</span></a>
               <span tal:condition="context/platform_choice4">
               <span class="eupcenterplatform" tal:content="structure view/w/platform_choice4/render" />
               </span>
-          <span tal:condition="context/external_file_size4">
-             <br />File size: <span tal:content="structure context/external_file_size4" /> kb
+          <span tal:condition="context/external_file_size4"><br />
+              <span i18n:translate="">File size:</span>
+              <span tal:content="structure context/external_file_size4" /> kb
           </span>
           </p>
 
-          <p tal:condition="context/link_to_file5"> <a i18n:translate="label_linked_extension_file" tal:attributes=" href context/link_to_file5">
-        The linked Extension file</a>
+          <p tal:condition="context/link_to_file5"> <a tal:attributes=" href context/link_to_file5">
+              <span i18n:translate="">The linked Extension file</span></a>
               <span tal:condition="context/platform_choice5">
               <span class="eupcenterplatform" tal:content="structure view/w/platform_choice5/render" />
               </span>
-          <span tal:condition="context/external_file_size5">
-             <br />File size: <span tal:content="structure context/external_file_size5" /> kb
+          <span tal:condition="context/external_file_size5"><br />
+              <span i18n:translate="">File size:</span>
+              <span tal:content="structure context/external_file_size5" /> kb
           </span>
           </p>
 
@@ -133,11 +140,13 @@
             <h2 i18n:translate="">Project Resources</h2>
                 <ul>
             <li tal:condition="context/documentation_link">
-                <a href="" tal:attributes="href context/documentation_link">External Documentation</a>
+                <a href="" tal:attributes="href context/documentation_link">
+                    <span i18n:translate="">External Documentation</span></a>
             </li>
                 <li tal:condition="context/homepage">
 
-                <a href="" tal:attributes="href context/homepage">External Project Page</a>
+                <a href="" tal:attributes="href context/homepage">
+                    <span i18n:translate="">External Project Page</span></a>
                 </li>
             </ul>
 
