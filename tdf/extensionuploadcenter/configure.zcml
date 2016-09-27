@@ -89,7 +89,7 @@
       />
 
 
-  <subscriber
+  <!-- <subscriber
     for="tdf.extensionuploadcenter.eupproject.IEUpProject
                zope.lifecycleevent.interfaces.IObjectAddedEvent"
     handler="tdf.extensionuploadcenter.eupcenter.notifyAboutNewProject"
@@ -130,7 +130,7 @@
     for="tdf.extensionuploadcenter.eupreleaselink.IEUpReleaseLink
              Products.CMFCore.interfaces.IActionSucceededEvent"
     handler="tdf.extensionuploadcenter.eupreleaselink.notifyExtensionHubReleaseLinkAdd"
-    />
+    /> -->
 
 
   <adapter
