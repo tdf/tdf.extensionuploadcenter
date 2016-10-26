@@ -34,7 +34,8 @@ class IEUpCenter(model.Schema):
     )
 
     available_category = schema.List(title=_(u"Available Categories"),
-                                     default=['Dictionary',
+                                     default=['All modules',
+                                              'Dictionary',
                                               'Clipart',
                                               'Makro',
                                               'Template Extension',
@@ -236,6 +237,9 @@ class EUpCenterView(BrowserView):
             contentFilter['getCategories'] = category
 
         return self.catalog(**contentFilter)
+
+    def show_search_form(self):
+        return 'getCategories' in self.request.environ['QUERY_STRING']
 
 
 class EUpCenterOwnProjectsViewlet(ViewletBase):
