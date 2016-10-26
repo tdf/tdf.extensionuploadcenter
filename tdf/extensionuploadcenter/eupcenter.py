@@ -50,13 +50,16 @@ class IEUpCenter(model.Schema):
                                      value_type=schema.TextLine())
 
     available_licenses = schema.List(title=_(u"Available Licenses"),
-                                     default=['GPL (GNU General Public License)',
+                                     default=['GNU-GPL-v2 (GNU General Public License Version 2)',
                                               'GNU-GPL-v3 (General Public License Version 3)',
-                                              'LGPL (GNU Lesser General Public License)',
+                                              'LGPL-v2.1 (GNU Lesser General Public License Version 2.1)',
                                               'LGPL-v3+ (GNU Lesser General Public License Version 3 and later)',
                                               'BSD (BSD License (revised))',
-                                              'MPL-v1.1 (Mozilla Public License Version 1.1',
+                                              'MPL-v1.1 (Mozilla Public License Version 1.1)',
+                                              'MPL-v2.0+ (Mozilla Public License Version 2.0 or later)',
                                               'CC-by-sa-v3 (Creative Commons Attribution-ShareAlike 3.0)',
+                                              'CC-BY-SA-v4 (Creative Commons Attribution-ShareAlike 4.0 International)',
+                                              'AL-v2 (Apache License Version 2.0)',
                                               'Public Domain',
                                               'OSI (Other OSI Approved)'],
                                      value_type=schema.TextLine())
