@@ -26,6 +26,7 @@
       directory="profiles/default"
       description="Extension profile for TDF Extension Upload Center"
       provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.post_install"
       />
 
   <!-- -*- extra stuff goes here -*- -->
@@ -144,5 +145,7 @@
   <adapter
     factory=".eupreleaselink.ValidateEUpReleaseLinkUniqueness"
     />
+
+  <adapter name="release_number" factory=".euprelease.release_number"/>
 
 </configure>

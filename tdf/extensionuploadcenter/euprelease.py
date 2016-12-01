@@ -1,6 +1,7 @@
 from tdf.extensionuploadcenter import MessageFactory as _
 from plone.app.textfield import RichText
 from plone.supermodel import model
+from plone.indexer.decorator import indexer
 from zope import schema
 from plone.autoform import directives as form
 from plone.dexterity.browser.view import DefaultView
@@ -330,6 +331,11 @@ class IEUpRelease(model.Schema):
             raise Invalid(_(u"Please choose a compatible platform for the uploaded file."))
 
 
+@indexer(IEUpRelease)
+def release_number(context, **kw):
+    return context.releasenumber
+
+
 def notifyExtensionHubReleaseAdd(self, event):
     portal = api.portal.get()
     state = api.content.get_state(self)
@@ -372,13 +378,11 @@ class ValidateEUpReleaseUniqueness(validator.SimpleFieldValidator):
 
         if value is not None:
             catalog = api.portal.get_tool(name='portal_catalog')
-            results = catalog({'Title': value,
-                               'object_provides': (IEUpRelease.__identifier__, IEUpReleaseLink.__identifier__), })
-
-            contextUUID = IUUID(self.context, None)
-            for result in results:
-                if result.UID != contextUUID:
-                    raise Invalid(_(u"The release number is already in use. Please choose another one."))
+            results = catalog({
+                'object_provides': (IEUpRelease.__identifier__, IEUpReleaseLink.__identifier__),
+                'release_number': value})
+            if len(results) > 0:
+                raise Invalid(_(u"The release number is already in use. Please choose another one."))
 
 
 validator.WidgetValidatorDiscriminators(
