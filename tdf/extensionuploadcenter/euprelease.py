@@ -376,13 +376,28 @@ class ValidateEUpReleaseUniqueness(validator.SimpleFieldValidator):
         super(ValidateEUpReleaseUniqueness, self).validate(value)
 
         if value is not None:
+            if IEUpRelease.providedBy(self.context):
+                # The release number is the same as the previous value stored
+                # in the object
+                if self.context.releasenumber == value:
+                    return None
+
             catalog = api.portal.get_tool(name='portal_catalog')
-            results = catalog({
-                'path': {'query': '/'.join(self.context.aq_parent.getPhysicalPath()), 'depth': 1},
+            # Differentiate between possible contexts (on creation or editing)
+            # on creation the context is the container
+            # on editing the context is already the object
+            if IEUpRelease.providedBy(self.context):
+                query = '/'.join(self.context.aq_parent.getPhysicalPath())
+            else:
+                query = '/'.join(self.context.getPhysicalPath())
+
+            result = catalog({
+                'path': {'query': query, 'depth': 1},
                 'portal_type': ['tdf.extensionuploadcenter.euprelease',
                                 'tdf.extensionuploadcenter.eupreleaselink'],
                 'release_number': value})
-            if len(results) > 0:
+
+            if len(result) > 0:
                 raise Invalid(_(u"The release number is already in use. Please choose another one."))
 
 
