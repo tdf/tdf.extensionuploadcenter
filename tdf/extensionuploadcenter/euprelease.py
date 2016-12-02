@@ -24,7 +24,6 @@ from Products.validation import V_REQUIRED
 from plone import api
 from z3c.form import validator
 from plone.uuid.interfaces import IUUID
-from tdf.extensionuploadcenter.eupreleaselink import IEUpReleaseLink
 import re
 
 
@@ -379,7 +378,8 @@ class ValidateEUpReleaseUniqueness(validator.SimpleFieldValidator):
         if value is not None:
             catalog = api.portal.get_tool(name='portal_catalog')
             results = catalog({
-                'object_provides': (IEUpRelease.__identifier__, IEUpReleaseLink.__identifier__),
+                'portal_type': ['tdf.extensionuploadcenter.euprelease',
+                                'tdf.extensionuploadcenter.eupreleaselink'],
                 'release_number': value})
             if len(results) > 0:
                 raise Invalid(_(u"The release number is already in use. Please choose another one."))

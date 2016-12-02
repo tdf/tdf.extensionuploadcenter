@@ -147,5 +147,6 @@
     />
 
   <adapter name="release_number" factory=".euprelease.release_number"/>
+  <adapter name="release_number" factory=".eupreleaselink.release_number"/>
 
 </configure>
