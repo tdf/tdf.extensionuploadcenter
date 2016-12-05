@@ -25,7 +25,7 @@ from plone import api
 from z3c.form import validator
 from plone.uuid.interfaces import IUUID
 import re
-
+import itertools
 
 checkfileextension = re.compile(
     r"^.*\.(oxt|OXT)").match
@@ -347,10 +347,15 @@ def notifyExtensionHubReleaseAdd(self, event):
         category = list(self.category_choice)
         compatibility = list(self.compatibility_choice)
         licenses = list(self.licenses_choice)
-        pf_list =\
-            list(getattr(self, 'platform_choice', '')) + list(getattr(self, 'platform_choice1', '')) + \
-            list(getattr(self, 'platform_choice2', '')) + list(getattr(self, 'platform_choice3', '')) + \
-            list(getattr(self, 'platform_choice4', '')) + list(getattr(self, 'platform_choice5', ''))
+        platform_fields = [
+            'platform_choice',
+            'platform_choice2',
+            'platform_choice3',
+            'platform_choice4',
+            'platform_choice5'
+        ]
+        pf_list = [field for field in platform_fields if getattr(self, field, False)]
+        pf_list = list(itertools.chain(*pf_list))
         pf_set = set(pf_list)
         platform = list(pf_set)
         platform.sort()
