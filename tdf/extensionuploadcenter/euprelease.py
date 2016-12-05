@@ -348,9 +348,9 @@ def notifyExtensionHubReleaseAdd(self, event):
         compatibility = list(self.compatibility_choice)
         licenses = list(self.licenses_choice)
         pf_list =\
-            list(self.platform_choice) + list(self.platform_choice1) + \
-            list(self.platform_choice2) + list(self.platform_choice3) + \
-            list(self.platform_choice4) + list(self.platform_choice5)
+            list(getattr(self, 'platform_choice', '')) + list(getattr(self, 'platform_choice1', '')) + \
+            list(getattr(self, 'platform_choice2', '')) + list(getattr(self, 'platform_choice3', '')) + \
+            list(getattr(self, 'platform_choice4', '')) + list(getattr(self, 'platform_choice5', ''))
         pf_set = set(pf_list)
         platform = list(pf_set)
         platform.sort()
