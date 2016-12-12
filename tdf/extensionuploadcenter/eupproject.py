@@ -135,7 +135,7 @@ class IEUpProject(model.Schema):
     )
 
     screenshot = NamedBlobImage(
-        title=_(u"Screemshot of the Extension"),
+        title=_(u"Screenshot of the Extension"),
         description=_(u"Add a screenshot by clicking the 'Browse' button."),
         required=False,
         constraint=validateImageextension
