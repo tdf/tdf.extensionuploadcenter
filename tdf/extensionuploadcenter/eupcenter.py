@@ -37,7 +37,7 @@ class IEUpCenter(model.Schema):
                                      default=['All modules',
                                               'Dictionary',
                                               'Clipart',
-                                              'Makro',
+                                              'Macro',
                                               'Template Extension',
                                               'Gallery Contents',
                                               'Language Tools',
