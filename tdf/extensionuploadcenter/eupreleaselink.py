@@ -7,6 +7,7 @@ from plone.dexterity.browser.view import DefaultView
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from zope.interface import directlyProvides
+from plone.indexer.decorator import indexer
 
 from zope.security import checkPermission
 from zope.interface import invariant, Invalid
@@ -372,6 +373,11 @@ class IEUpReleaseLink(model.Schema):
             raise Invalid(_(u"Please choose a compatible platform for the linked file."))
 
 
+@indexer(IEUpReleaseLink)
+def release_number(context, **kw):
+    return context.releasenumber
+
+
 def notifyExtensionHubReleaseLinkAdd(self, event):
     portal = api.portal.get()
     state = api.content.get_state(self)
@@ -413,15 +419,29 @@ class ValidateEUpReleaseLinkUniqueness(validator.SimpleFieldValidator):
         super(ValidateEUpReleaseLinkUniqueness, self).validate(value)
 
         if value is not None:
-            catalog = api.portal.get_tool(name='portal_catalog')
-            results = catalog({'Title': value,
-                               'portal_type': ('tdf.extensionuploadcenter.euprelease',
-                                               'tdf.extensionuploadcenter.eupreleaselink'), })
+            if IEUpReleaseLink.providedBy(self.context):
+                # The release number is the same as the previous value stored
+                # in the object
+                if self.context.releasenumber == value:
+                    return None
 
-            contextUUID = IUUID(self.context, None)
-            for result in results:
-                if result.UID != contextUUID:
-                    raise Invalid(_(u"The release number is already in use. Please choose another one."))
+            catalog = api.portal.get_tool(name='portal_catalog')
+            # Differentiate between possible contexts (on creation or editing)
+            # on creation the context is the container
+            # on editing the context is already the object
+            if IEUpReleaseLink.providedBy(self.context):
+                query = '/'.join(self.context.aq_parent.getPhysicalPath())
+            else:
+                query = '/'.join(self.context.getPhysicalPath())
+
+            result = catalog({
+                'path': {'query': query, 'depth': 1},
+                'portal_type': ['tdf.extensionuploadcenter.euprelease',
+                                'tdf.extensionuploadcenter.eupreleaselink'],
+                'release_number': value})
+
+            if len(result) > 0:
+                raise Invalid(_(u"The release number is already in use. Please choose another one."))
 
 
 validator.WidgetValidatorDiscriminators(

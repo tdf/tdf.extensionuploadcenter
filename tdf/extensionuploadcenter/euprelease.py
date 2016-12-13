@@ -1,6 +1,7 @@
 from tdf.extensionuploadcenter import MessageFactory as _
 from plone.app.textfield import RichText
 from plone.supermodel import model
+from plone.indexer.decorator import indexer
 from zope import schema
 from plone.autoform import directives as form
 from plone.dexterity.browser.view import DefaultView
@@ -23,9 +24,8 @@ from Products.validation import V_REQUIRED
 from plone import api
 from z3c.form import validator
 from plone.uuid.interfaces import IUUID
-from tdf.extensionuploadcenter.eupreleaselink import IEUpReleaseLink
 import re
-
+import itertools
 
 checkfileextension = re.compile(
     r"^.*\.(oxt|OXT)").match
@@ -330,6 +330,11 @@ class IEUpRelease(model.Schema):
             raise Invalid(_(u"Please choose a compatible platform for the uploaded file."))
 
 
+@indexer(IEUpRelease)
+def release_number(context, **kw):
+    return context.releasenumber
+
+
 def notifyExtensionHubReleaseAdd(self, event):
     portal = api.portal.get()
     state = api.content.get_state(self)
@@ -342,10 +347,15 @@ def notifyExtensionHubReleaseAdd(self, event):
         category = list(self.category_choice)
         compatibility = list(self.compatibility_choice)
         licenses = list(self.licenses_choice)
-        pf_list =\
-            list(self.platform_choice) + list(self.platform_choice1) + \
-            list(self.platform_choice2) + list(self.platform_choice3) + \
-            list(self.platform_choice4) + list(self.platform_choice5)
+        platform_fields = [
+            'platform_choice',
+            'platform_choice2',
+            'platform_choice3',
+            'platform_choice4',
+            'platform_choice5'
+        ]
+        pf_list = [field for field in platform_fields if getattr(self, field, False)]
+        pf_list = list(itertools.chain(*pf_list))
         pf_set = set(pf_list)
         platform = list(pf_set)
         platform.sort()
@@ -371,14 +381,29 @@ class ValidateEUpReleaseUniqueness(validator.SimpleFieldValidator):
         super(ValidateEUpReleaseUniqueness, self).validate(value)
 
         if value is not None:
-            catalog = api.portal.get_tool(name='portal_catalog')
-            results = catalog({'Title': value,
-                               'object_provides': (IEUpRelease.__identifier__, IEUpReleaseLink.__identifier__), })
+            if IEUpRelease.providedBy(self.context):
+                # The release number is the same as the previous value stored
+                # in the object
+                if self.context.releasenumber == value:
+                    return None
 
-            contextUUID = IUUID(self.context, None)
-            for result in results:
-                if result.UID != contextUUID:
-                    raise Invalid(_(u"The release number is already in use. Please choose another one."))
+            catalog = api.portal.get_tool(name='portal_catalog')
+            # Differentiate between possible contexts (on creation or editing)
+            # on creation the context is the container
+            # on editing the context is already the object
+            if IEUpRelease.providedBy(self.context):
+                query = '/'.join(self.context.aq_parent.getPhysicalPath())
+            else:
+                query = '/'.join(self.context.getPhysicalPath())
+
+            result = catalog({
+                'path': {'query': query, 'depth': 1},
+                'portal_type': ['tdf.extensionuploadcenter.euprelease',
+                                'tdf.extensionuploadcenter.eupreleaselink'],
+                'release_number': value})
+
+            if len(result) > 0:
+                raise Invalid(_(u"The release number is already in use. Please choose another one."))
 
 
 validator.WidgetValidatorDiscriminators(

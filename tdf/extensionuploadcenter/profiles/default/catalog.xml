@@ -13,4 +13,5 @@
         <indexed_attr value="category_choice" />
     </index>
     <column value="getCategories" />
+    <column value="release_number"/>
 </object>
