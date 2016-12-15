@@ -243,4 +243,12 @@ class EUpCenterView(BrowserView):
 
 
 class EUpCenterOwnProjectsViewlet(ViewletBase):
-    pass
+
+    def get_results(self):
+        current_user = api.user.get_current()
+        pc = api.portal.get_tool('portal_catalog')
+        return pc.portal_catalog(
+            portal_type='tdf.extensionuploadcenter.eupproject',
+            sort_on='Date',
+            sort_order='reverse',
+            Creator=current_user)
