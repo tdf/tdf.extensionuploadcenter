@@ -8,6 +8,7 @@ PROFILE_ID = 'profile-tdf.extensionuploadcenter:default'
 # catalog indexes to add
 CATALOG_INDEXES = (
     ('release_number', 'FieldIndex'),
+    ('releases_compat_versions', 'KeywordIndex'),
 )
 
 

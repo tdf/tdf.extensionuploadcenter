@@ -3,7 +3,6 @@ from plone.app.textfield import RichText
 from plone.supermodel import model
 from zope import schema
 from plone.dexterity.browser.view import DefaultView
-from Acquisition import aq_inner
 from plone import api
 from collective import dexteritytextindexer
 from zope.schema.interfaces import IContextSourceBinder
@@ -12,17 +11,14 @@ from zope.interface import directlyProvides
 import re
 from plone.namedfile.field import NamedBlobImage
 from zope.interface import Invalid, invariant
-from plone import api
-from tdf.extensionuploadcenter.euprelease import IEUpRelease
-from tdf.extensionuploadcenter.eupreleaselink import IEUpReleaseLink
 from z3c.form import validator
 from plone.uuid.interfaces import IUUID
 from plone.directives import form
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
-from Products.validation import V_REQUIRED
 
 checkfileextension = re.compile(
     r"^.*\.(png|PNG|gif|GIF|jpg|JPG)").match
+
 
 def validateImageextension(value):
     if not checkfileextension(value.filename):

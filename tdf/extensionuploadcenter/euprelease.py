@@ -17,6 +17,7 @@ from z3c.form.browser.checkbox import CheckBoxFieldWidget
 
 from plone.directives import form
 from zope import schema
+from tdf.extensionuploadcenter.adapter import IReleasesCompatVersions
 
 from zope.interface import provider
 from zope.schema.interfaces import IContextAwareDefaultFactory
@@ -152,6 +153,7 @@ class IEUpRelease(model.Schema):
         description=_(u"Please mark one or more program versions with which this release is compatible with."),
         value_type=schema.Choice(source=vocabAvailVersions),
         required=True,
+        default=[]
     )
 
     form.mode(title_declaration_legal='display')
@@ -371,6 +373,29 @@ def notifyExtensionHubReleaseAdd(self, event):
 
     else:
         return None
+
+
+def update_project_releases_compat_versions_on_creation(euprelease, event):
+    IReleasesCompatVersions(
+        euprelease.aq_parent).update(euprelease.compatibility_choice)
+
+
+def update_project_releases_compat_versions(euprelease, event):
+    pc = api.portal.get_tool(name='portal_catalog')
+    query = '/'.join(euprelease.aq_parent.getPhysicalPath())
+    brains = pc.searchResults({
+        'path': {'query': query, 'depth': 1},
+        'portal_type': ['tdf.extensionuploadcenter.euprelease',
+                        'tdf.extensionuploadcenter.eupreleaselink']
+    })
+
+    result = []
+    for brain in brains:
+        if isinstance(brain.compatibility_choice, list):
+            result = result + brain.compatibility_choice
+
+    IReleasesCompatVersions(
+        euprelease.aq_parent).set(list(set(result)))
 
 
 class ValidateEUpReleaseUniqueness(validator.SimpleFieldValidator):
