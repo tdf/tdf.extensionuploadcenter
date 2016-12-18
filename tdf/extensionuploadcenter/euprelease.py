@@ -117,9 +117,9 @@ class IEUpRelease(model.Schema):
 
     releasenumber = schema.TextLine(
         title=_(u"Release Number"),
-        description=_(u"Release Number (up to eight chars)"),
+        description=_(u"Release Number (up to twelf chars)"),
         default=_(u"1.0"),
-        max_length=8,
+        max_length=12,
     )
 
     description = schema.Text(
