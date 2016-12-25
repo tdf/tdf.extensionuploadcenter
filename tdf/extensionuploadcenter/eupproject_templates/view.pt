@@ -130,7 +130,7 @@
                 <span tal:condition="not:python:latestRelease.portal_type == 'tdf.extensionuploadcenter.eupreleaselink'">
                     <span tal:condition="latestRelease/file">
                          <a tal:attributes="href string:${latestRelease/absolute_url}/@@download/file/${latestRelease/file/filename}">
-                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" /></a>
+                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" />  <span tal:content="latestRelease/file/filename" /></a>
                         <tal:loop repeat="platform_choice latestRelease/platform_choice">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
@@ -140,7 +140,7 @@
                      </span>
                     <span tal:condition="latestRelease/file1">
                          <a tal:attributes="href string:${latestRelease/absolute_url}/@@download/file1/${latestRelease/file1/filename}">
-                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" /></a>
+                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" />  <span tal:content="latestRelease/file/filename" /></a>
                         <tal:loop repeat="platform_choice latestRelease/platform_choice1">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
@@ -150,7 +150,7 @@
                     </span>
                     <span tal:condition="latestRelease/file2">
                          <a tal:attributes="href string:${latestRelease/absolute_url}/@@download/file2/${latestRelease/file2/filename}">
-                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" /></a>
+                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" />  <span tal:content="latestRelease/file2/filename" /></a>
                         <tal:loop repeat="platform_choice latestRelease/platform_choice2">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
@@ -160,7 +160,7 @@
                     </span>
                     <span tal:condition="latestRelease/file3">
                          <a tal:attributes="href string:${latestRelease/absolute_url}/@@download/file3/${latestRelease/file3/filename}">
-                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" /></a>
+                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" />  <span tal:content="latestRelease/file3/filename" /></a>
                         <tal:loop repeat="platform_choice latestRelease/platform_choice3">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
@@ -170,7 +170,7 @@
                     </span>
                     <span tal:condition="latestRelease/file4">
                          <a tal:attributes="href string:${latestRelease/absolute_url}/@@download/file4/{latestRelease/file4/filename}">
-                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" /></a>
+                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" />  <span tal:content="latestRelease/file4/filename" /></a>
                         <tal:loop repeat="platform_choice latestRelease/platform_choice4">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
@@ -180,7 +180,7 @@
                     </span>
                     <span tal:condition="latestRelease/file5">
                          <a tal:attributes="href string:${latestRelease/absolute_url}/@@download/file5/${latestRelease/file5/filename}">
-                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" /></a>
+                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" />  <span tal:content="latestRelease/file5/filename" /></a>
                         <tal:loop repeat="platform_choice latestRelease/platform_choice5">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
