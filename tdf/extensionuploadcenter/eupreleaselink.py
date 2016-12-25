@@ -226,14 +226,23 @@ class IEUpReleaseLink(model.Schema):
         required=False
     )
 
-    form.fieldset('fileset1',
-                  label=u"Further linked files for this release",
+    model.fieldset('fieldset1',
+                  label=_(u"Further linked files for this release"),
                   fields=['link_to_file1',
+                          'external_file_size1',
                           'platform_choice1',
                           'link_to_file2',
+                          'external_file_size2',
                           'platform_choice2',
                           'link_to_file3',
-                          'platform_choice3']
+                          'external_file_size3',
+                          'platform_choice3',
+                          'link_to_file4',
+                          'external_file_size4',
+                          'platform_choice4',
+                          'link_to_file5',
+                          'external_file_size5',
+                          'platform_choice5']
                   )
 
     link_to_file1 = schema.URI(
