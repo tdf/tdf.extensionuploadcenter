@@ -5,6 +5,7 @@ Changelog
 -----------------
 
 - Add a displayed title to the further file upload sections of a release [Andreas Mantke]
+- Create a fieldset for every further linked file of a linked release and the associated fields [Andreas Mantke]
 
 
 0.13 (2016-12-31)
