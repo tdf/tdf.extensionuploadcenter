@@ -54,7 +54,7 @@ Examples
 --------
 
 This add-on can be seen in action at the following sites:
-- http://vm141.documentfoundation.org:9103
+- https://extensions.libreoffice.org/extensions
 
 
 Documentation
