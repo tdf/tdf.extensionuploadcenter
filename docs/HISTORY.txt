@@ -5,7 +5,20 @@ Changelog
 -----------------
 
 - Fix of the header of the German localization file [Andreas Mantke]
-
+- Fix field releated issues [Victor Fernandez de Alba]
+- Fix views and project_logo conditions [Victor Fernandez de Alba]
+- Fix templates responsive classes and use the Bootstrap ones [Victor Fernandez de Alba]
+- Fix optional fields for additional file fields marked as required [Victor Fernandez de Alba]
+- Add categorization behavior to the custom contenttypes [Victor Fernandez de Alba]
+- Unify the license list [Victor Fernandez de Alba]
+- Fix search issues in templates [Victor Fernandez de Alba]
+- Fixed a typo [Samuel Mehrbrodt]
+- Add support for querying the release compatibility version of inner releases from projects [Victor Fernandez de Alba]
+- Set the max length of a release name/numbering to twelf [Andreas Mantke]
+- Display the specific file name for each downloadable file [Andreas Mantke]
+- Add the file names next to the download arrow for the current release [Andreaas Mantke]
+- Fix of fieldset and migrate it to model from plone.supermodel [Andreas Mantke]
+- Spellcheck fix in own_project.pt [Andreas Mantke]
 
 0.12 (2016-09-08)
 -----------------
