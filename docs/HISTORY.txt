@@ -19,6 +19,7 @@ Changelog
 - Add the file names next to the download arrow for the current release [Andreaas Mantke]
 - Fix of fieldset and migrate it to model from plone.supermodel [Andreas Mantke]
 - Spellcheck fix in own_project.pt [Andreas Mantke]
+- Update of localization template file and of the translation into German [Andreas Mantke]
 
 0.12 (2016-09-08)
 -----------------
