@@ -222,8 +222,15 @@ class IEUpRelease(model.Schema):
 
     form.fieldset('fileset1',
                   label=u"File Upload 1",
-                  fields=['file1', 'platform_choice1', 'file2', 'platform_choice2', 'file3', 'platform_choice3']
+                  fields=['filetitlefield1', 'file1', 'platform_choice1',
+                          'filetitlefield2', 'file2', 'platform_choice2',
+                          'filetitlefield3',  'file3', 'platform_choice3']
                   )
+
+    form.mode(filetitlefield1='display')
+    filetitlefield1 = schema.TextLine(
+        title=_(u"Second Release File"),
+    )
 
     file1 = NamedBlobFile(
         title=_(u"The second file you want to upload (this is optional)"),
@@ -240,6 +247,11 @@ class IEUpRelease(model.Schema):
         required=False,
     )
 
+    form.mode(filetitlefield2='display')
+    filetitlefield2 = schema.TextLine(
+        title=_(u"Third Release File"),
+    )
+
     file2 = NamedBlobFile(
         title=_(u"The third file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
@@ -253,6 +265,11 @@ class IEUpRelease(model.Schema):
         description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=False,
+    )
+
+    form.mode(filetitlefield3='display')
+    filetitlefield3 = schema.TextLine(
+        title=_(u"Fourth Release File"),
     )
 
     file3 = NamedBlobFile(
@@ -272,8 +289,14 @@ class IEUpRelease(model.Schema):
 
     form.fieldset('fileset2',
                   label=u"File Upload 2",
-                  fields=['file4', 'platform_choice4', 'file5', 'platform_choice5']
+                  fields=['filetitlefield4', 'file4', 'platform_choice4',
+                          'filetitlefield5', 'file5', 'platform_choice5']
                   )
+
+    form.mode(filetitlefield4='display')
+    filetitlefield4 = schema.TextLine(
+        title=_(u"Fifth Release File"),
+    )
 
     file4 = NamedBlobFile(
         title=_(u"The fifth file you want to upload (this is optional)"),
@@ -288,6 +311,11 @@ class IEUpRelease(model.Schema):
         description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=False,
+    )
+
+    form.mode(filetitlefield5='display')
+    filetitlefield5 = schema.TextLine(
+        title=_(u"Sixth Release File"),
     )
 
     file5 = NamedBlobFile(

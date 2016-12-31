@@ -4,7 +4,7 @@ Changelog
 0.14 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Add a displayed title to the further file upload sections of a release [Andreas Mantke]
 
 
 0.13 (2016-12-31)
