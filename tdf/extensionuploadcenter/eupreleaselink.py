@@ -26,13 +26,14 @@ from z3c.form import validator
 from plone.uuid.interfaces import IUUID
 import re
 
-
 checkfileextension = re.compile(
     r"^.*\.(oxt|OXT)").match
 
+
 def validatelinkedfileextension(value):
     if not checkfileextension(value):
-        raise Invalid(u'You could only link to an URL (a file) that is a LibreOffice extension file with a proper file extension.')
+        raise Invalid(u'You could only link to an URL (a file) that is a LibreOffice '
+                      u'extension file with a proper file extension.')
     return True
 
 
@@ -221,29 +222,45 @@ class IEUpReleaseLink(model.Schema):
         description=_(
             u"If you want to link more files for this release, e.g. because "
             u"there are files for other operating systems, you'll find the "
-            u"fields to link this files on the register 'Further linked files "
+            u"fields to link this files on the next registers, e.g. 'Second linked file' "
             u"for this Release'."),
         required=False
     )
 
     model.fieldset('fieldset1',
-                  label=_(u"Further linked files for this release"),
-                  fields=['link_to_file1',
-                          'external_file_size1',
-                          'platform_choice1',
-                          'link_to_file2',
-                          'external_file_size2',
-                          'platform_choice2',
-                          'link_to_file3',
-                          'external_file_size3',
-                          'platform_choice3',
-                          'link_to_file4',
-                          'external_file_size4',
-                          'platform_choice4',
-                          'link_to_file5',
-                          'external_file_size5',
-                          'platform_choice5']
-                  )
+                   label=_(u"Second linked file"),
+                   fields=['link_to_file1',
+                           'external_file_size1',
+                           'platform_choice1']
+                   )
+
+    model.fieldset('fieldset2',
+                   label=_(u"Third linked file"),
+                   fields=['link_to_file2',
+                           'external_file_size2',
+                           'platform_choice2']
+                   )
+
+    model.fieldset('fieldset3',
+                   label=_(u"Fourth linked file"),
+                   fields=['link_to_file3',
+                           'external_file_size3',
+                           'platform_choice3']
+                   )
+
+    model.fieldset('fieldset4',
+                   label=_(u"Fifth linked file"),
+                   fields=['link_to_file4',
+                           'external_file_size4',
+                           'platform_choice4']
+                   )
+
+    model.fieldset('fieldset5',
+                   label=_(u"Sixth linked file"),
+                   fields=['link_to_file5',
+                           'external_file_size5',
+                           'platform_choice5']
+                   )
 
     link_to_file1 = schema.URI(
         title=_(u"The Link to the file of the release"),
@@ -337,7 +354,7 @@ class IEUpReleaseLink(model.Schema):
         title=_(u"The Link to the file of the release"),
         description=_(u"Please insert a link to your extension file."),
         required=False,
-        constraint = validatelinkedfileextension
+        constraint=validatelinkedfileextension
     )
 
     external_file_size5 = schema.Float(
@@ -399,7 +416,7 @@ def notifyExtensionHubReleaseLinkAdd(self, event):
         category = list(self.category_choice)
         compatibility = list(self.compatibility_choice)
         licenses = list(self.licenses_choice)
-        pf_list =\
+        pf_list = \
             list(self.platform_choice) + list(self.platform_choice1) + \
             list(self.platform_choice2) + list(self.platform_choice3) + \
             list(self.platform_choice4) + list(self.platform_choice5)
