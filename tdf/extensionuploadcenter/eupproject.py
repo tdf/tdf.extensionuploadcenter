@@ -9,7 +9,7 @@ from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from zope.interface import directlyProvides
 import re
-from plone.namedfile.field import NamedBlobImage
+from plone.namedfile.field import NamedBlobImage, NamedBlobFile
 from zope.interface import Invalid, invariant
 from z3c.form import validator
 from plone.uuid.interfaces import IUUID
@@ -23,6 +23,15 @@ checkfileextension = re.compile(
 def validateImageextension(value):
     if not checkfileextension(value.filename):
         raise Invalid(u"You could only add images in the png, gif or jpg file format to your project.")
+    return True
+
+
+checkdocfileextension = re.compile(
+    r"^.*\.(pdf|PDF|odt|ODT)").match
+
+def validatedocfileextension(value):
+    if not checkdocfileextension(value.filename):
+        raise Invalid(u"You could only add documentation files in the pdf or odt file format to your project.")
     return True
 
 
@@ -121,6 +130,13 @@ class IEUpProject(model.Schema):
                       u"documentation, enter its URL "
                       u"(example: 'http://www.mysite.org')."),
         required=False
+    )
+
+    documentation_file = NamedBlobFile(
+        title =_(u"Dokumentation File"),
+        description=_(u"If you have a Documentation in the file format 'PDF' or 'ODT' you could add it here."),
+        required=False,
+        constraint=validatedocfileextension
     )
 
     project_logo = NamedBlobImage(
