@@ -370,25 +370,22 @@ def notifyExtensionHubReleaseAdd(self, event):
     state = api.content.get_state(self)
     releasemessagereceipient = self.releaseAllert
     catalog = api.portal.get_tool(name='portal_catalog')
-    results = catalog(Title=self.title)
-    for brain in results:
-        url = brain.getURL()
 
-        category = list(self.category_choice)
-        compatibility = list(self.compatibility_choice)
-        licenses = list(self.licenses_choice)
-        platform_fields = [
-            'platform_choice',
-            'platform_choice2',
-            'platform_choice3',
-            'platform_choice4',
-            'platform_choice5'
-        ]
-        pf_list = [field for field in platform_fields if getattr(self, field, False)]
-        pf_list = list(itertools.chain(*pf_list))
-        pf_set = set(pf_list)
-        platform = list(pf_set)
-        platform.sort()
+    category = list(self.category_choice)
+    compatibility = list(self.compatibility_choice)
+    licenses = list(self.licenses_choice)
+    platform_fields = [
+        'platform_choice',
+        'platform_choice2',
+        'platform_choice3',
+        'platform_choice4',
+        'platform_choice5'
+    ]
+    pf_list = [field for field in platform_fields if getattr(self, field, False)]
+    pf_list = list(itertools.chain(*pf_list))
+    pf_set = set(pf_list)
+    platform = list(pf_set)
+    platform.sort()
 
     if state == 'final' and releasemessagereceipient is not None:
         api.portal.send_email(
@@ -396,7 +393,7 @@ def notifyExtensionHubReleaseAdd(self, event):
             subject="New Release added",
             body="A new release was added and published with\ntitle: %s\nURL: %s\nCompatibility:%s\n"
                  "Categories: %s\nLicenses: %s\nPlatforms: %s" % (
-                     self.title, url, compatibility, category, licenses, platform),
+                     self.title, self.absolute_url(), compatibility, category, licenses, platform),
         )
 
     else:
