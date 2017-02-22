@@ -10,6 +10,7 @@ Changelog
 - Add a field for uploaded project documentation and display it, add more translation tags
   to project view [Anddreas Mantke]
 - Update localisation template and German localisation [Andreas Mantke]
+- Improvement for the error messages and instructions on euprojects [Andreas Mantke]
 
 
 0.13 (2016-12-31)
