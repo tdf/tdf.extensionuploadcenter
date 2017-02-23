@@ -11,6 +11,7 @@ Changelog
   to project view [Anddreas Mantke]
 - Update localisation template and German localisation [Andreas Mantke]
 - Improvement for the error messages and instructions on euprojects [Andreas Mantke]
+- Better error messages on eupreleases and linked eupreleases [Andreas Mantke]
 
 
 0.13 (2016-12-31)
