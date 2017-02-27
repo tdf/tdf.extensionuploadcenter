@@ -98,7 +98,7 @@ class IEUpCenter(model.Schema):
     form.primary('install_instructions')
     install_instructions = RichText(
         title=_(u"Extension Installation Instructions"),
-        default=_(u"Fill in the install instructions"),
+        description=_(u"Please fill in the install instructions"),
         required=False
     )
 
