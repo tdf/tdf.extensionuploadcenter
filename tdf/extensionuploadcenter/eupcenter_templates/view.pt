@@ -131,7 +131,7 @@
                             <label for="project-sort" i18n:translate="">Sort On</label>
                             <select name="sort_on" id="project-sort" onchange="this.form.submit()">
                                 <tal:comment replace="nothing">Featured items are sorted by rating</tal:comment>
-                                <option value="positive ratings" tal:attributes="selected    python:sort_on == 'positive_ratings' and 'selected' ''" i18n:translate="">Highest Rated</option>
+                                <option value="positive_ratings" tal:attributes="selected    python:sort_on == 'positive_ratings' and 'selected' ''" i18n:translate="">Highest Rated</option>
                                 <option value="created" tal:attributes="selected    python:sort_on == 'created' and 'selected' or ''" i18n:translate="">Newest</option>
                             </select>
                             <input type="hidden" name="path" tal:attributes="value python:'/'.join(context.getPhysicalPath())" /> &nbsp;
