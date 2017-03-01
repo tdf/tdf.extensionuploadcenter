@@ -7,6 +7,7 @@ from plone.directives import form
 from plone.supermodel import model
 from Products.CMFPlone.browser.search import quote_chars
 from Products.Five import BrowserView
+from Products.ZCTextIndex.ParseTree import ParseError
 from tdf.extensionuploadcenter import MessageFactory as _
 from tdf.extensionuploadcenter.eupproject import IEUpProject
 from zope import schema
@@ -246,7 +247,10 @@ class EUpCenterView(BrowserView):
         if category:
             contentFilter['getCategories'] = category
 
-        return self.catalog(**contentFilter)
+        try:
+            return self.catalog(**contentFilter)
+        except ParseError:
+            return []
 
     def munge_search_term(self, q):
         for char in BAD_CHARS:
