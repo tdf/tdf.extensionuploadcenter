@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.14 (unreleased)
+0.14 (2017-03-02)
 -----------------
 
 - Add a displayed title to the further file upload sections of a release [Andreas Mantke]
