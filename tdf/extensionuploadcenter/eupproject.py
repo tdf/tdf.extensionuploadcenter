@@ -160,7 +160,7 @@ class IEUpProject(model.Schema):
     @invariant
     def missingScreenshotOrLogo(data):
         if not data.screenshot and not data.project_logo:
-            raise ProvideScreenshotLogo(_(u'Please add a screenshot or a logo to your project page. You will find the'
+            raise ProvideScreenshotLogo(_(u'Please add a screenshot or a logo to your project page. You will find the '
                                           u'appropriate fields below on this page.'))
 
 
