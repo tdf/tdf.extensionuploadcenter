@@ -20,6 +20,8 @@ Changelog
 - Better error messages on eupreleases and linked eupreleases [Andreas Mantke]
 - Fix catalog search to the Title index in case of special () characters [Victor Fernandez de Alba]
 - Added a description to the install instructions field and removed the default value (text) [Andreas Mantke]
+- Add guard in case that a malformed query was entered, return empty record [Victor Fernandez de Alba]
+- Update localisation template file and German localisation [Andreas Mantke]
 
 
 0.13 (2016-12-31)
