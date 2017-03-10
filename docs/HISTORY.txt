@@ -4,7 +4,7 @@ Changelog
 0.15 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Fixed a condition for linked releases on project view [Andreas Mantke]
 
 
 0.14 (2017-03-02)
