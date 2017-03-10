@@ -189,7 +189,7 @@
                             </div>
                     </span>
                 </span>
-                <span tal:condition="python:latestRelease.portal_type == 'tdf.templateuploadcenter.tupreleaselink'">
+                <span tal:condition="python:latestRelease.portal_type == 'tdf.extensionuploadcenter.eupreleaselink'">
                     <span tal:condition="latestRelease/link_to_file">
                         <a tal:attributes=" href latestRelease/link_to_file">
                         <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" /></a>
