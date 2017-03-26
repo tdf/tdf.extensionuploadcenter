@@ -53,7 +53,7 @@
         <p><span i18n:translate="">If you already created a new</span>
             <span tal:replace="context/product_title">Extensions</span>,
             <span i18n:translate="">please submit your new</span><br />
-    <a class="pointer"  tal:attributes="href string:${context/absolute_url}/++add++tdf.extensionsuploadcenter.eupproject">
+    <a class="pointer"  tal:attributes="href string:${context/absolute_url}/++add++tdf.extensionuploadcenter.eupproject">
                             <img src="++resource++tdf.extensionuploadcenter/yellowarrow.png" alt="" />
                             <span tal:content="context/product_title | string:extension_project" i18n:name="" />
     </a>
