@@ -273,4 +273,5 @@ class EUpCenterOwnProjectsViewlet(ViewletBase):
             portal_type='tdf.extensionuploadcenter.eupproject',
             sort_on='Date',
             sort_order='reverse',
-            Creator=current_user)
+            Creator=str(current_user)
+        )
