@@ -6,6 +6,10 @@ Changelog
 
 - Fixed a condition for linked releases on project view [Andreas Mantke]
 - Project screenshot will be displayed in large scale with a mouse click [Andreas Mantke]
+- Improve the messaging for new projects according to the review status. [Andreas Mantke]
+- Remove two not necessary i18n-domain declarations [Andreas Mantke]
+- Fixed typo in the add on extension command in own_project.pt [Andreas Mantke]
+- Fixed issue in command for listing of projects of current user [Andresa Mantke]
 
 
 0.14 (2017-03-02)
