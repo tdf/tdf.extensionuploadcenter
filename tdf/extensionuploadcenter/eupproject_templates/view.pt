@@ -32,8 +32,8 @@
 
         <span tal:replace="structure context/@@authenticator/authenticator"/>
 
-        <div tal:condition="python: is_editable and review_state == 'private' ">
-        <p class="portalinfomessage" i18n:translate="">
+        <div class="portalinfomessage" tal:condition="python: is_editable and review_state == 'private' ">
+        <p  i18n:translate="">
            Please make sure the relevant project information has been entered and a release has been added to your project.
            Once you have finished that you could submit your project for approval (publication).
         </p>
@@ -50,8 +50,8 @@
             <span tal:content="context/product_title | string:extension_project" /> <span i18n:translate>Project</span></a>
         </div>
         </div>
-        <div tal:condition="python: is_editable and review_state == 'pending' ">
-        <p class="portalinfomessage" i18n:translate="">
+        <div class="portalinfomessage" tal:condition="python: is_editable and review_state == 'pending' ">
+        <p  i18n:translate="">
            Your project has been submitted for publication and will be reviewed now. You will get an email, once the
             status of your project changed again.
         </p>
