@@ -225,7 +225,7 @@ class EUpProjectView(DefaultView):
         res = catalog.searchResults(
             portal_type=('tdf.extensionuploadcenter.euprelease', 'tdf.extensionuploadcenter.eupreleaselink'),
             path=current_path,
-            sort_on='id',
+            sort_on='Date',
             sort_order='reverse')
         return [r.getObject() for r in res]
 
@@ -241,7 +241,7 @@ class EUpProjectView(DefaultView):
             portal_type=('tdf.extensionuploadcenter.euprelease', 'tdf.extensionuploadcenter.eupreleaselink'),
             path='/'.join(context.getPhysicalPath()),
             review_state='final',
-            sort_on='id',
+            sort_on='effective',
             sort_order='reverse')
 
         if not res:
