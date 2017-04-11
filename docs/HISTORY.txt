@@ -12,6 +12,7 @@ Changelog
 - Fixed issue in command for listing of projects of current user [Andresa Mantke]
 - Fixed listing of eupreleases and linked eupreleases and the display of the latest
   final (linked) release on the project page [Andreas Mantke]
+- Update localisation template and localisation into German [Andreas Mantke]
 
 
 0.14 (2017-03-02)

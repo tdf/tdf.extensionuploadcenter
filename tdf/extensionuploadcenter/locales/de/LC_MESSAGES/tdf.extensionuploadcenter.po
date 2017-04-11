@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: 2017-03-30 18:54+0200\n"
+"PO-Revision-Date: 2017-04-11 21:23+0200\n"
 "Last-Translator: Andreas Mantke <maand@gmx.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -462,6 +462,10 @@ msgstr "Keine Ergebnisse gefunden"
 msgid "No stable release available yet."
 msgstr "Aktuell kein stabiles Release verfügbar."
 
+#: profiles/default/workflows/tdf.extensionuploadcenter_project_workshop/definition.xml
+msgid "Pending"
+msgstr "Schwebend"
+
 #: eupproject_templates/view.pt:264
 msgid "Platform(s)"
 msgstr "Plattform(en)"
@@ -545,6 +549,10 @@ msgstr "Bitte wählen Sie eine passende Kategorie (eine oder mehrere) für ihre 
 #: euprelease.py:199
 msgid "Please upload your file."
 msgstr "Bitte laden Sie Ihre Datei hoch."
+
+#: profiles/default/workflows/tdf.extensionuploadcenter_project_workshop/definition.xml
+msgid "Private"
+msgstr "Privat"
 
 #: eupproject_templates/view.pt:320 euprelease_templates/view.pt:128
 #: eupreleaselink_templates/view.pt:140
@@ -713,6 +721,7 @@ msgstr "Die letzte Stufe eines Extension-Release"
 msgid "The first file you want to upload"
 msgstr "Die erste Datei, die Sie hochladen wollen."
 
+#: profiles/default/workflows/tdf.extensionuploadcenter_project_workshop/definition.xml
 #: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
 #: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
 msgid "The first stage of an extension release"
