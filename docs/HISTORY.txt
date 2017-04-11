@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.15 (unreleased)
+0.15 (2017-04-11)
 -----------------
 
 - Fixed a condition for linked releases on project view [Andreas Mantke]
