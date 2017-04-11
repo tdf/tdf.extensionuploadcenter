@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-03-29 19:11+0000\n"
+"POT-Creation-Date: 2017-04-11 19:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -492,6 +492,10 @@ msgstr ""
 msgid "No stable release available yet."
 msgstr ""
 
+#: ./profiles/default/workflows/tdf.extensionuploadcenter_project_workshop/definition.xml
+msgid "Pending"
+msgstr ""
+
 #: ./eupproject_templates/view.pt:264
 msgid "Platform(s)"
 msgstr ""
@@ -581,6 +585,10 @@ msgstr ""
 
 #: ./euprelease.py:199
 msgid "Please upload your file."
+msgstr ""
+
+#: ./profiles/default/workflows/tdf.extensionuploadcenter_project_workshop/definition.xml
+msgid "Private"
 msgstr ""
 
 #: ./eupproject_templates/view.pt:320
@@ -758,6 +766,7 @@ msgstr ""
 msgid "The first file you want to upload"
 msgstr ""
 
+#: ./profiles/default/workflows/tdf.extensionuploadcenter_project_workshop/definition.xml
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
 msgid "The first stage of an extension release"
