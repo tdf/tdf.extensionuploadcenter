@@ -191,6 +191,22 @@ def notifyProjectManagerReleaseLinkedAdd(eupproject, event):
          )
 
 
+def notifyAboutNewReviewlistentry(self, event):
+    portal = api.portal.get()
+    state = api.content.get_state(self)
+    print(state)
+    if state == "pending":
+        api.portal.send_email(
+            recipient="extensions@libreoffice.org",
+            subject="A Project with the title %s was added to the review list" % (self.title),
+            body="Please have a look at the review list and check if the project is "
+                 "ready for publication. \n"
+                 "\n"
+                 "Kind regards,\n"
+                 "The Admin of the LibreOffice Extensions Website"
+        )
+
+
 class ValidateEUpProjectUniqueness(validator.SimpleFieldValidator):
     # Validate site-wide uniqueness of project titles.
 

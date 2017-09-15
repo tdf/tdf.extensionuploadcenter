@@ -136,6 +136,12 @@
     />
 
 
+  <subscriber
+    for="tdf.extensionuploadcenter.eupproject.IEUpProject
+               Products.CMFCore.interfaces.IActionSucceededEvent"
+    handler="tdf.extensionuploadcenter.eupproject.notifyAboutNewReviewlistentry"
+    />
+
   <adapter
     factory=".eupproject.ValidateEUpProjectUniqueness"
     />
