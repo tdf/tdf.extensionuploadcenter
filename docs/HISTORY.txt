@@ -4,7 +4,7 @@ Changelog
 0.16 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Notification about a new entry in the review list added [Andreas Mantke].
 
 
 0.15 (2017-04-11)
