@@ -10,7 +10,7 @@ Changelog
 0.16 (2017-09-18)
 -----------------
 
-- Notification about a new entry in the review list added [Andreas Mantke].
+- Notification about a new entry in the review list added to help the reviewer. [Andreas Mantke].
 
 
 0.15 (2017-04-11)
