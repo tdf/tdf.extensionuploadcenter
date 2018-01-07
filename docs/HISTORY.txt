@@ -4,7 +4,7 @@ Changelog
 0.17 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Fixed Tal-expression in views of release and linked release [Andreas Mantke]
 
 
 0.16a0 (2017-09-18)
