@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.17 (unreleased)
+0.17 (2018-01-07)
 -----------------
 
 - Fixed Tal-expression in views of release and linked release [Andreas Mantke]
