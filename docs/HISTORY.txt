@@ -4,7 +4,8 @@ Changelog
 0.18 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Heading for release details and changelog will be hidden in the view
+  eupreleases view, if there is no content for this topics [Andreas Mantke]
 
 
 0.17 (2018-01-07)

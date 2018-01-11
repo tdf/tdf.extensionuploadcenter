@@ -47,7 +47,7 @@
 
 
                     <div class="documentDescription"><span tal:content="context/description" /></div>
-        <h4 class="extcenter" i18n:translate="">Release Details</h4>
+        <h4 tal:condition="contex/details" class="extcenter" i18n:translate="">Release Details</h4>
       <p class="documentDescription" tal:content="structure view/w/details/render" />
 
 
@@ -55,7 +55,7 @@
       <div class="tucenterlicense" tal:content="structure view/w/licenses_choice/render" />
       <h4 class="tucentercompatibility" i18n:translate="">Compatibility</h4>
       <div class="tucentercompatibility" tal:content="structure view/w/compatibility_choice/render" />
-        <h4 class="documentSecondheading" i18n:translate="">Changelog</h4>
+        <h4 tal:condition="context/changelog" class="documentSecondheading" i18n:translate="">Changelog</h4>
         <div class="eupcenterchangelog" tal:content="structure view/w/changelog/render" />
 
 
