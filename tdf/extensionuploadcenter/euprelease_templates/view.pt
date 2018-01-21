@@ -47,7 +47,7 @@
 
 
                     <div class="documentDescription"><span tal:content="context/description" /></div>
-        <h4 tal:condition="contex/details" class="extcenter" i18n:translate="">Release Details</h4>
+        <h4 tal:condition="context/details" class="extcenter" i18n:translate="">Release Details</h4>
       <p class="documentDescription" tal:content="structure view/w/details/render" />
 
 
