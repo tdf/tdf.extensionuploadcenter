@@ -59,16 +59,16 @@
       <p class="documentDescription" tal:content="structure view/w/details/render" />
 
 
-     <h4 class="tupcenterlicense" i18n:translate="">License(s)</h4>
-      <div class="tupcenterlicense" tal:content="structure view/w/licenses_choice/render" />
-      <h4 class="tupcentercompatibility" i18n:translate="">Compatibility</h4>
-      <div class="tupcentercompatibility" tal:content="structure view/w/compatibility_choice/render" />
+     <h4 class="eupcenterlicense" i18n:translate="">License(s)</h4>
+      <div class="eupcenterlicense" tal:content="structure view/w/licenses_choice/render" />
+      <h4 class="eupcentercompatibility" i18n:translate="">Compatibility</h4>
+      <div class="eupcentercompatibility" tal:content="structure view/w/compatibility_choice/render" />
         <h4 tal:condition="context/changelog" class="documentSecondheading" i18n:translate="">Changelog</h4>
-        <div class="tupcenterchangelog" tal:content="structure view/w/changelog/render" />
+        <div class="eupcenterchangelog" tal:content="structure view/w/changelog/render" />
 
-        <h2 class="tupcenter" i18n:translate="">Available Downloads</h2>
+        <h2 class="eupcenter" i18n:translate="">Available Downloads</h2>
 
-      <div  class="tupcenterfile">
+      <div  class="eupcenterfile">
           <p tal:condition="context/link_to_file"> <a tal:attributes=" href context/link_to_file">
               <span i18n:translate="">The linked Extension file</span></a>
               <span class="eupcenterplatform" tal:content="structure view/w/platform_choice/render" />
@@ -136,8 +136,8 @@
 
           </div>
 
-      <h4 class="tupcenterlegaldownload" tal:content="structure context/title_legaldownloaddisclaimer" />
-      <div class="tupcenterlegaldownload" tal:content="structure context/legal_downloaddisclaimer/output" />
+      <h4 class="eupcenterlegaldownload" tal:content="structure context/title_legaldownloaddisclaimer" />
+      <div class="eupcenterlegaldownload" tal:content="structure context/legal_downloaddisclaimer/output" />
 
                     </div>
           </div>
