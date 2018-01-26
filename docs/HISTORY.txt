@@ -7,6 +7,10 @@ Changelog
 - Heading for release details and changelog will be hidden in the
   eupreleases and eupreleaseslink view, if there is no content for
   this topics [Andreas Mantke]
+- Update versions of LibreOffice [Andreas Mantke]
+- Add a further explanation for publishing a release and linked release
+  and a link to the advanced state change. [Andreas Mantke]
+
 
 
 0.17 (2018-01-07)
