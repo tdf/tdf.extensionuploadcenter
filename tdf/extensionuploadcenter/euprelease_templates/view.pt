@@ -58,10 +58,10 @@
       <p class="documentDescription" tal:content="structure view/w/details/render" />
 
 
-     <h4 class="tucenterlicense" i18n:translate="">License(s)</h4>
-      <div class="tucenterlicense" tal:content="structure view/w/licenses_choice/render" />
-      <h4 class="tucentercompatibility" i18n:translate="">Compatibility</h4>
-      <div class="tucentercompatibility" tal:content="structure view/w/compatibility_choice/render" />
+     <h4 class="eucenterlicense" i18n:translate="">License(s)</h4>
+      <div class="eucenterlicense" tal:content="structure view/w/licenses_choice/render" />
+      <h4 class="eucentercompatibility" i18n:translate="">Compatibility</h4>
+      <div class="eucentercompatibility" tal:content="structure view/w/compatibility_choice/render" />
         <h4 tal:condition="context/changelog" class="documentSecondheading" i18n:translate="">Changelog</h4>
         <div class="eupcenterchangelog" tal:content="structure view/w/changelog/render" />
 
