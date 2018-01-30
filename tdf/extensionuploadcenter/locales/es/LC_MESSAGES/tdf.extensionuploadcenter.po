@@ -108,7 +108,7 @@ msgstr "Cualquier versión"
 msgid "Available Categories"
 msgstr "Categorías disponibles"
 
-#: ./euprelease_templates/view.pt:69
+#: ./euprelease_templates/view.pt:70
 #: ./eupreleaselink_templates/view.pt:69
 msgid "Available Downloads"
 msgstr "Descargas disponibles"
@@ -153,7 +153,7 @@ msgid "Change the release stage to 'Release beta'"
 msgstr "Cambiar la etapa de emisión a «Emisión beta»"
 
 #: ./euprelease.py:137
-#: ./euprelease_templates/view.pt:65
+#: ./euprelease_templates/view.pt:66
 #: ./eupreleaselink.py:137
 msgid "Changelog"
 msgstr "Registro de cambios"
@@ -163,7 +163,7 @@ msgid "Choose your categories"
 msgstr "Elija sus categorías"
 
 #: ./eupproject_templates/view.pt:265
-#: ./euprelease_templates/view.pt:63
+#: ./euprelease_templates/view.pt:64
 #: ./eupreleaselink_templates/view.pt:64
 msgid "Compatibility"
 msgstr "Compatibilidad"
@@ -288,7 +288,7 @@ msgid "Fifth uploaded file is compatible with the Platform(s)"
 msgstr "El quinto archivo cargado es compatible con las plataformas"
 
 #: ./eupproject_templates/view.pt:153
-#: ./euprelease_templates/view.pt:82
+#: ./euprelease_templates/view.pt:83
 #: ./eupreleaselink_templates/view.pt:76
 msgid "File size:"
 msgstr ""
@@ -404,7 +404,7 @@ msgstr "Información"
 
 #: ./eupcenter_templates/view.pt:283
 #: ./eupproject_templates/view.pt:347
-#: ./euprelease_templates/view.pt:164
+#: ./euprelease_templates/view.pt:165
 msgid "Install Instructions"
 msgstr "Instrucciones de instalación"
 
@@ -440,12 +440,12 @@ msgid "License of the uploaded file"
 msgstr "Licencia del archivo cargado"
 
 #: ./eupproject_templates/view.pt:267
-#: ./euprelease_templates/view.pt:61
+#: ./euprelease_templates/view.pt:62
 #: ./eupreleaselink_templates/view.pt:62
 msgid "License(s)"
 msgstr "Licencia(s)"
 
-#: ./euprelease_templates/view.pt:160
+#: ./euprelease_templates/view.pt:161
 #: ./eupreleaselink_templates/view.pt:174
 msgid "Link to Source Code"
 msgstr "Enlace al código fuente"
@@ -490,6 +490,10 @@ msgstr "No se encontró ningún resultado."
 #: ./eupproject_templates/view.pt:99
 msgid "No stable release available yet."
 msgstr "Todavía no hay ninguna emisión estable."
+
+#: ./euprelease_templates/view.pt:40
+msgid "Or"
+msgstr ""
 
 #: ./profiles/default/workflows/tdf.extensionuploadcenter_project_workshop/definition.xml
 msgid "Pending"
@@ -591,7 +595,7 @@ msgid "Private"
 msgstr ""
 
 #: ./eupproject_templates/view.pt:320
-#: ./euprelease_templates/view.pt:135
+#: ./euprelease_templates/view.pt:136
 #: ./eupreleaselink_templates/view.pt:147
 msgid "Project Resources"
 msgstr "Recursos del proyecto"
@@ -619,7 +623,7 @@ msgstr "Reemisión"
 msgid "Release Candidate"
 msgstr "Emisión candidata"
 
-#: ./euprelease_templates/view.pt:57
+#: ./euprelease_templates/view.pt:58
 #: ./eupreleaselink_templates/view.pt:58
 msgid "Release Details"
 msgstr "Detalles de la emisión"
@@ -683,7 +687,7 @@ msgid "Retract release"
 msgstr "Retirar la emisión"
 
 #: ./eupproject_templates/view.pt:336
-#: ./euprelease_templates/view.pt:148
+#: ./euprelease_templates/view.pt:149
 #: ./eupreleaselink_templates/view.pt:162
 msgid "Screenshot"
 msgstr "Captura de pantalla"
@@ -930,7 +934,7 @@ msgstr "probada con:"
 msgid "to your"
 msgstr ""
 
-#: ./euprelease_templates/view.pt:42
+#: ./euprelease_templates/view.pt:43
 #: ./eupreleaselink_templates/view.pt:43
 msgid "you could do this following this link."
 msgstr ""
