@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-01-30 14:33+0000\n"
+"POT-Creation-Date: 2018-01-30 14:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -361,6 +361,7 @@ msgstr ""
 msgid "Hide"
 msgstr ""
 
+#: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
 msgid "Hide release"
 msgstr ""
@@ -609,6 +610,7 @@ msgstr ""
 msgid "Project Title - minimum 5 and maximum 50 characters"
 msgstr ""
 
+#: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
 msgid "Re-Release"
 msgstr ""
@@ -856,6 +858,7 @@ msgstr ""
 msgid "Unhide"
 msgstr ""
 
+#: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
 msgid "Unhide release"
 msgstr ""
@@ -927,46 +930,6 @@ msgstr ""
 
 #: ./eupproject_templates/view.pt:125
 msgid "tested with:"
-msgstr ""
-
-#. Default: "Release alpha"
-#: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
-msgid "title_euc_wf_alpha_release"
-msgstr ""
-
-#. Default: "Release beta"
-#: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
-msgid "title_euc_wf_beta_release"
-msgstr ""
-
-#. Default: "Final Release"
-#: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
-msgid "title_euc_wf_final_release"
-msgstr ""
-
-#. Default: "Hide release"
-#: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
-msgid "title_euc_wf_hide_release"
-msgstr ""
-
-#. Default: "Re-Release"
-#: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
-msgid "title_euc_wf_re_release"
-msgstr ""
-
-#. Default: "Release candidate"
-#: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
-msgid "title_euc_wf_release_candidate"
-msgstr ""
-
-#. Default: "Retract release"
-#: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
-msgid "title_euc_wf_retract_release"
-msgstr ""
-
-#. Default: "Unhide release"
-#: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
-msgid "title_euc_wf_unhide_release"
 msgstr ""
 
 #: ./eupproject_templates/view.pt:49
