@@ -355,6 +355,10 @@ msgstr "Emisión de extensión oculta"
 msgid "Hide"
 msgstr "Ocultar"
 
+#: ./profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Hide release"
+msgstr ""
+
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
 msgid "Hide this release"
@@ -599,6 +603,10 @@ msgstr "Resumen del proyecto"
 msgid "Project Title - minimum 5 and maximum 50 characters"
 msgstr "Título del proyecto, con longitud de entre 5 y 50 caracteres"
 
+#: ./profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Re-Release"
+msgstr ""
+
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
 msgid "Re-release"
@@ -842,6 +850,10 @@ msgstr "URL del repositorio de documentación"
 msgid "Unhide"
 msgstr "Mostrar"
 
+#: ./profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Unhide release"
+msgstr ""
+
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
 msgid "Unhide release project"
@@ -913,49 +925,41 @@ msgstr "probada con:"
 
 #. Default: "Release alpha"
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
-#: ./profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
 msgid "title_euc_wf_alpha_release"
 msgstr ""
 
 #. Default: "Release beta"
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
-#: ./profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
 msgid "title_euc_wf_beta_release"
 msgstr ""
 
 #. Default: "Final Release"
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
-#: ./profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
 msgid "title_euc_wf_final_release"
 msgstr ""
 
 #. Default: "Hide release"
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
-#: ./profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
 msgid "title_euc_wf_hide_release"
 msgstr ""
 
 #. Default: "Re-Release"
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
-#: ./profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
 msgid "title_euc_wf_re_release"
 msgstr ""
 
 #. Default: "Release candidate"
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
-#: ./profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
 msgid "title_euc_wf_release_candidate"
 msgstr ""
 
 #. Default: "Retract release"
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
-#: ./profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
 msgid "title_euc_wf_retract_release"
 msgstr ""
 
 #. Default: "Unhide release"
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
-#: ./profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
 msgid "title_euc_wf_unhide_release"
 msgstr ""
 
