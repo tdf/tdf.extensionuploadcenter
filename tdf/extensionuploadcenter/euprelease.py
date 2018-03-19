@@ -43,7 +43,8 @@ def vocabAvailLicenses(context):
     license_list = getattr(context.__parent__, 'available_licenses', [])
     terms = []
     for value in license_list:
-        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
+        if "Public Domain" not in value:
+            terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
     return SimpleVocabulary(terms)
 
 
@@ -365,7 +366,6 @@ class IEUpRelease(model.Schema):
 @indexer(IEUpRelease)
 def release_number(context, **kw):
     return context.releasenumber
-
 
 def notifyExtensionHubReleaseAdd(self, event):
     portal = api.portal.get()
