@@ -41,10 +41,14 @@ def vocabAvailLicenses(context):
     """ pick up licenses list from parent """
 
     license_list = getattr(context.__parent__, 'available_licenses', [])
+    legacy_licenses = getattr(context.__parent__, 'legacy_licenses', [])
+    usablelicenses = list(set(license_list) - set(legacy_licenses))
+    usablelicenses.sort()
+
     terms = []
-    for value in license_list:
-        if "Public Domain" not in value:
-            terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
+    for value in usablelicenses:
+        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
+
     return SimpleVocabulary(terms)
 
 
@@ -467,3 +471,4 @@ validator.WidgetValidatorDiscriminators(
 class EUpReleaseView(DefaultView):
     def canPublishContent(self):
         return checkPermission('cmf.ModifyPortalContent', self.context)
+
