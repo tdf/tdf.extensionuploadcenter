@@ -70,6 +70,14 @@ class IEUpCenter(model.Schema):
                                               'OSI (Other OSI Approved)'],
                                      value_type=schema.TextLine())
 
+    legacy_licenses = schema.List(title=_(u"Licenses That Should Not Be Used Anymore"),
+                                  description=_(u"List here the licenses from the above available licenses list, that"
+                                                u"should not be choosen anymore but are connected to already published"
+                                                u"releases (legacy license statements)"),
+                                  required=False,
+                                  value_type=schema.TextLine())
+
+
     available_versions = schema.List(title=_(u"Available Versions"),
                                      default=['LibreOffice 3.3',
                                               'LibreOffice 3.4',
