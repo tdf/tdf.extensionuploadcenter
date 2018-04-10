@@ -6,6 +6,7 @@ Changelog
 
 - Adding a function to collect the latest unstable release and a slot in
   the project view to present such releases to the user [Andreas Mantke]
+- Fixed link to the documentation file in the project view [Andreas Mantke]
 
 
 0.18 (2018-01-30)
