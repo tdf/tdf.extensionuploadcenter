@@ -430,9 +430,8 @@ def notifyExtensionHubReleaseLinkAdd(self, event):
         api.portal.send_email(
             recipient=releasemessagereceipient,
             subject="New Release added",
-            body="A new linked release was added and published with\ntitle: %s\nURL: %s\nCompatibility:%s\n"
-                 "Categories: %s\nLicenses: %s\nPlatforms: %s"
-                 % (self.title, url, compatibility, category, licenses, platform),
+            body=("""A new linked release was added and published with\ntitle: {}\nURL: {}\nCompatibility:{}\n
+                  Categories: {}\nLicenses: {}\nPlatforms: {}""").format(self.title, url, compatibility, category, licenses, platform),
         )
 
     else:

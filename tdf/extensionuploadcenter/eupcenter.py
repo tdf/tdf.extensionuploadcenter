@@ -154,7 +154,7 @@ class IEUpCenter(model.Schema):
 def notifyAboutNewProject(eupproject, event):
     api.portal.send_email(
         recipient="extensions@libreoffice.org",
-        subject="A Project with the title %s was added" % (eupproject.title),
+        subject=("A Project with the title {} was added").format(eupproject.title),
         body="A member added a new project"
     )
 
