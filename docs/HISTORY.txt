@@ -8,7 +8,7 @@ Changelog
   the project view to present such releases to the user [Andreas Mantke]
 - Fixed link to the documentation file in the project view [Andreas Mantke]
 - Updated string format handling to modern method in eupcenter.py, eupproject.py,
-  euprelease.py and eupreleaselink.py [Andreas Mantke]
+  euprelease.py, eupreleaselink.py and bootstrap.py [Andreas Mantke]
 
 
 
