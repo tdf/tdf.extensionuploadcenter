@@ -8,7 +8,7 @@ from plone.dexterity.browser.view import DefaultView
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from zope.interface import directlyProvides
-
+from plone import api
 from zope.security import checkPermission
 from zope.interface import invariant, Invalid
 from Acquisition import aq_inner, aq_parent, aq_get, aq_chain
@@ -467,3 +467,10 @@ validator.WidgetValidatorDiscriminators(
 class EUpReleaseView(DefaultView):
     def canPublishContent(self):
         return checkPermission('cmf.ModifyPortalContent', self.context)
+
+    def releaseLicense(self):
+        catalog = api.portal.get_tool(name='portal_catalog')
+        path="/".join(self.context.getPhysicalPath())
+        idx_data = catalog.getIndexDataForUID(path)
+        licenses= idx_data.get('releaseLicense')
+        return(r for r in licenses)
