@@ -11,6 +11,7 @@ Changelog
   euprelease.py, eupreleaselink.py and bootstrap.py [Andreas Mantke]
 - Add a function for search and display the license from the indexes of
   the portal_catalog [Andreas Mantke]
+- Update of the localization to German [Andreas Mantke]
 
 
 
