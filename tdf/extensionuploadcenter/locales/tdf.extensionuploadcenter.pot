@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-01-30 15:14+0000\n"
+"POT-Creation-Date: 2018-06-24 17:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,7 +81,7 @@ msgstr ""
 msgid "Add a screenshot by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'. "
 msgstr ""
 
-#: ./eupproject_templates/view.pt:256
+#: ./eupproject_templates/view.pt:278
 msgid "All Releases"
 msgstr ""
 
@@ -114,8 +114,8 @@ msgstr ""
 msgid "Available Categories"
 msgstr ""
 
-#: ./euprelease_templates/view.pt:70
-#: ./eupreleaselink_templates/view.pt:69
+#: ./euprelease_templates/view.pt:73
+#: ./eupreleaselink_templates/view.pt:75
 msgid "Available Downloads"
 msgstr ""
 
@@ -144,7 +144,7 @@ msgstr ""
 msgid "Browse Extensions by Category"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:81
+#: ./eupproject_templates/view.pt:82
 msgid "Category/Categories"
 msgstr ""
 
@@ -159,7 +159,7 @@ msgid "Change the release stage to 'Release beta'"
 msgstr ""
 
 #: ./euprelease.py:137
-#: ./euprelease_templates/view.pt:66
+#: ./euprelease_templates/view.pt:69
 #: ./eupreleaselink.py:137
 msgid "Changelog"
 msgstr ""
@@ -168,9 +168,9 @@ msgstr ""
 msgid "Choose your categories"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:265
-#: ./euprelease_templates/view.pt:64
-#: ./eupreleaselink_templates/view.pt:64
+#: ./eupproject_templates/view.pt:287
+#: ./euprelease_templates/view.pt:67
+#: ./eupreleaselink_templates/view.pt:70
 msgid "Compatibility"
 msgstr ""
 
@@ -191,19 +191,23 @@ msgstr ""
 msgid "Contact email-address for the project."
 msgstr ""
 
-#: ./eupproject_templates/view.pt:97
+#: ./eupproject_templates/view.pt:98
 msgid "Current Release"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:110
+#: ./eupproject_templates/view.pt:132
 msgid "Current release for the project"
+msgstr ""
+
+#: ./eupproject_templates/view.pt:107
+msgid "Current unstable release for the project"
 msgstr ""
 
 #: ./eupcenter_templates/view.pt:224
 msgid "Currently there are"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:266
+#: ./eupproject_templates/view.pt:288
 msgid "Description"
 msgstr ""
 
@@ -219,7 +223,7 @@ msgstr ""
 msgid "Dokumentation File"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:327
+#: ./eupproject_templates/view.pt:349
 msgid "Dokumentation File:"
 msgstr ""
 
@@ -271,13 +275,13 @@ msgstr ""
 msgid "Extensions"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:323
-#: ./eupreleaselink_templates/view.pt:151
+#: ./eupproject_templates/view.pt:345
+#: ./eupreleaselink_templates/view.pt:157
 msgid "External Documentation"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:331
-#: ./eupreleaselink_templates/view.pt:156
+#: ./eupproject_templates/view.pt:353
+#: ./eupreleaselink_templates/view.pt:162
 msgid "External Project Page"
 msgstr ""
 
@@ -293,9 +297,9 @@ msgstr ""
 msgid "Fifth uploaded file is compatible with the Platform(s)"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:153
-#: ./euprelease_templates/view.pt:83
-#: ./eupreleaselink_templates/view.pt:76
+#: ./eupproject_templates/view.pt:175
+#: ./euprelease_templates/view.pt:86
+#: ./eupreleaselink_templates/view.pt:82
 msgid "File size:"
 msgstr ""
 
@@ -403,14 +407,14 @@ msgstr ""
 msgid "If you want to upload more files for this release, e.g. because there are files for other operating systems, you'll find the upload fields on the register 'File Upload 1' and 'File Upload 2'."
 msgstr ""
 
-#: ./euprelease_templates/view.pt:35
-#: ./eupreleaselink_templates/view.pt:36
+#: ./euprelease_templates/view.pt:36
+#: ./eupreleaselink_templates/view.pt:37
 msgid "Info"
 msgstr ""
 
 #: ./eupcenter_templates/view.pt:283
-#: ./eupproject_templates/view.pt:347
-#: ./euprelease_templates/view.pt:165
+#: ./eupproject_templates/view.pt:369
+#: ./euprelease_templates/view.pt:168
 msgid "Install Instructions"
 msgstr ""
 
@@ -432,6 +436,10 @@ msgstr ""
 msgid "It is necessary that you accept the Legal Declaration"
 msgstr ""
 
+#: ./eupproject_templates/view.pt:105
+msgid "Latest Not Stable Release"
+msgstr ""
+
 #: ./eupcenter.py:116
 msgid "Legal Disclaimer and Limitations"
 msgstr ""
@@ -445,14 +453,14 @@ msgstr ""
 msgid "License of the uploaded file"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:267
-#: ./euprelease_templates/view.pt:62
-#: ./eupreleaselink_templates/view.pt:62
+#: ./eupproject_templates/view.pt:289
+#: ./euprelease_templates/view.pt:63
+#: ./eupreleaselink_templates/view.pt:63
 msgid "License(s)"
 msgstr ""
 
-#: ./euprelease_templates/view.pt:161
-#: ./eupreleaselink_templates/view.pt:174
+#: ./euprelease_templates/view.pt:164
+#: ./eupreleaselink_templates/view.pt:180
 msgid "Link to Source Code"
 msgstr ""
 
@@ -460,7 +468,7 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:142
+#: ./eupproject_templates/view.pt:164
 msgid "More about this release&hellip;"
 msgstr ""
 
@@ -493,11 +501,11 @@ msgstr ""
 msgid "No results were found."
 msgstr ""
 
-#: ./eupproject_templates/view.pt:99
+#: ./eupproject_templates/view.pt:100
 msgid "No stable release available yet."
 msgstr ""
 
-#: ./euprelease_templates/view.pt:40
+#: ./euprelease_templates/view.pt:41
 msgid "Or"
 msgstr ""
 
@@ -505,7 +513,7 @@ msgstr ""
 msgid "Pending"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:264
+#: ./eupproject_templates/view.pt:286
 msgid "Platform(s)"
 msgstr ""
 
@@ -565,7 +573,7 @@ msgstr ""
 msgid "Please insert a link to your extension file."
 msgstr ""
 
-#: ./eupproject_templates/view.pt:36
+#: ./eupproject_templates/view.pt:37
 msgid "Please make sure the relevant project information has been entered and a release has been added to your project. Once you have finished that you could submit your project for approval (publication)."
 msgstr ""
 
@@ -600,9 +608,9 @@ msgstr ""
 msgid "Private"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:320
-#: ./euprelease_templates/view.pt:136
-#: ./eupreleaselink_templates/view.pt:147
+#: ./eupproject_templates/view.pt:342
+#: ./euprelease_templates/view.pt:139
+#: ./eupreleaselink_templates/view.pt:153
 msgid "Project Resources"
 msgstr ""
 
@@ -629,8 +637,8 @@ msgstr ""
 msgid "Release Candidate"
 msgstr ""
 
-#: ./euprelease_templates/view.pt:58
-#: ./eupreleaselink_templates/view.pt:58
+#: ./euprelease_templates/view.pt:59
+#: ./eupreleaselink_templates/view.pt:59
 msgid "Release Details"
 msgstr ""
 
@@ -669,16 +677,16 @@ msgstr ""
 msgid "Release-Candidate"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:263
+#: ./eupproject_templates/view.pt:285
 msgid "Released"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:120
+#: ./eupproject_templates/view.pt:142
 msgid "Released ${latest_release_date}"
 msgstr ""
 
-#: ./euprelease_templates/view.pt:37
-#: ./eupreleaselink_templates/view.pt:38
+#: ./euprelease_templates/view.pt:38
+#: ./eupreleaselink_templates/view.pt:39
 msgid "Remember to publish your release once all files have been added. You can do that on the left side within the menubar. Click on the entry 'State: Unreleased'. <br />"
 msgstr ""
 
@@ -692,9 +700,9 @@ msgstr ""
 msgid "Retract release"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:336
-#: ./euprelease_templates/view.pt:149
-#: ./eupreleaselink_templates/view.pt:162
+#: ./eupproject_templates/view.pt:358
+#: ./euprelease_templates/view.pt:152
+#: ./eupreleaselink_templates/view.pt:168
 msgid "Screenshot"
 msgstr ""
 
@@ -790,7 +798,7 @@ msgstr ""
 msgid "The fourth file you want to upload (this is optional)"
 msgstr ""
 
-#: ./eupreleaselink_templates/view.pt:73
+#: ./eupreleaselink_templates/view.pt:79
 msgid "The linked Extension file"
 msgstr ""
 
@@ -799,7 +807,7 @@ msgid "The project title is already in use"
 msgstr ""
 
 #: ./euprelease.py:458
-#: ./eupreleaselink.py:472
+#: ./eupreleaselink.py:471
 msgid "The release number is already in use. Please choose another one."
 msgstr ""
 
@@ -877,7 +885,7 @@ msgstr ""
 msgid "Unreleased"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:262
+#: ./eupproject_templates/view.pt:284
 msgid "Version"
 msgstr ""
 
@@ -895,15 +903,15 @@ msgstr ""
 msgid "You have not chosen a category for the project"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:54
+#: ./eupproject_templates/view.pt:55
 msgid "Your project has been submitted for publication and will be reviewed now. You will get an email, once the status of your project changed again."
 msgstr ""
 
-#: ./eupproject_templates/view.pt:45
+#: ./eupproject_templates/view.pt:46
 msgid "a Release to your"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:49
+#: ./eupproject_templates/view.pt:50
 msgid "a linked Release"
 msgstr ""
 
@@ -911,7 +919,7 @@ msgstr ""
 msgid "in"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:46
+#: ./eupproject_templates/view.pt:47
 msgid "or:"
 msgstr ""
 
@@ -932,15 +940,15 @@ msgstr ""
 msgid "release(s) available."
 msgstr ""
 
-#: ./eupproject_templates/view.pt:125
+#: ./eupproject_templates/view.pt:115
 msgid "tested with:"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:49
+#: ./eupproject_templates/view.pt:50
 msgid "to your"
 msgstr ""
 
-#: ./euprelease_templates/view.pt:43
-#: ./eupreleaselink_templates/view.pt:43
+#: ./euprelease_templates/view.pt:44
+#: ./eupreleaselink_templates/view.pt:44
 msgid "you could do this following this link."
 msgstr ""
