@@ -123,6 +123,21 @@
                 </p>
             </tal:compatibility>
                     </tal:nounstable>
+                <dl>
+                    <span tal:condition="not:python:latestunstablerelease.portal_type == 'tdf.extensionuploadcenter.eupreleaselink'">
+                        <span tal:condition="latestunstablerelease/file">
+                         <a tal:attributes="href string:${latestunstablerelease/absolute_url}/@@download/file/${latestunstablerelease/file/filename}">
+                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" />  <span tal:content="latestunstablerelease/file/filename" /></a>
+                        <tal:loop repeat="platform_choice latestunstablerelease/platform_choice">
+                            <dl><div tal:content="platform_choice" /></dl>
+                         </tal:loop>
+                        <div class="tucfilesize">
+                       <span i18n:translate="">File size: </span> <span tal:content="python:latestunstablerelease.file.size / 1024" /><span> kb</span>
+                            </div>
+                     </span>
+
+                    </span>
+                </dl>
                 </tal:noreleases>
 
         </tal:nostable>
