@@ -122,8 +122,7 @@
                          </tal:loop>
                 </p>
             </tal:compatibility>
-                    </tal:nounstable>
-                <dl>
+                      <dl>
                     <span tal:condition="not:python:latestunstablerelease.portal_type == 'tdf.extensionuploadcenter.eupreleaselink'">
                         <span tal:condition="latestunstablerelease/file">
                          <a tal:attributes="href string:${latestunstablerelease/absolute_url}/@@download/file/${latestunstablerelease/file/filename}">
@@ -187,7 +186,53 @@
                      </span>
 
                     </span>
+                        <span tal:condition="python:latestunstablerelease.portal_type == 'tdf.extensionuploadcenter.eupreleaselink'">
+                    <span tal:condition="latestunstablerelease/link_to_file">
+                        <a tal:attributes=" href latestunstablerelease/link_to_file">
+                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" /></a>
+                        <tal:loop repeat="platform_choice latestunstablerelease/platform_choice">
+                            <dl><div tal:content="platform_choice" /></dl>
+                         </tal:loop>
+                    </span>
+                    <span tal:condition="latestunstablerelease/link_to_file1">
+                        <a tal:attributes=" href latestunstablerelease/link_to_file1">
+                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" /></a>
+                        <tal:loop repeat="platform_choice latestunstablerelease/platform_choice1">
+                            <dl><div tal:content="platform_choice" /></dl>
+                         </tal:loop>
+                    </span>
+                    <span tal:condition="latestunstablerelease/link_to_file2">
+                        <a tal:attributes=" href latestunstablerelease/link_to_file2">
+                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" /></a>
+                        <tal:loop repeat="platform_choice latestunstablerelease/platform_choice2">
+                            <dl><div tal:content="platform_choice" /></dl>
+                         </tal:loop>
+                    </span>
+                    <span tal:condition="latestunstablerelease/link_to_file3">
+                        <a tal:attributes=" href latestunstablerelease/link_to_file3">
+                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" /></a>
+                        <tal:loop repeat="platform_choice latestunstablerelease/platform_choice3">
+                            <dl><div tal:content="platform_choice" /></dl>
+                         </tal:loop>
+                    </span>
+                    <span tal:condition="latestunstablerelease/link_to_file4">
+                        <a tal:attributes=" href latestunstablerelease/link_to_file4">
+                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" /></a>
+                        <tal:loop repeat="platform_choice latestunstablerelease/platform_choice4">
+                            <dl><div tal:content="platform_choice" /></dl>
+                         </tal:loop>
+                    </span>
+                    <span tal:condition="latestunstablerelease/link_to_file5">
+                        <a tal:attributes=" href latestunstablerelease/link_to_file5">
+                        <img src="++resource++tdf.extensionuploadcenter/download_icon.gif" /></a>
+                        <tal:loop repeat="platform_choice latestunstablerelease/platform_choice5">
+                            <dl><div tal:content="platform_choice" /></dl>
+                         </tal:loop>
+                    </span>
+                </span>
                 </dl>
+                    </tal:nounstable>
+
                 </tal:noreleases>
 
         </tal:nostable>
