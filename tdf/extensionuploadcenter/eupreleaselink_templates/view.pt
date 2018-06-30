@@ -66,7 +66,6 @@
          <span tal:content="releaselicense" />,
          </tal:loop>
      </p>
-      <div class="eupcenterlicense" tal:content="structure view/w/licenses_choice/render" />
       <h4 class="eupcentercompatibility" i18n:translate="">Compatibility</h4>
       <div class="eupcentercompatibility" tal:content="structure view/w/compatibility_choice/render" />
         <h4 tal:condition="context/changelog" class="documentSecondheading" i18n:translate="">Changelog</h4>
