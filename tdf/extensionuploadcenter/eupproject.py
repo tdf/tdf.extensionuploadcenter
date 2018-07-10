@@ -165,11 +165,12 @@ class IEUpProject(model.Schema):
 
 
 def notifyProjectManager(eupproject, event):
+    state = api.content.get_state(eupproject)
     api.portal.send_email(
         recipient=("{}").format(eupproject.contactAddress),
         sender=("{} <{}>").format('Admin of the LibreOffice Extensions site', 'extensions@libreoffice.org'),
         subject=("Your Project {}").format(eupproject.title),
-        body="The status of your LibreOffice extension project changed"
+        body=("The status of your LibreOffice extension project changed. The new status is {}").format(state)
     )
 
 
