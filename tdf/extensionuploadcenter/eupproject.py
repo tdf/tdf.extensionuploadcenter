@@ -194,7 +194,6 @@ def notifyProjectManagerReleaseLinkedAdd(eupproject, event):
 def notifyAboutNewReviewlistentry(self, event):
     portal = api.portal.get()
     state = api.content.get_state(self)
-    print(state)
     if state == "pending":
         api.portal.send_email(
             recipient="extensions@libreoffice.org",
