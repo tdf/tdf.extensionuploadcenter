@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-06-24 17:17+0000\n"
+"POT-Creation-Date: 2018-07-21 08:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,7 +81,7 @@ msgstr ""
 msgid "Add a screenshot by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'. "
 msgstr ""
 
-#: ./eupproject_templates/view.pt:278
+#: ./eupproject_templates/view.pt:388
 msgid "All Releases"
 msgstr ""
 
@@ -115,7 +115,7 @@ msgid "Available Categories"
 msgstr ""
 
 #: ./euprelease_templates/view.pt:73
-#: ./eupreleaselink_templates/view.pt:75
+#: ./eupreleaselink_templates/view.pt:74
 msgid "Available Downloads"
 msgstr ""
 
@@ -168,9 +168,9 @@ msgstr ""
 msgid "Choose your categories"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:287
+#: ./eupproject_templates/view.pt:397
 #: ./euprelease_templates/view.pt:67
-#: ./eupreleaselink_templates/view.pt:70
+#: ./eupreleaselink_templates/view.pt:69
 msgid "Compatibility"
 msgstr ""
 
@@ -195,7 +195,7 @@ msgstr ""
 msgid "Current Release"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:132
+#: ./eupproject_templates/view.pt:242
 msgid "Current release for the project"
 msgstr ""
 
@@ -207,7 +207,7 @@ msgstr ""
 msgid "Currently there are"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:288
+#: ./eupproject_templates/view.pt:398
 msgid "Description"
 msgstr ""
 
@@ -223,7 +223,7 @@ msgstr ""
 msgid "Dokumentation File"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:349
+#: ./eupproject_templates/view.pt:459
 msgid "Dokumentation File:"
 msgstr ""
 
@@ -275,13 +275,13 @@ msgstr ""
 msgid "Extensions"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:345
-#: ./eupreleaselink_templates/view.pt:157
+#: ./eupproject_templates/view.pt:455
+#: ./eupreleaselink_templates/view.pt:156
 msgid "External Documentation"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:353
-#: ./eupreleaselink_templates/view.pt:162
+#: ./eupproject_templates/view.pt:463
+#: ./eupreleaselink_templates/view.pt:161
 msgid "External Project Page"
 msgstr ""
 
@@ -297,9 +297,9 @@ msgstr ""
 msgid "Fifth uploaded file is compatible with the Platform(s)"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:175
+#: ./eupproject_templates/view.pt:134
 #: ./euprelease_templates/view.pt:86
-#: ./eupreleaselink_templates/view.pt:82
+#: ./eupreleaselink_templates/view.pt:81
 msgid "File size:"
 msgstr ""
 
@@ -413,7 +413,7 @@ msgid "Info"
 msgstr ""
 
 #: ./eupcenter_templates/view.pt:283
-#: ./eupproject_templates/view.pt:369
+#: ./eupproject_templates/view.pt:479
 #: ./euprelease_templates/view.pt:168
 msgid "Install Instructions"
 msgstr ""
@@ -453,14 +453,14 @@ msgstr ""
 msgid "License of the uploaded file"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:289
+#: ./eupproject_templates/view.pt:399
 #: ./euprelease_templates/view.pt:63
 #: ./eupreleaselink_templates/view.pt:63
 msgid "License(s)"
 msgstr ""
 
 #: ./euprelease_templates/view.pt:164
-#: ./eupreleaselink_templates/view.pt:180
+#: ./eupreleaselink_templates/view.pt:179
 msgid "Link to Source Code"
 msgstr ""
 
@@ -468,7 +468,7 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:164
+#: ./eupproject_templates/view.pt:274
 msgid "More about this release&hellip;"
 msgstr ""
 
@@ -513,7 +513,7 @@ msgstr ""
 msgid "Pending"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:286
+#: ./eupproject_templates/view.pt:396
 msgid "Platform(s)"
 msgstr ""
 
@@ -608,9 +608,9 @@ msgstr ""
 msgid "Private"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:342
+#: ./eupproject_templates/view.pt:452
 #: ./euprelease_templates/view.pt:139
-#: ./eupreleaselink_templates/view.pt:153
+#: ./eupreleaselink_templates/view.pt:152
 msgid "Project Resources"
 msgstr ""
 
@@ -677,11 +677,11 @@ msgstr ""
 msgid "Release-Candidate"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:285
+#: ./eupproject_templates/view.pt:395
 msgid "Released"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:142
+#: ./eupproject_templates/view.pt:252
 msgid "Released ${latest_release_date}"
 msgstr ""
 
@@ -700,9 +700,9 @@ msgstr ""
 msgid "Retract release"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:358
+#: ./eupproject_templates/view.pt:468
 #: ./euprelease_templates/view.pt:152
-#: ./eupreleaselink_templates/view.pt:168
+#: ./eupreleaselink_templates/view.pt:167
 msgid "Screenshot"
 msgstr ""
 
@@ -798,7 +798,7 @@ msgstr ""
 msgid "The fourth file you want to upload (this is optional)"
 msgstr ""
 
-#: ./eupreleaselink_templates/view.pt:79
+#: ./eupreleaselink_templates/view.pt:78
 msgid "The linked Extension file"
 msgstr ""
 
@@ -885,7 +885,7 @@ msgstr ""
 msgid "Unreleased"
 msgstr ""
 
-#: ./eupproject_templates/view.pt:284
+#: ./eupproject_templates/view.pt:394
 msgid "Version"
 msgstr ""
 
