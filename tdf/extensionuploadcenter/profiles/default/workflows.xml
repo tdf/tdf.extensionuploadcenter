@@ -15,4 +15,10 @@
             <bound-workflow workflow_id="tdf_extensionuploadcenter_linked_release_workflow" />
         </type>
     </bindings>
+    <object name="tdf_extensionuploadcenter_project_workflow" meta_type="Workflow" />
+    <bindings>
+        <type type_id="tdf.extensionuploadcenter.project">
+            <bound-workflow workflow_id="tdf_extensionuploadcenter_project_workflow" />
+        </type>
+    </bindings>
 </object>
