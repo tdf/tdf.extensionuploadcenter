@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-07-21 08:03+0000\n"
+"POT-Creation-Date: 2018-07-31 17:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,6 +48,10 @@ msgstr ""
 
 #: ./eupcenter_templates/view.pt:157
 msgid "${results_eupprojects} projects matching your criteria."
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "- A simple workflow for Extension Project objects."
 msgstr ""
 
 #: ./euprelease.py:121
@@ -231,6 +235,10 @@ msgstr ""
 msgid "EMail address for the messages about new releases"
 msgstr ""
 
+#: ./profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "EUC Project Publication Workflow"
+msgstr ""
+
 #: ./eupcenter.py:149
 msgid "Enter a email address to which information about a new release should be send"
 msgstr ""
@@ -399,6 +407,11 @@ msgstr ""
 msgid "If you have a Documentation in the file format 'PDF' or 'ODT' you could add it here."
 msgstr ""
 
+#: ./profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "If you submitted the item by mistake or want to perform additional edits,
+          this will take it back."
+msgstr ""
+
 #: ./eupreleaselink.py:222
 msgid "If you want to link more files for this release, e.g. because there are files for other operating systems, you'll find the fields to link this files on the next registers, e.g. 'Second linked file' for this Release'."
 msgstr ""
@@ -468,6 +481,14 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
+#: ./profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "Member retracts submission"
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "Member submits content for publication"
+msgstr ""
+
 #: ./eupproject_templates/view.pt:274
 msgid "More about this release&hellip;"
 msgstr ""
@@ -509,7 +530,7 @@ msgstr ""
 msgid "Or"
 msgstr ""
 
-#: ./profiles/default/workflows/tdf.extensionuploadcenter_project_workshop/definition.xml
+#: ./profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
 msgid "Pending"
 msgstr ""
 
@@ -604,7 +625,7 @@ msgstr ""
 msgid "Please upload your file."
 msgstr ""
 
-#: ./profiles/default/workflows/tdf.extensionuploadcenter_project_workshop/definition.xml
+#: ./profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
 msgid "Private"
 msgstr ""
 
@@ -620,6 +641,23 @@ msgstr ""
 
 #: ./eupproject.py:90
 msgid "Project Title - minimum 5 and maximum 50 characters"
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "Publish"
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "Published"
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "Publishing the item makes it visible to the all
+          users of the site."
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "Puts your item in a review queue, so it can be published on the site."
 msgstr ""
 
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
@@ -691,6 +729,7 @@ msgid "Remember to publish your release once all files have been added. You can 
 msgstr ""
 
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
 msgid "Retract"
 msgstr ""
@@ -698,6 +737,14 @@ msgstr ""
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
 msgid "Retract release"
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "Reviewer publishes content"
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "Reviewer sends content back for re-drafting"
 msgstr ""
 
 #: ./eupproject_templates/view.pt:468
@@ -730,6 +777,15 @@ msgstr ""
 msgid "Second uploaded file is compatible with the Platform(s)"
 msgstr ""
 
+#: ./profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "Send back"
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "Sending the item back will return the item to the original author instead of publishing it.
+          You should preferably provide a reason to the author why it was not published."
+msgstr ""
+
 #: ./eupcenter_templates/view.pt:116
 msgid "Show"
 msgstr ""
@@ -748,6 +804,10 @@ msgstr ""
 
 #: ./eupcenter_templates/view.pt:131
 msgid "Sort On"
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "Submit for publication"
 msgstr ""
 
 #: ./eupcenter_templates/view.pt:228
@@ -788,7 +848,6 @@ msgstr ""
 msgid "The first file you want to upload"
 msgstr ""
 
-#: ./profiles/default/workflows/tdf.extensionuploadcenter_project_workshop/definition.xml
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
 msgid "The first stage of an extension release"
@@ -800,6 +859,10 @@ msgstr ""
 
 #: ./eupreleaselink_templates/view.pt:78
 msgid "The linked Extension file"
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "The owner can edit the extension project"
 msgstr ""
 
 #: ./eupproject.py:224
@@ -887,6 +950,15 @@ msgstr ""
 
 #: ./eupproject_templates/view.pt:394
 msgid "Version"
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "Visible to everyone, editable by the owner."
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "Waiting for the Review, further editable by
+                                           the owner (contributor)."
 msgstr ""
 
 #: ./euprelease.py:80
