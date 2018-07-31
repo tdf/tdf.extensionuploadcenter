@@ -5,6 +5,7 @@ Changelog
 -----------------
 
 - Added a workflow for extension projects [Andreas Mantke]
+- Update of the localization to German. [Andreas Mantke]
 
 
 0.20 (2018-07-21)
