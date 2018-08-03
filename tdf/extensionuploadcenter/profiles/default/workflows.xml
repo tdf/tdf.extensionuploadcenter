@@ -17,7 +17,7 @@
     </bindings>
     <object name="tdf_extensionuploadcenter_project_workflow" meta_type="Workflow" />
     <bindings>
-        <type type_id="tdf.extensionuploadcenter.project">
+        <type type_id="tdf.extensionuploadcenter.eupproject">
             <bound-workflow workflow_id="tdf_extensionuploadcenter_project_workflow" />
         </type>
     </bindings>
