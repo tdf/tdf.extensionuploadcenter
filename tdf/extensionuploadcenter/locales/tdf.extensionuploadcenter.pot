@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-07-31 17:31+0000\n"
+"POT-Creation-Date: 2018-08-07 18:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,26 +20,6 @@ msgstr ""
 #: ./euprelease.py:161
 #: ./eupreleaselink.py:160
 msgid ""
-msgstr ""
-
-#: ./eupreleaselink.py:212
-msgid " First linked file is compatible with the Platform(s)"
-msgstr ""
-
-#: ./euprelease.py:206
-msgid " First uploaded file is compatible with the Platform(s)"
-msgstr ""
-
-#: ./eupreleaselink.py:325
-msgid " Fourth linked file is compatible with the Platform(s)"
-msgstr ""
-
-#: ./eupreleaselink.py:281
-msgid " Second linked file is compatible with the Platform(s)"
-msgstr ""
-
-#: ./eupreleaselink.py:303
-msgid " Third linked file is compatible with the Platform(s)"
 msgstr ""
 
 #: ./eupcenter_templates/view.pt:220
@@ -82,7 +62,7 @@ msgid "Add a logo for the project (or organization/company) by clicking the 'Bro
 msgstr ""
 
 #: ./eupproject.py:154
-msgid "Add a screenshot by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'. "
+msgid "Add a screenshot by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'."
 msgstr ""
 
 #: ./eupproject_templates/view.pt:388
@@ -240,7 +220,7 @@ msgid "EUC Project Publication Workflow"
 msgstr ""
 
 #: ./eupcenter.py:149
-msgid "Enter a email address to which information about a new release should be send"
+msgid "Enter an email address to which information about a new release should be send."
 msgstr ""
 
 #: ./eupcenter.py:140
@@ -301,6 +281,10 @@ msgstr ""
 msgid "Fifth linked file"
 msgstr ""
 
+#: ./eupreleaselink.py:347
+msgid "Fifth linked file is compatible with the Platform(s)"
+msgstr ""
+
 #: ./euprelease.py:310
 msgid "Fifth uploaded file is compatible with the Platform(s)"
 msgstr ""
@@ -312,11 +296,11 @@ msgid "File size:"
 msgstr ""
 
 #: ./eupcenter.py:126
-msgid "Fill in the legal disclaimer, that had to be accepted by the project owner"
+msgid "Fill in the legal disclaimer, that had to be accepted by the project owner."
 msgstr ""
 
 #: ./eupcenter.py:143
-msgid "Fill in the text for the legal download disclaimer"
+msgid "Fill in the text for the legal download disclaimer."
 msgstr ""
 
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
@@ -329,12 +313,24 @@ msgstr ""
 msgid "Final release"
 msgstr ""
 
+#: ./eupreleaselink.py:212
+msgid "First linked file is compatible with the Platform(s)"
+msgstr ""
+
+#: ./euprelease.py:206
+msgid "First uploaded file is compatible with the Platform(s)"
+msgstr ""
+
 #: ./euprelease.py:272
 msgid "Fourth Release File"
 msgstr ""
 
 #: ./eupreleaselink.py:245
 msgid "Fourth linked file"
+msgstr ""
+
+#: ./eupreleaselink.py:325
+msgid "Fourth linked file is compatible with the Platform(s)"
 msgstr ""
 
 #: ./euprelease.py:284
@@ -569,17 +565,17 @@ msgstr ""
 
 #: ./euprelease.py:344
 #: ./eupreleaselink.py:383
-msgid "Please choose one or more compatible product versions for your release"
+msgid "Please choose one or more compatible product versions for your release."
 msgstr ""
 
 #: ./euprelease.py:175
 #: ./eupreleaselink.py:174
-msgid "Please declare that you accept the above legal disclaimer"
+msgid "Please declare that you accept the above legal disclaimer."
 msgstr ""
 
 #: ./euprelease.py:193
 #: ./eupreleaselink.py:192
-msgid "Please fill in the Link (URL) to the Source Code"
+msgid "Please fill in the Link (URL) to the Source Code."
 msgstr ""
 
 #: ./eupcenter.py:104
@@ -773,6 +769,10 @@ msgstr ""
 msgid "Second linked file"
 msgstr ""
 
+#: ./eupreleaselink.py:281
+msgid "Second linked file is compatible with the Platform(s)"
+msgstr ""
+
 #: ./euprelease.py:244
 msgid "Second uploaded file is compatible with the Platform(s)"
 msgstr ""
@@ -796,6 +796,10 @@ msgstr ""
 
 #: ./eupreleaselink.py:259
 msgid "Sixth linked file"
+msgstr ""
+
+#: ./eupreleaselink.py:369
+msgid "Sixth linked file is compatible with the Platform(s)"
 msgstr ""
 
 #: ./euprelease.py:330
@@ -845,7 +849,7 @@ msgid "The final stage of an extension release"
 msgstr ""
 
 #: ./euprelease.py:198
-msgid "The first file you want to upload"
+msgid "The first file you want to upload."
 msgstr ""
 
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
@@ -866,7 +870,7 @@ msgid "The owner can edit the extension project"
 msgstr ""
 
 #: ./eupproject.py:224
-msgid "The project title is already in use"
+msgid "The project title is already in use."
 msgstr ""
 
 #: ./euprelease.py:458
@@ -876,7 +880,7 @@ msgstr ""
 
 #: ./euprelease.py:114
 #: ./eupreleaselink.py:114
-msgid "The release title will be computed from the parent project title"
+msgid "The release title will be computed from the parent project title."
 msgstr ""
 
 #: ./euprelease.py:236
@@ -906,6 +910,10 @@ msgstr ""
 
 #: ./eupreleaselink.py:238
 msgid "Third linked file"
+msgstr ""
+
+#: ./eupreleaselink.py:303
+msgid "Third linked file is compatible with the Platform(s)"
 msgstr ""
 
 #: ./euprelease.py:264
@@ -972,7 +980,7 @@ msgid "You answered the question, whether the source code is inside your extensi
 msgstr ""
 
 #: ./eupproject.py:82
-msgid "You have not chosen a category for the project"
+msgid "You have not chosen a category for the project."
 msgstr ""
 
 #: ./eupproject_templates/view.pt:55

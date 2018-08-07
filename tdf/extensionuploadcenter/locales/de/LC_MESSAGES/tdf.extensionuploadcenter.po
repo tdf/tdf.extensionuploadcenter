@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: 2018-07-31 19:44+0200\n"
+"PO-Revision-Date: 2018-08-07 20:48+0200\n"
 "Last-Translator: Andreas Mantke <maand@gmx.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -14,27 +14,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: tdf.extensionuploadcenter\n"
 "Language: de\n"
-"X-Generator: Poedit 1.8.9\n"
-
-#: eupreleaselink.py:212
-msgid " First linked file is compatible with the Platform(s)"
-msgstr "Die erste verlinkte Datei ist kompatibel mit den Plattformen"
-
-#: euprelease.py:206
-msgid " First uploaded file is compatible with the Platform(s)"
-msgstr "Die erste hochgeladene Datei ist kompatibel mit den Plattformen"
-
-#: eupreleaselink.py:325
-msgid " Fourth linked file is compatible with the Platform(s)"
-msgstr "Die vierte verlinkte Datei ist kompatibel mit den Plattformen"
-
-#: eupreleaselink.py:281
-msgid " Second linked file is compatible with the Platform(s)"
-msgstr "Die zweite verlinkte Datei ist kompatibel mit den Plattformen"
-
-#: eupreleaselink.py:303
-msgid " Third linked file is compatible with the Platform(s)"
-msgstr "Die dritte verlinkte Datei ist kompatibel mit den Plattformen"
+"X-Generator: Poedit 2.0.7\n"
 
 #: eupcenter_templates/view.pt:220
 msgid "${product_title}"
@@ -73,7 +53,7 @@ msgid "Add a logo for the project (or organization/company) by clicking the 'Bro
 msgstr "Fügen Sie ein Logo für Projekt (oder Organisation/Unternehmen) durch Klicken den Schalter \"Durchsuchen\" hinzu. Sie können Grafiken in den Dateiformaten \"png\", \"gif\" oder \"jpg\" verwenden."
 
 #: eupproject.py:154
-msgid "Add a screenshot by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'. "
+msgid "Add a screenshot by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'."
 msgstr "Fügen Sie ein Bildschirmfoto durch Klicken auf den Schalter \"Durchsuchen\" hinzu. Sie können Grafiken in den Dateiformaten \"png\", \"gif\" oder \"jpg\" verwenden."
 
 #: eupproject_templates/view.pt:388
@@ -175,7 +155,7 @@ msgstr "Kontakt-Email-Adresse"
 
 #: eupproject.py:119 euprelease.py:181 eupreleaselink.py:180
 msgid "Contact email-address for the project."
-msgstr "Kontakt-Email-Adresse für das Projekt"
+msgstr "Kontakt-Email-Adresse für das Projekt.."
 
 #: eupproject_templates/view.pt:98
 msgid "Current Release"
@@ -222,7 +202,7 @@ msgid "EUC Project Publication Workflow"
 msgstr "EUC Projekt-Veröffentlichungs-Workflow"
 
 #: eupcenter.py:149
-msgid "Enter a email address to which information about a new release should be send"
+msgid "Enter an email address to which information about a new release should be send."
 msgstr "Fügen Sie eine Email-Adresse ein, an die Informationen über neue Releases gesendet werden sollen."
 
 #: eupcenter.py:140
@@ -281,6 +261,10 @@ msgstr "Fünfte Release-Datei"
 msgid "Fifth linked file"
 msgstr "Fünfte verlinkte Datei"
 
+#: eupreleaselink.py:347
+msgid "Fifth linked file is compatible with the Platform(s)"
+msgstr "Die vierte verlinkte Datei ist kompatibel mit den Plattformen"
+
 #: euprelease.py:310
 msgid "Fifth uploaded file is compatible with the Platform(s)"
 msgstr "Die fünfte hochgeladene Datei ist kompatibel mit den Plattformen"
@@ -291,11 +275,11 @@ msgid "File size:"
 msgstr "Dateigröße:"
 
 #: eupcenter.py:126
-msgid "Fill in the legal disclaimer, that had to be accepted by the project owner"
+msgid "Fill in the legal disclaimer, that had to be accepted by the project owner."
 msgstr "Fügen Sie den Haftungsausschluss ein, der von den Projekteigentümern zu akzeptieren ist."
 
 #: eupcenter.py:143
-msgid "Fill in the text for the legal download disclaimer"
+msgid "Fill in the text for the legal download disclaimer."
 msgstr "Füllen Sie den Text für den Download-Haftungsausschluss ein."
 
 #: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
@@ -308,6 +292,14 @@ msgstr "Finales Release"
 msgid "Final release"
 msgstr "Finales Release"
 
+#: eupreleaselink.py:212
+msgid "First linked file is compatible with the Platform(s)"
+msgstr "Die erste verlinkte Datei ist kompatibel mit den Plattformen"
+
+#: euprelease.py:206
+msgid "First uploaded file is compatible with the Platform(s)"
+msgstr "Die erste hochgeladene Datei ist kompatibel mit den Plattformen"
+
 #: euprelease.py:272
 msgid "Fourth Release File"
 msgstr "Vierte Release-Datei"
@@ -315,6 +307,10 @@ msgstr "Vierte Release-Datei"
 #: eupreleaselink.py:245
 msgid "Fourth linked file"
 msgstr "Vierte verlinkte Datei"
+
+#: eupreleaselink.py:325
+msgid "Fourth linked file is compatible with the Platform(s)"
+msgstr "Die vierte verlinkte Datei ist kompatibel mit den Plattformen"
 
 #: euprelease.py:284
 msgid "Fourth uploaded file is compatible with the Platform(s)"
@@ -404,7 +400,7 @@ msgstr "Installationsanleitung"
 
 #: eupcenter.py:110
 msgid "Instruction how to report Bugs"
-msgstr "Anleitung, wie ein Fehler gemeldet wird."
+msgstr "Anleitung, wie ein Fehler gemeldet wird"
 
 #: eupproject.py:72
 msgid "Invalid email address"
@@ -485,7 +481,7 @@ msgstr "Nein"
 
 #: eupcenter_templates/view.pt:154
 msgid "No results were found."
-msgstr "Keine Ergebnisse gefunden"
+msgstr "Keine Ergebnisse gefunden."
 
 #: eupproject_templates/view.pt:100
 msgid "No stable release available yet."
@@ -521,26 +517,26 @@ msgstr "Bitte fügen Sie ein Bildschirmfoto oder ein Logo Ihrem Projekt hinzu. S
 
 #: eupreleaselink.py:401
 msgid "Please choose a compatible platform for the linked file."
-msgstr "Bitte wählen Sie eine zu der verlinkten Datei kompatible Plattform"
+msgstr "Bitte wählen Sie eine zu der verlinkten Datei kompatible Plattform."
 
 #: euprelease.py:362
 msgid "Please choose a compatible platform for the uploaded file."
-msgstr "Bitte wählen Sie eine zu der hochgeladenen Datei kompatible Plattform"
+msgstr "Bitte wählen Sie eine zu der hochgeladenen Datei kompatible Plattform."
 
 #: euprelease.py:339 eupreleaselink.py:378
 msgid "Please choose a license for your release."
 msgstr "Bitte wählen Sie eine Lizenz für Ihr Release."
 
 #: euprelease.py:344 eupreleaselink.py:383
-msgid "Please choose one or more compatible product versions for your release"
+msgid "Please choose one or more compatible product versions for your release."
 msgstr "Bitte wählen Sie eine oder mehrere kompatible Produkt-Versionen für Ihr Release."
 
 #: euprelease.py:175 eupreleaselink.py:174
-msgid "Please declare that you accept the above legal disclaimer"
+msgid "Please declare that you accept the above legal disclaimer."
 msgstr "Bitte erklären Sie, dass Sie den obigen Haftungsausschluss akzeptieren."
 
 #: euprelease.py:193 eupreleaselink.py:192
-msgid "Please fill in the Link (URL) to the Source Code"
+msgid "Please fill in the Link (URL) to the Source Code."
 msgstr "Bitte füllen Sie den Link (URL) zu dem Quellcode ein."
 
 #: eupcenter.py:104
@@ -719,6 +715,10 @@ msgstr "Zweite Release-Datei"
 msgid "Second linked file"
 msgstr "Zweite verlinkte Datei"
 
+#: eupreleaselink.py:281
+msgid "Second linked file is compatible with the Platform(s)"
+msgstr "Die zweite verlinkte Datei ist kompatibel mit den Plattformen"
+
 #: euprelease.py:244
 msgid "Second uploaded file is compatible with the Platform(s)"
 msgstr "Die zweite hochgeladene Datei ist kompatibel mit den Plattformen"
@@ -738,6 +738,10 @@ msgstr "Sechste Release-Datei"
 #: eupreleaselink.py:259
 msgid "Sixth linked file"
 msgstr "Sechste verlinkte Datei"
+
+#: eupreleaselink.py:369
+msgid "Sixth linked file is compatible with the Platform(s)"
+msgstr "Die sechste verlinkte Datei ist kompatibel mit den Plattformen"
 
 #: euprelease.py:330
 msgid "Sixth uploaded file is compatible with the Platform(s)"
@@ -785,7 +789,7 @@ msgid "The final stage of an extension release"
 msgstr "Die letzte Stufe eines Extension-Release"
 
 #: euprelease.py:198
-msgid "The first file you want to upload"
+msgid "The first file you want to upload."
 msgstr "Die erste Datei, die Sie hochladen wollen."
 
 #: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
@@ -806,7 +810,7 @@ msgid "The owner can edit the extension project"
 msgstr "Der Besitzer kann das Extension-Projekt bearbeiten"
 
 #: eupproject.py:224
-msgid "The project title is already in use"
+msgid "The project title is already in use."
 msgstr "Der Projekt-Titel wird bereits verwendet."
 
 #: euprelease.py:458 eupreleaselink.py:471
@@ -814,8 +818,8 @@ msgid "The release number is already in use. Please choose another one."
 msgstr "Die Release-Nummer ist bereits im Gebrauch. Bitte wählen Sie eine andere."
 
 #: euprelease.py:114 eupreleaselink.py:114
-msgid "The release title will be computed from the parent project title"
-msgstr "Der Release-Titel wird aus dem Projekt-Titel erzeugt."
+msgid "The release title will be computed from the parent project title."
+msgstr "Der Release-Titel wird maschinell aus dem Projekt-Titel erstellt."
 
 #: euprelease.py:236
 msgid "The second file you want to upload (this is optional)"
@@ -846,6 +850,10 @@ msgstr "Dritte Release-Datei"
 msgid "Third linked file"
 msgstr "Dritte verlinkte Datei"
 
+#: eupreleaselink.py:303
+msgid "Third linked file is compatible with the Platform(s)"
+msgstr "Die dritte verlinkte Datei ist kompatibel mit den Plattformen"
+
 #: euprelease.py:264
 msgid "Third uploaded file is compatible with the Platform(s))"
 msgstr "Die dritte hochgeladene Datei ist kompatibel mit den Plattformen"
@@ -864,7 +872,7 @@ msgstr "Titel für rechtliche Hinweise und Einschränkungen für Downloads"
 
 #: eupproject.py:130
 msgid "URL of documentation repository "
-msgstr "URL des Repository der Dokumentation"
+msgstr "URL des Repository der Dokumentation "
 
 #: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
 #: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
@@ -884,7 +892,7 @@ msgstr "Release Projekt sichtbar machen"
 #: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
 #: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
 msgid "Unreleased"
-msgstr "unveröffentlicht"
+msgstr "Unveröffentlicht"
 
 #: eupproject_templates/view.pt:394
 msgid "Version"
@@ -903,7 +911,7 @@ msgid "You answered the question, whether the source code is inside your extensi
 msgstr "Sie haben die Frage, ob der Quelltext in Ihrer Extension ist, mit nein (Standardantwort) beantwortet. Falls dies zutreffend ist, schreiben Sie bitte den Link (URL) zum Quelltext unten in das entsprechende Feld."
 
 #: eupproject.py:82
-msgid "You have not chosen a category for the project"
+msgid "You have not chosen a category for the project."
 msgstr "Sie haben noch keine Kategorie für Ihr Projekt gewählt."
 
 #: eupproject_templates/view.pt:55
@@ -941,11 +949,11 @@ msgstr "Erneut veröffentlichen"
 
 #: eupcenter_templates/view.pt:226
 msgid "release(s) available."
-msgstr "Releases verfügbar"
+msgstr "Releases verfügbar."
 
 #: eupproject_templates/view.pt:115
 msgid "tested with:"
-msgstr "getestet mit"
+msgstr "getestet mit:"
 
 #: eupproject_templates/view.pt:50
 msgid "to your"
