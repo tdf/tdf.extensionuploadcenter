@@ -79,7 +79,7 @@ class ProvideScreenshotLogo(Invalid):
 
 
 class MissingCategory(Invalid):
-    __doc__ = _(u"You have not chosen a category for the project")
+    __doc__ = _(u"You have not chosen a category for the project.")
 
 
 class IEUpProject(model.Schema):
@@ -152,7 +152,7 @@ class IEUpProject(model.Schema):
     screenshot = NamedBlobImage(
         title=_(u"Screenshot of the Extension"),
         description=_(u"Add a screenshot by clicking the 'Browse' button. You could provide an image of the file "
-                      u"format 'png', 'gif' or 'jpg'. "),
+                      u"format 'png', 'gif' or 'jpg'."),
         required=False,
         constraint=validateImageextension
     )
@@ -221,7 +221,7 @@ class ValidateEUpProjectUniqueness(validator.SimpleFieldValidator):
             contextUUID = IUUID(self.context, None)
             for result in results:
                 if result.UID != contextUUID:
-                    raise Invalid(_(u"The project title is already in use"))
+                    raise Invalid(_(u"The project title is already in use."))
 
 
 validator.WidgetValidatorDiscriminators(

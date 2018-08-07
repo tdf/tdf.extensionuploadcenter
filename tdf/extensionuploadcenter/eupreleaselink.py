@@ -111,7 +111,7 @@ class IEUpReleaseLink(model.Schema):
     form.mode(projecttitle='hidden')
     projecttitle = schema.TextLine(
         title=_(u"The Computed Project Title"),
-        description=_(u"The release title will be computed from the parent project title"),
+        description=_(u"The release title will be computed from the parent project title."),
         defaultFactory=getContainerTitle
     )
 
@@ -171,7 +171,7 @@ class IEUpReleaseLink(model.Schema):
 
     accept_legal_declaration = schema.Bool(
         title=_(u"Accept the above legal disclaimer"),
-        description=_(u"Please declare that you accept the above legal disclaimer"),
+        description=_(u"Please declare that you accept the above legal disclaimer."),
         required=True
     )
 
@@ -189,7 +189,7 @@ class IEUpReleaseLink(model.Schema):
     )
 
     link_to_source = schema.URI(
-        title=_(u"Please fill in the Link (URL) to the Source Code"),
+        title=_(u"Please fill in the Link (URL) to the Source Code."),
         required=False
     )
 
@@ -209,7 +209,7 @@ class IEUpReleaseLink(model.Schema):
 
     form.widget(platform_choice=CheckBoxFieldWidget)
     platform_choice = schema.List(
-        title=_(u" First linked file is compatible with the Platform(s)"),
+        title=_(u"First linked file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
@@ -278,7 +278,7 @@ class IEUpReleaseLink(model.Schema):
 
     form.widget(platform_choice1=CheckBoxFieldWidget)
     platform_choice1 = schema.List(
-        title=_(u" Second linked file is compatible with the Platform(s)"),
+        title=_(u"Second linked file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the linked file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
@@ -300,7 +300,7 @@ class IEUpReleaseLink(model.Schema):
 
     form.widget(platform_choice2=CheckBoxFieldWidget)
     platform_choice2 = schema.List(
-        title=_(u" Third linked file is compatible with the Platform(s)"),
+        title=_(u"Third linked file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the linked file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True
@@ -322,7 +322,7 @@ class IEUpReleaseLink(model.Schema):
 
     form.widget(platform_choice3=CheckBoxFieldWidget)
     platform_choice3 = schema.List(
-        title=_(u" Fourth linked file is compatible with the Platform(s)"),
+        title=_(u"Fourth linked file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the linked file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
@@ -344,7 +344,7 @@ class IEUpReleaseLink(model.Schema):
 
     form.widget(platform_choice4=CheckBoxFieldWidget)
     platform_choice4 = schema.List(
-        title=_(u" Fourth linked file is compatible with the Platform(s)"),
+        title=_(u"Fifth linked file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the linked file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
@@ -366,7 +366,7 @@ class IEUpReleaseLink(model.Schema):
 
     form.widget(platform_choice5=CheckBoxFieldWidget)
     platform_choice5 = schema.List(
-        title=_(u" Fourth linked file is compatible with the Platform(s)"),
+        title=_(u"Sixth linked file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the linked file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
@@ -380,7 +380,7 @@ class IEUpReleaseLink(model.Schema):
     @invariant
     def compatibilitynotchoosen(data):
         if not data.compatibility_choice:
-            raise Invalid(_(u"Please choose one or more compatible product versions for your release"))
+            raise Invalid(_(u"Please choose one or more compatible product versions for your release."))
 
     @invariant
     def legaldeclarationaccepted(data):

@@ -111,7 +111,7 @@ class IEUpRelease(model.Schema):
     form.mode(projecttitle='hidden')
     projecttitle = schema.TextLine(
         title=_(u"The Computed Project Title"),
-        description=_(u"The release title will be computed from the parent project title"),
+        description=_(u"The release title will be computed from the parent project title."),
         defaultFactory=getContainerTitle
     )
 
@@ -172,7 +172,7 @@ class IEUpRelease(model.Schema):
 
     accept_legal_declaration = schema.Bool(
         title=_(u"Accept the above legal disclaimer"),
-        description=_(u"Please declare that you accept the above legal disclaimer"),
+        description=_(u"Please declare that you accept the above legal disclaimer."),
         required=True
     )
 
@@ -190,12 +190,12 @@ class IEUpRelease(model.Schema):
     )
 
     link_to_source = schema.URI(
-        title=_(u"Please fill in the Link (URL) to the Source Code"),
+        title=_(u"Please fill in the Link (URL) to the Source Code."),
         required=False
     )
 
     file = NamedBlobFile(
-        title=_(u"The first file you want to upload"),
+        title=_(u"The first file you want to upload."),
         description=_(u"Please upload your file."),
         required=True,
         constraint=validatefileextension,
@@ -203,7 +203,7 @@ class IEUpRelease(model.Schema):
 
     form.widget(platform_choice=CheckBoxFieldWidget)
     platform_choice = schema.List(
-        title=_(u" First uploaded file is compatible with the Platform(s)"),
+        title=_(u"First uploaded file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
@@ -341,7 +341,7 @@ class IEUpRelease(model.Schema):
     @invariant
     def compatibilitynotchoosen(data):
         if not data.compatibility_choice:
-            raise Invalid(_(u"Please choose one or more compatible product versions for your release"))
+            raise Invalid(_(u"Please choose one or more compatible product versions for your release."))
 
     @invariant
     def legaldeclarationaccepted(data):

@@ -124,7 +124,7 @@ class IEUpCenter(model.Schema):
                       u"project creator and should be accepted by "
                       u"the owner of the project."),
         default=_(u"Fill in the legal disclaimer, that had to be "
-                  u"accepted by the project owner"),
+                  u"accepted by the project owner."),
         required=False
     )
 
@@ -140,13 +140,13 @@ class IEUpCenter(model.Schema):
         description=_(u"Enter any legal disclaimer and limitations for "
                       u"downloads that should appear on each page for "
                       u"dowloadable files."),
-        default=_(u"Fill in the text for the legal download disclaimer"),
+        default=_(u"Fill in the text for the legal download disclaimer."),
         required=False
     )
 
     releaseAllert = schema.ASCIILine(
         title=_(u"EMail address for the messages about new releases"),
-        description=_(u"Enter a email address to which information about a new release should be send"),
+        description=_(u"Enter an email address to which information about a new release should be send."),
         required=False
     )
 
