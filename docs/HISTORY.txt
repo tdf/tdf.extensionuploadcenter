@@ -4,7 +4,10 @@ Changelog
 0.22 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- A type_id issue fixed in the project workflow [Andreas Mantke]
+- Fixed some strings in the modules eupcenter, eupproject, euprelease
+  and eupreleaselink [Andreas Mantke]
+- Update of localization to German after string changes [Andreas Mantke]
 
 
 0.21 (2018-08-01)
