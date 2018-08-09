@@ -168,8 +168,8 @@ def notifyProjectManager(eupproject, event):
     state = api.content.get_state(eupproject)
     api.portal.send_email(
         recipient=("{}").format(eupproject.contactAddress),
-        sender=("{} <{}>").format('Admin of the LibreOffice Extensions site', 'extensions@libreoffice.org'),
-        subject=("Your Project {}").format(eupproject.title),
+        sender=(u"{} <{}>").format('Admin of the LibreOffice Extensions site', 'extensions@libreoffice.org'),
+        subject=(u"Your Project {}").format(eupproject.title),
         body=("The status of your LibreOffice extension project changed. The new status is {}").format(state)
     )
 
@@ -178,8 +178,8 @@ def notifyProjectManagerReleaseAdd(eupproject, event):
     api.portal.send_email(
         recipient=("{}").format(eupproject.contactAddress),
         sender=("{} <{}>").format('Admin of the LibreOffice Extensions site', 'extensions@libreoffice.org'),
-        subject=("Your Project [{}: new Release added").format(eupproject.title),
-        body=("A new release was added to your project: '{}'").format(eupproject.title),
+        subject=(u"Your Project [{}: new Release added").format(eupproject.title),
+        body=(u"A new release was added to your project: '{}'").format(eupproject.title),
          )
 
 
@@ -187,8 +187,8 @@ def notifyProjectManagerReleaseLinkedAdd(eupproject, event):
     api.portal.send_email(
         recipient=("{}").format(eupproject.contactAddress),
         sender=("{} <{}>").format('Admin of the LibreOffice Extensions site', 'extensions@libreoffice.org'),
-        subject=("Your Project {}: new linked Release added").format(eupproject.title),
-        body=("A new linked release was added to your project: '{}'").format(eupproject.title),
+        subject=(u"Your Project {}: new linked Release added").format(eupproject.title),
+        body=(u"A new linked release was added to your project: '{}'").format(eupproject.title),
          )
 
 
@@ -198,7 +198,7 @@ def notifyAboutNewReviewlistentry(self, event):
     if state == "pending":
         api.portal.send_email(
             recipient="extensions@libreoffice.org",
-            subject=("A Project with the title {} was added to the review list").format(self.title),
+            subject=(u"A Project with the title {} was added to the review list").format(self.title),
             body="Please have a look at the review list and check if the project is "
                  "ready for publication. \n"
                  "\n"
