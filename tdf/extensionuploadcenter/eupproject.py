@@ -170,14 +170,14 @@ def notifyProjectManager(eupproject, event):
         recipient=("{}").format(eupproject.contactAddress),
         sender=(u"{} <{}>").format('Admin of the LibreOffice Extensions site', 'extensions@libreoffice.org'),
         subject=(u"Your Project {}").format(eupproject.title),
-        body=("The status of your LibreOffice extension project changed. The new status is {}").format(state)
+        body=(u"The status of your LibreOffice extension project changed. The new status is {}").format(state)
     )
 
 
 def notifyProjectManagerReleaseAdd(eupproject, event):
     api.portal.send_email(
         recipient=("{}").format(eupproject.contactAddress),
-        sender=("{} <{}>").format('Admin of the LibreOffice Extensions site', 'extensions@libreoffice.org'),
+        sender=(u"{} <{}>").format('Admin of the LibreOffice Extensions site', 'extensions@libreoffice.org'),
         subject=(u"Your Project [{}: new Release added").format(eupproject.title),
         body=(u"A new release was added to your project: '{}'").format(eupproject.title),
          )
@@ -186,7 +186,7 @@ def notifyProjectManagerReleaseAdd(eupproject, event):
 def notifyProjectManagerReleaseLinkedAdd(eupproject, event):
     api.portal.send_email(
         recipient=("{}").format(eupproject.contactAddress),
-        sender=("{} <{}>").format('Admin of the LibreOffice Extensions site', 'extensions@libreoffice.org'),
+        sender=(u"{} <{}>").format('Admin of the LibreOffice Extensions site', 'extensions@libreoffice.org'),
         subject=(u"Your Project {}: new linked Release added").format(eupproject.title),
         body=(u"A new linked release was added to your project: '{}'").format(eupproject.title),
          )
