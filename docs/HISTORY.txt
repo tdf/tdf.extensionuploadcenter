@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.23 (unreleased)
+0.23 (2018-08-11)
 -----------------
 
 - Marked some message strings as utf-8. [Andreas Mantke]
