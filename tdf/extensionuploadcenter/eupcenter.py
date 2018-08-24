@@ -144,6 +144,15 @@ class IEUpCenter(model.Schema):
         required=False
     )
 
+    form.primary('information_oldversions')
+    information_oldversions = RichText(
+        title=_(u"Information About Search For Old LibreOffice Versions"),
+        description = _(u"Enter an information about the search for older"
+                        u"versions of LibreOffice, if they are not on the"
+                        u"versions list (compatibility) anymore."),
+        required=False
+    )
+
     releaseAllert = schema.ASCIILine(
         title=_(u"EMail address for the messages about new releases"),
         description=_(u"Enter an email address to which information about a new release should be send."),
