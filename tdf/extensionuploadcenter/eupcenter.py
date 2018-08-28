@@ -148,8 +148,8 @@ class IEUpCenter(model.Schema):
     form.primary('information_oldversions')
     information_oldversions = RichText(
         title=_(u"Information About Search For Old LibreOffice Versions"),
-        description = _(u"Enter an information about the search for older"
-                        u"versions of LibreOffice, if they are not on the"
+        description = _(u"Enter an information about the search for older "
+                        u"versions of LibreOffice, if they are not on the "
                         u"versions list (compatibility) anymore."),
         required=False
     )
