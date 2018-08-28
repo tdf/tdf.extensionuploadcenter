@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-08-07 18:48+0000\n"
+"POT-Creation-Date: 2018-08-28 15:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid ""
 msgstr ""
 
-#: ./eupcenter_templates/view.pt:220
+#: ./eupcenter_templates/view.pt:224
 msgid "${product_title}"
 msgstr ""
 
-#: ./eupcenter_templates/view.pt:157
+#: ./eupcenter_templates/view.pt:161
 msgid "${results_eupprojects} projects matching your criteria."
 msgstr ""
 
@@ -48,7 +48,7 @@ msgstr ""
 msgid "A linked extension release"
 msgstr ""
 
-#: ./eupcenter_templates/view.pt:292
+#: ./eupcenter_templates/view.pt:296
 msgid "About"
 msgstr ""
 
@@ -69,7 +69,7 @@ msgstr ""
 msgid "All Releases"
 msgstr ""
 
-#: ./eupcenter_templates/view.pt:118
+#: ./eupcenter_templates/view.pt:122
 msgid "All categories"
 msgstr ""
 
@@ -90,7 +90,7 @@ msgstr ""
 msgid "An extension release"
 msgstr ""
 
-#: ./eupcenter_templates/view.pt:128
+#: ./eupcenter_templates/view.pt:132
 msgid "Any version"
 msgstr ""
 
@@ -98,8 +98,8 @@ msgstr ""
 msgid "Available Categories"
 msgstr ""
 
-#: ./euprelease_templates/view.pt:73
-#: ./eupreleaselink_templates/view.pt:74
+#: ./euprelease_templates/view.pt:78
+#: ./eupreleaselink_templates/view.pt:79
 msgid "Available Downloads"
 msgstr ""
 
@@ -107,7 +107,7 @@ msgstr ""
 msgid "Available Licenses"
 msgstr ""
 
-#: ./eupcenter.py:91
+#: ./eupcenter.py:92
 msgid "Available Platforms"
 msgstr ""
 
@@ -120,11 +120,11 @@ msgstr ""
 msgid "Beta Release"
 msgstr ""
 
-#: ./eupcenter_templates/view.pt:268
+#: ./eupcenter_templates/view.pt:272
 msgid "Browse ${product_title} by Category"
 msgstr ""
 
-#: ./eupcenter_templates/view.pt:270
+#: ./eupcenter_templates/view.pt:274
 msgid "Browse Extensions by Category"
 msgstr ""
 
@@ -143,7 +143,7 @@ msgid "Change the release stage to 'Release beta'"
 msgstr ""
 
 #: ./euprelease.py:137
-#: ./euprelease_templates/view.pt:69
+#: ./euprelease_templates/view.pt:74
 #: ./eupreleaselink.py:137
 msgid "Changelog"
 msgstr ""
@@ -153,8 +153,8 @@ msgid "Choose your categories"
 msgstr ""
 
 #: ./eupproject_templates/view.pt:397
-#: ./euprelease_templates/view.pt:67
-#: ./eupreleaselink_templates/view.pt:69
+#: ./euprelease_templates/view.pt:68
+#: ./eupreleaselink_templates/view.pt:70
 msgid "Compatibility"
 msgstr ""
 
@@ -187,7 +187,7 @@ msgstr ""
 msgid "Current unstable release for the project"
 msgstr ""
 
-#: ./eupcenter_templates/view.pt:224
+#: ./eupcenter_templates/view.pt:228
 msgid "Currently there are"
 msgstr ""
 
@@ -211,7 +211,7 @@ msgstr ""
 msgid "Dokumentation File:"
 msgstr ""
 
-#: ./eupcenter.py:148
+#: ./eupcenter.py:158
 msgid "EMail address for the messages about new releases"
 msgstr ""
 
@@ -219,15 +219,19 @@ msgstr ""
 msgid "EUC Project Publication Workflow"
 msgstr ""
 
-#: ./eupcenter.py:149
+#: ./eupcenter.py:159
 msgid "Enter an email address to which information about a new release should be send."
 msgstr ""
 
-#: ./eupcenter.py:140
+#: ./eupcenter.py:151
+msgid "Enter an information about the search for older versions of LibreOffice, if they are not on the versions list (compatibility) anymore."
+msgstr ""
+
+#: ./eupcenter.py:141
 msgid "Enter any legal disclaimer and limitations for downloads that should appear on each page for dowloadable files."
 msgstr ""
 
-#: ./eupcenter.py:122
+#: ./eupcenter.py:123
 msgid "Enter the text of the legal disclaimer and limitations that should be displayed to the project creator and should be accepted by the owner of the project."
 msgstr ""
 
@@ -235,7 +239,7 @@ msgstr ""
 msgid "Extension Center"
 msgstr ""
 
-#: ./eupcenter.py:103
+#: ./eupcenter.py:104
 msgid "Extension Installation Instructions"
 msgstr ""
 
@@ -259,17 +263,17 @@ msgstr ""
 msgid "Extension profile for TDF Extension Upload Center"
 msgstr ""
 
-#: ./eupcenter_templates/view.pt:222
+#: ./eupcenter_templates/view.pt:226
 msgid "Extensions"
 msgstr ""
 
 #: ./eupproject_templates/view.pt:455
-#: ./eupreleaselink_templates/view.pt:156
+#: ./eupreleaselink_templates/view.pt:161
 msgid "External Documentation"
 msgstr ""
 
 #: ./eupproject_templates/view.pt:463
-#: ./eupreleaselink_templates/view.pt:161
+#: ./eupreleaselink_templates/view.pt:166
 msgid "External Project Page"
 msgstr ""
 
@@ -290,16 +294,16 @@ msgid "Fifth uploaded file is compatible with the Platform(s)"
 msgstr ""
 
 #: ./eupproject_templates/view.pt:134
-#: ./euprelease_templates/view.pt:86
-#: ./eupreleaselink_templates/view.pt:81
+#: ./euprelease_templates/view.pt:91
+#: ./eupreleaselink_templates/view.pt:86
 msgid "File size:"
 msgstr ""
 
-#: ./eupcenter.py:126
+#: ./eupcenter.py:127
 msgid "Fill in the legal disclaimer, that had to be accepted by the project owner."
 msgstr ""
 
-#: ./eupcenter.py:143
+#: ./eupcenter.py:144
 msgid "Fill in the text for the legal download disclaimer."
 msgstr ""
 
@@ -379,7 +383,7 @@ msgstr ""
 msgid "Hide this release"
 msgstr ""
 
-#: ./eupcenter_templates/view.pt:134
+#: ./eupcenter_templates/view.pt:138
 msgid "Highest Rated"
 msgstr ""
 
@@ -416,18 +420,22 @@ msgstr ""
 msgid "If you want to upload more files for this release, e.g. because there are files for other operating systems, you'll find the upload fields on the register 'File Upload 1' and 'File Upload 2'."
 msgstr ""
 
-#: ./euprelease_templates/view.pt:36
-#: ./eupreleaselink_templates/view.pt:37
+#: ./euprelease_templates/view.pt:37
+#: ./eupreleaselink_templates/view.pt:38
 msgid "Info"
 msgstr ""
 
-#: ./eupcenter_templates/view.pt:283
+#: ./eupcenter.py:150
+msgid "Information About Search For Old LibreOffice Versions"
+msgstr ""
+
+#: ./eupcenter_templates/view.pt:287
 #: ./eupproject_templates/view.pt:479
-#: ./euprelease_templates/view.pt:168
+#: ./euprelease_templates/view.pt:173
 msgid "Install Instructions"
 msgstr ""
 
-#: ./eupcenter.py:110
+#: ./eupcenter.py:111
 msgid "Instruction how to report Bugs"
 msgstr ""
 
@@ -449,11 +457,11 @@ msgstr ""
 msgid "Latest Not Stable Release"
 msgstr ""
 
-#: ./eupcenter.py:116
+#: ./eupcenter.py:117
 msgid "Legal Disclaimer and Limitations"
 msgstr ""
 
-#: ./eupcenter.py:133
+#: ./eupcenter.py:134
 msgid "Legal Disclaimer and Limitations for Downloads"
 msgstr ""
 
@@ -463,13 +471,13 @@ msgid "License of the uploaded file"
 msgstr ""
 
 #: ./eupproject_templates/view.pt:399
-#: ./euprelease_templates/view.pt:63
-#: ./eupreleaselink_templates/view.pt:63
+#: ./euprelease_templates/view.pt:64
+#: ./eupreleaselink_templates/view.pt:64
 msgid "License(s)"
 msgstr ""
 
-#: ./euprelease_templates/view.pt:164
-#: ./eupreleaselink_templates/view.pt:179
+#: ./euprelease_templates/view.pt:169
+#: ./eupreleaselink_templates/view.pt:184
 msgid "Link to Source Code"
 msgstr ""
 
@@ -493,7 +501,7 @@ msgstr ""
 msgid "Most popular ${product_title}"
 msgstr ""
 
-#: ./eupcenter_templates/view.pt:237
+#: ./eupcenter_templates/view.pt:241
 msgid "Most recent"
 msgstr ""
 
@@ -505,7 +513,7 @@ msgstr ""
 msgid "Name of the Extensions Center"
 msgstr ""
 
-#: ./eupcenter_templates/view.pt:135
+#: ./eupcenter_templates/view.pt:139
 msgid "Newest"
 msgstr ""
 
@@ -514,7 +522,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: ./eupcenter_templates/view.pt:154
+#: ./eupcenter_templates/view.pt:158
 msgid "No results were found."
 msgstr ""
 
@@ -522,7 +530,7 @@ msgstr ""
 msgid "No stable release available yet."
 msgstr ""
 
-#: ./euprelease_templates/view.pt:41
+#: ./euprelease_templates/view.pt:42
 msgid "Or"
 msgstr ""
 
@@ -578,7 +586,7 @@ msgstr ""
 msgid "Please fill in the Link (URL) to the Source Code."
 msgstr ""
 
-#: ./eupcenter.py:104
+#: ./eupcenter.py:105
 msgid "Please fill in the install instructions"
 msgstr ""
 
@@ -626,8 +634,8 @@ msgid "Private"
 msgstr ""
 
 #: ./eupproject_templates/view.pt:452
-#: ./euprelease_templates/view.pt:139
-#: ./eupreleaselink_templates/view.pt:152
+#: ./euprelease_templates/view.pt:144
+#: ./eupreleaselink_templates/view.pt:157
 msgid "Project Resources"
 msgstr ""
 
@@ -671,8 +679,8 @@ msgstr ""
 msgid "Release Candidate"
 msgstr ""
 
-#: ./euprelease_templates/view.pt:59
-#: ./eupreleaselink_templates/view.pt:59
+#: ./euprelease_templates/view.pt:60
+#: ./eupreleaselink_templates/view.pt:60
 msgid "Release Details"
 msgstr ""
 
@@ -719,8 +727,8 @@ msgstr ""
 msgid "Released ${latest_release_date}"
 msgstr ""
 
-#: ./euprelease_templates/view.pt:38
-#: ./eupreleaselink_templates/view.pt:39
+#: ./euprelease_templates/view.pt:39
+#: ./eupreleaselink_templates/view.pt:40
 msgid "Remember to publish your release once all files have been added. You can do that on the left side within the menubar. Click on the entry 'State: Unreleased'. <br />"
 msgstr ""
 
@@ -744,8 +752,8 @@ msgid "Reviewer sends content back for re-drafting"
 msgstr ""
 
 #: ./eupproject_templates/view.pt:468
-#: ./euprelease_templates/view.pt:152
-#: ./eupreleaselink_templates/view.pt:167
+#: ./euprelease_templates/view.pt:157
+#: ./eupreleaselink_templates/view.pt:172
 msgid "Screenshot"
 msgstr ""
 
@@ -753,7 +761,7 @@ msgstr ""
 msgid "Screenshot of the Extension"
 msgstr ""
 
-#: ./eupcenter_templates/view.pt:143
+#: ./eupcenter_templates/view.pt:147
 msgid "Search"
 msgstr ""
 
@@ -786,7 +794,7 @@ msgid "Sending the item back will return the item to the original author instead
           You should preferably provide a reason to the author why it was not published."
 msgstr ""
 
-#: ./eupcenter_templates/view.pt:116
+#: ./eupcenter_templates/view.pt:120
 msgid "Show"
 msgstr ""
 
@@ -806,7 +814,7 @@ msgstr ""
 msgid "Sixth uploaded file is compatible with the Platform(s)"
 msgstr ""
 
-#: ./eupcenter_templates/view.pt:131
+#: ./eupcenter_templates/view.pt:135
 msgid "Sort On"
 msgstr ""
 
@@ -814,7 +822,7 @@ msgstr ""
 msgid "Submit for publication"
 msgstr ""
 
-#: ./eupcenter_templates/view.pt:228
+#: ./eupcenter_templates/view.pt:232
 msgid "Submit your"
 msgstr ""
 
@@ -822,11 +830,11 @@ msgstr ""
 msgid "TDF Extension Upload Center"
 msgstr ""
 
-#: ./eupcenter.py:121
+#: ./eupcenter.py:122
 msgid "Text of the Legal Disclaimer and Limitations"
 msgstr ""
 
-#: ./eupcenter.py:139
+#: ./eupcenter.py:140
 msgid "Text of the Legal Disclaimer and Limitations for Downlaods"
 msgstr ""
 
@@ -861,7 +869,7 @@ msgstr ""
 msgid "The fourth file you want to upload (this is optional)"
 msgstr ""
 
-#: ./eupreleaselink_templates/view.pt:78
+#: ./eupreleaselink_templates/view.pt:83
 msgid "The linked Extension file"
 msgstr ""
 
@@ -924,11 +932,11 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: ./eupcenter.py:115
+#: ./eupcenter.py:116
 msgid "Title for Legal Disclaimer and Limitations"
 msgstr ""
 
-#: ./eupcenter.py:132
+#: ./eupcenter.py:133
 msgid "Title of the Legal Disclaimer and Limitations for Downloads"
 msgstr ""
 
@@ -1007,7 +1015,7 @@ msgstr ""
 msgid "please submit your new"
 msgstr ""
 
-#: ./eupcenter_templates/view.pt:225
+#: ./eupcenter_templates/view.pt:229
 msgid "project(s) with"
 msgstr ""
 
@@ -1016,7 +1024,7 @@ msgstr ""
 msgid "re-release"
 msgstr ""
 
-#: ./eupcenter_templates/view.pt:226
+#: ./eupcenter_templates/view.pt:230
 msgid "release(s) available."
 msgstr ""
 
@@ -1028,7 +1036,7 @@ msgstr ""
 msgid "to your"
 msgstr ""
 
-#: ./euprelease_templates/view.pt:44
-#: ./eupreleaselink_templates/view.pt:44
+#: ./euprelease_templates/view.pt:45
+#: ./eupreleaselink_templates/view.pt:45
 msgid "you could do this following this link."
 msgstr ""
