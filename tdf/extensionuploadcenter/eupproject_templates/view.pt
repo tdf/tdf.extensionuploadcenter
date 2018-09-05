@@ -388,9 +388,9 @@
              <h2 i18n:translate="">All Releases</h2>
 
 
-<table border="1">
+<table class="eupcenterprojecttable">
             <thead>
-            <tr bgcolor="#40FB27">
+            <tr>
                 <td><h4 i18n:translate="">Version</h4></td>
                 <td><h4 i18n:translate="">Released</h4></td>
                 <td><h4 i18n:translate="">Platform(s)</h4></td>

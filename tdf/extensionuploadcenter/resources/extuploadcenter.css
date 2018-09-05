@@ -210,3 +210,19 @@ table.eupcenterprojecttable td {
     font-size: 16px;
     font-weight: 700;
 }
+
+
+table.eupcenterprojecttable
+{
+    border:true;
+}
+
+table.eupcenterprojecttable thead
+{
+   background-color:#00A500;
+}
+
+table.eupcenterprojecttable h4
+{
+    color:white;
+}
