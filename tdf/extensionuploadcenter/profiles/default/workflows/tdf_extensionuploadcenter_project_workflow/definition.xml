@@ -32,10 +32,6 @@
         </permission-map>
         <permission-map name="View"
                         acquired="True">
-            <permission-role>Owner</permission-role>
-            <permission-role>Reviewer</permission-role>
-            <permission-role>Manager</permission-role>
-            <permission-role>Site-Administrator</permission-role>
         </permission-map>
     </state>
 
@@ -46,28 +42,13 @@
         <exit-transition transition_id="submit"/>
         <permission-map name="Access contents information"
                         acquired="True">
-            <permission-role>Manager</permission-role>
-            <permission-role>Owner</permission-role>
-            <permission-role>Editor</permission-role>
-            <permission-role>Contributor</permission-role>
-            <permission-role>Site Administrator</permission-role>
         </permission-map>
         <permission-map name="Modify portal content"
                         acquired="True">
-            <permission-role>Manager</permission-role>
-            <permission-role>Owner</permission-role>
-            <permission-role>Editor</permission-role>
-            <permission-role>Contributor</permission-role>
-            <permission-role>Site Administrator</permission-role>
         </permission-map>
         <permission-map name="View"
                         acquired="True">
-            <permission-role>Manager</permission-role>
-            <permission-role>Owner</permission-role>
-            <permission-role>Editor</permission-role>
-            <permission-role>Contributor</permission-role>
-            <permission-role>Site Administrator</permission-role>
-        </permission-map>
+         </permission-map>
     </state>
 
     <state state_id="published" title="Published" i18n:attributes="title">
@@ -77,18 +58,12 @@
         <exit-transition transition_id="reject"/>
         <permission-map name="Access contents information"
                         acquired="True">
-            <permission-role>Anonymous</permission-role>
         </permission-map>
         <permission-map name="Modify portal content"
                         acquired="True">
-            <permission-role>Manager</permission-role>
-            <permission-role>Owner</permission-role>
-            <permission-role>Editor</permission-role>
-            <permission-role>Site Administrator</permission-role>
         </permission-map>
         <permission-map name="View"
                         acquired="True">
-            <permission-role>Anonymous</permission-role>
         </permission-map>
     </state>
 
