@@ -4,7 +4,10 @@ Changelog
 0.25 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Moved changelog to CHANGES.txt [Andreas Mantke]
+- Move CSS styles for tables on eupproject view from inline
+  style to the stylesheet file and improve the styles
+  [Andreas Mantke]
 
 
 0.24 (2018-08-28)
