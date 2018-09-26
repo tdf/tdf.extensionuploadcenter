@@ -207,6 +207,20 @@ def notifyAboutNewReviewlistentry(self, event):
         )
 
 
+def textmodified_project(self, event):
+    portal = api.portal.get()
+    state = api.content.get_state(self)
+    if state == "published":
+        api.portal.send_email(
+            recipient="extensions@libreoffice.org",
+            sender=(u"{} <{}>").format('Admin of the LibreOffice Extensions site', 'extensions@libreoffice.org'),
+            subject=(u"The content of the project {} has changed").format(self.title),
+            body=(u"The content of the project {} has changed. Here you get the text of the "
+                  u"description field of the project: \n'{}\n\nand this is the text of the "
+                  u"details field:\n{}'").format(self.title, self.description, self.details.output),
+    )
+
+
 class ValidateEUpProjectUniqueness(validator.SimpleFieldValidator):
     # Validate site-wide uniqueness of project titles.
 
