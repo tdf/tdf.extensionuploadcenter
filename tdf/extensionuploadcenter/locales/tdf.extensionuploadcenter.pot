@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-08-28 15:57+0000\n"
+"POT-Creation-Date: 2018-10-24 17:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -408,8 +408,7 @@ msgid "If you have a Documentation in the file format 'PDF' or 'ODT' you could a
 msgstr ""
 
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
-msgid "If you submitted the item by mistake or want to perform additional edits,
-          this will take it back."
+msgid "If you submitted the item by mistake or want to perform additional edits, this will take it back."
 msgstr ""
 
 #: ./eupreleaselink.py:222
@@ -877,7 +876,7 @@ msgstr ""
 msgid "The owner can edit the extension project"
 msgstr ""
 
-#: ./eupproject.py:224
+#: ./eupproject.py:238
 msgid "The project title is already in use."
 msgstr ""
 
