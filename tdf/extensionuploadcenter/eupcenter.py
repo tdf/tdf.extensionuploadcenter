@@ -160,6 +160,12 @@ class IEUpCenter(model.Schema):
         required=False
     )
 
+    contactForCenter =schema.ASCIILine(
+        title=_(u"EMail address for communication with the extension center manager and reviewer"),
+        description=_(u"Enter an email address for the communication with extension center manager and reviewer"),
+        required=False
+    )
+
 
 def notifyAboutNewProject(eupproject, event):
     api.portal.send_email(
