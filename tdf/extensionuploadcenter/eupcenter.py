@@ -38,6 +38,11 @@ class IEUpCenter(model.Schema):
         description=_(u"Name of the Extension product, e.g. only Extensions or LibreOffice Extensions"),
     )
 
+    form.fieldset('categories_et_all',
+                  label=u"Categories et all",
+                  fields=['available_category', 'available_licenses',
+                          'available_versions', 'available_platforms'])
+
     available_category = schema.List(title=_(u"Available Categories"),
                                      default=['All modules',
                                               'Dictionary',
@@ -99,6 +104,10 @@ class IEUpCenter(model.Schema):
                                                'UNIX (other)'],
                                       value_type=schema.TextLine())
 
+    form.fieldset('instructions',
+                  label=u'Instructions',
+                  fields=['install_instructions', 'reporting_bugs',])
+
     form.primary('install_instructions')
     install_instructions = RichText(
         title=_(u"Extension Installation Instructions"),
@@ -111,6 +120,11 @@ class IEUpCenter(model.Schema):
         title=_(u"Instruction how to report Bugs"),
         required=False
     )
+
+    form.fieldset('disclaimer',
+                  label=u'Legal Disclaimer',
+                  fields=['title_legaldisclaimer', 'legal_disclaimer',
+                          'title_legaldownloaddisclaimer', 'legal_downloaddisclaimer'])
 
     title_legaldisclaimer = schema.TextLine(
         title=_(u"Title for Legal Disclaimer and Limitations"),
@@ -154,6 +168,10 @@ class IEUpCenter(model.Schema):
         required=False
     )
 
+    form.fieldset('contactadresses',
+                  label=u'Special Email Adresses',
+                  fields=['releaseAllert', 'contactForCenter'])
+
     releaseAllert = schema.ASCIILine(
         title=_(u"EMail address for the messages about new releases"),
         description=_(u"Enter an email address to which information about a new release should be send."),
@@ -163,7 +181,7 @@ class IEUpCenter(model.Schema):
     contactForCenter =schema.ASCIILine(
         title=_(u"EMail address for communication with the extension center manager and reviewer"),
         description=_(u"Enter an email address for the communication with extension center manager and reviewer"),
-        required=False
+        default= 'extensions@libreoffice.org'
     )
 
 
