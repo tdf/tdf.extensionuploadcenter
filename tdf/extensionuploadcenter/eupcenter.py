@@ -11,10 +11,22 @@ from Products.ZCTextIndex.ParseTree import ParseError
 from tdf.extensionuploadcenter import MessageFactory as _
 from tdf.extensionuploadcenter.eupproject import IEUpProject
 from zope import schema
+import re
+from zope.interface import Invalid
 
 
 MULTISPACE = u'\u3000'.encode('utf-8')
 BAD_CHARS = ('?', '-', '+', '*', MULTISPACE)
+
+
+checkEmail = re.compile(
+    r"[a-zA-Z0-9._%-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}").match
+
+
+def validateEmail(value):
+    if not checkEmail(value):
+        raise Invalid(_(u"Invalid email address"))
+    return True
 
 
 class IEUpCenter(model.Schema):
@@ -181,7 +193,8 @@ class IEUpCenter(model.Schema):
     contactForCenter =schema.ASCIILine(
         title=_(u"EMail address for communication with the extension center manager and reviewer"),
         description=_(u"Enter an email address for the communication with extension center manager and reviewer"),
-        default= 'extensions@libreoffice.org'
+        default= 'extensions@libreoffice.org',
+        constraint= validateEmail
     )
 
 
