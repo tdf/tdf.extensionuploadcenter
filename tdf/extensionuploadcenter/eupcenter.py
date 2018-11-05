@@ -198,12 +198,6 @@ class IEUpCenter(model.Schema):
     )
 
 
-def notifyAboutNewProject(eupproject, event):
-    api.portal.send_email(
-        recipient="extensions@libreoffice.org",
-        subject=(u"A Project with the title {} was added").format(eupproject.title),
-        body="A member added a new project"
-    )
 
 
 directives.languageindependent('available_category')

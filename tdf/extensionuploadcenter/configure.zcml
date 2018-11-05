@@ -95,7 +95,7 @@
   <subscriber
     for="tdf.extensionuploadcenter.eupproject.IEUpProject
                zope.lifecycleevent.interfaces.IObjectAddedEvent"
-    handler="tdf.extensionuploadcenter.eupcenter.notifyAboutNewProject"
+    handler="tdf.extensionuploadcenter.eupproject.notifyAboutNewProject"
     />
 
   <subscriber
