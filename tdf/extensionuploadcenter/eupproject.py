@@ -17,6 +17,7 @@ from plone.directives import form
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from tdf.extensionuploadcenter import quote_chars
 
+
 checkfileextension = re.compile(
     r"^.*\.(png|PNG|gif|GIF|jpg|JPG)").match
 
@@ -164,12 +165,16 @@ class IEUpProject(model.Schema):
                                           u'appropriate fields below on this page.'))
 
 
-def notifyProjectManager(eupproject, event):
-    state = api.content.get_state(eupproject)
+def notifyProjectManager(self, event):
+    state = api.content.get_state(self)
+    if (self.__parent__.contactForCenter) is not None:
+        mailrecipient = str(self.__parent__.contactForCenter)
+    else:
+        mailrecipient ='extensions@libreoffice.org'
     api.portal.send_email(
-        recipient=("{}").format(eupproject.contactAddress),
-        sender=(u"{} <{}>").format('Admin of the LibreOffice Extensions site', 'extensions@libreoffice.org'),
-        subject=(u"Your Project {}").format(eupproject.title),
+        recipient=("{}").format(self.contactAddress),
+        sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
+        subject=(u"Your Project {}").format(self.title),
         body=(u"The status of your LibreOffice extension project changed. The new status is {}").format(state)
     )
 
@@ -196,7 +201,7 @@ def notifyAboutNewReviewlistentry(self, event):
     portal = api.portal.get()
     state = api.content.get_state(self)
     if (self.__parent__.contactForCenter) is not None:
-        mailrecipient = str(self.__parent__.contactForCenter),
+        mailrecipient = str(self.__parent__.contactForCenter)
     else:
         mailrecipient ='extensions@libreoffice.org'
 
@@ -208,7 +213,7 @@ def notifyAboutNewReviewlistentry(self, event):
                  "ready for publication. \n"
                  "\n"
                  "Kind regards,\n"
-                 "The Admin of the LibreOffice Extensions Website"
+                 "The Admin of the Website"
         )
 
 
