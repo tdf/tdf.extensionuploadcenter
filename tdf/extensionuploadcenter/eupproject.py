@@ -179,21 +179,29 @@ def notifyProjectManager(self, event):
     )
 
 
-def notifyProjectManagerReleaseAdd(eupproject, event):
+def notifyProjectManagerReleaseAdd(self, event):
+    if (self.__parent__.contactForCenter) is not None:
+        mailrecipient = str(self.__parent__.contactForCenter)
+    else:
+        mailrecipient ='extensions@libreoffice.org'
     api.portal.send_email(
-        recipient=("{}").format(eupproject.contactAddress),
-        sender=(u"{} <{}>").format('Admin of the LibreOffice Extensions site', 'extensions@libreoffice.org'),
-        subject=(u"Your Project [{}: new Release added").format(eupproject.title),
-        body=(u"A new release was added to your project: '{}'").format(eupproject.title),
+        recipient=("{}").format(self.contactAddress),
+        sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
+        subject=(u"Your Project [{}: new Release added").format(self.title),
+        body=(u"A new release was added to your project: '{}'").format(self.title),
          )
 
 
-def notifyProjectManagerReleaseLinkedAdd(eupproject, event):
+def notifyProjectManagerReleaseLinkedAdd(self, event):
+    if (self.__parent__.contactForCenter) is not None:
+        mailrecipient = str(self.__parent__.contactForCenter)
+    else:
+        mailrecipient ='extensions@libreoffice.org'
     api.portal.send_email(
-        recipient=("{}").format(eupproject.contactAddress),
-        sender=(u"{} <{}>").format('Admin of the LibreOffice Extensions site', 'extensions@libreoffice.org'),
-        subject=(u"Your Project {}: new linked Release added").format(eupproject.title),
-        body=(u"A new linked release was added to your project: '{}'").format(eupproject.title),
+        recipient=("{}").format(self.contactAddress),
+        sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
+        subject=(u"Your Project {}: new linked Release added").format(self.title),
+        body=(u"A new linked release was added to your project: '{}'").format(self.title),
          )
 
 
@@ -220,10 +228,14 @@ def notifyAboutNewReviewlistentry(self, event):
 def textmodified_project(self, event):
     portal = api.portal.get()
     state = api.content.get_state(self)
+    if (self.__parent__.contactForCenter) is not None:
+        mailrecipient = str(self.__parent__.contactForCenter)
+    else:
+        mailrecipient ='extensions@libreoffice.org'
     if state == "published":
         api.portal.send_email(
-            recipient="extensions@libreoffice.org",
-            sender=(u"{} <{}>").format('Admin of the LibreOffice Extensions site', 'extensions@libreoffice.org'),
+            recipient=mailrecipient,
+            sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
             subject=(u"The content of the project {} has changed").format(self.title),
             body=(u"The content of the project {} has changed. Here you get the text of the "
                   u"description field of the project: \n'{}\n\nand this is the text of the "
