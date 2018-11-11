@@ -4,7 +4,8 @@ Changelog
 0.26 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Changed the email address for notifications about projects and (linked) releases
+  from hard coded to variable [Andreas Mantke]
 
 
 0.25 (2018-10-24)
