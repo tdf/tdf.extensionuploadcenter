@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.26 (unreleased)
+0.26 (2018-11-18)
 -----------------
 
 - Changed the email address for notifications about projects and (linked) releases
