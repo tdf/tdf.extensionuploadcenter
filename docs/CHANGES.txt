@@ -5,7 +5,9 @@ Changelog
 -----------------
 
 - Changed the email address for notifications about projects and (linked) releases
-  from hard coded to variable [Andreas Mantke]
+  from hard coded to variable and added a validation for the email address [Andreas Mantke]
+- Improve the extension project workflow [Andreas Mantke]
+- Update German localization [Andreas Mantke]
 
 
 0.25 (2018-10-24)
