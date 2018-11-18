@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-10-24 17:35+0000\n"
+"POT-Creation-Date: 2018-11-18 08:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,11 +57,11 @@ msgstr ""
 msgid "Accept the above legal disclaimer"
 msgstr ""
 
-#: ./eupproject.py:146
+#: ./eupproject.py:147
 msgid "Add a logo for the project (or organization/company) by clicking the 'Browse' button.You could provide an image of the file format 'png', 'gif' or 'jpg'."
 msgstr ""
 
-#: ./eupproject.py:154
+#: ./eupproject.py:155
 msgid "Add a screenshot by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'."
 msgstr ""
 
@@ -94,7 +94,7 @@ msgstr ""
 msgid "Any version"
 msgstr ""
 
-#: ./eupcenter.py:41
+#: ./eupcenter.py:58
 msgid "Available Categories"
 msgstr ""
 
@@ -103,15 +103,15 @@ msgstr ""
 msgid "Available Downloads"
 msgstr ""
 
-#: ./eupcenter.py:58
+#: ./eupcenter.py:75
 msgid "Available Licenses"
 msgstr ""
 
-#: ./eupcenter.py:92
+#: ./eupcenter.py:109
 msgid "Available Platforms"
 msgstr ""
 
-#: ./eupcenter.py:73
+#: ./eupcenter.py:90
 msgid "Available Versions"
 msgstr ""
 
@@ -148,7 +148,7 @@ msgstr ""
 msgid "Changelog"
 msgstr ""
 
-#: ./eupproject.py:110
+#: ./eupproject.py:111
 msgid "Choose your categories"
 msgstr ""
 
@@ -163,13 +163,13 @@ msgstr ""
 msgid "Compatible with versions of LibreOffice"
 msgstr ""
 
-#: ./eupproject.py:118
+#: ./eupproject.py:119
 #: ./euprelease.py:180
 #: ./eupreleaselink.py:179
 msgid "Contact email-address"
 msgstr ""
 
-#: ./eupproject.py:119
+#: ./eupproject.py:120
 #: ./euprelease.py:181
 #: ./eupreleaselink.py:180
 msgid "Contact email-address for the project."
@@ -195,15 +195,15 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: ./eupcenter.py:29
+#: ./eupcenter.py:41
 msgid "Description of the Extensions Center"
 msgstr ""
 
-#: ./eupcenter.py:33
+#: ./eupcenter.py:45
 msgid "Description of the features of extensions"
 msgstr ""
 
-#: ./eupproject.py:138
+#: ./eupproject.py:139
 msgid "Dokumentation File"
 msgstr ""
 
@@ -211,7 +211,11 @@ msgstr ""
 msgid "Dokumentation File:"
 msgstr ""
 
-#: ./eupcenter.py:158
+#: ./eupcenter.py:194
+msgid "EMail address for communication with the extension center manager and reviewer"
+msgstr ""
+
+#: ./eupcenter.py:188
 msgid "EMail address for the messages about new releases"
 msgstr ""
 
@@ -219,19 +223,23 @@ msgstr ""
 msgid "EUC Project Publication Workflow"
 msgstr ""
 
-#: ./eupcenter.py:159
+#: ./eupcenter.py:195
+msgid "Enter an email address for the communication with extension center manager and reviewer"
+msgstr ""
+
+#: ./eupcenter.py:189
 msgid "Enter an email address to which information about a new release should be send."
 msgstr ""
 
-#: ./eupcenter.py:151
+#: ./eupcenter.py:177
 msgid "Enter an information about the search for older versions of LibreOffice, if they are not on the versions list (compatibility) anymore."
 msgstr ""
 
-#: ./eupcenter.py:141
+#: ./eupcenter.py:167
 msgid "Enter any legal disclaimer and limitations for downloads that should appear on each page for dowloadable files."
 msgstr ""
 
-#: ./eupcenter.py:123
+#: ./eupcenter.py:149
 msgid "Enter the text of the legal disclaimer and limitations that should be displayed to the project creator and should be accepted by the owner of the project."
 msgstr ""
 
@@ -239,7 +247,7 @@ msgstr ""
 msgid "Extension Center"
 msgstr ""
 
-#: ./eupcenter.py:104
+#: ./eupcenter.py:125
 msgid "Extension Installation Instructions"
 msgstr ""
 
@@ -247,7 +255,7 @@ msgstr ""
 msgid "Extension Linked Release"
 msgstr ""
 
-#: ./eupcenter.py:37
+#: ./eupcenter.py:49
 msgid "Extension Product Name"
 msgstr ""
 
@@ -299,11 +307,11 @@ msgstr ""
 msgid "File size:"
 msgstr ""
 
-#: ./eupcenter.py:127
+#: ./eupcenter.py:153
 msgid "Fill in the legal disclaimer, that had to be accepted by the project owner."
 msgstr ""
 
-#: ./eupcenter.py:144
+#: ./eupcenter.py:170
 msgid "Fill in the text for the legal download disclaimer."
 msgstr ""
 
@@ -341,7 +349,7 @@ msgstr ""
 msgid "Fourth uploaded file is compatible with the Platform(s)"
 msgstr ""
 
-#: ./eupproject.py:103
+#: ./eupproject.py:104
 msgid "Full Project Description"
 msgstr ""
 
@@ -387,15 +395,15 @@ msgstr ""
 msgid "Highest Rated"
 msgstr ""
 
-#: ./eupproject.py:124
+#: ./eupproject.py:125
 msgid "Homepage"
 msgstr ""
 
-#: ./eupproject.py:125
+#: ./eupproject.py:126
 msgid "If the project has an external home page, enter its URL (example: 'http://www.mysite.org')."
 msgstr ""
 
-#: ./eupproject.py:131
+#: ./eupproject.py:132
 msgid "If the project has externally hosted documentation, enter its URL (example: 'http://www.mysite.org')."
 msgstr ""
 
@@ -403,7 +411,7 @@ msgstr ""
 msgid "If you already created a new"
 msgstr ""
 
-#: ./eupproject.py:139
+#: ./eupproject.py:140
 msgid "If you have a Documentation in the file format 'PDF' or 'ODT' you could add it here."
 msgstr ""
 
@@ -424,7 +432,7 @@ msgstr ""
 msgid "Info"
 msgstr ""
 
-#: ./eupcenter.py:150
+#: ./eupcenter.py:176
 msgid "Information About Search For Old LibreOffice Versions"
 msgstr ""
 
@@ -434,11 +442,12 @@ msgstr ""
 msgid "Install Instructions"
 msgstr ""
 
-#: ./eupcenter.py:111
+#: ./eupcenter.py:132
 msgid "Instruction how to report Bugs"
 msgstr ""
 
-#: ./eupproject.py:72
+#: ./eupcenter.py:28
+#: ./eupproject.py:73
 msgid "Invalid email address"
 msgstr ""
 
@@ -456,11 +465,11 @@ msgstr ""
 msgid "Latest Not Stable Release"
 msgstr ""
 
-#: ./eupcenter.py:117
+#: ./eupcenter.py:143
 msgid "Legal Disclaimer and Limitations"
 msgstr ""
 
-#: ./eupcenter.py:134
+#: ./eupcenter.py:160
 msgid "Legal Disclaimer and Limitations for Downloads"
 msgstr ""
 
@@ -480,7 +489,7 @@ msgstr ""
 msgid "Link to Source Code"
 msgstr ""
 
-#: ./eupproject.py:145
+#: ./eupproject.py:146
 msgid "Logo"
 msgstr ""
 
@@ -504,11 +513,11 @@ msgstr ""
 msgid "Most recent"
 msgstr ""
 
-#: ./eupcenter.py:38
+#: ./eupcenter.py:50
 msgid "Name of the Extension product, e.g. only Extensions or LibreOffice Extensions"
 msgstr ""
 
-#: ./eupcenter.py:25
+#: ./eupcenter.py:37
 msgid "Name of the Extensions Center"
 msgstr ""
 
@@ -549,11 +558,11 @@ msgstr ""
 msgid "Please accept the Legal Declaration about your Release and your linked File"
 msgstr ""
 
-#: ./eupproject.py:163
+#: ./eupproject.py:164
 msgid "Please add a screenshot or a logo to your project page. You will find the appropriate fields below on this page."
 msgstr ""
 
-#: ./eupproject.py:77
+#: ./eupproject.py:78
 msgid "Please add a screenshot or a logo to your project. You find the appropriate fields below on this page."
 msgstr ""
 
@@ -585,7 +594,7 @@ msgstr ""
 msgid "Please fill in the Link (URL) to the Source Code."
 msgstr ""
 
-#: ./eupcenter.py:105
+#: ./eupcenter.py:126
 msgid "Please fill in the install instructions"
 msgstr ""
 
@@ -620,7 +629,7 @@ msgstr ""
 msgid "Please mark one or more program versions with which this release is compatible with."
 msgstr ""
 
-#: ./eupproject.py:111
+#: ./eupproject.py:112
 msgid "Please select the appropriate categories (one or more) for your project."
 msgstr ""
 
@@ -638,11 +647,11 @@ msgstr ""
 msgid "Project Resources"
 msgstr ""
 
-#: ./eupproject.py:97
+#: ./eupproject.py:98
 msgid "Project Summary"
 msgstr ""
 
-#: ./eupproject.py:90
+#: ./eupproject.py:91
 msgid "Project Title - minimum 5 and maximum 50 characters"
 msgstr ""
 
@@ -756,7 +765,7 @@ msgstr ""
 msgid "Screenshot"
 msgstr ""
 
-#: ./eupproject.py:153
+#: ./eupproject.py:154
 msgid "Screenshot of the Extension"
 msgstr ""
 
@@ -829,11 +838,11 @@ msgstr ""
 msgid "TDF Extension Upload Center"
 msgstr ""
 
-#: ./eupcenter.py:122
+#: ./eupcenter.py:148
 msgid "Text of the Legal Disclaimer and Limitations"
 msgstr ""
 
-#: ./eupcenter.py:140
+#: ./eupcenter.py:166
 msgid "Text of the Legal Disclaimer and Limitations for Downlaods"
 msgstr ""
 
@@ -876,7 +885,7 @@ msgstr ""
 msgid "The owner can edit the extension project"
 msgstr ""
 
-#: ./eupproject.py:238
+#: ./eupproject.py:272
 msgid "The project title is already in use."
 msgstr ""
 
@@ -927,19 +936,19 @@ msgstr ""
 msgid "Third uploaded file is compatible with the Platform(s))"
 msgstr ""
 
-#: ./eupproject.py:89
+#: ./eupproject.py:90
 msgid "Title"
 msgstr ""
 
-#: ./eupcenter.py:116
+#: ./eupcenter.py:142
 msgid "Title for Legal Disclaimer and Limitations"
 msgstr ""
 
-#: ./eupcenter.py:133
+#: ./eupcenter.py:159
 msgid "Title of the Legal Disclaimer and Limitations for Downloads"
 msgstr ""
 
-#: ./eupproject.py:130
+#: ./eupproject.py:131
 msgid "URL of documentation repository "
 msgstr ""
 
@@ -986,7 +995,7 @@ msgstr ""
 msgid "You answered the question, whether the source code is inside your extension with no (default answer). If this is the correct answer, please fill in the Link (URL) to the Source Code."
 msgstr ""
 
-#: ./eupproject.py:82
+#: ./eupproject.py:83
 msgid "You have not chosen a category for the project."
 msgstr ""
 
