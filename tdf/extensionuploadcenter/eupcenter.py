@@ -116,7 +116,7 @@ class IEUpCenter(model.Schema):
                                                'UNIX (other)'],
                                       value_type=schema.TextLine())
 
-    form.fieldset('instructions',
+    model.fieldset('instructions',
                   label=u'Instructions',
                   fields=['install_instructions', 'reporting_bugs',])
 
@@ -133,7 +133,7 @@ class IEUpCenter(model.Schema):
         required=False
     )
 
-    form.fieldset('disclaimer',
+    model.fieldset('disclaimer',
                   label=u'Legal Disclaimer',
                   fields=['title_legaldisclaimer', 'legal_disclaimer',
                           'title_legaldownloaddisclaimer', 'legal_downloaddisclaimer'])
@@ -180,7 +180,8 @@ class IEUpCenter(model.Schema):
         required=False
     )
 
-    form.fieldset('contactadresses',
+
+    model.fieldset('contactadresses',
                   label=u'Special Email Adresses',
                   fields=['releaseAllert', 'contactForCenter'])
 
