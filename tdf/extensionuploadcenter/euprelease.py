@@ -31,6 +31,7 @@ import itertools
 checkfileextension = re.compile(
     r"^.*\.(oxt|OXT)").match
 
+
 def validatefileextension(value):
     if not checkfileextension(value.filename):
         raise Invalid(u'You could only upload LibreOffice extension files with a proper file extension.')
@@ -470,14 +471,14 @@ class EUpReleaseView(DefaultView):
 
     def releaseLicense(self):
         catalog = api.portal.get_tool(name='portal_catalog')
-        path="/".join(self.context.getPhysicalPath())
+        path = "/".join(self.context.getPhysicalPath())
         idx_data = catalog.getIndexDataForUID(path)
         licenses = idx_data.get('releaseLicense')
         return(r for r in licenses)
 
     def releaseCompatibility(self):
         catalog = api.portal.get_tool(name='portal_catalog')
-        path="/".join(self.context.getPhysicalPath())
-        idx_data= catalog.getIndexDataForUID(path)
+        path = "/".join(self.context.getPhysicalPath())
+        idx_data = catalog.getIndexDataForUID(path)
         compatibility = idx_data.get('getCompatibility')
         return(r for r in compatibility)

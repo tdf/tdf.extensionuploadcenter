@@ -431,7 +431,8 @@ def notifyExtensionHubReleaseLinkAdd(self, event):
             recipient=releasemessagereceipient,
             subject="New Release added",
             body=("""A new linked release was added and published with\ntitle: {}\nURL: {}\nCompatibility:{}\n
-                  Categories: {}\nLicenses: {}\nPlatforms: {}""").format(self.title, url, compatibility, category, licenses, platform),
+                  Categories: {}\nLicenses: {}\nPlatforms: {}""").format(self.title, url, compatibility,
+                                                                         category, licenses, platform),
         )
 
     else:
@@ -483,14 +484,14 @@ class EUpReleaseLinkView(DefaultView):
 
     def releaseLicense(self):
         catalog = api.portal.get_tool(name='portal_catalog')
-        path="/".join(self.context.getPhysicalPath())
+        path = "/".join(self.context.getPhysicalPath())
         idx_data = catalog.getIndexDataForUID(path)
-        licenses= idx_data.get('releaseLicense')
+        licenses = idx_data.get('releaseLicense')
         return(r for r in licenses)
 
     def linkedreleaseCompatibility(self):
         catalog = api.portal.get_tool(name='portal_catalog')
-        path="/".join(self.context.getPhysicalPath())
-        idx_data= catalog.getIndexDataForUID(path)
+        path = "/".join(self.context.getPhysicalPath())
+        idx_data = catalog.getIndexDataForUID(path)
         compatibility = idx_data.get('getCompatibility')
         return(r for r in compatibility)

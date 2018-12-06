@@ -3,7 +3,6 @@ from plone import api
 from plone.app.layout.viewlets import ViewletBase
 from plone.app.multilingual.dx import directives
 from plone.app.textfield import RichText
-from plone.directives import form
 from plone.supermodel import model
 from plone.supermodel.directives import primary
 from Products.CMFPlone.browser.search import quote_chars
@@ -15,10 +14,8 @@ from zope import schema
 import re
 from zope.interface import Invalid
 
-
 MULTISPACE = u'\u3000'.encode('utf-8')
 BAD_CHARS = ('?', '-', '+', '*', MULTISPACE)
-
 
 checkEmail = re.compile(
     r"[a-zA-Z0-9._%-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}").match
@@ -52,9 +49,9 @@ class IEUpCenter(model.Schema):
     )
 
     model.fieldset('categories_et_all',
-                  label=u"Categories et all",
-                  fields=['available_category', 'available_licenses',
-                          'available_versions', 'available_platforms'])
+                   label=u"Categories et all",
+                   fields=['available_category', 'available_licenses',
+                           'available_versions', 'available_platforms'])
 
     available_category = schema.List(title=_(u"Available Categories"),
                                      default=['All modules',
@@ -118,8 +115,8 @@ class IEUpCenter(model.Schema):
                                       value_type=schema.TextLine())
 
     model.fieldset('instructions',
-                  label=u'Instructions',
-                  fields=['install_instructions', 'reporting_bugs',])
+                   label=u'Instructions',
+                   fields=['install_instructions', 'reporting_bugs', ])
 
     primary('install_instructions')
     install_instructions = RichText(
@@ -135,9 +132,9 @@ class IEUpCenter(model.Schema):
     )
 
     model.fieldset('disclaimer',
-                  label=u'Legal Disclaimer',
-                  fields=['title_legaldisclaimer', 'legal_disclaimer',
-                          'title_legaldownloaddisclaimer', 'legal_downloaddisclaimer'])
+                   label=u'Legal Disclaimer',
+                   fields=['title_legaldisclaimer', 'legal_disclaimer',
+                           'title_legaldownloaddisclaimer', 'legal_downloaddisclaimer'])
 
     title_legaldisclaimer = schema.TextLine(
         title=_(u"Title for Legal Disclaimer and Limitations"),
@@ -175,16 +172,15 @@ class IEUpCenter(model.Schema):
     primary('information_oldversions')
     information_oldversions = RichText(
         title=_(u"Information About Search For Old LibreOffice Versions"),
-        description = _(u"Enter an information about the search for older "
-                        u"versions of LibreOffice, if they are not on the "
-                        u"versions list (compatibility) anymore."),
+        description=_(u"Enter an information about the search for older "
+                      u"versions of LibreOffice, if they are not on the "
+                      u"versions list (compatibility) anymore."),
         required=False
     )
 
-
     model.fieldset('contactadresses',
-                  label=u'Special Email Adresses',
-                  fields=['releaseAllert', 'contactForCenter'])
+                   label=u'Special Email Adresses',
+                   fields=['releaseAllert', 'contactForCenter'])
 
     releaseAllert = schema.ASCIILine(
         title=_(u"EMail address for the messages about new releases"),
@@ -192,14 +188,12 @@ class IEUpCenter(model.Schema):
         required=False
     )
 
-    contactForCenter =schema.ASCIILine(
+    contactForCenter = schema.ASCIILine(
         title=_(u"EMail address for communication with the extension center manager and reviewer"),
         description=_(u"Enter an email address for the communication with extension center manager and reviewer"),
-        default= 'extensions@libreoffice.org',
-        constraint= validateEmail
+        default='extensions@libreoffice.org',
+        constraint=validateEmail
     )
-
-
 
 
 directives.languageindependent('available_category')

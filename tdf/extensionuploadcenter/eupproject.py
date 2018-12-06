@@ -31,6 +31,7 @@ def validateImageextension(value):
 checkdocfileextension = re.compile(
     r"^.*\.(pdf|PDF|odt|ODT)").match
 
+
 def validatedocfileextension(value):
     if not checkdocfileextension(value.filename):
         raise Invalid(u"You could only add documentation files in the pdf or odt file format to your project.")
@@ -55,6 +56,8 @@ def vocabCategories(context):
         terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
 
     return SimpleVocabulary(terms)
+
+
 directlyProvides(vocabCategories, IContextSourceBinder)
 
 
@@ -136,7 +139,7 @@ class IEUpProject(model.Schema):
     )
 
     documentation_file = NamedBlobFile(
-        title =_(u"Dokumentation File"),
+        title=_(u"Dokumentation File"),
         description=_(u"If you have a Documentation in the file format 'PDF' or 'ODT' you could add it here."),
         required=False,
         constraint=validatedocfileextension
@@ -170,7 +173,7 @@ def notifyProjectManager(self, event):
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
-        mailrecipient ='extensions@libreoffice.org'
+        mailrecipient = 'extensions@libreoffice.org'
     api.portal.send_email(
         recipient=("{}").format(self.contactAddress),
         sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
@@ -183,7 +186,7 @@ def notifyProjectManagerReleaseAdd(self, event):
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
-        mailrecipient ='extensions@libreoffice.org'
+        mailrecipient = 'extensions@libreoffice.org'
     api.portal.send_email(
         recipient=("{}").format(self.contactAddress),
         sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
@@ -196,7 +199,7 @@ def notifyProjectManagerReleaseLinkedAdd(self, event):
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
-        mailrecipient ='extensions@libreoffice.org'
+        mailrecipient = 'extensions@libreoffice.org'
     api.portal.send_email(
         recipient=("{}").format(self.contactAddress),
         sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
@@ -211,11 +214,11 @@ def notifyAboutNewReviewlistentry(self, event):
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
-        mailrecipient ='extensions@libreoffice.org'
+        mailrecipient = 'extensions@libreoffice.org'
 
     if state == "pending":
         api.portal.send_email(
-            recipient= mailrecipient,
+            recipient=mailrecipient,
             subject=(u"A Project with the title {} was added to the review list").format(self.title),
             body="Please have a look at the review list and check if the project is "
                  "ready for publication. \n"
@@ -231,7 +234,7 @@ def textmodified_project(self, event):
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
-        mailrecipient ='extensions@libreoffice.org'
+        mailrecipient = 'extensions@libreoffice.org'
     if state == "published":
         api.portal.send_email(
             recipient=mailrecipient,
@@ -240,14 +243,14 @@ def textmodified_project(self, event):
             body=(u"The content of the project {} has changed. Here you get the text of the "
                   u"description field of the project: \n'{}\n\nand this is the text of the "
                   u"details field:\n{}'").format(self.title, self.description, self.details.output),
-    )
+        )
 
 
 def notifyAboutNewProject(self, event):
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter),
     else:
-        mailrecipient ='extensions@libreoffice.org'
+        mailrecipient = 'extensions@libreoffice.org'
     api.portal.send_email(
         recipient=mailrecipient,
         subject=(u"A Project with the title {} was added").format(self.title),
@@ -332,7 +335,7 @@ class EUpProjectView(DefaultView):
         res = catalog.searchResults(
             portal_type=('tdf.extensionuploadcenter.euprelease', 'tdf.extensionuploadcenter.eupreleaselink'),
             path='/'.join(context.getPhysicalPath()),
-            review_state=('alpha','beta','release-candidate'),
+            review_state=('alpha', 'beta', 'release-candidate'),
             sort_on='effective',
             sort_order='reverse')
 
