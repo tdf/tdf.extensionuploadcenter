@@ -214,7 +214,7 @@ table.eupcenterprojecttable td {
 
 table.eupcenterprojecttable
 {
-    border:true;
+    border: 1px solid;
 }
 
 table.eupcenterprojecttable thead
