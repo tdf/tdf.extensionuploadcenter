@@ -5,6 +5,7 @@ from plone.app.multilingual.dx import directives
 from plone.app.textfield import RichText
 from plone.directives import form
 from plone.supermodel import model
+from plone.supermodel.directives import primary
 from Products.CMFPlone.browser.search import quote_chars
 from Products.Five import BrowserView
 from Products.ZCTextIndex.ParseTree import ParseError
@@ -50,7 +51,7 @@ class IEUpCenter(model.Schema):
         description=_(u"Name of the Extension product, e.g. only Extensions or LibreOffice Extensions"),
     )
 
-    form.fieldset('categories_et_all',
+    model.fieldset('categories_et_all',
                   label=u"Categories et all",
                   fields=['available_category', 'available_licenses',
                           'available_versions', 'available_platforms'])
@@ -120,14 +121,14 @@ class IEUpCenter(model.Schema):
                   label=u'Instructions',
                   fields=['install_instructions', 'reporting_bugs',])
 
-    form.primary('install_instructions')
+    primary('install_instructions')
     install_instructions = RichText(
         title=_(u"Extension Installation Instructions"),
         description=_(u"Please fill in the install instructions"),
         required=False
     )
 
-    form.primary('reporting_bugs')
+    primary('reporting_bugs')
     reporting_bugs = RichText(
         title=_(u"Instruction how to report Bugs"),
         required=False
@@ -161,7 +162,7 @@ class IEUpCenter(model.Schema):
         required=False
     )
 
-    form.primary('legal_downloaddisclaimer')
+    primary('legal_downloaddisclaimer')
     legal_downloaddisclaimer = RichText(
         title=_(u"Text of the Legal Disclaimer and Limitations for Downlaods"),
         description=_(u"Enter any legal disclaimer and limitations for "
@@ -171,7 +172,7 @@ class IEUpCenter(model.Schema):
         required=False
     )
 
-    form.primary('information_oldversions')
+    primary('information_oldversions')
     information_oldversions = RichText(
         title=_(u"Information About Search For Old LibreOffice Versions"),
         description = _(u"Enter an information about the search for older "
