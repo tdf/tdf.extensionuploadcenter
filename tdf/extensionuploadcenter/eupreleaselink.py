@@ -25,6 +25,7 @@ from plone import api
 from z3c.form import validator
 from plone.uuid.interfaces import IUUID
 import re
+from plone.supermodel.directives import primary
 
 checkfileextension = re.compile(
     r"^.*\.(oxt|OXT)").match
@@ -126,13 +127,13 @@ class IEUpReleaseLink(model.Schema):
         title=_(u"Release Summary"),
     )
 
-    form.primary('details')
+    primary('details')
     details = RichText(
         title=_(u"Full Release Description"),
         required=False
     )
 
-    form.primary('changelog')
+    primary('changelog')
     changelog = RichText(
         title=_(u"Changelog"),
         description=_(u"A detailed log of what has changed since the previous release."),
@@ -216,7 +217,7 @@ class IEUpReleaseLink(model.Schema):
     )
 
     form.mode(information_further_file_uploads='display')
-    form.primary('information_further_file_uploads')
+    primary('information_further_file_uploads')
     information_further_file_uploads = RichText(
         title=_(u"Further linked files for this Release"),
         description=_(
