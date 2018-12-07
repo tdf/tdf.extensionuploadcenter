@@ -28,6 +28,7 @@ from z3c.form import validator
 from plone.uuid.interfaces import IUUID
 import re
 import itertools
+from plone.autoform import directives
 
 checkfileextension = re.compile(
     r"^.*\.(oxt|OXT)").match
