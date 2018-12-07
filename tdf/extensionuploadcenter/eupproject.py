@@ -16,6 +16,7 @@ from plone.uuid.interfaces import IUUID
 from plone.directives import form
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from tdf.extensionuploadcenter import quote_chars
+from plone.supermodel.directives import primary
 
 
 checkfileextension = re.compile(
@@ -102,7 +103,7 @@ class IEUpProject(model.Schema):
     )
 
     dexteritytextindexer.searchable('details')
-    form.primary('details')
+    primary('details')
     details = RichText(
         title=_(u"Full Project Description"),
         required=False
