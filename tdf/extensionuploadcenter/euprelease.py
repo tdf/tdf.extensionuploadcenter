@@ -14,6 +14,7 @@ from zope.interface import invariant, Invalid
 from Acquisition import aq_inner, aq_parent, aq_get, aq_chain
 from plone.namedfile.field import NamedBlobFile
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
+from plone.supermodel.directives import primary
 
 from plone.directives import form
 from zope import schema
@@ -127,13 +128,13 @@ class IEUpRelease(model.Schema):
         title=_(u"Release Summary"),
     )
 
-    form.primary('details')
+    primary('details')
     details = RichText(
         title=_(u"Full Release Description"),
         required=False
     )
 
-    form.primary('changelog')
+    primary('changelog')
     changelog = RichText(
         title=_(u"Changelog"),
         description=_(u"A detailed log of what has changed since the previous release."),
@@ -211,7 +212,7 @@ class IEUpRelease(model.Schema):
     )
 
     form.mode(information_further_file_uploads='display')
-    model.primary('information_further_file_uploads')
+    primary('information_further_file_uploads')
     information_further_file_uploads = RichText(
         title=_(u"Further File Uploads for this Release"),
         description=_(u"If you want to upload more files for this release, "
@@ -221,7 +222,7 @@ class IEUpRelease(model.Schema):
         required=False
     )
 
-    form.fieldset('fileset1',
+    model.fieldset('fileset1',
                   label=u"File Upload 1",
                   fields=['filetitlefield1', 'file1', 'platform_choice1',
                           'filetitlefield2', 'file2', 'platform_choice2',
@@ -288,7 +289,7 @@ class IEUpRelease(model.Schema):
         required=False,
     )
 
-    form.fieldset('fileset2',
+    model.fieldset('fileset2',
                   label=u"File Upload 2",
                   fields=['filetitlefield4', 'file4', 'platform_choice4',
                           'filetitlefield5', 'file5', 'platform_choice5']
