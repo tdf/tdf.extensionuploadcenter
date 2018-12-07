@@ -26,6 +26,7 @@ from z3c.form import validator
 from plone.uuid.interfaces import IUUID
 import re
 from plone.supermodel.directives import primary
+from plone.autoform import directives
 
 checkfileextension = re.compile(
     r"^.*\.(oxt|OXT)").match
@@ -140,7 +141,7 @@ class IEUpReleaseLink(model.Schema):
         required=False,
     )
 
-    form.widget(licenses_choice=CheckBoxFieldWidget)
+    directives.widget(licenses_choice=CheckBoxFieldWidget)
     licenses_choice = schema.List(
         title=_(u'License of the uploaded file'),
         description=_(u"Please mark one or more licenses you publish your release."),
@@ -148,7 +149,7 @@ class IEUpReleaseLink(model.Schema):
         required=True,
     )
 
-    form.widget(compatibility_choice=CheckBoxFieldWidget)
+    directives.widget(compatibility_choice=CheckBoxFieldWidget)
     compatibility_choice = schema.List(
         title=_(u"Compatible with versions of LibreOffice"),
         description=_(u"Please mark one or more program versions with which this release is compatible with."),
@@ -208,7 +209,7 @@ class IEUpReleaseLink(model.Schema):
         required=False
     )
 
-    form.widget(platform_choice=CheckBoxFieldWidget)
+    directives.widget(platform_choice=CheckBoxFieldWidget)
     platform_choice = schema.List(
         title=_(u"First linked file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
@@ -277,7 +278,7 @@ class IEUpReleaseLink(model.Schema):
         required=False
     )
 
-    form.widget(platform_choice1=CheckBoxFieldWidget)
+    directives.widget(platform_choice1=CheckBoxFieldWidget)
     platform_choice1 = schema.List(
         title=_(u"Second linked file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the linked file is compatible."),
@@ -299,7 +300,7 @@ class IEUpReleaseLink(model.Schema):
         required=False
     )
 
-    form.widget(platform_choice2=CheckBoxFieldWidget)
+    directives.widget(platform_choice2=CheckBoxFieldWidget)
     platform_choice2 = schema.List(
         title=_(u"Third linked file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the linked file is compatible."),
@@ -321,7 +322,7 @@ class IEUpReleaseLink(model.Schema):
         required=False
     )
 
-    form.widget(platform_choice3=CheckBoxFieldWidget)
+    directives.widget(platform_choice3=CheckBoxFieldWidget)
     platform_choice3 = schema.List(
         title=_(u"Fourth linked file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the linked file is compatible."),
@@ -343,7 +344,7 @@ class IEUpReleaseLink(model.Schema):
         required=False
     )
 
-    form.widget(platform_choice4=CheckBoxFieldWidget)
+    directives.widget(platform_choice4=CheckBoxFieldWidget)
     platform_choice4 = schema.List(
         title=_(u"Fifth linked file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the linked file is compatible."),
@@ -365,7 +366,7 @@ class IEUpReleaseLink(model.Schema):
         required=False
     )
 
-    form.widget(platform_choice5=CheckBoxFieldWidget)
+    directives.widget(platform_choice5=CheckBoxFieldWidget)
     platform_choice5 = schema.List(
         title=_(u"Sixth linked file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the linked file is compatible."),

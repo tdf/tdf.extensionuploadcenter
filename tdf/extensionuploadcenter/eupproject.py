@@ -17,7 +17,7 @@ from plone.directives import form
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from tdf.extensionuploadcenter import quote_chars
 from plone.supermodel.directives import primary
-
+from plone.autoform import directives
 
 checkfileextension = re.compile(
     r"^.*\.(png|PNG|gif|GIF|jpg|JPG)").match
@@ -110,7 +110,7 @@ class IEUpProject(model.Schema):
     )
 
     dexteritytextindexer.searchable('category_choice')
-    form.widget(category_choice=CheckBoxFieldWidget)
+    directives.widget(category_choice=CheckBoxFieldWidget)
     category_choice = schema.List(
         title=_(u"Choose your categories"),
         description=_(u"Please select the appropriate categories (one or more) for your project."),
