@@ -2,7 +2,6 @@ from tdf.extensionuploadcenter import MessageFactory as _
 from plone.app.textfield import RichText
 from plone.supermodel import model
 from zope import schema
-from plone.autoform import directives as form
 from plone.dexterity.browser.view import DefaultView
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
@@ -15,7 +14,6 @@ from Acquisition import aq_inner, aq_parent, aq_get, aq_chain
 from plone.namedfile.field import NamedBlobFile
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
 
-from plone.directives import form
 from zope import schema
 
 from zope.interface import provider

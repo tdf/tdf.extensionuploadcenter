@@ -13,7 +13,6 @@ from plone.namedfile.field import NamedBlobImage, NamedBlobFile
 from zope.interface import Invalid, invariant
 from z3c.form import validator
 from plone.uuid.interfaces import IUUID
-from plone.directives import form
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from tdf.extensionuploadcenter import quote_chars
 from plone.supermodel.directives import primary

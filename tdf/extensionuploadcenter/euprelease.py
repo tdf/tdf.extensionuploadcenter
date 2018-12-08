@@ -3,7 +3,6 @@ from plone.app.textfield import RichText
 from plone.supermodel import model
 from plone.indexer.decorator import indexer
 from zope import schema
-from plone.autoform import directives as form
 from plone.dexterity.browser.view import DefaultView
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
@@ -16,7 +15,6 @@ from plone.namedfile.field import NamedBlobFile
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from plone.supermodel.directives import primary
 
-from plone.directives import form
 from zope import schema
 from tdf.extensionuploadcenter.adapter import IReleasesCompatVersions
 
