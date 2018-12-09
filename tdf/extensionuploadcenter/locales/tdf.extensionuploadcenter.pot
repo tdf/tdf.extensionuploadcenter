@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-11-18 08:44+0000\n"
+"POT-Creation-Date: 2018-12-09 16:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: tdf.extensionuploadcenter\n"
 
-#: ./euprelease.py:161
+#: ./euprelease.py:162
 #: ./eupreleaselink.py:160
 msgid ""
 msgstr ""
@@ -34,12 +34,12 @@ msgstr ""
 msgid "- A simple workflow for Extension Project objects."
 msgstr ""
 
-#: ./euprelease.py:121
+#: ./euprelease.py:122
 #: ./eupreleaselink.py:121
 msgid "1.0"
 msgstr ""
 
-#: ./euprelease.py:138
+#: ./euprelease.py:139
 #: ./eupreleaselink.py:138
 msgid "A detailed log of what has changed since the previous release."
 msgstr ""
@@ -52,16 +52,16 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: ./euprelease.py:174
+#: ./euprelease.py:175
 #: ./eupreleaselink.py:173
 msgid "Accept the above legal disclaimer"
 msgstr ""
 
-#: ./eupproject.py:147
+#: ./eupproject.py:150
 msgid "Add a logo for the project (or organization/company) by clicking the 'Browse' button.You could provide an image of the file format 'png', 'gif' or 'jpg'."
 msgstr ""
 
-#: ./eupproject.py:155
+#: ./eupproject.py:158
 msgid "Add a screenshot by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'."
 msgstr ""
 
@@ -94,7 +94,7 @@ msgstr ""
 msgid "Any version"
 msgstr ""
 
-#: ./eupcenter.py:58
+#: ./eupcenter.py:56
 msgid "Available Categories"
 msgstr ""
 
@@ -103,15 +103,15 @@ msgstr ""
 msgid "Available Downloads"
 msgstr ""
 
-#: ./eupcenter.py:75
+#: ./eupcenter.py:73
 msgid "Available Licenses"
 msgstr ""
 
-#: ./eupcenter.py:109
+#: ./eupcenter.py:107
 msgid "Available Platforms"
 msgstr ""
 
-#: ./eupcenter.py:90
+#: ./eupcenter.py:88
 msgid "Available Versions"
 msgstr ""
 
@@ -142,13 +142,13 @@ msgstr ""
 msgid "Change the release stage to 'Release beta'"
 msgstr ""
 
-#: ./euprelease.py:137
+#: ./euprelease.py:138
 #: ./euprelease_templates/view.pt:74
 #: ./eupreleaselink.py:137
 msgid "Changelog"
 msgstr ""
 
-#: ./eupproject.py:111
+#: ./eupproject.py:114
 msgid "Choose your categories"
 msgstr ""
 
@@ -158,19 +158,19 @@ msgstr ""
 msgid "Compatibility"
 msgstr ""
 
-#: ./euprelease.py:152
+#: ./euprelease.py:153
 #: ./eupreleaselink.py:152
 msgid "Compatible with versions of LibreOffice"
 msgstr ""
 
-#: ./eupproject.py:119
-#: ./euprelease.py:180
+#: ./eupproject.py:122
+#: ./euprelease.py:181
 #: ./eupreleaselink.py:179
 msgid "Contact email-address"
 msgstr ""
 
-#: ./eupproject.py:120
-#: ./euprelease.py:181
+#: ./eupproject.py:123
+#: ./euprelease.py:182
 #: ./eupreleaselink.py:180
 msgid "Contact email-address for the project."
 msgstr ""
@@ -195,15 +195,15 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: ./eupcenter.py:41
+#: ./eupcenter.py:39
 msgid "Description of the Extensions Center"
 msgstr ""
 
-#: ./eupcenter.py:45
+#: ./eupcenter.py:43
 msgid "Description of the features of extensions"
 msgstr ""
 
-#: ./eupproject.py:139
+#: ./eupproject.py:142
 msgid "Dokumentation File"
 msgstr ""
 
@@ -211,11 +211,11 @@ msgstr ""
 msgid "Dokumentation File:"
 msgstr ""
 
-#: ./eupcenter.py:194
+#: ./eupcenter.py:192
 msgid "EMail address for communication with the extension center manager and reviewer"
 msgstr ""
 
-#: ./eupcenter.py:188
+#: ./eupcenter.py:186
 msgid "EMail address for the messages about new releases"
 msgstr ""
 
@@ -223,23 +223,23 @@ msgstr ""
 msgid "EUC Project Publication Workflow"
 msgstr ""
 
-#: ./eupcenter.py:195
+#: ./eupcenter.py:193
 msgid "Enter an email address for the communication with extension center manager and reviewer"
 msgstr ""
 
-#: ./eupcenter.py:189
+#: ./eupcenter.py:187
 msgid "Enter an email address to which information about a new release should be send."
 msgstr ""
 
-#: ./eupcenter.py:177
+#: ./eupcenter.py:175
 msgid "Enter an information about the search for older versions of LibreOffice, if they are not on the versions list (compatibility) anymore."
 msgstr ""
 
-#: ./eupcenter.py:167
+#: ./eupcenter.py:165
 msgid "Enter any legal disclaimer and limitations for downloads that should appear on each page for dowloadable files."
 msgstr ""
 
-#: ./eupcenter.py:149
+#: ./eupcenter.py:147
 msgid "Enter the text of the legal disclaimer and limitations that should be displayed to the project creator and should be accepted by the owner of the project."
 msgstr ""
 
@@ -247,7 +247,7 @@ msgstr ""
 msgid "Extension Center"
 msgstr ""
 
-#: ./eupcenter.py:125
+#: ./eupcenter.py:123
 msgid "Extension Installation Instructions"
 msgstr ""
 
@@ -255,7 +255,7 @@ msgstr ""
 msgid "Extension Linked Release"
 msgstr ""
 
-#: ./eupcenter.py:49
+#: ./eupcenter.py:47
 msgid "Extension Product Name"
 msgstr ""
 
@@ -285,7 +285,7 @@ msgstr ""
 msgid "External Project Page"
 msgstr ""
 
-#: ./euprelease.py:298
+#: ./euprelease.py:299
 msgid "Fifth Release File"
 msgstr ""
 
@@ -297,7 +297,7 @@ msgstr ""
 msgid "Fifth linked file is compatible with the Platform(s)"
 msgstr ""
 
-#: ./euprelease.py:310
+#: ./euprelease.py:311
 msgid "Fifth uploaded file is compatible with the Platform(s)"
 msgstr ""
 
@@ -307,11 +307,11 @@ msgstr ""
 msgid "File size:"
 msgstr ""
 
-#: ./eupcenter.py:153
+#: ./eupcenter.py:151
 msgid "Fill in the legal disclaimer, that had to be accepted by the project owner."
 msgstr ""
 
-#: ./eupcenter.py:170
+#: ./eupcenter.py:168
 msgid "Fill in the text for the legal download disclaimer."
 msgstr ""
 
@@ -329,11 +329,11 @@ msgstr ""
 msgid "First linked file is compatible with the Platform(s)"
 msgstr ""
 
-#: ./euprelease.py:206
+#: ./euprelease.py:207
 msgid "First uploaded file is compatible with the Platform(s)"
 msgstr ""
 
-#: ./euprelease.py:272
+#: ./euprelease.py:273
 msgid "Fourth Release File"
 msgstr ""
 
@@ -345,20 +345,20 @@ msgstr ""
 msgid "Fourth linked file is compatible with the Platform(s)"
 msgstr ""
 
-#: ./euprelease.py:284
+#: ./euprelease.py:285
 msgid "Fourth uploaded file is compatible with the Platform(s)"
 msgstr ""
 
-#: ./eupproject.py:104
+#: ./eupproject.py:107
 msgid "Full Project Description"
 msgstr ""
 
-#: ./euprelease.py:131
+#: ./euprelease.py:132
 #: ./eupreleaselink.py:131
 msgid "Full Release Description"
 msgstr ""
 
-#: ./euprelease.py:215
+#: ./euprelease.py:216
 msgid "Further File Uploads for this Release"
 msgstr ""
 
@@ -395,15 +395,15 @@ msgstr ""
 msgid "Highest Rated"
 msgstr ""
 
-#: ./eupproject.py:125
+#: ./eupproject.py:128
 msgid "Homepage"
 msgstr ""
 
-#: ./eupproject.py:126
+#: ./eupproject.py:129
 msgid "If the project has an external home page, enter its URL (example: 'http://www.mysite.org')."
 msgstr ""
 
-#: ./eupproject.py:132
+#: ./eupproject.py:135
 msgid "If the project has externally hosted documentation, enter its URL (example: 'http://www.mysite.org')."
 msgstr ""
 
@@ -411,7 +411,7 @@ msgstr ""
 msgid "If you already created a new"
 msgstr ""
 
-#: ./eupproject.py:140
+#: ./eupproject.py:143
 msgid "If you have a Documentation in the file format 'PDF' or 'ODT' you could add it here."
 msgstr ""
 
@@ -423,7 +423,7 @@ msgstr ""
 msgid "If you want to link more files for this release, e.g. because there are files for other operating systems, you'll find the fields to link this files on the next registers, e.g. 'Second linked file' for this Release'."
 msgstr ""
 
-#: ./euprelease.py:216
+#: ./euprelease.py:217
 msgid "If you want to upload more files for this release, e.g. because there are files for other operating systems, you'll find the upload fields on the register 'File Upload 1' and 'File Upload 2'."
 msgstr ""
 
@@ -432,7 +432,7 @@ msgstr ""
 msgid "Info"
 msgstr ""
 
-#: ./eupcenter.py:176
+#: ./eupcenter.py:174
 msgid "Information About Search For Old LibreOffice Versions"
 msgstr ""
 
@@ -442,21 +442,21 @@ msgstr ""
 msgid "Install Instructions"
 msgstr ""
 
-#: ./eupcenter.py:132
+#: ./eupcenter.py:130
 msgid "Instruction how to report Bugs"
 msgstr ""
 
-#: ./eupcenter.py:28
-#: ./eupproject.py:73
+#: ./eupcenter.py:26
+#: ./eupproject.py:76
 msgid "Invalid email address"
 msgstr ""
 
-#: ./euprelease.py:187
+#: ./euprelease.py:188
 #: ./eupreleaselink.py:186
 msgid "Is the source code inside the extension?"
 msgstr ""
 
-#: ./euprelease.py:107
+#: ./euprelease.py:108
 #: ./eupreleaselink.py:107
 msgid "It is necessary that you accept the Legal Declaration"
 msgstr ""
@@ -465,15 +465,15 @@ msgstr ""
 msgid "Latest Not Stable Release"
 msgstr ""
 
-#: ./eupcenter.py:143
+#: ./eupcenter.py:141
 msgid "Legal Disclaimer and Limitations"
 msgstr ""
 
-#: ./eupcenter.py:160
+#: ./eupcenter.py:158
 msgid "Legal Disclaimer and Limitations for Downloads"
 msgstr ""
 
-#: ./euprelease.py:144
+#: ./euprelease.py:145
 #: ./eupreleaselink.py:144
 msgid "License of the uploaded file"
 msgstr ""
@@ -489,7 +489,7 @@ msgstr ""
 msgid "Link to Source Code"
 msgstr ""
 
-#: ./eupproject.py:146
+#: ./eupproject.py:149
 msgid "Logo"
 msgstr ""
 
@@ -513,11 +513,11 @@ msgstr ""
 msgid "Most recent"
 msgstr ""
 
-#: ./eupcenter.py:50
+#: ./eupcenter.py:48
 msgid "Name of the Extension product, e.g. only Extensions or LibreOffice Extensions"
 msgstr ""
 
-#: ./eupcenter.py:37
+#: ./eupcenter.py:35
 msgid "Name of the Extensions Center"
 msgstr ""
 
@@ -525,7 +525,7 @@ msgstr ""
 msgid "Newest"
 msgstr ""
 
-#: ./euprelease.py:79
+#: ./euprelease.py:80
 #: ./eupreleaselink.py:79
 msgid "No"
 msgstr ""
@@ -550,7 +550,7 @@ msgstr ""
 msgid "Platform(s)"
 msgstr ""
 
-#: ./euprelease.py:350
+#: ./euprelease.py:351
 msgid "Please accept the Legal Declaration about your Release and your Uploaded File"
 msgstr ""
 
@@ -558,11 +558,11 @@ msgstr ""
 msgid "Please accept the Legal Declaration about your Release and your linked File"
 msgstr ""
 
-#: ./eupproject.py:164
+#: ./eupproject.py:167
 msgid "Please add a screenshot or a logo to your project page. You will find the appropriate fields below on this page."
 msgstr ""
 
-#: ./eupproject.py:78
+#: ./eupproject.py:81
 msgid "Please add a screenshot or a logo to your project. You find the appropriate fields below on this page."
 msgstr ""
 
@@ -570,31 +570,31 @@ msgstr ""
 msgid "Please choose a compatible platform for the linked file."
 msgstr ""
 
-#: ./euprelease.py:362
+#: ./euprelease.py:363
 msgid "Please choose a compatible platform for the uploaded file."
 msgstr ""
 
-#: ./euprelease.py:339
+#: ./euprelease.py:340
 #: ./eupreleaselink.py:378
 msgid "Please choose a license for your release."
 msgstr ""
 
-#: ./euprelease.py:344
+#: ./euprelease.py:345
 #: ./eupreleaselink.py:383
 msgid "Please choose one or more compatible product versions for your release."
 msgstr ""
 
-#: ./euprelease.py:175
+#: ./euprelease.py:176
 #: ./eupreleaselink.py:174
 msgid "Please declare that you accept the above legal disclaimer."
 msgstr ""
 
-#: ./euprelease.py:193
+#: ./euprelease.py:194
 #: ./eupreleaselink.py:192
 msgid "Please fill in the Link (URL) to the Source Code."
 msgstr ""
 
-#: ./eupcenter.py:126
+#: ./eupcenter.py:124
 msgid "Please fill in the install instructions"
 msgstr ""
 
@@ -610,7 +610,7 @@ msgstr ""
 msgid "Please make sure the relevant project information has been entered and a release has been added to your project. Once you have finished that you could submit your project for approval (publication)."
 msgstr ""
 
-#: ./euprelease.py:145
+#: ./euprelease.py:146
 #: ./eupreleaselink.py:145
 msgid "Please mark one or more licenses you publish your release."
 msgstr ""
@@ -619,21 +619,21 @@ msgstr ""
 msgid "Please mark one or more platforms with which the linked file is compatible."
 msgstr ""
 
-#: ./euprelease.py:207
+#: ./euprelease.py:208
 #: ./eupreleaselink.py:213
 msgid "Please mark one or more platforms with which the uploaded file is compatible."
 msgstr ""
 
-#: ./euprelease.py:153
+#: ./euprelease.py:154
 #: ./eupreleaselink.py:153
 msgid "Please mark one or more program versions with which this release is compatible with."
 msgstr ""
 
-#: ./eupproject.py:112
+#: ./eupproject.py:115
 msgid "Please select the appropriate categories (one or more) for your project."
 msgstr ""
 
-#: ./euprelease.py:199
+#: ./euprelease.py:200
 msgid "Please upload your file."
 msgstr ""
 
@@ -647,11 +647,11 @@ msgstr ""
 msgid "Project Resources"
 msgstr ""
 
-#: ./eupproject.py:98
+#: ./eupproject.py:101
 msgid "Project Summary"
 msgstr ""
 
-#: ./eupproject.py:91
+#: ./eupproject.py:94
 msgid "Project Title - minimum 5 and maximum 50 characters"
 msgstr ""
 
@@ -692,17 +692,17 @@ msgstr ""
 msgid "Release Details"
 msgstr ""
 
-#: ./euprelease.py:119
+#: ./euprelease.py:120
 #: ./eupreleaselink.py:119
 msgid "Release Number"
 msgstr ""
 
-#: ./euprelease.py:120
+#: ./euprelease.py:121
 #: ./eupreleaselink.py:120
 msgid "Release Number (up to twelf chars)"
 msgstr ""
 
-#: ./euprelease.py:126
+#: ./euprelease.py:127
 #: ./eupreleaselink.py:126
 msgid "Release Summary"
 msgstr ""
@@ -765,7 +765,7 @@ msgstr ""
 msgid "Screenshot"
 msgstr ""
 
-#: ./eupproject.py:154
+#: ./eupproject.py:157
 msgid "Screenshot of the Extension"
 msgstr ""
 
@@ -777,7 +777,7 @@ msgstr ""
 msgid "Search ${product_title}"
 msgstr ""
 
-#: ./euprelease.py:232
+#: ./euprelease.py:233
 msgid "Second Release File"
 msgstr ""
 
@@ -789,7 +789,7 @@ msgstr ""
 msgid "Second linked file is compatible with the Platform(s)"
 msgstr ""
 
-#: ./euprelease.py:244
+#: ./euprelease.py:245
 msgid "Second uploaded file is compatible with the Platform(s)"
 msgstr ""
 
@@ -806,7 +806,7 @@ msgstr ""
 msgid "Show"
 msgstr ""
 
-#: ./euprelease.py:318
+#: ./euprelease.py:319
 msgid "Sixth Release File"
 msgstr ""
 
@@ -818,7 +818,7 @@ msgstr ""
 msgid "Sixth linked file is compatible with the Platform(s)"
 msgstr ""
 
-#: ./euprelease.py:330
+#: ./euprelease.py:331
 msgid "Sixth uploaded file is compatible with the Platform(s)"
 msgstr ""
 
@@ -838,15 +838,15 @@ msgstr ""
 msgid "TDF Extension Upload Center"
 msgstr ""
 
-#: ./eupcenter.py:148
+#: ./eupcenter.py:146
 msgid "Text of the Legal Disclaimer and Limitations"
 msgstr ""
 
-#: ./eupcenter.py:166
+#: ./eupcenter.py:164
 msgid "Text of the Legal Disclaimer and Limitations for Downlaods"
 msgstr ""
 
-#: ./euprelease.py:113
+#: ./euprelease.py:114
 #: ./eupreleaselink.py:113
 msgid "The Computed Project Title"
 msgstr ""
@@ -855,7 +855,7 @@ msgstr ""
 msgid "The Link to the file of the release"
 msgstr ""
 
-#: ./euprelease.py:302
+#: ./euprelease.py:303
 msgid "The fifth file you want to upload (this is optional)"
 msgstr ""
 
@@ -864,7 +864,7 @@ msgstr ""
 msgid "The final stage of an extension release"
 msgstr ""
 
-#: ./euprelease.py:198
+#: ./euprelease.py:199
 msgid "The first file you want to upload."
 msgstr ""
 
@@ -873,7 +873,7 @@ msgstr ""
 msgid "The first stage of an extension release"
 msgstr ""
 
-#: ./euprelease.py:276
+#: ./euprelease.py:277
 msgid "The fourth file you want to upload (this is optional)"
 msgstr ""
 
@@ -885,21 +885,21 @@ msgstr ""
 msgid "The owner can edit the extension project"
 msgstr ""
 
-#: ./eupproject.py:272
+#: ./eupproject.py:275
 msgid "The project title is already in use."
 msgstr ""
 
-#: ./euprelease.py:458
-#: ./eupreleaselink.py:471
+#: ./euprelease.py:459
+#: ./eupreleaselink.py:472
 msgid "The release number is already in use. Please choose another one."
 msgstr ""
 
-#: ./euprelease.py:114
+#: ./euprelease.py:115
 #: ./eupreleaselink.py:114
 msgid "The release title will be computed from the parent project title."
 msgstr ""
 
-#: ./euprelease.py:236
+#: ./euprelease.py:237
 msgid "The second file you want to upload (this is optional)"
 msgstr ""
 
@@ -908,7 +908,7 @@ msgstr ""
 msgid "The second stage of an extension release"
 msgstr ""
 
-#: ./euprelease.py:322
+#: ./euprelease.py:323
 msgid "The sixth file you want to upload (this is optional)"
 msgstr ""
 
@@ -916,11 +916,11 @@ msgstr ""
 msgid "The size of the external hosted file"
 msgstr ""
 
-#: ./euprelease.py:256
+#: ./euprelease.py:257
 msgid "The third file you want to upload (this is optional)"
 msgstr ""
 
-#: ./euprelease.py:252
+#: ./euprelease.py:253
 msgid "Third Release File"
 msgstr ""
 
@@ -932,23 +932,23 @@ msgstr ""
 msgid "Third linked file is compatible with the Platform(s)"
 msgstr ""
 
-#: ./euprelease.py:264
+#: ./euprelease.py:265
 msgid "Third uploaded file is compatible with the Platform(s))"
 msgstr ""
 
-#: ./eupproject.py:90
+#: ./eupproject.py:93
 msgid "Title"
 msgstr ""
 
-#: ./eupcenter.py:142
+#: ./eupcenter.py:140
 msgid "Title for Legal Disclaimer and Limitations"
 msgstr ""
 
-#: ./eupcenter.py:159
+#: ./eupcenter.py:157
 msgid "Title of the Legal Disclaimer and Limitations for Downloads"
 msgstr ""
 
-#: ./eupproject.py:131
+#: ./eupproject.py:134
 msgid "URL of documentation repository "
 msgstr ""
 
@@ -985,17 +985,17 @@ msgid "Waiting for the Review, further editable by
                                            the owner (contributor)."
 msgstr ""
 
-#: ./euprelease.py:80
+#: ./euprelease.py:81
 #: ./eupreleaselink.py:80
 msgid "Yes"
 msgstr ""
 
-#: ./euprelease.py:355
+#: ./euprelease.py:356
 #: ./eupreleaselink.py:394
 msgid "You answered the question, whether the source code is inside your extension with no (default answer). If this is the correct answer, please fill in the Link (URL) to the Source Code."
 msgstr ""
 
-#: ./eupproject.py:83
+#: ./eupproject.py:86
 msgid "You have not chosen a category for the project."
 msgstr ""
 
