@@ -33,7 +33,8 @@ checkfileextension = re.compile(
 def validatelinkedfileextension(value):
     if not checkfileextension(value):
         raise Invalid(u'You could only link to an URL (a file) that is a LibreOffice '
-                      u'extension file with a proper file extension.')
+                      u'extension file with a proper file extension.\n'
+                      u'LibreOffice extensions have an \'oxt\' file extension.')
     return True
 
 

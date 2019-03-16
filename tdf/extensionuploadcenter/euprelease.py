@@ -34,7 +34,8 @@ checkfileextension = re.compile(
 
 def validatefileextension(value):
     if not checkfileextension(value.filename):
-        raise Invalid(u'You could only upload LibreOffice extension files with a proper file extension.')
+        raise Invalid(u'You could only upload LibreOffice extension files with a proper file extension.\n'
+                      u'LibreOffice extensions have an \'oxt\' file extension.')
     return True
 
 
