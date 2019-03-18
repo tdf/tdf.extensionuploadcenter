@@ -12,6 +12,8 @@ from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from zope.interface import directlyProvides
 from zope.schema.interfaces import IContextSourceBinder
 from plone.namedfile.field import NamedBlobImage, NamedBlobFile
+from zope.interface import provider
+from zope.schema.interfaces import IContextAwareDefaultFactory
 
 
 checkfileextension = re.compile(
@@ -57,6 +59,26 @@ def vocabCategories(context):
 
 directlyProvides(vocabCategories, IContextSourceBinder)
 
+
+def vocabAvailLicenses(context):
+    """ pick up licenses list from parent """
+    from tdf.extensionuploadcenter.eupcenter import IEUpCenter
+    while context is not None and not IEUpCenter.providedBy(context):
+        # context = aq_parent(aq_inner(context))
+        context = context.__parent__
+
+    license_list = []
+    if context is not None and context.available_licenses:
+        license_list = context.available_licenses
+    terms = []
+    for value in license_list:
+        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
+    return SimpleVocabulary(terms)
+
+
+directlyProvides(vocabAvailLicenses, IContextSourceBinder)
+
+
 def vocabAvailVersions(context):
     """ pick up the program versions list from parent """
     from tdf.extensionuploadcenter.eupcenter import IEUpCenter
@@ -92,7 +114,7 @@ def vocabAvailLicenses(context):
 
     license_list = []
     if context is not None and context.available_licenses:
-        category_list = context.available_licenses
+        license_list = context.available_licenses
     terms = []
     for value in license_list:
         terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
@@ -125,6 +147,19 @@ def validateextensionfileextension(value):
     return True
 
 
+@provider(IContextAwareDefaultFactory)
+def legal_declaration_title(context):
+    return context.title_legaldisclaimer
+
+
+@provider(IContextAwareDefaultFactory)
+def legal_declaration_text(context):
+    return context.legal_disclaimer
+
+
+class AcceptLegalDeclaration(Invalid):
+    __doc__ = _(u"It is necessary that you accept the Legal Declaration")
+
 class IEUpEasyProject(model.Schema):
 
     dexteritytextindexer.searchable('title')
@@ -145,6 +180,36 @@ class IEUpEasyProject(model.Schema):
     details = RichText(
         title=_(u"Full Project Description"),
         required=False
+    )
+
+
+    directives.widget(licenses_choice=CheckBoxFieldWidget)
+    licenses_choice = schema.List(
+        title=_(u'License of the uploaded file'),
+        description=_(u"Please mark one or more licenses you publish your release."),
+        value_type=schema.Choice(source=vocabAvailLicenses),
+        required=True,
+    )
+
+
+    directives.mode(title_declaration_legal='display')
+    title_declaration_legal = schema.TextLine(
+        title=_(u""),
+        required=False,
+        defaultFactory=legal_declaration_title
+    )
+
+    directives.mode(declaration_legal='display')
+    declaration_legal = schema.Text(
+        title=_(u""),
+        required=False,
+        defaultFactory=legal_declaration_text
+    )
+
+    accept_legal_declaration = schema.Bool(
+        title=_(u"Accept the above legal disclaimer"),
+        description=_(u"Please declare that you accept the above legal disclaimer."),
+        required=True
     )
 
     dexteritytextindexer.searchable('category_choice')
@@ -213,3 +278,87 @@ class IEUpEasyProject(model.Schema):
         description =_(u"You need only to upload one file to your project. There are options for further two file uploads"
                        u"if you want to provide files for different platforms.")
     )
+
+    model.fieldset('fileset2',
+                   label=u"Optional Further File Upload",
+                   fields=['filetitlefield1', 'platform_choice1', 'file1',
+                           'filetitlefield2', 'platform_choice2', 'file2']
+                   )
+
+
+    directives.mode(filetitlefield1='display')
+    filetitlefield1 = schema.TextLine(
+        title=_(u"Second Release File"),
+        description=_(u"Here you could add an optional second file to your project, if the files support different "
+                      u"platforms.")
+    )
+
+    directives.widget(platform_choice1=CheckBoxFieldWidget)
+    platform_choice1 = schema.List(
+        title=_(u"Second uploaded file is compatible with the Platform(s)"),
+        description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
+        value_type=schema.Choice(source=vocabAvailPlatforms),
+        required=False,
+    )
+
+    file1 = NamedBlobFile(
+        title=_(u"The second file you want to upload (this is optional)"),
+        description=_(u"Please upload your file."),
+        required=False,
+        constraint=validateextensionfileextension,
+    )
+
+
+
+    directives.mode(filetitlefield2='display')
+    filetitlefield2 = schema.TextLine(
+        title=_(u"Third Release File"),
+        description=_(u"Here you could add an optional third file to your project, if the files support different "
+                      u"platforms.")
+    )
+
+
+    directives.widget(platform_choice2=CheckBoxFieldWidget)
+    platform_choice2 = schema.List(
+        title=_(u"Third uploaded file is compatible with the Platform(s))"),
+        description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
+        value_type=schema.Choice(source=vocabAvailPlatforms),
+        required=False,
+    )
+
+    file2 = NamedBlobFile(
+        title=_(u"The third file you want to upload (this is optional)"),
+        description=_(u"Please upload your file."),
+        required=False,
+        constraint=validateextensionfileextension,
+    )
+
+
+    @invariant
+    def licensenotchoosen(value):
+        if not value.licenses_choice:
+            raise Invalid(_(u"Please choose a license for your release."))
+
+    @invariant
+    def compatibilitynotchoosen(data):
+        if not data.compatibility_choice:
+            raise Invalid(_(u"Please choose one or more compatible product versions for your release."))
+
+    @invariant
+    def legaldeclarationaccepted(data):
+        if data.accept_legal_declaration is not True:
+            raise AcceptLegalDeclaration(
+                _(u"Please accept the Legal Declaration about your Release and your Uploaded File"))
+
+    @invariant
+    def testingvalue(data):
+        if data.source_code_inside is not 1 and data.link_to_source is None:
+            raise Invalid(_(u"You answered the question, whether the source code is inside your extension with no "
+                            u"(default answer). If this is the correct answer, please fill in the Link (URL) "
+                            u"to the Source Code."))
+
+    @invariant
+    def noOSChosen(data):
+        if data.file is not None and data.platform_choice == []:
+            raise Invalid(_(u"Please choose a compatible platform for the uploaded file."))
+
