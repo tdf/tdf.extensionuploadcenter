@@ -100,6 +100,24 @@ def vocabAvailLicenses(context):
 
 directlyProvides(vocabAvailLicenses, IContextSourceBinder)
 
+def vocabAvailPlatforms(context):
+    """ pick up the list of platforms from parent """
+    from tdf.extensionuploadcenter.eupcenter import IEUpCenter
+    while context is not None and not IEUpCenter.providedBy(context):
+        # context = aq_parent(aq_inner(context))
+        context = context.__parent__
+
+    platforms_list = []
+    if context is not None and context.available_platforms:
+        platforms_list = context.available_platforms
+    terms = []
+    for value in platforms_list:
+        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
+    return SimpleVocabulary(terms)
+
+directlyProvides(vocabAvailPlatforms, IContextSourceBinder)
+
+
 def validateextensionfileextension(value):
     if not checkfileextension(value.filename):
         raise Invalid(u'You could only upload LibreOffice extension files with a proper file extension.\n'
@@ -174,4 +192,24 @@ class IEUpEasyProject(model.Schema):
         description=_(u"Please upload your file."),
         required=True,
         constraint=validateextensionfileextension,
+    )
+
+    directives.widget(platform_choice=CheckBoxFieldWidget)
+    platform_choice = schema.List(
+        title=_(u"First uploaded file is compatible with the Platform(s)"),
+        description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
+        value_type=schema.Choice(source=vocabAvailPlatforms),
+        required=True,
+    )
+
+    model.fieldset('fileset1',
+                   label=u"File Upload",
+                   fields=['filetitlefield', 'platform_choice', 'file',]
+                   )
+
+    directives.mode(filetitlefield='display')
+    filetitlefield = schema.TextLine(
+        title=_(u"The First File You Want To Upload"),
+        description =_(u"You need only to upload one file to your project. There are options for further two file uploads"
+                       u"if you want to provide files for different platforms.")
     )
