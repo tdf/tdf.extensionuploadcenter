@@ -14,6 +14,7 @@ from zope.schema.interfaces import IContextSourceBinder
 from plone.namedfile.field import NamedBlobImage, NamedBlobFile
 from zope.interface import provider
 from zope.schema.interfaces import IContextAwareDefaultFactory
+from plone.indexer.decorator import indexer
 
 
 checkfileextension = re.compile(
@@ -160,7 +161,7 @@ def legal_declaration_text(context):
 class AcceptLegalDeclaration(Invalid):
     __doc__ = _(u"It is necessary that you accept the Legal Declaration")
 
-class IEUpEasyProject(model.Schema):
+class IEUpSmallProject(model.Schema):
 
     dexteritytextindexer.searchable('title')
     title = schema.TextLine(
@@ -237,8 +238,8 @@ class IEUpEasyProject(model.Schema):
     )
 
     releasenumber = schema.TextLine(
-        title=_(u"Release Number"),
-        description=_(u"Release Number (up to twelf chars)"),
+        title=_(u"Versions Number"),
+        description=_(u"Version Number of the Extension File (up to twelf chars) which yuo upload in this project."),
         default=_(u"1.0"),
         max_length=12,
     )
@@ -362,3 +363,7 @@ class IEUpEasyProject(model.Schema):
         if data.file is not None and data.platform_choice == []:
             raise Invalid(_(u"Please choose a compatible platform for the uploaded file."))
 
+
+@indexer(IEUpSmallProject)
+def release_number(context, **kw):
+    return context.releasenumber
