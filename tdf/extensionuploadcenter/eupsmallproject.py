@@ -15,10 +15,20 @@ from plone.namedfile.field import NamedBlobImage, NamedBlobFile
 from zope.interface import provider
 from zope.schema.interfaces import IContextAwareDefaultFactory
 from plone.indexer.decorator import indexer
+from zope.security import checkPermission
+from plone import api
+from tdf.extensionuploadcenter.eupproject import IEUpProject
+from z3c.form import validator
+from plone.dexterity.browser.view import DefaultView
+from tdf.extensionuploadcenter import quote_chars
+from plone.uuid.interfaces import IUUID
 
+
+checkfileextensionimage = re.compile(
+    r"^.*\.(png|PNG|gif|GIF|jpg|JPG)").match
 
 checkfileextension = re.compile(
-    r"^.*\.(png|PNG|gif|GIF|jpg|JPG)").match
+    r"^.*\.(oxt|OXT)").match
 
 def validateImageextension(value):
     if not checkfileextension(value.filename):
@@ -147,6 +157,11 @@ def validateextensionfileextension(value):
                       u'LibreOffice extensions have an \'oxt\' file extension.')
     return True
 
+yesnochoice = SimpleVocabulary(
+    [SimpleTerm(value=0, title=_(u'No')),
+     SimpleTerm(value=1, title=_(u'Yes')), ]
+)
+
 
 @provider(IContextAwareDefaultFactory)
 def legal_declaration_title(context):
@@ -212,6 +227,19 @@ class IEUpSmallProject(model.Schema):
         description=_(u"Please declare that you accept the above legal disclaimer."),
         required=True
     )
+
+    source_code_inside = schema.Choice(
+        title=_(u"Is the source code inside the extension?"),
+        vocabulary=yesnochoice,
+        required=True
+    )
+
+
+    link_to_source = schema.URI(
+        title=_(u"Please fill in the Link (URL) to the Source Code."),
+        required=False
+    )
+
 
     dexteritytextindexer.searchable('category_choice')
     directives.widget(category_choice=CheckBoxFieldWidget)
@@ -367,3 +395,51 @@ class IEUpSmallProject(model.Schema):
 @indexer(IEUpSmallProject)
 def release_number(context, **kw):
     return context.releasenumber
+
+
+
+class ValidateEUpSmallProjectUniqueness(validator.SimpleFieldValidator):
+    # Validate site-wide uniqueness of project titles.
+
+    def validate(self, value):
+        # Perform the standard validation first
+        from tdf.extensionuploadcenter.eupproject import IEUpProject
+
+        super(ValidateEUpSmallProjectUniqueness, self).validate(value)
+        if value is not None:
+            catalog = api.portal.get_tool(name='portal_catalog')
+            results1 = catalog({'Title': quote_chars(value),
+                               'object_provides': IEUpProject.__identifier__,})
+            results2 = catalog({'Title': quote_chars(value),
+                               'object_provides': IEUpSmallProject.__identifier__,})
+            results = results1 + results2
+
+            contextUUID = IUUID(self.context, None)
+            for result in results:
+                if result.UID != contextUUID:
+                    raise Invalid(_(u"The project title is already in use."))
+
+
+validator.WidgetValidatorDiscriminators(
+    ValidateEUpSmallProjectUniqueness,
+    field=IEUpSmallProject['title'],
+)
+
+
+class EUpSmallProjectView(DefaultView):
+    def canPublishContent(self):
+        return checkPermission('cmf.ModifyPortalContent', self.context)
+
+    def releaseLicense(self):
+        catalog = api.portal.get_tool(name='portal_catalog')
+        path = "/".join(self.context.getPhysicalPath())
+        idx_data = catalog.getIndexDataForUID(path)
+        licenses = idx_data.get('releaseLicense')
+        return(r for r in licenses)
+
+    def releaseCompatibility(self):
+        catalog = api.portal.get_tool(name='portal_catalog')
+        path = "/".join(self.context.getPhysicalPath())
+        idx_data = catalog.getIndexDataForUID(path)
+        compatibility = idx_data.get('getCompatibility')
+        return(r for r in compatibility)
