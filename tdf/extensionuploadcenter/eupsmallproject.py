@@ -397,6 +397,71 @@ def release_number(context, **kw):
     return context.releasenumber
 
 
+def notifyProjectManager(self, event):
+    state = api.content.get_state(self)
+    if (self.__parent__.contactForCenter) is not None:
+        mailrecipient = str(self.__parent__.contactForCenter)
+    else:
+        mailrecipient = 'extensions@libreoffice.org'
+    api.portal.send_email(
+        recipient=("{}").format(self.contactAddress),
+        sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
+        subject=(u"Your Project {}").format(self.title),
+        body=(u"The status of your LibreOffice extension project changed. The new status is {}").format(state)
+    )
+
+
+def notifyAboutNewReviewlistentry(self, event):
+    portal = api.portal.get()
+    state = api.content.get_state(self)
+    if (self.__parent__.contactForCenter) is not None:
+        mailrecipient = str(self.__parent__.contactForCenter)
+    else:
+        mailrecipient = 'extensions@libreoffice.org'
+
+    if state == "pending":
+        api.portal.send_email(
+            recipient=mailrecipient,
+            subject=(u"A Project with the title {} was added to the review list").format(self.title),
+            body="Please have a look at the review list and check if the project is "
+                 "ready for publication. \n"
+                 "\n"
+                 "Kind regards,\n"
+                 "The Admin of the Website"
+        )
+
+def textmodified_project(self, event):
+    portal = api.portal.get()
+    state = api.content.get_state(self)
+    if (self.__parent__.contactForCenter) is not None:
+        mailrecipient = str(self.__parent__.contactForCenter)
+    else:
+        mailrecipient = 'extensions@libreoffice.org'
+    if state == "published":
+        api.portal.send_email(
+            recipient=mailrecipient,
+            sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
+            subject=(u"The content of the project {} has changed").format(self.title),
+            body=(u"The content of the project {} has changed. Here you get the text of the "
+                  u"description field of the project: \n'{}\n\nand this is the text of the "
+                  u"details field:\n{}'").format(self.title, self.description, self.details.output),
+        )
+
+
+def notifyAboutNewProject(self, event):
+    if (self.__parent__.contactForCenter) is not None:
+        mailrecipient = str(self.__parent__.contactForCenter),
+    else:
+        mailrecipient = 'extensions@libreoffice.org'
+    api.portal.send_email(
+        recipient=mailrecipient,
+        subject=(u"A Project with the title {} was added").format(self.title),
+        body="A member added a new project"
+    )
+
+
+
+
 
 class ValidateEUpSmallProjectUniqueness(validator.SimpleFieldValidator):
     # Validate site-wide uniqueness of project titles.
