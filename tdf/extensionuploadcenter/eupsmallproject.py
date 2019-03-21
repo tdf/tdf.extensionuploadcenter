@@ -22,6 +22,7 @@ from z3c.form import validator
 from plone.dexterity.browser.view import DefaultView
 from tdf.extensionuploadcenter import quote_chars
 from plone.uuid.interfaces import IUUID
+from Products.validation import V_REQUIRED
 
 
 checkfileextensionimage = re.compile(
