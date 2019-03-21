@@ -263,11 +263,16 @@ class ValidateEUpProjectUniqueness(validator.SimpleFieldValidator):
 
     def validate(self, value):
         # Perform the standard validation first
+        from tdf.extensionuploadcenter.eupsmallproject import IEUpSmallProject
+
         super(ValidateEUpProjectUniqueness, self).validate(value)
         if value is not None:
             catalog = api.portal.get_tool(name='portal_catalog')
-            results = catalog({'Title': quote_chars(value),
-                               'object_provides': IEUpProject.__identifier__})
+            results1 = catalog({'Title': quote_chars(value),
+                               'object_provides': IEUpProject.__identifier__,})
+            results2 = catalog({'Title': quote_chars(value),
+                               'object_provides': IEUpSmallProject.__identifier__,})
+            results = results1 + results2
 
             contextUUID = IUUID(self.context, None)
             for result in results:
