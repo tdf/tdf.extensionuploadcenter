@@ -177,7 +177,17 @@ def legal_declaration_text(context):
 class AcceptLegalDeclaration(Invalid):
     __doc__ = _(u"It is necessary that you accept the Legal Declaration")
 
+
 class IEUpSmallProject(model.Schema):
+
+    directives.mode(information="display")
+    information = schema.Text(
+        title= _(u"Information"),
+        description=_(u"The Dialog to create a new project consists of different register. Please go through "
+                      u"this register and fill in the appropriate data for your project or choose one of the "
+                      u"options that are provided. You could upload one or more files to your project on the  "
+                      u"register 'File Upload' and 'Optional Further File Upload'.")
+    )
 
     dexteritytextindexer.searchable('title')
     title = schema.TextLine(
@@ -198,6 +208,16 @@ class IEUpSmallProject(model.Schema):
         title=_(u"Full Project Description"),
         required=False
     )
+    model.fieldset('category_compatibility',
+                   label=u"Categories / Compatibility",
+                   fields=['category_choice', 'compatibility_choice']
+                   )
+
+    model.fieldset('legal',
+                   label=u"Legal",
+                   fields=['licenses_choice', 'title_declaration_legal', 'declaration_legal',
+                           'accept_legal_declaration', 'source_code_inside', 'link_to_source' ]
+                   )
 
 
     directives.widget(licenses_choice=CheckBoxFieldWidget)
