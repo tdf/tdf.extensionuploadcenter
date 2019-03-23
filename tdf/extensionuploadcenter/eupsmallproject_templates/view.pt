@@ -55,7 +55,7 @@
                      <h3 i18n:translate="">Category/Categories</h3>
                      <p>
                          <tal:loop repeat="releasecategories categories">
-                             <span tal:content="releasecategories" />
+                             <span tal:content="releasecategories" />,
                          </tal:loop>
                      </p>
                      <h4 class="eucenterlicense" i18n:translate="">License(s)</h4>
