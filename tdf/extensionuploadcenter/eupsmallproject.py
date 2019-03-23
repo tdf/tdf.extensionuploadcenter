@@ -529,3 +529,10 @@ class EUpSmallProjectView(DefaultView):
         idx_data = catalog.getIndexDataForUID(path)
         compatibility = idx_data.get('getCompatibility')
         return(r for r in compatibility)
+
+    def releaseCategory(self):
+        catalog = api.portal.get_tool(name='portal_catalog')
+        path = "/".join(self.context.getPhysicalPath())
+        idx_data = catalog.getIndexDataForUID(path)
+        category = idx_data.get('getCategories')
+        return(r for r in category)
