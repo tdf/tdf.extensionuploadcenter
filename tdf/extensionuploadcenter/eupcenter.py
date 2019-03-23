@@ -309,7 +309,8 @@ class EUpCenterOwnProjectsViewlet(ViewletBase):
         current_user = api.user.get_current()
         pc = api.portal.get_tool('portal_catalog')
         return pc.portal_catalog(
-            portal_type='tdf.extensionuploadcenter.eupproject',
+            portal_type=('tdf.extensionuploadcenter.eupproject',
+                         'tdf.extensionuploadcenter.eupsmallproject'),
             sort_on='Date',
             sort_order='reverse',
             Creator=str(current_user)

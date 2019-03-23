@@ -228,10 +228,17 @@
                         <p class="current-projects"><span i18n:translate="">Currently there are</span>
                             <span tal:content="view/eupproject_count" /> <span i18n:translate="">project(s) with</span>
                             <span tal:content="view/euprelease_count" /> <span i18n:translate="">release(s) available.</span></p>
+                        <p>
                         <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.extensionuploadcenter.eupproject">
                             <img src="++resource++tdf.extensionuploadcenter/yellowarrow.png"  alt=""/><span i18n:translate=""> Submit your </span>
                             <span tal:content="context/product_title | string:extension_project" />
+                        </a><br /> or <br />
+                        <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.extensionuploadcenter.eupsmallproject">
+                            <img src="++resource++tdf.extensionuploadcenter/yellowarrow.png"  alt=""/><span i18n:translate=""> Submit easy and fast a small </span>
+                            <span tal:content="context/product_title | string:extension_project" /> Project
                         </a>
+                        </p>
+
 
                 	</div>
 
