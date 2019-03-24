@@ -288,7 +288,7 @@ class IEUpSmallProject(model.Schema):
 
     releasenumber = schema.TextLine(
         title=_(u"Versions Number"),
-        description=_(u"Version Number of the Extension File (up to twelf chars) which yuo upload in this project."),
+        description=_(u"Version Number of the Extension File (up to twelf chars) which you upload in this project."),
         default=_(u"1.0"),
         max_length=12,
     )
@@ -325,7 +325,7 @@ class IEUpSmallProject(model.Schema):
     directives.mode(filetitlefield='display')
     filetitlefield = schema.TextLine(
         title=_(u"The First File You Want To Upload"),
-        description =_(u"You need only to upload one file to your project. There are options for further two file uploads"
+        description =_(u"You need only to upload one file to your project. There are options for further two file uploads "
                        u"if you want to provide files for different platforms.")
     )
 
