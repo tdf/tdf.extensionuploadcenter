@@ -4,7 +4,10 @@ Changelog
 0.28 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Add a new module for small extension projects [Andreas Mantke]
+- New function to search and display categories for extension
+  projects and small extension projects [Andreas Mantke]
+- Update German localization [Andreas Mantke]
 
 
 0.27 (2018-12-09)
