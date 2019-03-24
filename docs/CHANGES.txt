@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.28 (unreleased)
+0.28 (2019-03-24)
 -----------------
 
 - Add a new module for small extension projects [Andreas Mantke]
