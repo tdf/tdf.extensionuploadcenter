@@ -32,7 +32,7 @@ checkfileextension = re.compile(
     r"^.*\.(oxt|OXT)").match
 
 def validateImageextension(value):
-    if not checkfileextension(value.filename):
+    if not checkfileextensionimage(value.filename):
         raise Invalid(u"You could only add images in the png, gif or jpg file format to your project.")
     return True
 
