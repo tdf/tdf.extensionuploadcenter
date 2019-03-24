@@ -27,7 +27,7 @@
                                                           wf_tool here/portal_workflow;
                                                           license view/releaseLicense;
                                                           compatibility view/releaseCompatibility;
-                                                          categories view/releaseCategory;
+                                                          categories view/projectCategory;
                                                           review_state python:wf_tool.getInfoFor( here, 'review_state', '');">
 
         <span tal:replace="structure context/@@authenticator/authenticator"/>
