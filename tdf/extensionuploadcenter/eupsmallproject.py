@@ -459,13 +459,18 @@ def textmodified_project(self, event):
     else:
         mailrecipient = 'extensions@libreoffice.org'
     if state == "published":
+        if self.details is not None:
+            detailed_description = self.details.output
+        else:
+            detailed_description = None
+
         api.portal.send_email(
             recipient=mailrecipient,
             sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
             subject=(u"The content of the project {} has changed").format(self.title),
             body=(u"The content of the project {} has changed. Here you get the text of the "
                   u"description field of the project: \n'{}\n\nand this is the text of the "
-                  u"details field:\n{}'").format(self.title, self.description, self.details.output),
+                  u"details field:\n{}'").format(self.title, self.description, detailed_description),
         )
 
 
@@ -530,7 +535,7 @@ class EUpSmallProjectView(DefaultView):
         compatibility = idx_data.get('getCompatibility')
         return(r for r in compatibility)
 
-    def releaseCategory(self):
+    def projectCategory(self):
         catalog = api.portal.get_tool(name='portal_catalog')
         path = "/".join(self.context.getPhysicalPath())
         idx_data = catalog.getIndexDataForUID(path)
