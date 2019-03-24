@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-03-24 20:38+0000\n"
+"POT-Creation-Date: 2019-03-24 21:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1051,7 +1051,7 @@ msgid "Version"
 msgstr ""
 
 #: ./eupsmallproject.py:291
-msgid "Version Number of the Extension File (up to twelf chars) which yuo upload in this project."
+msgid "Version Number of the Extension File (up to twelf chars) which you upload in this project."
 msgstr ""
 
 #: ./eupsmallproject.py:290
@@ -1084,7 +1084,7 @@ msgid "You have not chosen a category for the project."
 msgstr ""
 
 #: ./eupsmallproject.py:328
-msgid "You need only to upload one file to your project. There are options for further two file uploadsif you want to provide files for different platforms."
+msgid "You need only to upload one file to your project. There are options for further two file uploads if you want to provide files for different platforms."
 msgstr ""
 
 #: ./eupproject_templates/view.pt:56
