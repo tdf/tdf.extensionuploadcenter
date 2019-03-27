@@ -282,7 +282,7 @@ class IEUpSmallProject(model.Schema):
         title=_(u"Screenshot of the Extension"),
         description=_(u"Add a screenshot by clicking the 'Browse' button. You could provide an image of the file "
                       u"format 'png', 'gif' or 'jpg'."),
-        required=False,
+        required=True,
         constraint=validateImageextension
     )
 
@@ -541,3 +541,6 @@ class EUpSmallProjectView(DefaultView):
         idx_data = catalog.getIndexDataForUID(path)
         category = idx_data.get('getCategories')
         return(r for r in category)
+
+    def latest_release_date(self):
+        return None
