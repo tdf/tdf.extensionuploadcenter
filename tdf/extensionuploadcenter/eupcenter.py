@@ -233,7 +233,8 @@ class EUpCenterView(BrowserView):
         context = aq_inner(self.context)
         catalog = api.portal.get_tool(name='portal_catalog')
 
-        return len(catalog(portal_type='tdf.extensionuploadcenter.eupproject'))
+        return len(catalog(portal_type=('tdf.extensionuploadcenter.eupproject', 'tdf.extensionuploadcenter.eupsmallproject'),
+                           review_state = 'published'))
 
     def euprelease_count(self):
         """Return number of downloadable files
@@ -250,7 +251,8 @@ class EUpCenterView(BrowserView):
             'sort_on': sort_on,
             'sort_order': 'reverse',
             'review_state': 'published',
-            'portal_type': 'tdf.extensionuploadcenter.eupproject'}
+            'portal_type': ('tdf.extensionuploadcenter.eupproject',
+                            'tdf.extensionuploadcenter.eupsmallproject')}
         return catalog(**contentFilter)
 
     def get_newest_products(self):
@@ -276,7 +278,8 @@ class EUpCenterView(BrowserView):
             'sort_on': sort_on,
             'SearchableText': SearchableText,
             'sort_order': 'reverse',
-            'portal_type': 'tdf.extensionuploadcenter.eupproject'}
+            'portal_type': ('tdf.extensionuploadcenter.eupproject',
+                           'tdf.extensionuploadcenter.eupsmallproject')}
 
         if version != 'any':
             # We ask to the indexed value on the project (aggregated from
