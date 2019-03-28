@@ -4,7 +4,10 @@ Changelog
 0.29 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Improve the view and the search features of the eupcenter and include the new
+  module for smalll projects in the search and listing [Andreas Mantke]
+- Add the install instructions to the ressources of the new module for small
+  projects view [Andreas Mantke]
 
 
 0.28 (2019-03-24)
