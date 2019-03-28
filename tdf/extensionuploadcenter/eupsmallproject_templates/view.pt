@@ -121,6 +121,10 @@
                              </div>
                          </div>
                      </div>
+                     <div class="eupcenterprojectinstallinstructions" tal:condition="context/install_instructions">
+                         <h3 i18n:translate="">Install Instructions</h3>
+                         <span tal:content="structure context/install_instructions/output" />
+                     </div>
                  </div>
              </div>
          </div>
