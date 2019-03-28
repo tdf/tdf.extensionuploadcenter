@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.29 (unreleased)
+0.29 (2019-03-28)
 -----------------
 
 - Improve the view and the search features of the eupcenter and include the new
