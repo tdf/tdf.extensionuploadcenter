@@ -417,6 +417,10 @@ class IEUpSmallProject(model.Schema):
 def release_number(context, **kw):
     return context.releasenumber
 
+@indexer(IEUpSmallProject)
+def project_compat_versions(context, **kw):
+    return context.compatibility_choice
+
 
 def notifyProjectManager(self, event):
     state = api.content.get_state(self)
@@ -484,8 +488,6 @@ def notifyAboutNewProject(self, event):
         subject=(u"A Project with the title {} was added").format(self.title),
         body="A member added a new project"
     )
-
-
 
 
 
