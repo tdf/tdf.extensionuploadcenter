@@ -262,7 +262,8 @@ class EUpCenterView(BrowserView):
             'sort_on': sort_on,
             'sort_order': 'reverse',
             'review_state': 'published',
-            'portal_type': 'tdf.extensionuploadcenter.eupproject'}
+            'portal_type': ('tdf.extensionuploadcenter.eupproject',
+                            'tdf.extensionuploadcenter.eupsmallproject')}
 
         results = self.catalog(**contentFilter)
 
