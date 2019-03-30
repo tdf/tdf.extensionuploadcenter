@@ -4,7 +4,9 @@ Changelog
 0.30 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Add a missing entry for small extension projects in the search for newest
+  projects [Andreas Mantke]
+- CSS fix [Andreas Mantke]
 
 
 0.29 (2019-03-28)
