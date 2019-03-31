@@ -146,7 +146,7 @@ class IEUpRelease(model.Schema):
         title=_(u'License of the uploaded file'),
         description=_(u"Please mark one or more licenses you publish your release."),
         value_type=schema.Choice(source=vocabAvailLicenses),
-        required=True,
+        required=False,
     )
 
     directives.widget(compatibility_choice=CheckBoxFieldWidget)
@@ -334,11 +334,6 @@ class IEUpRelease(model.Schema):
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=False,
     )
-
-    @invariant
-    def licensenotchoosen(value):
-        if not value.licenses_choice:
-            raise Invalid(_(u"Please choose a license for your release."))
 
     @invariant
     def compatibilitynotchoosen(data):
