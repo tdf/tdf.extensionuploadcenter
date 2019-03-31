@@ -7,6 +7,7 @@ Changelog
 - Add a missing entry for small extension projects in the search for newest
   projects [Andreas Mantke]
 - CSS fix [Andreas Mantke]
+- Structure the eupproject edit mode with register [Andreas Mantke]
 
 
 0.29 (2019-03-28)
