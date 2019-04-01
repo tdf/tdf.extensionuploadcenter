@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-03-24 21:20+0000\n"
+"POT-Creation-Date: 2019-04-01 19:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,11 +64,11 @@ msgstr ""
 msgid "Accept the above legal disclaimer"
 msgstr ""
 
-#: ./eupproject.py:150
+#: ./eupproject.py:174
 msgid "Add a logo for the project (or organization/company) by clicking the 'Browse' button.You could provide an image of the file format 'png', 'gif' or 'jpg'."
 msgstr ""
 
-#: ./eupproject.py:158
+#: ./eupproject.py:182
 #: ./eupsmallproject.py:283
 msgid "Add a screenshot by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'."
 msgstr ""
@@ -158,7 +158,7 @@ msgstr ""
 msgid "Changelog"
 msgstr ""
 
-#: ./eupproject.py:114
+#: ./eupproject.py:138
 #: ./eupsmallproject.py:268
 msgid "Choose your categories"
 msgstr ""
@@ -175,13 +175,13 @@ msgstr ""
 msgid "Compatible with versions of LibreOffice"
 msgstr ""
 
-#: ./eupproject.py:122
+#: ./eupproject.py:146
 #: ./euprelease.py:182
 #: ./eupreleaselink.py:180
 msgid "Contact email-address"
 msgstr ""
 
-#: ./eupproject.py:123
+#: ./eupproject.py:147
 #: ./euprelease.py:183
 #: ./eupreleaselink.py:181
 msgid "Contact email-address for the project."
@@ -215,7 +215,7 @@ msgstr ""
 msgid "Description of the features of extensions"
 msgstr ""
 
-#: ./eupproject.py:142
+#: ./eupproject.py:166
 msgid "Dokumentation File"
 msgstr ""
 
@@ -362,7 +362,7 @@ msgstr ""
 msgid "Fourth uploaded file is compatible with the Platform(s)"
 msgstr ""
 
-#: ./eupproject.py:107
+#: ./eupproject.py:115
 #: ./eupsmallproject.py:208
 msgid "Full Project Description"
 msgstr ""
@@ -417,15 +417,15 @@ msgstr ""
 msgid "Highest Rated"
 msgstr ""
 
-#: ./eupproject.py:128
+#: ./eupproject.py:152
 msgid "Homepage"
 msgstr ""
 
-#: ./eupproject.py:129
+#: ./eupproject.py:153
 msgid "If the project has an external home page, enter its URL (example: 'http://www.mysite.org')."
 msgstr ""
 
-#: ./eupproject.py:135
+#: ./eupproject.py:159
 msgid "If the project has externally hosted documentation, enter its URL (example: 'http://www.mysite.org')."
 msgstr ""
 
@@ -433,7 +433,7 @@ msgstr ""
 msgid "If you already created a new"
 msgstr ""
 
-#: ./eupproject.py:143
+#: ./eupproject.py:167
 msgid "If you have a Documentation in the file format 'PDF' or 'ODT' you could add it here."
 msgstr ""
 
@@ -454,6 +454,7 @@ msgstr ""
 msgid "Info"
 msgstr ""
 
+#: ./eupproject.py:93
 #: ./eupsmallproject.py:185
 msgid "Information"
 msgstr ""
@@ -519,7 +520,7 @@ msgstr ""
 msgid "Link to Source Code"
 msgstr ""
 
-#: ./eupproject.py:149
+#: ./eupproject.py:173
 msgid "Logo"
 msgstr ""
 
@@ -590,7 +591,7 @@ msgstr ""
 msgid "Please accept the Legal Declaration about your Release and your linked File"
 msgstr ""
 
-#: ./eupproject.py:167
+#: ./eupproject.py:191
 msgid "Please add a screenshot or a logo to your project page. You will find the appropriate fields below on this page."
 msgstr ""
 
@@ -673,7 +674,7 @@ msgstr ""
 msgid "Please mark one or more program versions with which this release is compatible with."
 msgstr ""
 
-#: ./eupproject.py:115
+#: ./eupproject.py:139
 #: ./eupsmallproject.py:269
 msgid "Please select the appropriate categories (one or more) for your project."
 msgstr ""
@@ -693,12 +694,12 @@ msgstr ""
 msgid "Project Resources"
 msgstr ""
 
-#: ./eupproject.py:101
+#: ./eupproject.py:109
 #: ./eupsmallproject.py:202
 msgid "Project Summary"
 msgstr ""
 
-#: ./eupproject.py:94
+#: ./eupproject.py:102
 #: ./eupsmallproject.py:195
 msgid "Project Title - minimum 5 and maximum 50 characters"
 msgstr ""
@@ -813,7 +814,7 @@ msgstr ""
 msgid "Screenshot"
 msgstr ""
 
-#: ./eupproject.py:157
+#: ./eupproject.py:181
 #: ./eupsmallproject.py:282
 msgid "Screenshot of the Extension"
 msgstr ""
@@ -914,6 +915,10 @@ msgstr ""
 msgid "The Dialog to create a new project consists of different register. Please go through this register and fill in the appropriate data for your project or choose one of the options that are provided. You could upload one or more files to your project on the  register 'File Upload' and 'Optional Further File Upload'."
 msgstr ""
 
+#: ./eupproject.py:94
+msgid "The Dialog to create a new project consists of different register. Please go through this register and fill in the appropriate data for your project. The register 'Documentation' and its fields are optional."
+msgstr ""
+
 #: ./eupsmallproject.py:327
 msgid "The First File You Want To Upload"
 msgstr ""
@@ -953,8 +958,8 @@ msgstr ""
 msgid "The owner can edit the extension project"
 msgstr ""
 
-#: ./eupproject.py:285
-#: ./eupsmallproject.py:511
+#: ./eupproject.py:309
+#: ./eupsmallproject.py:513
 msgid "The project title is already in use."
 msgstr ""
 
@@ -1009,7 +1014,7 @@ msgstr ""
 msgid "Third uploaded file is compatible with the Platform(s))"
 msgstr ""
 
-#: ./eupproject.py:93
+#: ./eupproject.py:101
 #: ./eupsmallproject.py:194
 msgid "Title"
 msgstr ""
@@ -1022,7 +1027,7 @@ msgstr ""
 msgid "Title of the Legal Disclaimer and Limitations for Downloads"
 msgstr ""
 
-#: ./eupproject.py:134
+#: ./eupproject.py:158
 msgid "URL of documentation repository "
 msgstr ""
 
