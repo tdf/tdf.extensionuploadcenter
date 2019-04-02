@@ -8,6 +8,8 @@ Changelog
   projects [Andreas Mantke]
 - CSS fix [Andreas Mantke]
 - Structure the eupproject edit mode with register [Andreas Mantke]
+- Update German localization [Andreas Mantke]
+
 
 
 0.29 (2019-03-28)
