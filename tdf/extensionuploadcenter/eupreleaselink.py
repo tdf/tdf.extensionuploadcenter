@@ -109,6 +109,18 @@ class AcceptLegalDeclaration(Invalid):
 
 
 class IEUpReleaseLink(model.Schema):
+    directives.mode(information="display")
+    information = schema.Text(
+        title=_(u"Information"),
+        description=_(u"This Dialog to create a new release consists of different register. Please go through "
+                      u"this register and fill in the appropriate data for your project. This register 'Default' "
+                      u"provide fields for general information of your linked release. The next register 'compatibility "
+                      u"is the place to submit information about the versions with which your linked release file(s) "
+                      u"is / are compatibility. The register asks for some legal informations. The next register "
+                      u"' Linked File' provide a field to link your release file. The further register are optional. "
+                      u" There is the opportunity to link further release files (for different platforms).")
+    )
+
     directives.mode(projecttitle='hidden')
     projecttitle = schema.TextLine(
         title=_(u"The Computed Project Title"),
@@ -139,6 +151,16 @@ class IEUpReleaseLink(model.Schema):
         description=_(u"A detailed log of what has changed since the previous release."),
         required=False,
     )
+
+    model.fieldset('compatibility',
+                   label=u"Compatibility",
+                   fields=['compatibility_choice'])
+
+    model.fieldset('legal',
+                   label=u"Legal",
+                   fields=['licenses_choice', 'title_declaration_legal',
+                           'declaration_legal', 'accept_legal_declaration',
+                           'source_code_inside', 'link_to_source'])
 
     directives.widget(licenses_choice=CheckBoxFieldWidget)
     licenses_choice = schema.List(
@@ -193,6 +215,11 @@ class IEUpReleaseLink(model.Schema):
         title=_(u"Please fill in the Link (URL) to the Source Code."),
         required=False
     )
+
+    model.fieldset('linked_file',
+                   label='Linked File',
+                   fields= ['link_to_file', 'external_file_size',
+                            'platform_choice', 'information_further_file_uploads'])
 
     link_to_file = schema.URI(
         title=_(u"The Link to the file of the release"),
