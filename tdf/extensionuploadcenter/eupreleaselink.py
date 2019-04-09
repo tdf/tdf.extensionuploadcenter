@@ -112,12 +112,12 @@ class IEUpReleaseLink(model.Schema):
     directives.mode(information="display")
     information = schema.Text(
         title=_(u"Information"),
-        description=_(u"This Dialog to create a new release consists of different register. Please go through "
-                      u"this register and fill in the appropriate data for your project. This register 'Default' "
+        description=_(u"This Dialog to create a new linked release consists of different register. Please go through "
+                      u"this register and fill in the appropriate data for your linked release. This register 'Default' "
                       u"provide fields for general information of your linked release. The next register 'compatibility "
                       u"is the place to submit information about the versions with which your linked release file(s) "
-                      u"is / are compatibility. The register asks for some legal informations. The next register "
-                      u"' Linked File' provide a field to link your release file. The further register are optional. "
+                      u"is / are compatible. The next register asks for some legal informations. The next register "
+                      u" 'Linked File' provide a field to link your release file. The further register are optional. "
                       u" There is the opportunity to link further release files (for different platforms).")
     )
 

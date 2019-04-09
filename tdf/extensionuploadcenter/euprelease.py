@@ -114,7 +114,7 @@ class IEUpRelease(model.Schema):
     information = schema.Text(
         title=_(u"Information"),
         description=_(u"This Dialog to create a new release consists of different register. Please go through "
-                      u"this register and fill in the appropriate data for your project. This register 'Default' "
+                      u"this register and fill in the appropriate data for your release. This register 'Default' "
                       u"provide fields for general information of your release. The next register 'compatibility' is "
                       u"the place to submit information about the versions with which your release file(s) is / are "
                       u"compatible. The following register asks for some legal informations. The next register "
