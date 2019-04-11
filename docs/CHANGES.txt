@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.30 (unreleased)
+0.30 (2019-04-11)
 -----------------
 
 - Add a missing entry for small extension projects in the search for newest
