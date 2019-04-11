@@ -11,7 +11,7 @@ Changelog
 - Update German localization [Andreas Mantke]
 - Improve the edit dialog and split it into more register for the release and
   the linked release module. [Andreas Mantke]
--
+
 
 
 0.29 (2019-03-28)
