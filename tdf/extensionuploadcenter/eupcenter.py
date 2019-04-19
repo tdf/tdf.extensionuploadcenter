@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from Acquisition import aq_inner
 from plone import api
 from plone.app.layout.viewlets import ViewletBase
