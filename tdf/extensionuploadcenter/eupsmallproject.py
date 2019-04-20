@@ -18,7 +18,6 @@ from zope.schema.interfaces import IContextAwareDefaultFactory
 from plone.indexer.decorator import indexer
 from zope.security import checkPermission
 from plone import api
-from tdf.extensionuploadcenter.eupproject import IEUpProject
 from z3c.form import validator
 from plone.dexterity.browser.view import DefaultView
 from tdf.extensionuploadcenter import quote_chars
