@@ -11,20 +11,17 @@ from zope.interface import directlyProvides
 from plone import api
 from zope.security import checkPermission
 from zope.interface import invariant, Invalid
-from Acquisition import aq_inner, aq_parent, aq_get, aq_chain
+from Acquisition import aq_inner, aq_parent
 from plone.namedfile.field import NamedBlobFile
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from plone.supermodel.directives import primary
 
-from zope import schema
 from tdf.extensionuploadcenter.adapter import IReleasesCompatVersions
 
 from zope.interface import provider
 from zope.schema.interfaces import IContextAwareDefaultFactory
 from Products.validation import V_REQUIRED
-from plone import api
 from z3c.form import validator
-from plone.uuid.interfaces import IUUID
 import re
 import itertools
 from plone.autoform import directives
