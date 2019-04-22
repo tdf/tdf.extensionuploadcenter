@@ -33,7 +33,8 @@ checkfileextension = re.compile(
 
 def validateImageextension(value):
     if not checkfileextensionimage(value.filename):
-        raise Invalid(u"You could only add images in the png, gif or jpg file format to your project.")
+        raise Invalid(u"You could only add images in the png, gif or jpg file "
+                      u"format to your project.")
     return True
 
 
@@ -65,7 +66,8 @@ def vocabCategories(context):
 
     terms = []
     for value in category_list:
-        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
+        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'),
+                                title=value))
 
     return SimpleVocabulary(terms)
 
@@ -84,7 +86,8 @@ def vocabAvailLicenses(context):
         license_list = context.available_licenses
     terms = []
     for value in license_list:
-        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
+        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'),
+                                title=value))
     return SimpleVocabulary(terms)
 
 
@@ -104,7 +107,8 @@ def vocabAvailVersions(context):
 
     terms = []
     for value in versions_list:
-        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
+        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'),
+                                title=value))
     return SimpleVocabulary(terms)
 
 
@@ -112,7 +116,8 @@ directlyProvides(vocabAvailVersions, IContextSourceBinder)
 
 def isNotEmptyCategory(value):
     if not value:
-        raise Invalid(u'You have to choose at least one category for your project.')
+        raise Invalid(u'You have to choose at least one category for your '
+                      u'project.')
     return True
 
 def vocabAvailLicenses(context):
@@ -129,7 +134,8 @@ def vocabAvailLicenses(context):
         license_list = context.available_licenses
     terms = []
     for value in license_list:
-        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
+        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'),
+                                title=value))
     return SimpleVocabulary(terms)
 
 directlyProvides(vocabAvailLicenses, IContextSourceBinder)
@@ -146,7 +152,8 @@ def vocabAvailPlatforms(context):
         platforms_list = context.available_platforms
     terms = []
     for value in platforms_list:
-        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
+        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'),
+                                title=value))
     return SimpleVocabulary(terms)
 
 directlyProvides(vocabAvailPlatforms, IContextSourceBinder)
@@ -154,8 +161,10 @@ directlyProvides(vocabAvailPlatforms, IContextSourceBinder)
 
 def validateextensionfileextension(value):
     if not checkfileextension(value.filename):
-        raise Invalid(u'You could only upload LibreOffice extension files with a proper file extension.\n'
-                      u'LibreOffice extensions have an \'oxt\' file extension.')
+        raise Invalid(u'You could only upload LibreOffice extension files '
+                      u'with a proper file extension.\n'
+                      u'LibreOffice extensions have an \'oxt\' file '
+                      u'extension.')
     return True
 
 yesnochoice = SimpleVocabulary(
@@ -183,10 +192,13 @@ class IEUpSmallProject(model.Schema):
     directives.mode(information="display")
     information = schema.Text(
         title= _(u"Information"),
-        description=_(u"The Dialog to create a new project consists of different register. Please go through "
-                      u"this register and fill in the appropriate data for your project or choose one of the "
-                      u"options that are provided. You could upload one or more files to your project on the  "
-                      u"register 'File Upload' and 'Optional Further File Upload'.")
+        description=_(u"The Dialog to create a new project consists of "
+                      u"different register. Please go through this register "
+                      u"and fill in the appropriate data for your project or "
+                      u"choose one of the options that are provided. You "
+                      u"could upload one or more files to your project on "
+                      u"the register 'File Upload' and 'Optional Further "
+                      u"File Upload'.")
     )
 
     dexteritytextindexer.searchable('title')
@@ -215,15 +227,20 @@ class IEUpSmallProject(model.Schema):
 
     model.fieldset('legal',
                    label=u"Legal",
-                   fields=['licenses_choice', 'title_declaration_legal', 'declaration_legal',
-                           'accept_legal_declaration', 'source_code_inside', 'link_to_source' ]
+                   fields=['licenses_choice',
+                           'title_declaration_legal',
+                           'declaration_legal',
+                           'accept_legal_declaration',
+                           'source_code_inside',
+                           'link_to_source' ]
                    )
 
 
     directives.widget(licenses_choice=CheckBoxFieldWidget)
     licenses_choice = schema.List(
         title=_(u'License of the uploaded file'),
-        description=_(u"Please mark one or more licenses you publish your release."),
+        description=_(u"Please mark one or more licenses you publish your "
+                      u"release."),
         value_type=schema.Choice(source=vocabAvailLicenses),
         required=True,
     )
@@ -245,7 +262,8 @@ class IEUpSmallProject(model.Schema):
 
     accept_legal_declaration = schema.Bool(
         title=_(u"Accept the above legal disclaimer"),
-        description=_(u"Please declare that you accept the above legal disclaimer."),
+        description=_(u"Please declare that you accept the above legal "
+                      u"disclaimer."),
         required=True
     )
 
@@ -266,7 +284,8 @@ class IEUpSmallProject(model.Schema):
     directives.widget(category_choice=CheckBoxFieldWidget)
     category_choice = schema.List(
         title=_(u"Choose your categories"),
-        description=_(u"Please select the appropriate categories (one or more) for your project."),
+        description=_(u"Please select the appropriate categories (one or "
+                      u"more) for your project."),
         value_type=schema.Choice(source=vocabCategories),
         constraint=isNotEmptyCategory,
         required=True
@@ -280,15 +299,17 @@ class IEUpSmallProject(model.Schema):
 
     screenshot = NamedBlobImage(
         title=_(u"Screenshot of the Extension"),
-        description=_(u"Add a screenshot by clicking the 'Browse' button. You could provide an image of the file "
-                      u"format 'png', 'gif' or 'jpg'."),
+        description=_(u"Add a screenshot by clicking the 'Browse' button. "
+                      u"You could provide an image of the file format 'png', "
+                      u"'gif' or 'jpg'."),
         required=True,
         constraint=validateImageextension
     )
 
     releasenumber = schema.TextLine(
         title=_(u"Versions Number"),
-        description=_(u"Version Number of the Extension File (up to twelf chars) which you upload in this project."),
+        description=_(u"Version Number of the Extension File (up to twelf "
+                      u"chars) which you upload in this project."),
         default=_(u"1.0"),
         max_length=12,
     )
@@ -296,7 +317,8 @@ class IEUpSmallProject(model.Schema):
     directives.widget(compatibility_choice=CheckBoxFieldWidget)
     compatibility_choice = schema.List(
         title=_(u"Compatible with versions of LibreOffice"),
-        description=_(u"Please mark one or more program versions with which this release is compatible with."),
+        description=_(u"Please mark one or more program versions with which "
+                      u"this release is compatible with."),
         value_type=schema.Choice(source=vocabAvailVersions),
         required=True,
         default=[]
@@ -312,7 +334,8 @@ class IEUpSmallProject(model.Schema):
     directives.widget(platform_choice=CheckBoxFieldWidget)
     platform_choice = schema.List(
         title=_(u"First uploaded file is compatible with the Platform(s)"),
-        description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
+        description=_(u"Please mark one or more platforms with which the "
+                      u"uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
     )
@@ -325,8 +348,10 @@ class IEUpSmallProject(model.Schema):
     directives.mode(filetitlefield='display')
     filetitlefield = schema.TextLine(
         title=_(u"The First File You Want To Upload"),
-        description =_(u"You need only to upload one file to your project. There are options for further two file uploads "
-                       u"if you want to provide files for different platforms.")
+        description =_(u"You need only to upload one file to your project. "
+                       u"There are options for further two file uploads "
+                       u"if you want to provide files for different "
+                       u"platforms.")
     )
 
     model.fieldset('fileset2',
@@ -339,14 +364,16 @@ class IEUpSmallProject(model.Schema):
     directives.mode(filetitlefield1='display')
     filetitlefield1 = schema.TextLine(
         title=_(u"Second Release File"),
-        description=_(u"Here you could add an optional second file to your project, if the files support different "
+        description=_(u"Here you could add an optional second file to your "
+                      u"project, if the files support different "
                       u"platforms.")
     )
 
     directives.widget(platform_choice1=CheckBoxFieldWidget)
     platform_choice1 = schema.List(
         title=_(u"Second uploaded file is compatible with the Platform(s)"),
-        description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
+        description=_(u"Please mark one or more platforms with which the "
+                      u"uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=False,
     )
@@ -363,15 +390,16 @@ class IEUpSmallProject(model.Schema):
     directives.mode(filetitlefield2='display')
     filetitlefield2 = schema.TextLine(
         title=_(u"Third Release File"),
-        description=_(u"Here you could add an optional third file to your project, if the files support different "
-                      u"platforms.")
+        description=_(u"Here you could add an optional third file to your "
+                      u"project, if the files support different platforms.")
     )
 
 
     directives.widget(platform_choice2=CheckBoxFieldWidget)
     platform_choice2 = schema.List(
         title=_(u"Third uploaded file is compatible with the Platform(s))"),
-        description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
+        description=_(u"Please mark one or more platforms with which the "
+                      u"uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=False,
     )
@@ -392,25 +420,30 @@ class IEUpSmallProject(model.Schema):
     @invariant
     def compatibilitynotchoosen(data):
         if not data.compatibility_choice:
-            raise Invalid(_(u"Please choose one or more compatible product versions for your release."))
+            raise Invalid(_(u"Please choose one or more compatible product "
+                            u"versions for your release."))
 
     @invariant
     def legaldeclarationaccepted(data):
         if data.accept_legal_declaration is not True:
             raise AcceptLegalDeclaration(
-                _(u"Please accept the Legal Declaration about your Release and your Uploaded File"))
+                _(u"Please accept the Legal Declaration about your Release "
+                  u"and your Uploaded File"))
 
     @invariant
     def testingvalue(data):
         if data.source_code_inside is not 1 and data.link_to_source is None:
-            raise Invalid(_(u"You answered the question, whether the source code is inside your extension with no "
-                            u"(default answer). If this is the correct answer, please fill in the Link (URL) "
-                            u"to the Source Code."))
+            raise Invalid(_(u"You answered the question, whether the source "
+                            u"code is inside your extension with no "
+                            u"(default answer). If this is the correct "
+                            u"answer, please fill in the Link (URL) to the "
+                            u"Source Code."))
 
     @invariant
     def noOSChosen(data):
         if data.file is not None and data.platform_choice == []:
-            raise Invalid(_(u"Please choose a compatible platform for the uploaded file."))
+            raise Invalid(_(u"Please choose a compatible platform for the "
+                            u"uploaded file."))
 
 
 @indexer(IEUpSmallProject)
@@ -432,7 +465,8 @@ def notifyProjectManager(self, event):
         recipient=("{}").format(self.contactAddress),
         sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
         subject=(u"Your Project {}").format(self.title),
-        body=(u"The status of your LibreOffice extension project changed. The new status is {}").format(state)
+        body=(u"The status of your LibreOffice extension project changed. "
+              u"The new status is {}").format(state)
     )
 
 
@@ -447,9 +481,10 @@ def notifyAboutNewReviewlistentry(self, event):
     if state == "pending":
         api.portal.send_email(
             recipient=mailrecipient,
-            subject=(u"A Project with the title {} was added to the review list").format(self.title),
-            body="Please have a look at the review list and check if the project is "
-                 "ready for publication. \n"
+            subject=(u"A Project with the title {} was added to the review "
+                     u"list").format(self.title),
+            body="Please have a look at the review list and check if the "
+                 "project is ready for publication. \n"
                  "\n"
                  "Kind regards,\n"
                  "The Admin of the Website"
@@ -471,10 +506,14 @@ def textmodified_project(self, event):
         api.portal.send_email(
             recipient=mailrecipient,
             sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
-            subject=(u"The content of the project {} has changed").format(self.title),
-            body=(u"The content of the project {} has changed. Here you get the text of the "
-                  u"description field of the project: \n'{}\n\nand this is the text of the "
-                  u"details field:\n{}'").format(self.title, self.description, detailed_description),
+            subject=(u"The content of the project {} has "
+                     u"changed").format(self.title),
+            body=(u"The content of the project {} has changed. Here you get "
+                  u"the text of the description field of the project: "
+                  u"\n'{}\n\nand this is the text of the details field:"
+                  u"\n{}'").format(self.title,
+                                   self.description,
+                                   detailed_description),
         )
 
 
@@ -502,9 +541,11 @@ class ValidateEUpSmallProjectUniqueness(validator.SimpleFieldValidator):
         if value is not None:
             catalog = api.portal.get_tool(name='portal_catalog')
             results1 = catalog({'Title': quote_chars(value),
-                               'object_provides': IEUpProject.__identifier__,})
+                               'object_provides':
+                                   IEUpProject.__identifier__, })
             results2 = catalog({'Title': quote_chars(value),
-                               'object_provides': IEUpSmallProject.__identifier__,})
+                               'object_provides':
+                                   IEUpSmallProject.__identifier__, })
             results = results1 + results2
 
             contextUUID = IUUID(self.context, None)
