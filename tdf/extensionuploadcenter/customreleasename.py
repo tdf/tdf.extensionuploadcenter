@@ -3,8 +3,8 @@ from plone.dexterity.content import Item
 
 
 class ReleaseCustomName(Item):
-
-    """Custom name for a release and linked release from the title and the release number"""
+    """Custom name for a release and linked release from the title and
+    the release number"""
 
     @property
     def title(self):
