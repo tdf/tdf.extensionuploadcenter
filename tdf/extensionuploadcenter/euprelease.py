@@ -171,8 +171,8 @@ class IEUpRelease(model.Schema):
     model.fieldset('legal',
                    label=u"Legal",
                    fields=['licenses_choice', 'title_declaration_legal',
-                             'declaration_legal', 'accept_legal_declaration',
-                             'source_code_inside', 'link_to_source'])
+                           'declaration_legal', 'accept_legal_declaration',
+                           'source_code_inside', 'link_to_source'])
 
     directives.widget(licenses_choice=CheckBoxFieldWidget)
     licenses_choice = schema.List(
@@ -235,7 +235,7 @@ class IEUpRelease(model.Schema):
     model.fieldset('fileupload',
                    label=u"Fileupload",
                    fields=['file', 'platform_choice',
-                             'information_further_file_uploads'])
+                           'information_further_file_uploads'])
 
     file = NamedBlobFile(
         title=_(u"The first file you want to upload."),
@@ -266,11 +266,11 @@ class IEUpRelease(model.Schema):
     )
 
     model.fieldset('fileset1',
-                  label=u"Further File Uploads",
-                  fields=['filetitlefield1', 'file1', 'platform_choice1',
-                          'filetitlefield2', 'file2', 'platform_choice2',
-                          'filetitlefield3',  'file3', 'platform_choice3']
-                  )
+                   label=u"Further File Uploads",
+                   fields=['filetitlefield1', 'file1', 'platform_choice1',
+                           'filetitlefield2', 'file2', 'platform_choice2',
+                           'filetitlefield3', 'file3', 'platform_choice3']
+                   )
 
     directives.mode(filetitlefield1='display')
     filetitlefield1 = schema.TextLine(
@@ -336,10 +336,10 @@ class IEUpRelease(model.Schema):
     )
 
     model.fieldset('fileset2',
-                  label=u"Further More File Uploads",
-                  fields=['filetitlefield4', 'file4', 'platform_choice4',
-                          'filetitlefield5', 'file5', 'platform_choice5']
-                  )
+                   label=u"Further More File Uploads",
+                   fields=['filetitlefield4', 'file4', 'platform_choice4',
+                           'filetitlefield5', 'file5', 'platform_choice5']
+                   )
 
     directives.mode(filetitlefield4='display')
     filetitlefield4 = schema.TextLine(
@@ -452,8 +452,8 @@ def notifyExtensionHubReleaseAdd(self, event):
             body=("""A new release was added and published with\ntitle: 
                   {}\nURL: {}\nCompatibility:{}\n
                  Categories: {}\nLicenses: {}\nPlatforms: {}""").format(
-                     self.title, self.absolute_url(),
-                     compatibility, category, licenses, platform),
+                self.title, self.absolute_url(),
+                compatibility, category, licenses, platform),
         )
 
     else:
@@ -532,11 +532,11 @@ class EUpReleaseView(DefaultView):
         path = "/".join(self.context.getPhysicalPath())
         idx_data = catalog.getIndexDataForUID(path)
         licenses = idx_data.get('releaseLicense')
-        return(r for r in licenses)
+        return (r for r in licenses)
 
     def releaseCompatibility(self):
         catalog = api.portal.get_tool(name='portal_catalog')
         path = "/".join(self.context.getPhysicalPath())
         idx_data = catalog.getIndexDataForUID(path)
         compatibility = idx_data.get('getCompatibility')
-        return(r for r in compatibility)
+        return (r for r in compatibility)
