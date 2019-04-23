@@ -469,7 +469,6 @@ def notifyProjectManager(self, event):
 
 
 def notifyAboutNewReviewlistentry(self, event):
-    portal = api.portal.get()
     state = api.content.get_state(self)
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
@@ -490,7 +489,6 @@ def notifyAboutNewReviewlistentry(self, event):
 
 
 def textmodified_project(self, event):
-    portal = api.portal.get()
     state = api.content.get_state(self)
     if self.__parent__.contactForCenter is not None:
         mailrecipient = str(self.__parent__.contactForCenter)

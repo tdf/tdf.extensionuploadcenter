@@ -423,10 +423,8 @@ def release_number(context, **kw):
 
 
 def notifyExtensionHubReleaseAdd(self, event):
-    portal = api.portal.get()
     state = api.content.get_state(self)
     releasemessagereceipient = self.releaseAllert
-    catalog = api.portal.get_tool(name='portal_catalog')
 
     category = list(self.category_choice)
     compatibility = list(self.compatibility_choice)
@@ -449,11 +447,14 @@ def notifyExtensionHubReleaseAdd(self, event):
         api.portal.send_email(
             recipient=releasemessagereceipient,
             subject="New Release added",
-            body=("""A new release was added and published with\ntitle: 
-                  {}\nURL: {}\nCompatibility:{}\n
-                 Categories: {}\nLicenses: {}\nPlatforms: {}""").format(
-                self.title, self.absolute_url(),
-                compatibility, category, licenses, platform),
+            body=("""A new release was added and published with\n
+                  title: {}\nURL: {}\nCompatibility:{}\n
+                  Categories: {}\nLicenses: {}\n
+                  Platforms: {}""").format(self.title,
+                                           self.absolute_url(),
+                                           compatibility, category,
+                                           licenses,
+                                           platform),
         )
 
     else:
