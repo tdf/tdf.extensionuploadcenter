@@ -232,9 +232,9 @@ class IEUpReleaseLink(model.Schema):
     model.fieldset('linked_file',
                    label='Linked File',
                    fields=['link_to_file',
-                            'external_file_size',
-                            'platform_choice',
-                            'information_further_file_uploads'])
+                           'external_file_size',
+                           'platform_choice',
+                           'information_further_file_uploads'])
 
     link_to_file = schema.URI(
         title=_(u"The Link to the file of the release"),
