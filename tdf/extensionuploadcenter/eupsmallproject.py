@@ -24,12 +24,12 @@ from tdf.extensionuploadcenter import quote_chars
 from plone.uuid.interfaces import IUUID
 from Products.validation import V_REQUIRED
 
-
 checkfileextensionimage = re.compile(
     r"^.*\.(png|PNG|gif|GIF|jpg|JPG)").match
 
 checkfileextension = re.compile(
     r"^.*\.(oxt|OXT)").match
+
 
 def validateImageextension(value):
     if not checkfileextensionimage(value.filename):
@@ -41,7 +41,6 @@ def validateImageextension(value):
 checkdocfileextension = re.compile(
     r"^.*\.(pdf|PDF|odt|ODT)").match
 
-
 checkEmail = re.compile(
     r"[a-zA-Z0-9._%-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}").match
 
@@ -50,6 +49,7 @@ def validateEmail(value):
     if not checkEmail(value):
         raise Invalid(_(u"Invalid email address"))
     return True
+
 
 def vocabCategories(context):
     # For add forms
@@ -70,6 +70,7 @@ def vocabCategories(context):
                                 title=value))
 
     return SimpleVocabulary(terms)
+
 
 directlyProvides(vocabCategories, IContextSourceBinder)
 
@@ -114,11 +115,13 @@ def vocabAvailVersions(context):
 
 directlyProvides(vocabAvailVersions, IContextSourceBinder)
 
+
 def isNotEmptyCategory(value):
     if not value:
         raise Invalid(u'You have to choose at least one category for your '
                       u'project.')
     return True
+
 
 def vocabAvailLicenses(context):
     """ pick up licenses list from parent """
@@ -138,7 +141,9 @@ def vocabAvailLicenses(context):
                                 title=value))
     return SimpleVocabulary(terms)
 
+
 directlyProvides(vocabAvailLicenses, IContextSourceBinder)
+
 
 def vocabAvailPlatforms(context):
     """ pick up the list of platforms from parent """
@@ -156,6 +161,7 @@ def vocabAvailPlatforms(context):
                                 title=value))
     return SimpleVocabulary(terms)
 
+
 directlyProvides(vocabAvailPlatforms, IContextSourceBinder)
 
 
@@ -166,6 +172,7 @@ def validateextensionfileextension(value):
                       u'LibreOffice extensions have an \'oxt\' file '
                       u'extension.')
     return True
+
 
 yesnochoice = SimpleVocabulary(
     [SimpleTerm(value=0, title=_(u'No')),
@@ -188,10 +195,9 @@ class AcceptLegalDeclaration(Invalid):
 
 
 class IEUpSmallProject(model.Schema):
-
     directives.mode(information="display")
     information = schema.Text(
-        title= _(u"Information"),
+        title=_(u"Information"),
         description=_(u"The Dialog to create a new project consists of "
                       u"different register. Please go through this register "
                       u"and fill in the appropriate data for your project or "
@@ -232,9 +238,8 @@ class IEUpSmallProject(model.Schema):
                            'declaration_legal',
                            'accept_legal_declaration',
                            'source_code_inside',
-                           'link_to_source' ]
+                           'link_to_source']
                    )
-
 
     directives.widget(licenses_choice=CheckBoxFieldWidget)
     licenses_choice = schema.List(
@@ -244,7 +249,6 @@ class IEUpSmallProject(model.Schema):
         value_type=schema.Choice(source=vocabAvailLicenses),
         required=True,
     )
-
 
     directives.mode(title_declaration_legal='display')
     title_declaration_legal = schema.TextLine(
@@ -273,12 +277,10 @@ class IEUpSmallProject(model.Schema):
         required=True
     )
 
-
     link_to_source = schema.URI(
         title=_(u"Please fill in the Link (URL) to the Source Code."),
         required=False
     )
-
 
     dexteritytextindexer.searchable('category_choice')
     directives.widget(category_choice=CheckBoxFieldWidget)
@@ -342,16 +344,16 @@ class IEUpSmallProject(model.Schema):
 
     model.fieldset('fileset1',
                    label=u"File Upload",
-                   fields=['filetitlefield', 'platform_choice', 'file',]
+                   fields=['filetitlefield', 'platform_choice', 'file', ]
                    )
 
     directives.mode(filetitlefield='display')
     filetitlefield = schema.TextLine(
         title=_(u"The First File You Want To Upload"),
-        description =_(u"You need only to upload one file to your project. "
-                       u"There are options for further two file uploads "
-                       u"if you want to provide files for different "
-                       u"platforms.")
+        description=_(u"You need only to upload one file to your project. "
+                      u"There are options for further two file uploads "
+                      u"if you want to provide files for different "
+                      u"platforms.")
     )
 
     model.fieldset('fileset2',
@@ -359,7 +361,6 @@ class IEUpSmallProject(model.Schema):
                    fields=['filetitlefield1', 'platform_choice1', 'file1',
                            'filetitlefield2', 'platform_choice2', 'file2']
                    )
-
 
     directives.mode(filetitlefield1='display')
     filetitlefield1 = schema.TextLine(
@@ -385,15 +386,12 @@ class IEUpSmallProject(model.Schema):
         constraint=validateextensionfileextension,
     )
 
-
-
     directives.mode(filetitlefield2='display')
     filetitlefield2 = schema.TextLine(
         title=_(u"Third Release File"),
         description=_(u"Here you could add an optional third file to your "
                       u"project, if the files support different platforms.")
     )
-
 
     directives.widget(platform_choice2=CheckBoxFieldWidget)
     platform_choice2 = schema.List(
@@ -410,7 +408,6 @@ class IEUpSmallProject(model.Schema):
         required=False,
         constraint=validateextensionfileextension,
     )
-
 
     @invariant
     def licensenotchoosen(value):
@@ -450,6 +447,7 @@ class IEUpSmallProject(model.Schema):
 def release_number(context, **kw):
     return context.releasenumber
 
+
 @indexer(IEUpSmallProject)
 def project_compat_versions(context, **kw):
     return context.compatibility_choice
@@ -457,7 +455,7 @@ def project_compat_versions(context, **kw):
 
 def notifyProjectManager(self, event):
     state = api.content.get_state(self)
-    if (self.__parent__.contactForCenter) is not None:
+    if self.__parent__.contactForCenter is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
         mailrecipient = 'extensions@libreoffice.org'
@@ -490,10 +488,11 @@ def notifyAboutNewReviewlistentry(self, event):
                  "The Admin of the Website"
         )
 
+
 def textmodified_project(self, event):
     portal = api.portal.get()
     state = api.content.get_state(self)
-    if (self.__parent__.contactForCenter) is not None:
+    if self.__parent__.contactForCenter is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
         mailrecipient = 'extensions@libreoffice.org'
@@ -518,7 +517,7 @@ def textmodified_project(self, event):
 
 
 def notifyAboutNewProject(self, event):
-    if (self.__parent__.contactForCenter) is not None:
+    if self.__parent__.contactForCenter is not None:
         mailrecipient = str(self.__parent__.contactForCenter),
     else:
         mailrecipient = 'extensions@libreoffice.org'
@@ -527,7 +526,6 @@ def notifyAboutNewProject(self, event):
         subject=(u"A Project with the title {} was added").format(self.title),
         body="A member added a new project"
     )
-
 
 
 class ValidateEUpSmallProjectUniqueness(validator.SimpleFieldValidator):
@@ -541,11 +539,11 @@ class ValidateEUpSmallProjectUniqueness(validator.SimpleFieldValidator):
         if value is not None:
             catalog = api.portal.get_tool(name='portal_catalog')
             results1 = catalog({'Title': quote_chars(value),
-                               'object_provides':
-                                   IEUpProject.__identifier__, })
+                                'object_provides':
+                                    IEUpProject.__identifier__, })
             results2 = catalog({'Title': quote_chars(value),
-                               'object_provides':
-                                   IEUpSmallProject.__identifier__, })
+                                'object_provides':
+                                    IEUpSmallProject.__identifier__, })
             results = results1 + results2
 
             contextUUID = IUUID(self.context, None)
@@ -569,21 +567,21 @@ class EUpSmallProjectView(DefaultView):
         path = "/".join(self.context.getPhysicalPath())
         idx_data = catalog.getIndexDataForUID(path)
         licenses = idx_data.get('releaseLicense')
-        return(r for r in licenses)
+        return (r for r in licenses)
 
     def releaseCompatibility(self):
         catalog = api.portal.get_tool(name='portal_catalog')
         path = "/".join(self.context.getPhysicalPath())
         idx_data = catalog.getIndexDataForUID(path)
         compatibility = idx_data.get('getCompatibility')
-        return(r for r in compatibility)
+        return (r for r in compatibility)
 
     def projectCategory(self):
         catalog = api.portal.get_tool(name='portal_catalog')
         path = "/".join(self.context.getPhysicalPath())
         idx_data = catalog.getIndexDataForUID(path)
         category = idx_data.get('getCategories')
-        return(r for r in category)
+        return (r for r in category)
 
     def latest_release_date(self):
         return None
