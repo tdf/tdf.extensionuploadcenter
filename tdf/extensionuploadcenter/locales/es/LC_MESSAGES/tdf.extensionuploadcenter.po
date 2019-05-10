@@ -130,6 +130,10 @@ msgstr "Explorar ${product_title} por categoría"
 msgid "Browse Extensions by Category"
 msgstr "Explorar extensiones por categoría"
 
+#: ./mailtoauthor.py:187
+msgid "Cancel"
+msgstr ""
+
 #: ./eupproject_templates/view.pt:87
 #: ./eupsmallproject_templates/view.pt:55
 msgid "Category/Categories"
@@ -179,6 +183,10 @@ msgstr "Dirección electrónica de contacto"
 #: ./eupreleaselink.py:216
 msgid "Contact email-address for the project."
 msgstr "La dirección electrónica de contacto del proyecto."
+
+#: ./mailtoauthor.py:114
+msgid "Contact the project author and send your feedback"
+msgstr ""
 
 #: ./eupproject_templates/view.pt:107
 msgid "Current Release"
@@ -518,6 +526,10 @@ msgstr "Enlace al código fuente"
 msgid "Logo"
 msgstr "Logo"
 
+#: ./mailtoauthor.py:113
+msgid "Mail To The Project Author"
+msgstr ""
+
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
 msgid "Member retracts submission"
 msgstr ""
@@ -563,6 +575,10 @@ msgstr "No se encontró ningún resultado."
 #: ./eupproject_templates/view.pt:109
 msgid "No stable release available yet."
 msgstr "Todavía no hay ninguna emisión estable."
+
+#: ./mailtoauthor.py:41
+msgid "Not a valid project name. Please retry."
+msgstr ""
 
 #: ./euprelease_templates/view.pt:42
 msgid "Or"
@@ -634,6 +650,18 @@ msgstr ""
 msgid "Please fill in the size in kilobyte of the external hosted file (e.g. 633, if the size is 633 kb)"
 msgstr "Proporcione el tamaño en kilobytes del archivo alojado externamente (p. ej., 633 kB)"
 
+#: ./mailtoauthor.py:78
+msgid "Please fill in your email address."
+msgstr ""
+
+#: ./mailtoauthor.py:73
+msgid "Please fill in your familiy name"
+msgstr ""
+
+#: ./mailtoauthor.py:68
+msgid "Please fill in your first name(s)"
+msgstr ""
+
 #: ./eupreleaselink.py:241
 msgid "Please insert a link to your extension file."
 msgstr "Inserte un enlace al archivo de la extensión."
@@ -678,8 +706,16 @@ msgstr "Seleccione las categorías apropiadas (una o más) para el proyecto."
 msgid "Please upload your file."
 msgstr "Cargue el archivo."
 
+#: ./mailtoauthor.py:145
+msgid "Please validate the recaptcha field before sending the form."
+msgstr ""
+
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
 msgid "Private"
+msgstr ""
+
+#: ./mailtoauthor.py:83
+msgid "Project Name"
 msgstr ""
 
 #: ./eupproject_templates/view.pt:461
@@ -834,6 +870,10 @@ msgstr ""
 msgid "Second uploaded file is compatible with the Platform(s)"
 msgstr "El segundo archivo cargado es compatible con las plataformas"
 
+#: ./mailtoauthor.py:126
+msgid "Send Email"
+msgstr ""
+
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
 msgid "Send back"
 msgstr ""
@@ -936,6 +976,10 @@ msgstr "El cuarto archivo que cargar (opcional)"
 
 #: ./eupreleaselink_templates/view.pt:83
 msgid "The linked Extension file"
+msgstr ""
+
+#: ./mailtoauthor.py:84
+msgid "The name of the project, to which author you want to send feedback."
 msgstr ""
 
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
@@ -1059,6 +1103,14 @@ msgstr ""
 msgid "Visible to everyone, editable by the owner."
 msgstr ""
 
+#: ./mailtoauthor.py:179
+msgid "We send your message to the author of the project. It's on his choice, if he'll get back to you."
+msgstr ""
+
+#: ./mailtoauthor.py:91
+msgid "What is your message to the author of the project? Your message is limited to 1000 characters."
+msgstr ""
+
 #: ./euprelease.py:85
 #: ./eupreleaselink.py:82
 #: ./eupsmallproject.py:179
@@ -1077,6 +1129,22 @@ msgstr ""
 
 #: ./eupsmallproject.py:353
 msgid "You need only to upload one file to your project. There are options for further two file uploads if you want to provide files for different platforms."
+msgstr ""
+
+#: ./mailtoauthor.py:77
+msgid "Your Email Address"
+msgstr ""
+
+#: ./mailtoauthor.py:72
+msgid "Your Family Name"
+msgstr ""
+
+#: ./mailtoauthor.py:67
+msgid "Your First Name"
+msgstr ""
+
+#: ./mailtoauthor.py:90
+msgid "Your Message To The Author"
 msgstr ""
 
 #: ./eupproject_templates/view.pt:60
