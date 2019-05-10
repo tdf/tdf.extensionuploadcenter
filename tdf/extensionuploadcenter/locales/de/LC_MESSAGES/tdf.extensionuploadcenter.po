@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: 2019-04-23 12:40+0200\n"
+"PO-Revision-Date: 2019-05-10 20:50+0200\n"
 "Last-Translator: Andreas Mantke <maand@gmx.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -123,6 +123,10 @@ msgstr "${product_title} nach Kategorie"
 msgid "Browse Extensions by Category"
 msgstr "Suchen Sie Extensions nach Kategorien"
 
+#: mailtoauthor.py:187
+msgid "Cancel"
+msgstr "Abbrechen"
+
 #: eupproject_templates/view.pt:87 eupsmallproject_templates/view.pt:55
 msgid "Category/Categories"
 msgstr "Kategorie/Kategorien"
@@ -161,6 +165,10 @@ msgstr "Kontakt-Email-Adresse"
 #: eupproject.py:153 euprelease.py:219 eupreleaselink.py:216
 msgid "Contact email-address for the project."
 msgstr "Kontakt-Email-Adresse für das Projekt.."
+
+#: mailtoauthor.py:114
+msgid "Contact the project author and send your feedback"
+msgstr "Kontaktieren Sie den Projekt-Autoren und senden Sie Feedback"
 
 #: eupproject_templates/view.pt:107
 msgid "Current Release"
@@ -480,6 +488,10 @@ msgstr "Link zum Quellcode"
 msgid "Logo"
 msgstr "Logo"
 
+#: mailtoauthor.py:113
+msgid "Mail To The Project Author"
+msgstr "E-Mail an den Projekt-Autor"
+
 #: profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
 msgid "Member retracts submission"
 msgstr "Mitglied zieht Einreichung zurück"
@@ -523,6 +535,10 @@ msgstr "Keine Ergebnisse gefunden."
 #: eupproject_templates/view.pt:109
 msgid "No stable release available yet."
 msgstr "Aktuell kein stabiles Release verfügbar."
+
+#: mailtoauthor.py:41
+msgid "Not a valid project name. Please retry."
+msgstr "Kein gültiger Projektname. Bitte versuchen Sie es nochmals."
 
 #: euprelease_templates/view.pt:42
 msgid "Or"
@@ -584,6 +600,18 @@ msgstr "Bitte füllen Sie die Installationsanweisungen ein"
 msgid "Please fill in the size in kilobyte of the external hosted file (e.g. 633, if the size is 633 kb)"
 msgstr "Bitte füllen Sie die Größe der extern gehosteten Datei  in Kilobyte (z.B. 633, falls die Größe 633 KB ist) ein."
 
+#: mailtoauthor.py:78
+msgid "Please fill in your email address."
+msgstr "Bitte tragen Sie Ihre E-Mail-Adresse ein."
+
+#: mailtoauthor.py:73
+msgid "Please fill in your familiy name"
+msgstr "Bitte tragen Sie Ihren Familiennamen ein."
+
+#: mailtoauthor.py:68
+msgid "Please fill in your first name(s)"
+msgstr "Bitte tragen Sie Ihre(n) Vornamen ein."
+
 #: eupreleaselink.py:241
 msgid "Please insert a link to your extension file."
 msgstr "Bitte fügen Sie einen Link zu Ihrer Extension-Datei ein."
@@ -620,9 +648,17 @@ msgstr "Bitte wählen Sie eine passende Kategorie (eine oder mehrere) für ihre 
 msgid "Please upload your file."
 msgstr "Bitte laden Sie Ihre Datei hoch."
 
+#: mailtoauthor.py:145
+msgid "Please validate the recaptcha field before sending the form."
+msgstr "Bitte validieren Sie das Recaptcha-Feld, bevor Sie das Formular absenden."
+
 #: profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
 msgid "Private"
 msgstr "Privat"
+
+#: mailtoauthor.py:83
+msgid "Project Name"
+msgstr "Projekt-Name"
 
 #: eupproject_templates/view.pt:461 euprelease_templates/view.pt:144
 #: eupreleaselink_templates/view.pt:157
@@ -764,6 +800,10 @@ msgstr "Die zweite verlinkte Datei ist kompatibel mit den Plattformen"
 msgid "Second uploaded file is compatible with the Platform(s)"
 msgstr "Die zweite hochgeladene Datei ist kompatibel mit den Plattformen"
 
+#: mailtoauthor.py:126
+msgid "Send Email"
+msgstr "E-Mail senden"
+
 #: profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
 msgid "Send back"
 msgstr "Zurück senden"
@@ -865,6 +905,10 @@ msgstr "Die vierte Datei, die Sie hochladen wollen (dies ist optional)"
 #: eupreleaselink_templates/view.pt:83
 msgid "The linked Extension file"
 msgstr "Die verlinkte Extension-Datei"
+
+#: mailtoauthor.py:84
+msgid "The name of the project, to which author you want to send feedback."
+msgstr "Der Name des Projekts, dessen Autor Sie Feedback senden wollen."
 
 #: profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
 msgid "The owner can edit the extension project"
@@ -979,6 +1023,14 @@ msgstr "Version-Nummer"
 msgid "Visible to everyone, editable by the owner."
 msgstr "Für Jedermann sichtbar, durch den Besitzer bearbeitbar."
 
+#: mailtoauthor.py:179
+msgid "We send your message to the author of the project. It's on his choice, if he'll get back to you."
+msgstr "Wir senden Ihre Nachricht an den Projekt-Autor. Es ist seine Entscheidung, ob er sich bei Ihnen meldet."
+
+#: mailtoauthor.py:91
+msgid "What is your message to the author of the project? Your message is limited to 1000 characters."
+msgstr "Wie lautet Ihre Nachricht an den Projekt-Autor? Ihre Nachricht ist auf 1000 Zeichen begrenzt."
+
 #: euprelease.py:85 eupreleaselink.py:82 eupsmallproject.py:179
 msgid "Yes"
 msgstr "Ja"
@@ -994,6 +1046,22 @@ msgstr "Sie haben noch keine Kategorie für Ihr Projekt gewählt."
 #: eupsmallproject.py:353
 msgid "You need only to upload one file to your project. There are options for further two file uploads if you want to provide files for different platforms."
 msgstr "Sie brauchen nur eine Datei zu Ihrem Projekt hochladen. Es bestehen Möglichkeiten für das Hochladen von zwei weiteren Dateien, falls Sie Dateien für andere Plattformen zur Verfügung stellen wollen."
+
+#: mailtoauthor.py:77
+msgid "Your Email Address"
+msgstr "Ihre E-Mail-Adresse"
+
+#: mailtoauthor.py:72
+msgid "Your Family Name"
+msgstr "Ihr Familienname"
+
+#: mailtoauthor.py:67
+msgid "Your First Name"
+msgstr "Ihr Vorname"
+
+#: mailtoauthor.py:90
+msgid "Your Message To The Author"
+msgstr "Ihre Nachricht an den Autor"
 
 #: eupproject_templates/view.pt:60 eupsmallproject_templates/view.pt:41
 msgid "Your project has been submitted for publication and will be reviewed now. You will get an email, once the status of your project changed again."
