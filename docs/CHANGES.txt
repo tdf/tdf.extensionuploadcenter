@@ -4,7 +4,14 @@ Changelog
 0.31 (unreleased)
 -----------------
 
-- Nothing changed yet.
+
+- Add a new email form to send feedback to a project author with recaptcha
+  protection and link it from the project and the smallproject
+  view [Andreas Mantke]
+- Pep8 fixes [Andreas Mantke]
+- Update localization template, Spanish localization file and
+  German localization [Andreas Mantke]
+
 
 
 0.30 (2019-04-11)
