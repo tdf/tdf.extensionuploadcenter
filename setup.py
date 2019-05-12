@@ -8,6 +8,7 @@ setup(name='tdf.extensionuploadcenter',
       description="TDF Extension Upload Center",
       long_description=open("README.rst").read() + "\n" +
                        open(os.path.join("docs", "CHANGES.txt")).read(),
+      long_description_content_type='text/x-rst',
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
