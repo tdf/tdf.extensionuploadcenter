@@ -6,7 +6,7 @@ version = '0.31'
 setup(name='tdf.extensionuploadcenter',
       version=version,
       description="TDF Extension Upload Center",
-      long_description=open("README.md").read() + "\n" +
+      long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "CHANGES.txt")).read(),
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
