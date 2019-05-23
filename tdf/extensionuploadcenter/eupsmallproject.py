@@ -123,28 +123,6 @@ def isNotEmptyCategory(value):
     return True
 
 
-def vocabAvailLicenses(context):
-    """ pick up licenses list from parent """
-
-    # For other forms edited or displayed
-    from tdf.extensionuploadcenter.eupcenter import IEUpCenter
-    while context is not None and not IEUpCenter.providedBy(context):
-        # context = aq_parent(aq_inner(context))
-        context = context.__parent__
-
-    license_list = []
-    if context is not None and context.available_licenses:
-        license_list = context.available_licenses
-    terms = []
-    for value in license_list:
-        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'),
-                                title=value))
-    return SimpleVocabulary(terms)
-
-
-directlyProvides(vocabAvailLicenses, IContextSourceBinder)
-
-
 def vocabAvailPlatforms(context):
     """ pick up the list of platforms from parent """
     from tdf.extensionuploadcenter.eupcenter import IEUpCenter
