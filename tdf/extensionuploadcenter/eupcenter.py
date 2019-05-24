@@ -93,9 +93,7 @@ class IEUpCenter(model.Schema):
                                          'CC-BY-SA-v4 (Creative Commons '
                                          'Attribution-ShareAlike 4.0 '
                                          'International)',
-                                         'AL-v2 (Apache License Version 2.0)',
-                                         'Public Domain',
-                                         'OSI (Other OSI Approved)'],
+                                         'AL-v2 (Apache License Version 2.0)',],
                                      value_type=schema.TextLine())
 
     available_versions = schema.List(title=_(u"Available Versions"),
@@ -114,7 +112,8 @@ class IEUpCenter(model.Schema):
                                               'LibreOffice 5.3',
                                               'LibreOffice 5.4',
                                               'LibreOffice 6.0',
-                                              'LibreOffice 6.1'],
+                                              'LibreOffice 6.1',
+                                              'LibreOffice 6.2'],
                                      value_type=schema.TextLine())
 
     available_platforms = schema.List(title=_(u"Available Platforms"),
