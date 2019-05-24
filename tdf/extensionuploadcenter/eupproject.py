@@ -223,7 +223,7 @@ def notifyProjectManagerReleaseAdd(self, event):
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
-        mailrecipient = 'extensions@libreoffice.org'
+        mailrecipient = api.portal.get_registry_record('plone.email_from_address')
     api.portal.send_email(
         recipient=("{}").format(self.contactAddress),
         sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
@@ -237,7 +237,7 @@ def notifyProjectManagerReleaseLinkedAdd(self, event):
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
-        mailrecipient = 'extensions@libreoffice.org'
+        mailrecipient = api.portal.get_registry_record('plone.email_from_address')
     api.portal.send_email(
         recipient=("{}").format(self.contactAddress),
         sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
@@ -253,7 +253,7 @@ def notifyAboutNewReviewlistentry(self, event):
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
-        mailrecipient = 'extensions@libreoffice.org'
+        mailrecipient = api.portal.get_registry_record('plone.email_from_address')
 
     if state == "pending":
         api.portal.send_email(
@@ -273,7 +273,7 @@ def textmodified_project(self, event):
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
-        mailrecipient = 'extensions@libreoffice.org'
+        mailrecipient = api.portal.get_registry_record('plone.email_from_address')
     if state == "published":
         if self.details is not None:
             detailed_description = self.details.output
@@ -298,7 +298,7 @@ def notifyAboutNewProject(self, event):
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter),
     else:
-        mailrecipient = 'extensions@libreoffice.org'
+        mailrecipient = api.portal.get_registry_record('plone.email_from_address')
     api.portal.send_email(
         recipient=mailrecipient,
         subject=(u"A Project with the title {} was added").format(self.title),
