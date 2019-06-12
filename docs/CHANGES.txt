@@ -7,6 +7,8 @@ Changelog
 - Project view for stable releases changed thus a release date is only
   shown, if there is a publishing date for a release within a
   project available. {Andreas Mantke]
+- Update localization template and German translation and Spanish
+  localization file [Andreas Mantke]
 
 
 0.33 (2019-05-30)
