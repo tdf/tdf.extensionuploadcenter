@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: 2019-05-26 22:14+0200\n"
+"PO-Revision-Date: 2019-06-12 21:24+0200\n"
 "Last-Translator: Andreas Mantke <maand@gmx.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,18 @@ msgstr ""
 "Language: de\n"
 "X-Generator: Poedit 2.0.7\n"
 
+#: eupcenter_templates/view.pt:228
+msgid "${product_title}"
+msgstr "${product_title}"
+
+#: eupcenter_templates/view.pt:163
+msgid "${results_eupprojects} projects matching your criteria."
+msgstr "${results_eupprojects} Projekte stimmen mit Ihren Kriterien überein."
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "- A simple workflow for Extension Project objects."
+msgstr "- Ein einfacher Workflow für Extension-Projekt-Objekte."
+
 #: euprelease.py:145 eupreleaselink.py:143 eupsmallproject.py:293
 msgid "1.0"
 msgstr "1.0"
@@ -23,6 +35,18 @@ msgstr "1.0"
 #: euprelease.py:162 eupreleaselink.py:160
 msgid "A detailed log of what has changed since the previous release."
 msgstr "Eine detaillierte Aufstellung über das, was sich seit dem letzten Release verändert hat."
+
+#: profiles/default/types/tdf.extensionuploadcenter.eupreleaselink.xml
+msgid "A linked extension release"
+msgstr "Ein verlinktes Extension-Release"
+
+#: profiles/default/types/tdf.extensionuploadcenter.eupsmallproject.xml
+msgid "A small extension project"
+msgstr "Ein kleines Extension-Projekt"
+
+#: eupcenter_templates/view.pt:307
+msgid "About"
+msgstr "Über"
 
 #: euprelease.py:211 eupreleaselink.py:208 eupsmallproject.py:246
 msgid "Accept the above legal disclaimer"
@@ -36,9 +60,43 @@ msgstr "Bitte fügen Sie ein Logo für Ihr Projekt (oder Organisation/Unternehme
 msgid "Add a screenshot by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'."
 msgstr "Fügen Sie ein Bildschirmfoto durch Klicken auf den Schalter \"Durchsuchen\" hinzu. Sie können Grafiken in den Dateiformaten \"png\", \"gif\" oder \"jpg\" verwenden."
 
+#: eupproject_templates/view.pt:397
+msgid "All Releases"
+msgstr "Alle Releases"
+
+#: eupcenter_templates/view.pt:124
+msgid "All categories"
+msgstr "Alle Kategorien"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Alpha Release"
+msgstr "Alpha Release"
+
+#: profiles/default/types/tdf.extensionuploadcenter.eupcenter.xml
+msgid "An extension center"
+msgstr "Ein Extension-Center"
+
+#: profiles/default/types/tdf.extensionuploadcenter.eupproject.xml
+msgid "An extension project"
+msgstr "Ein Extension Projekt"
+
+#: profiles/default/types/tdf.extensionuploadcenter.euprelease.xml
+msgid "An extension release"
+msgstr "Ein Extension-Release"
+
+#: eupcenter_templates/view.pt:134
+msgid "Any version"
+msgstr "Jede Version"
+
 #: eupcenter.py:59
 msgid "Available Categories"
 msgstr "Verfügbare Kategorien"
+
+#: euprelease_templates/view.pt:78 eupreleaselink_templates/view.pt:79
+#: eupsmallproject_templates/view.pt:74
+msgid "Available Downloads"
+msgstr "Verfügbare Downloads"
 
 #: eupcenter.py:76
 msgid "Available Licenses"
@@ -52,17 +110,49 @@ msgstr "Verfügbare Plattformen"
 msgid "Available Versions"
 msgstr "Verfügbare Versionen"
 
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Beta Release"
+msgstr "Beta Release"
+
+#: eupcenter_templates/view.pt:283
+msgid "Browse ${product_title} by Category"
+msgstr "${product_title} nach Kategorie"
+
+#: eupcenter_templates/view.pt:285
+msgid "Browse Extensions by Category"
+msgstr "Suchen Sie Extensions nach Kategorien"
+
 #: mailtoauthor.py:187
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: euprelease.py:161 eupreleaselink.py:159
+#: eupproject_templates/view.pt:87 eupsmallproject_templates/view.pt:55
+msgid "Category/Categories"
+msgstr "Kategorie/Kategorien"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Change the release stage to 'Release alpha'"
+msgstr "Ändere den Release-Status zu \"Release alpha\""
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Change the release stage to 'Release beta'"
+msgstr "Ändere den Release-Status zu \"Release beta\""
+
+#: euprelease.py:161 euprelease_templates/view.pt:74 eupreleaselink.py:159
 msgid "Changelog"
 msgstr "Änderungsprotokoll"
 
 #: eupproject.py:143 eupsmallproject.py:266
 msgid "Choose your categories"
 msgstr "Wählen Sie Ihre Kategorien"
+
+#: eupproject_templates/view.pt:406 euprelease_templates/view.pt:68
+#: eupreleaselink_templates/view.pt:70
+msgid "Compatibility"
+msgstr "Kompatibilität"
 
 #: euprelease.py:188 eupreleaselink.py:186 eupsmallproject.py:299
 msgid "Compatible with versions of LibreOffice"
@@ -80,6 +170,26 @@ msgstr "Kontakt-Email-Adresse für das Projekt.."
 msgid "Contact the project author and send your feedback"
 msgstr "Kontaktieren Sie den Projekt-Autoren und senden Sie Feedback"
 
+#: eupproject_templates/view.pt:107
+msgid "Current Release"
+msgstr "Aktuelles Release"
+
+#: eupproject_templates/view.pt:251
+msgid "Current release for the project"
+msgstr "Aktuelles Release dieses Projekts"
+
+#: eupproject_templates/view.pt:116
+msgid "Current unstable release for the project"
+msgstr "Aktuelles instabiles Release für das Projekt"
+
+#: eupcenter_templates/view.pt:232
+msgid "Currently there are"
+msgstr "Aktuell sind hier"
+
+#: eupproject_templates/view.pt:407
+msgid "Description"
+msgstr "Beschreibung"
+
 #: eupcenter.py:40
 msgid "Description of the Extensions Center"
 msgstr "Beschreibung des Extensions-Center"
@@ -92,6 +202,10 @@ msgstr "Beschreibung der Extension-Funktionen"
 msgid "Dokumentation File"
 msgstr "Dokumentationsdatei"
 
+#: eupproject_templates/view.pt:468
+msgid "Dokumentation File:"
+msgstr "Dokumentationsdatei:"
+
 #: eupcenter.py:208
 msgid "EMail address for communication with the extension center manager and reviewer"
 msgstr "E-Mail-Adresse zur Kommunikation mit dem Extension-Center-Manager und -Reviewer"
@@ -99,6 +213,10 @@ msgstr "E-Mail-Adresse zur Kommunikation mit dem Extension-Center-Manager und -R
 #: eupcenter.py:200
 msgid "EMail address for the messages about new releases"
 msgstr "Email-Adresse für Meldungen über neue Releases"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "EUC Project Publication Workflow"
+msgstr "EUC Projekt-Veröffentlichungs-Workflow"
 
 #: eupcenter.py:211
 msgid "Enter an email address for the communication with extension center manager and reviewer"
@@ -120,13 +238,45 @@ msgstr "Fügen Sie den Text der  rechtlichen Hinweise und Einschränkungen für 
 msgid "Enter the text of the legal disclaimer and limitations that should be displayed to the project creator and should be accepted by the owner of the project."
 msgstr "Fügen Sie den Text der rechtlichen Hinweise und Einschränkungen ein, der dem Ersteller eines Projektes angezeigt und von dem Projekt-Eigentümer zu akzeptieren ist."
 
+#: profiles/default/types/tdf.extensionuploadcenter.eupcenter.xml
+msgid "Extension Center"
+msgstr "Extension-Center"
+
 #: eupcenter.py:135
 msgid "Extension Installation Instructions"
 msgstr "Installationsanweisungen für Extensions"
 
+#: profiles/default/types/tdf.extensionuploadcenter.eupreleaselink.xml
+msgid "Extension Linked Release"
+msgstr "Verlinktes Extension-Release"
+
 #: eupcenter.py:48
 msgid "Extension Product Name"
 msgstr "Extension-Produktname"
+
+#: profiles/default/types/tdf.extensionuploadcenter.eupproject.xml
+msgid "Extension Project"
+msgstr "Extension-Projekt"
+
+#: profiles/default/types/tdf.extensionuploadcenter.euprelease.xml
+msgid "Extension Release"
+msgstr "Extension-Release"
+
+#: configure.zcml:32
+msgid "Extension profile for TDF Extension Upload Center"
+msgstr "Extension Profil für TDF Extension Upload Center"
+
+#: eupcenter_templates/view.pt:230
+msgid "Extensions"
+msgstr "Extensions"
+
+#: eupproject_templates/view.pt:464 eupreleaselink_templates/view.pt:161
+msgid "External Documentation"
+msgstr "Externe Dokumentation"
+
+#: eupproject_templates/view.pt:472 eupreleaselink_templates/view.pt:166
+msgid "External Project Page"
+msgstr "Externe Projektseite"
 
 #: euprelease.py:346
 msgid "Fifth Release File"
@@ -144,6 +294,11 @@ msgstr "Die vierte verlinkte Datei ist kompatibel mit den Plattformen"
 msgid "Fifth uploaded file is compatible with the Platform(s)"
 msgstr "Die fünfte hochgeladene Datei ist kompatibel mit den Plattformen"
 
+#: eupproject_templates/view.pt:143 euprelease_templates/view.pt:91
+#: eupreleaselink_templates/view.pt:86
+msgid "File size:"
+msgstr "Dateigröße:"
+
 #: eupcenter.py:164
 msgid "Fill in the legal disclaimer, that had to be accepted by the project owner."
 msgstr "Fügen Sie den Haftungsausschluss ein, der von den Projekteigentümern zu akzeptieren ist."
@@ -151,6 +306,16 @@ msgstr "Fügen Sie den Haftungsausschluss ein, der von den Projekteigentümern z
 #: eupcenter.py:182
 msgid "Fill in the text for the legal download disclaimer."
 msgstr "Füllen Sie den Text für den Download-Haftungsausschluss ein."
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Final Release"
+msgstr "Finales Release"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Final release"
+msgstr "Finales Release"
 
 #: eupreleaselink.py:256
 msgid "First linked file is compatible with the Platform(s)"
@@ -200,6 +365,35 @@ msgstr "Hier können Sie  eine optionale zweite Datei Ihrem Projekt hinzufügen,
 msgid "Here you could add an optional third file to your project, if the files support different platforms."
 msgstr "Hier können Sie  eine optionale dritte Datei Ihrem Projekt hinzufügen, falls die Dateien unterschiedliche Plattformen unterstützen."
 
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Hidden"
+msgstr "Versteckt"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Hidden extension release"
+msgstr "Verstecktes Extension-Release"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Hide"
+msgstr "Verstecken"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Hide release"
+msgstr "Release verbergen"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Hide this release"
+msgstr "Verstecken Sie dieses Release"
+
+#: eupcenter_templates/view.pt:140
+msgid "Highest Rated"
+msgstr "Am höchsten bewertet"
+
 #: eupproject.py:158
 msgid "Homepage"
 msgstr "Homepage"
@@ -212,9 +406,17 @@ msgstr "Falls das Projekt eine externe Homepage hat, füllen Sie hier die URL (B
 msgid "If the project has externally hosted documentation, enter its URL (example: 'http://www.mysite.org')."
 msgstr "Falls Ihr Projekt eine extern verfügbare Dokumentation besitzt, fügen Sie hier die entsprechende URL (Beispiel: \"http://www.mysite.org\") ein."
 
+#: eupcenter_templates/own_project.pt:53
+msgid "If you already created a new"
+msgstr "Falls Sie bereits ein neues"
+
 #: eupproject.py:174
 msgid "If you have a Documentation in the file format 'PDF' or 'ODT' you could add it here."
 msgstr "Falls Sie eine Dokumentation im Dateiformat \"PDF\" oder \"ODT\" haben, können Sie hier hinzufügen."
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "If you submitted the item by mistake or want to perform additional edits, this will take it back."
+msgstr "Falls Sie das Objekt irrtümlich eingereicht haben oder falls Sie Ergänzungen vornehmen wollen, führt Sie dies zurück."
 
 #: eupreleaselink.py:267
 msgid "If you want to link more files for this release, e.g. because there are files for other operating systems, you'll find the fields to link this files on the next registers, e.g. 'Second linked file' for this Release'."
@@ -224,6 +426,10 @@ msgstr "Falls Sie weitere Dateien zu diesem Release verlinken wollen, z.B. weil 
 msgid "If you want to upload more files for this release, e.g. because there are files for other operating systems, you'll find the upload fields on the register 'Further Uploads' and 'Further More Uploads'."
 msgstr "Falls Sie weitere Dateien für Ihr Release hochladen wollen, z.B. Dateien für andere Betriebssysteme,  finden Felder für das Hochladen auf den Registern 'Further Uploads' und 'Further More Uploads'."
 
+#: euprelease_templates/view.pt:37 eupreleaselink_templates/view.pt:38
+msgid "Info"
+msgstr "Info"
+
 #: eupproject.py:97 euprelease.py:118 eupreleaselink.py:115
 msgid "Information"
 msgstr "Information"
@@ -231,6 +437,11 @@ msgstr "Information"
 #: eupcenter.py:188
 msgid "Information About Search For Old LibreOffice Versions"
 msgstr "Information zur Suche nach älteren LibreOffice-Versionen"
+
+#: eupcenter_templates/view.pt:298 eupproject_templates/view.pt:488
+#: euprelease_templates/view.pt:173
+msgid "Install Instructions"
+msgstr "Installationsanleitung"
 
 #: eupcenter.py:142
 msgid "Instruction how to report Bugs"
@@ -248,6 +459,10 @@ msgstr "Ist der Quellcode in der Extension enthalten?"
 msgid "It is necessary that you accept the Legal Declaration"
 msgstr "Es ist erforderlich, dass Sie den Haftungsausschluss akzeptieren"
 
+#: eupproject_templates/view.pt:114
+msgid "Latest Not Stable Release"
+msgstr "Letztes nicht stabiles Release"
+
 #: eupcenter.py:154
 msgid "Legal Disclaimer and Limitations"
 msgstr "Rechtliche Hinweise und Einschränkungen"
@@ -260,6 +475,15 @@ msgstr "Rechtliche Hinweise und Einschränkungen für das Herunterladen"
 msgid "License of the uploaded file"
 msgstr "Lizenz der hochgeladenen Datei"
 
+#: eupproject_templates/view.pt:408 euprelease_templates/view.pt:64
+#: eupreleaselink_templates/view.pt:64
+msgid "License(s)"
+msgstr "Lizenz(en)"
+
+#: euprelease_templates/view.pt:169 eupreleaselink_templates/view.pt:184
+msgid "Link to Source Code"
+msgstr "Link zum Quellcode"
+
 #: eupproject.py:181
 msgid "Logo"
 msgstr "Logo"
@@ -267,6 +491,26 @@ msgstr "Logo"
 #: mailtoauthor.py:113
 msgid "Mail To The Project Author"
 msgstr "E-Mail an den Projekt-Autor"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "Member retracts submission"
+msgstr "Mitglied zieht Einreichung zurück"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "Member submits content for publication"
+msgstr "Mitglied reicht Inhalt zur Veröffentlichung ein"
+
+#: eupproject_templates/view.pt:283
+msgid "More about this release&hellip;"
+msgstr "Mehr über dieses Release&hellip;"
+
+#: eupcenter_templates/view.pt:44
+msgid "Most popular ${product_title}"
+msgstr "Beliebteste ${product_title}"
+
+#: eupcenter_templates/view.pt:252
+msgid "Most recent"
+msgstr "Aktuellste"
 
 #: eupcenter.py:49
 msgid "Name of the Extension product, e.g. only Extensions or LibreOffice Extensions"
@@ -276,13 +520,37 @@ msgstr "Name des Extension-Produkts, z.B. nur Extensions oder LibreOffice Extens
 msgid "Name of the Extensions Center"
 msgstr "Name des Extensions-Center"
 
+#: eupcenter_templates/view.pt:141
+msgid "Newest"
+msgstr "Neueste"
+
 #: euprelease.py:84 eupreleaselink.py:81 eupsmallproject.py:156
 msgid "No"
 msgstr "Nein"
 
+#: eupcenter_templates/view.pt:160
+msgid "No results were found."
+msgstr "Keine Ergebnisse gefunden."
+
+#: eupproject_templates/view.pt:109
+msgid "No stable release available yet."
+msgstr "Aktuell kein stabiles Release verfügbar."
+
 #: mailtoauthor.py:41
 msgid "Not a valid project name. Please retry."
 msgstr "Kein gültiger Projektname. Bitte versuchen Sie es nochmals."
+
+#: euprelease_templates/view.pt:42
+msgid "Or"
+msgstr "Oder"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "Pending"
+msgstr "Schwebend"
+
+#: eupproject_templates/view.pt:405
+msgid "Platform(s)"
+msgstr "Plattform(en)"
 
 #: euprelease.py:401 eupsmallproject.py:405
 msgid "Please accept the Legal Declaration about your Release and your Uploaded File"
@@ -348,6 +616,14 @@ msgstr "Bitte tragen Sie Ihre(n) Vornamen ein."
 msgid "Please insert a link to your extension file."
 msgstr "Bitte fügen Sie einen Link zu Ihrer Extension-Datei ein."
 
+#: eupproject_templates/view.pt:38
+msgid "Please make sure the relevant project information has been entered and a release has been added to your project. Once you have finished that you could submit your project for approval (publication)."
+msgstr "Bitte stellen Sie sicher, dass Sie alle relevanten Projekt-Informationen eingetragen und Ihrem Projekt ein Release hinzugefügt haben. Sobald Sie diese Arbeiten beendet haben, können Sie das Projekt zur Überprüfung (Veröffentlichung) übermitteln."
+
+#: eupsmallproject_templates/view.pt:35
+msgid "Please make sure the relevant project information has been entered and submit your project for approval (publication)."
+msgstr "Bitte stellen Sie sicher, dass die relevanten Projekt-Informationen eingetragen sind und übermitteln Sie Ihr Projekt zur Prüfung (Veröffentlichung)."
+
 #: euprelease.py:180 eupreleaselink.py:178 eupsmallproject.py:225
 msgid "Please mark one or more licenses you publish your release."
 msgstr "Bitte markieren Sie eine oder mehrere Lizenzen, unter denen Sie Ihr Release veröffentlichen."
@@ -376,9 +652,18 @@ msgstr "Bitte laden Sie Ihre Datei hoch."
 msgid "Please validate the recaptcha field before sending the form."
 msgstr "Bitte validieren Sie das Recaptcha-Feld, bevor Sie das Formular absenden."
 
+#: profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "Private"
+msgstr "Privat"
+
 #: mailtoauthor.py:83
 msgid "Project Name"
 msgstr "Projekt-Name"
+
+#: eupproject_templates/view.pt:461 euprelease_templates/view.pt:144
+#: eupreleaselink_templates/view.pt:157
+msgid "Project Resources"
+msgstr "Projekt Ressourcen"
 
 #: eupproject.py:115 eupsmallproject.py:198
 msgid "Project Summary"
@@ -387,6 +672,37 @@ msgstr "Projekt-Zusammenfassung"
 #: eupproject.py:108 eupsmallproject.py:191
 msgid "Project Title - minimum 5 and maximum 50 characters"
 msgstr "Projekt-Titel  - mindestens 5 und höchstens 50 Zeichen"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "Publish"
+msgstr "Veröffentlichen"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "Published"
+msgstr "Veröffentlicht"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "Puts your item in a review queue, so it can be published on the site."
+msgstr "Packt Ihre Objekte in eine Review-Schlange, so dass sie auf der Seite veröffentlicht werden können."
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Re-Release"
+msgstr "Erneut veröffentlichen"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Re-release"
+msgstr "Erneut veröffentlichen"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Release Candidate"
+msgstr "Release-Kandidat"
+
+#: euprelease_templates/view.pt:60 eupreleaselink_templates/view.pt:60
+msgid "Release Details"
+msgstr "Release-Details"
 
 #: euprelease.py:143 eupreleaselink.py:141
 msgid "Release Number"
@@ -400,9 +716,73 @@ msgstr "Release-Nummer (bis zu zwölf Zeichen)"
 msgid "Release Summary"
 msgstr "Release-Zusammenfassung"
 
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Release alpha"
+msgstr "Veröffentlichen als Alpha Release"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Release beta"
+msgstr "Veröffentlichen als Beta-Release"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Release candidate"
+msgstr "Release-Kandidat"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Release-Candidate"
+msgstr "Release-Kandidat"
+
+#: eupproject_templates/view.pt:404
+msgid "Released"
+msgstr "Veröffentlicht"
+
+#: eupproject_templates/view.pt:261
+msgid "Released ${latest_release_date}"
+msgstr "Veröffentlicht ${latest_release_date}"
+
+#: euprelease_templates/view.pt:39 eupreleaselink_templates/view.pt:40
+msgid "Remember to publish your release once all files have been added. You can do that on the left side within the menubar. Click on the entry 'State: Unreleased'. <br />"
+msgstr "Denken Sie daran, Ihr Release zu veröffentlichen, sobald Sie alle Dateien hinzugefügt haben. Sie können dies in dem Menü auf der linken Seite machen. Klicken Sie auf den Eintrag: \"State: Unreleased\".<br />"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Retract"
+msgstr "Zurückziehen"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Retract release"
+msgstr "Release zurückziehen"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "Reviewer publishes content"
+msgstr "Reviewer veröffentlicht den Inhalt"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "Reviewer sends content back for re-drafting"
+msgstr "Reviewer sendet den Inhalt zurück zur Überarbeitung"
+
+#: eupproject_templates/view.pt:477 euprelease_templates/view.pt:157
+#: eupreleaselink_templates/view.pt:172
+msgid "Screenshot"
+msgstr "Bildschirmfoto"
+
 #: eupproject.py:190 eupsmallproject.py:281
 msgid "Screenshot of the Extension"
 msgstr "Bildschirmfoto der Extension"
+
+#: eupcenter_templates/view.pt:149
+msgid "Search"
+msgstr "Suchen"
+
+#: eupcenter_templates/view.pt:114
+msgid "Search ${product_title}"
+msgstr "Suche ${product_title}"
 
 #: euprelease.py:277 eupsmallproject.py:345
 msgid "Second Release File"
@@ -424,6 +804,14 @@ msgstr "Die zweite hochgeladene Datei ist kompatibel mit den Plattformen"
 msgid "Send Email"
 msgstr "E-Mail senden"
 
+#: profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "Send back"
+msgstr "Zurück senden"
+
+#: eupcenter_templates/view.pt:122
+msgid "Show"
+msgstr "Anzeigen"
+
 #: euprelease.py:367
 msgid "Sixth Release File"
 msgstr "Sechste Release-Datei"
@@ -439,6 +827,30 @@ msgstr "Die sechste verlinkte Datei ist kompatibel mit den Plattformen"
 #: euprelease.py:379
 msgid "Sixth uploaded file is compatible with the Platform(s)"
 msgstr "Die sechste hochgeladene Datei ist kompatibel mit den Plattformen"
+
+#: profiles/default/types/tdf.extensionuploadcenter.eupsmallproject.xml
+msgid "Small Extension Project"
+msgstr "Kleines Exttension-Projekt"
+
+#: eupcenter_templates/view.pt:137
+msgid "Sort On"
+msgstr "Sortieren nach"
+
+#: eupcenter_templates/view.pt:241
+msgid "Submit easy and fast a small"
+msgstr "Übermitteln Sie einfach und schnell ein kleines"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "Submit for publication"
+msgstr "Zur Veröffentlichung einreichen"
+
+#: eupcenter_templates/view.pt:237
+msgid "Submit your"
+msgstr "Übermitteln Sie Ihre"
+
+#: configure.zcml:32
+msgid "TDF Extension Upload Center"
+msgstr "TDF Extension Upload Center"
 
 #: eupcenter.py:159
 msgid "Text of the Legal Disclaimer and Limitations"
@@ -472,17 +884,35 @@ msgstr "Der Link zu der Datei dieses Release"
 msgid "The fifth file you want to upload (this is optional)"
 msgstr "Die fünfte Datei, die Sie hochladen wollen (dies ist optional)"
 
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "The final stage of an extension release"
+msgstr "Die letzte Stufe eines Extension-Release"
+
 #: euprelease.py:241 eupsmallproject.py:308
 msgid "The first file you want to upload."
 msgstr "Die erste Datei, die Sie hochladen wollen."
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "The first stage of an extension release"
+msgstr "Die erste Stufe eines Extension-Release"
 
 #: euprelease.py:323
 msgid "The fourth file you want to upload (this is optional)"
 msgstr "Die vierte Datei, die Sie hochladen wollen (dies ist optional)"
 
+#: eupreleaselink_templates/view.pt:83
+msgid "The linked Extension file"
+msgstr "Die verlinkte Extension-Datei"
+
 #: mailtoauthor.py:84
 msgid "The name of the project, to which author you want to send feedback."
 msgstr "Der Name des Projekts, dessen Autor Sie Feedback senden wollen."
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "The owner can edit the extension project"
+msgstr "Der Besitzer kann das Extension-Projekt bearbeiten"
 
 #: eupproject.py:330 eupsmallproject.py:528
 msgid "The project title is already in use."
@@ -499,6 +929,11 @@ msgstr "Der Release-Titel wird maschinell aus dem Projekt-Titel erstellt."
 #: euprelease.py:281 eupsmallproject.py:361
 msgid "The second file you want to upload (this is optional)"
 msgstr "Die zweite Datei, die Sie hochladen wollen (dies ist optional)."
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "The second stage of an extension release"
+msgstr "Die zweite Stufe eines Extension-Release"
 
 #: euprelease.py:371
 msgid "The sixth file you want to upload (this is optional)"
@@ -552,6 +987,30 @@ msgstr "Titel für rechtliche Hinweise und Einschränkungen für Downloads"
 msgid "URL of documentation repository "
 msgstr "URL des Repository der Dokumentation "
 
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Unhide"
+msgstr "Nicht mehr verstecken"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Unhide release"
+msgstr "Release wieder einblenden"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Unhide release project"
+msgstr "Release Projekt sichtbar machen"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "Unreleased"
+msgstr "Unveröffentlicht"
+
+#: eupproject_templates/view.pt:403
+msgid "Version"
+msgstr "Version"
+
 #: eupsmallproject.py:291
 msgid "Version Number of the Extension File (up to twelf chars) which you upload in this project."
 msgstr "Version-Nummer der Extension-Datei (bis zu zwölf Zeichen), die Sie zu diesem Projekt hochladen wollen."
@@ -559,6 +1018,10 @@ msgstr "Version-Nummer der Extension-Datei (bis zu zwölf Zeichen), die Sie zu d
 #: eupsmallproject.py:290
 msgid "Versions Number"
 msgstr "Version-Nummer"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
+msgid "Visible to everyone, editable by the owner."
+msgstr "Für Jedermann sichtbar, durch den Besitzer bearbeitbar."
 
 #: mailtoauthor.py:179
 msgid "We send your message to the author of the project. It's on his choice, if he'll get back to you."
@@ -599,3 +1062,52 @@ msgstr "Ihr Vorname"
 #: mailtoauthor.py:90
 msgid "Your Message To The Author"
 msgstr "Ihre Nachricht an den Autor"
+
+#: eupproject_templates/view.pt:60 eupsmallproject_templates/view.pt:41
+msgid "Your project has been submitted for publication and will be reviewed now. You will get an email, once the status of your project changed again."
+msgstr "Ihr Projekt wurde zur Veröffentlichung übermittelt und wird nun geprüft. Sie bekommen eine Email, sobald sich der Status Ihres Projektes erneut ändert."
+
+#: eupproject_templates/view.pt:48
+msgid "a Release to your"
+msgstr "ein Release zu Ihrem"
+
+#: eupproject_templates/view.pt:53
+msgid "a linked Release"
+msgstr "ein verlinktes Release"
+
+#: eupcenter_templates/view.pt:95
+msgid "in"
+msgstr "in"
+
+#: eupproject_templates/view.pt:71
+msgid "or:"
+msgstr "oder"
+
+#: eupcenter_templates/own_project.pt:55
+msgid "please submit your new"
+msgstr "bitte übermitteln Sie Ihre neue"
+
+#: eupcenter_templates/view.pt:233
+msgid "project(s) with"
+msgstr "Projekt(e) mit"
+
+#: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
+#: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
+msgid "re-release"
+msgstr "Erneut veröffentlichen"
+
+#: eupcenter_templates/view.pt:234
+msgid "release(s) available."
+msgstr "Releases verfügbar."
+
+#: eupproject_templates/view.pt:124
+msgid "tested with:"
+msgstr "getestet mit:"
+
+#: eupproject_templates/view.pt:53
+msgid "to your"
+msgstr "zu Ihrem"
+
+#: euprelease_templates/view.pt:45 eupreleaselink_templates/view.pt:45
+msgid "you could do this following this link."
+msgstr "Sie können dies über diesen Link tun."
