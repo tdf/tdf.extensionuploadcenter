@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from tdf.extensionuploadcenter import MessageFactory as _
 from plone.app.textfield import RichText
 from plone.supermodel import model
@@ -24,7 +25,8 @@ checkfileextension = re.compile(
 
 def validateImageextension(value):
     if not checkfileextension(value.filename):
-        raise Invalid(u"You could only add images in the png, gif or jpg file format to your project.")
+        raise Invalid(u"You could only add images in the png, gif or jpg file "
+                      u"format to your project.")
     return True
 
 
@@ -34,7 +36,8 @@ checkdocfileextension = re.compile(
 
 def validatedocfileextension(value):
     if not checkdocfileextension(value.filename):
-        raise Invalid(u"You could only add documentation files in the pdf or odt file format to your project.")
+        raise Invalid(u"You could only add documentation files in the pdf or "
+                      u"odt file format to your project.")
     return True
 
 
@@ -53,7 +56,8 @@ def vocabCategories(context):
 
     terms = []
     for value in category_list:
-        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
+        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'),
+                                title=value))
 
     return SimpleVocabulary(terms)
 
@@ -63,7 +67,8 @@ directlyProvides(vocabCategories, IContextSourceBinder)
 
 def isNotEmptyCategory(value):
     if not value:
-        raise Invalid(u'You have to choose at least one category for your project.')
+        raise Invalid(u'You have to choose at least one category for your '
+                      u'project.')
     return True
 
 
@@ -78,8 +83,8 @@ def validateEmail(value):
 
 
 class ProvideScreenshotLogo(Invalid):
-    __doc__ = _(u"Please add a screenshot or a logo to your project. You find the appropriate fields below "
-                u"on this page.")
+    __doc__ = _(u"Please add a screenshot or a logo to your project. You find "
+                u"the appropriate fields below on this page.")
 
 
 class MissingCategory(Invalid):
@@ -87,6 +92,15 @@ class MissingCategory(Invalid):
 
 
 class IEUpProject(model.Schema):
+    directives.mode(information="display")
+    information = schema.Text(
+        title=_(u"Information"),
+        description=_(u"The Dialog to create a new project consists of "
+                      u"different register. Please go through this register "
+                      u"and fill in the appropriate data for your project. "
+                      u"The register 'Documentation' and its fields are "
+                      u"optional.")
+    )
 
     dexteritytextindexer.searchable('title')
     title = schema.TextLine(
@@ -108,11 +122,27 @@ class IEUpProject(model.Schema):
         required=False
     )
 
+    model.fieldset('Categories',
+                   label='Category / Categories',
+                   fields=['category_choice']
+                   )
+
+    model.fieldset('logo_screenshot',
+                   label='Logo / Screenshot',
+                   fields=['project_logo', 'screenshot']
+                   )
+
+    model.fieldset('documentation',
+                   label='Documentation',
+                   fields=['documentation_link', 'documentation_file']
+                   )
+
     dexteritytextindexer.searchable('category_choice')
     directives.widget(category_choice=CheckBoxFieldWidget)
     category_choice = schema.List(
         title=_(u"Choose your categories"),
-        description=_(u"Please select the appropriate categories (one or more) for your project."),
+        description=_(u"Please select the appropriate categories (one or "
+                      u"more) for your project."),
         value_type=schema.Choice(source=vocabCategories),
         constraint=isNotEmptyCategory,
         required=True
@@ -126,7 +156,8 @@ class IEUpProject(model.Schema):
 
     homepage = schema.URI(
         title=_(u"Homepage"),
-        description=_(u"If the project has an external home page, enter its URL (example: 'http://www.mysite.org')."),
+        description=_(u"If the project has an external home page, enter its "
+                      u"URL (example: 'http://www.mysite.org')."),
         required=False
     )
 
@@ -140,23 +171,26 @@ class IEUpProject(model.Schema):
 
     documentation_file = NamedBlobFile(
         title=_(u"Dokumentation File"),
-        description=_(u"If you have a Documentation in the file format 'PDF' or 'ODT' you could add it here."),
+        description=_(u"If you have a Documentation in the file format 'PDF' "
+                      u"or 'ODT' you could add it here."),
         required=False,
         constraint=validatedocfileextension
     )
 
     project_logo = NamedBlobImage(
         title=_(u"Logo"),
-        description=_(u"Add a logo for the project (or organization/company) by clicking the 'Browse' button."
-                      u"You could provide an image of the file format 'png', 'gif' or 'jpg'."),
+        description=_(u"Add a logo for the project (or organization/company) "
+                      u"by clicking the 'Browse' button. You could provide "
+                      u"an image of the file format 'png', 'gif' or 'jpg'."),
         required=False,
         constraint=validateImageextension
     )
 
     screenshot = NamedBlobImage(
         title=_(u"Screenshot of the Extension"),
-        description=_(u"Add a screenshot by clicking the 'Browse' button. You could provide an image of the file "
-                      u"format 'png', 'gif' or 'jpg'."),
+        description=_(u"Add a screenshot by clicking the 'Browse' button. You "
+                      u"could provide an image of the file format 'png', "
+                      u"'gif' or 'jpg'."),
         required=False,
         constraint=validateImageextension
     )
@@ -164,21 +198,24 @@ class IEUpProject(model.Schema):
     @invariant
     def missingScreenshotOrLogo(data):
         if not data.screenshot and not data.project_logo:
-            raise ProvideScreenshotLogo(_(u'Please add a screenshot or a logo to your project page. You will find the '
-                                          u'appropriate fields below on this page.'))
+            raise ProvideScreenshotLogo(_(u'Please add a screenshot or a logo '
+                                          u'to your project page. You will '
+                                          u'find the appropriate fields below '
+                                          u'on this page.'))
 
 
 def notifyProjectManager(self, event):
     state = api.content.get_state(self)
     if (self.__parent__.contactForCenter) is not None:
-        mailrecipient = str(self.__parent__.contactForCenter)
+        mailsender = str(self.__parent__.contactForCenter)
     else:
-        mailrecipient = 'extensions@libreoffice.org'
+        mailsender = api.portal.get_registry_record('plone.email_from_address')
     api.portal.send_email(
         recipient=("{}").format(self.contactAddress),
-        sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
+        sender=(u"{} <{}>").format('Admin of the Website', mailsender),
         subject=(u"Your Project {}").format(self.title),
-        body=(u"The status of your LibreOffice extension project changed. The new status is {}").format(state)
+        body=(u"The status of your LibreOffice extension project changed. "
+              u"The new status is {}").format(state)
     )
 
 
@@ -186,42 +223,45 @@ def notifyProjectManagerReleaseAdd(self, event):
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
-        mailrecipient = 'extensions@libreoffice.org'
+        mailrecipient = api.portal.get_registry_record('plone.email_from_address')
     api.portal.send_email(
         recipient=("{}").format(self.contactAddress),
         sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
         subject=(u"Your Project [{}: new Release added").format(self.title),
-        body=(u"A new release was added to your project: '{}'").format(self.title),
-         )
+        body=(u"A new release was added to your project: "
+              u"'{}'").format(self.title),
+    )
 
 
 def notifyProjectManagerReleaseLinkedAdd(self, event):
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
-        mailrecipient = 'extensions@libreoffice.org'
+        mailrecipient = api.portal.get_registry_record('plone.email_from_address')
     api.portal.send_email(
         recipient=("{}").format(self.contactAddress),
         sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
-        subject=(u"Your Project {}: new linked Release added").format(self.title),
-        body=(u"A new linked release was added to your project: '{}'").format(self.title),
-         )
+        subject=(u"Your Project {}: new linked Release "
+                 u"added").format(self.title),
+        body=(u"A new linked release was added to your "
+              u"project: '{}'").format(self.title),
+    )
 
 
 def notifyAboutNewReviewlistentry(self, event):
-    portal = api.portal.get()
     state = api.content.get_state(self)
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
-        mailrecipient = 'extensions@libreoffice.org'
+        mailrecipient = api.portal.get_registry_record('plone.email_from_address')
 
     if state == "pending":
         api.portal.send_email(
             recipient=mailrecipient,
-            subject=(u"A Project with the title {} was added to the review list").format(self.title),
-            body="Please have a look at the review list and check if the project is "
-                 "ready for publication. \n"
+            subject=(u"A Project with the title {} was added to the review "
+                     u"list").format(self.title),
+            body="Please have a look at the review list and check if the "
+                 "project is ready for publication. \n"
                  "\n"
                  "Kind regards,\n"
                  "The Admin of the Website"
@@ -229,20 +269,28 @@ def notifyAboutNewReviewlistentry(self, event):
 
 
 def textmodified_project(self, event):
-    portal = api.portal.get()
     state = api.content.get_state(self)
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
-        mailrecipient = 'extensions@libreoffice.org'
+        mailrecipient = api.portal.get_registry_record('plone.email_from_address')
     if state == "published":
+        if self.details is not None:
+            detailed_description = self.details.output
+        else:
+            detailed_description = None
+
         api.portal.send_email(
             recipient=mailrecipient,
             sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
-            subject=(u"The content of the project {} has changed").format(self.title),
-            body=(u"The content of the project {} has changed. Here you get the text of the "
-                  u"description field of the project: \n'{}\n\nand this is the text of the "
-                  u"details field:\n{}'").format(self.title, self.description, self.details.output),
+            subject=(u"The content of the project {} has "
+                     u"changed").format(self.title),
+            body=(u"The content of the project {} has changed. Here you get "
+                  u"the text of the description field of the "
+                  u"project: \n'{}\n\nand this is the text of the "
+                  u"details field:\n{}'").format(self.title,
+                                                 self.description,
+                                                 detailed_description),
         )
 
 
@@ -250,7 +298,7 @@ def notifyAboutNewProject(self, event):
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter),
     else:
-        mailrecipient = 'extensions@libreoffice.org'
+        mailrecipient = api.portal.get_registry_record('plone.email_from_address')
     api.portal.send_email(
         recipient=mailrecipient,
         subject=(u"A Project with the title {} was added").format(self.title),
@@ -263,11 +311,18 @@ class ValidateEUpProjectUniqueness(validator.SimpleFieldValidator):
 
     def validate(self, value):
         # Perform the standard validation first
+        from tdf.extensionuploadcenter.eupsmallproject import IEUpSmallProject
+
         super(ValidateEUpProjectUniqueness, self).validate(value)
         if value is not None:
             catalog = api.portal.get_tool(name='portal_catalog')
-            results = catalog({'Title': quote_chars(value),
-                               'object_provides': IEUpProject.__identifier__})
+            results1 = catalog({'Title': quote_chars(value),
+                                'object_provides':
+                                    IEUpProject.__identifier__, })
+            results2 = catalog({'Title': quote_chars(value),
+                                'object_provides':
+                                    IEUpSmallProject.__identifier__, })
+            results = results1 + results2
 
             contextUUID = IUUID(self.context, None)
             for result in results:
@@ -284,13 +339,15 @@ validator.WidgetValidatorDiscriminators(
 class EUpProjectView(DefaultView):
 
     def all_releases(self):
-        """Get a list of all releases, ordered by version, starting with the latest.
+        """Get a list of all releases, ordered by version, starting with
+           the latest.
         """
 
         catalog = api.portal.get_tool(name='portal_catalog')
         current_path = "/".join(self.context.getPhysicalPath())
         res = catalog.searchResults(
-            portal_type=('tdf.extensionuploadcenter.euprelease', 'tdf.extensionuploadcenter.eupreleaselink'),
+            portal_type=('tdf.extensionuploadcenter.euprelease',
+                         'tdf.extensionuploadcenter.eupreleaselink'),
             path=current_path,
             sort_on='Date',
             sort_order='reverse')
@@ -305,7 +362,8 @@ class EUpProjectView(DefaultView):
         catalog = api.portal.get_tool('portal_catalog')
 
         res = catalog.searchResults(
-            portal_type=('tdf.extensionuploadcenter.euprelease', 'tdf.extensionuploadcenter.eupreleaselink'),
+            portal_type=('tdf.extensionuploadcenter.euprelease',
+                         'tdf.extensionuploadcenter.eupreleaselink'),
             path='/'.join(context.getPhysicalPath()),
             review_state='final',
             sort_on='effective',
@@ -333,7 +391,8 @@ class EUpProjectView(DefaultView):
         catalog = api.portal.get_tool('portal_catalog')
 
         res = catalog.searchResults(
-            portal_type=('tdf.extensionuploadcenter.euprelease', 'tdf.extensionuploadcenter.eupreleaselink'),
+            portal_type=('tdf.extensionuploadcenter.euprelease',
+                         'tdf.extensionuploadcenter.eupreleaselink'),
             path='/'.join(context.getPhysicalPath()),
             review_state=('alpha', 'beta', 'release-candidate'),
             sort_on='effective',
@@ -344,3 +403,9 @@ class EUpProjectView(DefaultView):
         else:
             return res[0].getObject()
 
+    def projectCategory(self):
+        catalog = api.portal.get_tool(name='portal_catalog')
+        path = "/".join(self.context.getPhysicalPath())
+        idx_data = catalog.getIndexDataForUID(path)
+        category = idx_data.get('getCategories')
+        return (r for r in category)

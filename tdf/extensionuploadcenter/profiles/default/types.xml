@@ -12,4 +12,5 @@
     <object name="tdf.extensionuploadcenter.eupproject" meta_type="Dexterity FTI" />
     <object name="tdf.extensionuploadcenter.euprelease" meta_type="Dexterity FTI" />
     <object name="tdf.extensionuploadcenter.eupreleaselink" meta_type="Dexterity FTI" />
+    <object name="tdf.extensionuploadcenter.eupsmallproject" meta_type="Dexterity FTI" />
 </object>

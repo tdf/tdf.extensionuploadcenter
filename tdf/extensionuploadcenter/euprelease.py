@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from tdf.extensionuploadcenter import MessageFactory as _
 from plone.app.textfield import RichText
 from plone.supermodel import model
@@ -10,20 +11,17 @@ from zope.interface import directlyProvides
 from plone import api
 from zope.security import checkPermission
 from zope.interface import invariant, Invalid
-from Acquisition import aq_inner, aq_parent, aq_get, aq_chain
+from Acquisition import aq_inner, aq_parent
 from plone.namedfile.field import NamedBlobFile
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from plone.supermodel.directives import primary
 
-from zope import schema
 from tdf.extensionuploadcenter.adapter import IReleasesCompatVersions
 
 from zope.interface import provider
 from zope.schema.interfaces import IContextAwareDefaultFactory
 from Products.validation import V_REQUIRED
-from plone import api
 from z3c.form import validator
-from plone.uuid.interfaces import IUUID
 import re
 import itertools
 from plone.autoform import directives
@@ -34,7 +32,10 @@ checkfileextension = re.compile(
 
 def validatefileextension(value):
     if not checkfileextension(value.filename):
-        raise Invalid(u'You could only upload LibreOffice extension files with a proper file extension.')
+        raise Invalid(u'You could only upload LibreOffice extension files '
+                      u'with a proper file extension.\n'
+                      u'LibreOffice extensions have an \'oxt\' '
+                      u'file extension.')
     return True
 
 
@@ -44,7 +45,8 @@ def vocabAvailLicenses(context):
     license_list = getattr(context.__parent__, 'available_licenses', [])
     terms = []
     for value in license_list:
-        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
+        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'),
+                                title=value))
     return SimpleVocabulary(terms)
 
 
@@ -57,7 +59,8 @@ def vocabAvailVersions(context):
     versions_list = getattr(context.__parent__, 'available_versions', [])
     terms = []
     for value in versions_list:
-        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
+        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'),
+                                title=value))
     return SimpleVocabulary(terms)
 
 
@@ -70,7 +73,8 @@ def vocabAvailPlatforms(context):
     platforms_list = getattr(context.__parent__, 'available_platforms', [])
     terms = []
     for value in platforms_list:
-        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
+        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'),
+                                title=value))
     return SimpleVocabulary(terms)
 
 
@@ -109,10 +113,29 @@ class AcceptLegalDeclaration(Invalid):
 
 
 class IEUpRelease(model.Schema):
+    directives.mode(information="display")
+    information = schema.Text(
+        title=_(u"Information"),
+        description=_(u"This Dialog to create a new release consists of "
+                      u"different register. Please go through this register "
+                      u"and fill in the appropriate data for your release. "
+                      u"This register 'Default' provide fields for general "
+                      u"information of your release. The next register "
+                      u"'compatibility' is the place to submit information "
+                      u"about the versions with which your release file(s) "
+                      u"is / are compatible. The following register asks for "
+                      u"some legal informations. The next register "
+                      u"'File Upload' provide a field to upload your release "
+                      u"file. The further register are optional. There is the "
+                      u"opportunity to upload further release files "
+                      u"(for different platforms).")
+    )
+
     directives.mode(projecttitle='hidden')
     projecttitle = schema.TextLine(
         title=_(u"The Computed Project Title"),
-        description=_(u"The release title will be computed from the parent project title."),
+        description=_(u"The release title will be computed from the parent "
+                      u"project title."),
         defaultFactory=getContainerTitle
     )
 
@@ -136,14 +159,26 @@ class IEUpRelease(model.Schema):
     primary('changelog')
     changelog = RichText(
         title=_(u"Changelog"),
-        description=_(u"A detailed log of what has changed since the previous release."),
+        description=_(u"A detailed log of what has changed since the previous "
+                      u"release."),
         required=False,
     )
+
+    model.fieldset('compatibility',
+                   label=u"Compatibility",
+                   fields=['compatibility_choice'])
+
+    model.fieldset('legal',
+                   label=u"Legal",
+                   fields=['licenses_choice', 'title_declaration_legal',
+                           'declaration_legal', 'accept_legal_declaration',
+                           'source_code_inside', 'link_to_source'])
 
     directives.widget(licenses_choice=CheckBoxFieldWidget)
     licenses_choice = schema.List(
         title=_(u'License of the uploaded file'),
-        description=_(u"Please mark one or more licenses you publish your release."),
+        description=_(u"Please mark one or more licenses you publish your "
+                      u"release."),
         value_type=schema.Choice(source=vocabAvailLicenses),
         required=True,
     )
@@ -151,7 +186,8 @@ class IEUpRelease(model.Schema):
     directives.widget(compatibility_choice=CheckBoxFieldWidget)
     compatibility_choice = schema.List(
         title=_(u"Compatible with versions of LibreOffice"),
-        description=_(u"Please mark one or more program versions with which this release is compatible with."),
+        description=_(u"Please mark one or more program versions with which "
+                      u"this release is compatible with."),
         value_type=schema.Choice(source=vocabAvailVersions),
         required=True,
         default=[]
@@ -173,7 +209,8 @@ class IEUpRelease(model.Schema):
 
     accept_legal_declaration = schema.Bool(
         title=_(u"Accept the above legal disclaimer"),
-        description=_(u"Please declare that you accept the above legal disclaimer."),
+        description=_(u"Please declare that you accept the above legal "
+                      u"disclaimer."),
         required=True
     )
 
@@ -195,6 +232,11 @@ class IEUpRelease(model.Schema):
         required=False
     )
 
+    model.fieldset('fileupload',
+                   label=u"Fileupload",
+                   fields=['file', 'platform_choice',
+                           'information_further_file_uploads'])
+
     file = NamedBlobFile(
         title=_(u"The first file you want to upload."),
         description=_(u"Please upload your file."),
@@ -205,7 +247,8 @@ class IEUpRelease(model.Schema):
     directives.widget(platform_choice=CheckBoxFieldWidget)
     platform_choice = schema.List(
         title=_(u"First uploaded file is compatible with the Platform(s)"),
-        description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
+        description=_(u"Please mark one or more platforms with which the "
+                      u"uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
     )
@@ -217,16 +260,17 @@ class IEUpRelease(model.Schema):
         description=_(u"If you want to upload more files for this release, "
                       u"e.g. because there are files for other operating "
                       u"systems, you'll find the upload fields on the "
-                      u"register 'File Upload 1' and 'File Upload 2'."),
+                      u"register 'Further Uploads' and 'Further More "
+                      u"Uploads'."),
         required=False
     )
 
     model.fieldset('fileset1',
-                  label=u"File Upload 1",
-                  fields=['filetitlefield1', 'file1', 'platform_choice1',
-                          'filetitlefield2', 'file2', 'platform_choice2',
-                          'filetitlefield3',  'file3', 'platform_choice3']
-                  )
+                   label=u"Further File Uploads",
+                   fields=['filetitlefield1', 'file1', 'platform_choice1',
+                           'filetitlefield2', 'file2', 'platform_choice2',
+                           'filetitlefield3', 'file3', 'platform_choice3']
+                   )
 
     directives.mode(filetitlefield1='display')
     filetitlefield1 = schema.TextLine(
@@ -243,7 +287,8 @@ class IEUpRelease(model.Schema):
     directives.widget(platform_choice1=CheckBoxFieldWidget)
     platform_choice1 = schema.List(
         title=_(u"Second uploaded file is compatible with the Platform(s)"),
-        description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
+        description=_(u"Please mark one or more platforms with which the "
+                      u"uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=False,
     )
@@ -263,7 +308,8 @@ class IEUpRelease(model.Schema):
     directives.widget(platform_choice2=CheckBoxFieldWidget)
     platform_choice2 = schema.List(
         title=_(u"Third uploaded file is compatible with the Platform(s))"),
-        description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
+        description=_(u"Please mark one or more platforms with which the "
+                      u"uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=False,
     )
@@ -283,16 +329,17 @@ class IEUpRelease(model.Schema):
     directives.widget(platform_choice3=CheckBoxFieldWidget)
     platform_choice3 = schema.List(
         title=_(u"Fourth uploaded file is compatible with the Platform(s)"),
-        description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
+        description=_(u"Please mark one or more platforms with which the "
+                      u"uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=False,
     )
 
     model.fieldset('fileset2',
-                  label=u"File Upload 2",
-                  fields=['filetitlefield4', 'file4', 'platform_choice4',
-                          'filetitlefield5', 'file5', 'platform_choice5']
-                  )
+                   label=u"Further More File Uploads",
+                   fields=['filetitlefield4', 'file4', 'platform_choice4',
+                           'filetitlefield5', 'file5', 'platform_choice5']
+                   )
 
     directives.mode(filetitlefield4='display')
     filetitlefield4 = schema.TextLine(
@@ -309,7 +356,8 @@ class IEUpRelease(model.Schema):
     directives.widget(platform_choice4=CheckBoxFieldWidget)
     platform_choice4 = schema.List(
         title=_(u"Fifth uploaded file is compatible with the Platform(s)"),
-        description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
+        description=_(u"Please mark one or more platforms with which the "
+                      u"uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=False,
     )
@@ -329,7 +377,8 @@ class IEUpRelease(model.Schema):
     directives.widget(platform_choice5=CheckBoxFieldWidget)
     platform_choice5 = schema.List(
         title=_(u"Sixth uploaded file is compatible with the Platform(s)"),
-        description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
+        description=_(u"Please mark one or more platforms with which the "
+                      u"uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=False,
     )
@@ -342,25 +391,30 @@ class IEUpRelease(model.Schema):
     @invariant
     def compatibilitynotchoosen(data):
         if not data.compatibility_choice:
-            raise Invalid(_(u"Please choose one or more compatible product versions for your release."))
+            raise Invalid(_(u"Please choose one or more compatible product "
+                            u"versions for your release."))
 
     @invariant
     def legaldeclarationaccepted(data):
         if data.accept_legal_declaration is not True:
             raise AcceptLegalDeclaration(
-                _(u"Please accept the Legal Declaration about your Release and your Uploaded File"))
+                _(u"Please accept the Legal Declaration about your Release "
+                  u"and your Uploaded File"))
 
     @invariant
     def testingvalue(data):
         if data.source_code_inside is not 1 and data.link_to_source is None:
-            raise Invalid(_(u"You answered the question, whether the source code is inside your extension with no "
-                            u"(default answer). If this is the correct answer, please fill in the Link (URL) "
+            raise Invalid(_(u"You answered the question, whether the source "
+                            u"code is inside your extension with no "
+                            u"(default answer). If this is the correct "
+                            u"answer, please fill in the Link (URL) "
                             u"to the Source Code."))
 
     @invariant
     def noOSChosen(data):
         if data.file is not None and data.platform_choice == []:
-            raise Invalid(_(u"Please choose a compatible platform for the uploaded file."))
+            raise Invalid(_(u"Please choose a compatible platform for the "
+                            u"uploaded file."))
 
 
 @indexer(IEUpRelease)
@@ -369,10 +423,8 @@ def release_number(context, **kw):
 
 
 def notifyExtensionHubReleaseAdd(self, event):
-    portal = api.portal.get()
     state = api.content.get_state(self)
     releasemessagereceipient = self.releaseAllert
-    catalog = api.portal.get_tool(name='portal_catalog')
 
     category = list(self.category_choice)
     compatibility = list(self.compatibility_choice)
@@ -384,7 +436,8 @@ def notifyExtensionHubReleaseAdd(self, event):
         'platform_choice4',
         'platform_choice5'
     ]
-    pf_list = [field for field in platform_fields if getattr(self, field, False)]
+    pf_list = [field for field in platform_fields if getattr(self,
+                                                             field, False)]
     pf_list = list(itertools.chain(*pf_list))
     pf_set = set(pf_list)
     platform = list(pf_set)
@@ -394,9 +447,14 @@ def notifyExtensionHubReleaseAdd(self, event):
         api.portal.send_email(
             recipient=releasemessagereceipient,
             subject="New Release added",
-            body=("""A new release was added and published with\ntitle: {}\nURL: {}\nCompatibility:{}\n
-                 Categories: {}\nLicenses: {}\nPlatforms: {}""").format(
-                     self.title, self.absolute_url(), compatibility, category, licenses, platform),
+            body=("""A new release was added and published with\n
+                  title: {}\nURL: {}\nCompatibility:{}\n
+                  Categories: {}\nLicenses: {}\n
+                  Platforms: {}""").format(self.title,
+                                           self.absolute_url(),
+                                           compatibility, category,
+                                           licenses,
+                                           platform),
         )
 
     else:
@@ -456,7 +514,8 @@ class ValidateEUpReleaseUniqueness(validator.SimpleFieldValidator):
                 'release_number': value})
 
             if len(result) > 0:
-                raise Invalid(_(u"The release number is already in use. Please choose another one."))
+                raise Invalid(_(u"The release number is already in use. "
+                                u"Please choose another one."))
 
 
 validator.WidgetValidatorDiscriminators(
@@ -474,11 +533,11 @@ class EUpReleaseView(DefaultView):
         path = "/".join(self.context.getPhysicalPath())
         idx_data = catalog.getIndexDataForUID(path)
         licenses = idx_data.get('releaseLicense')
-        return(r for r in licenses)
+        return (r for r in licenses)
 
     def releaseCompatibility(self):
         catalog = api.portal.get_tool(name='portal_catalog')
         path = "/".join(self.context.getPhysicalPath())
         idx_data = catalog.getIndexDataForUID(path)
         compatibility = idx_data.get('getCompatibility')
-        return(r for r in compatibility)
+        return (r for r in compatibility)

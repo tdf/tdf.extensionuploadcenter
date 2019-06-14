@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from plone.indexer import indexer
 from tdf.extensionuploadcenter.eupproject import IEUpProject
 from zope.component import adapter

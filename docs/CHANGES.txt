@@ -1,10 +1,73 @@
 Changelog
 =========
 
-0.28 (unreleased)
+0.35 (unreleased)
 -----------------
 
 - Nothing changed yet.
+
+
+0.34 (2019-06-12)
+-----------------
+
+- Project view for stable releases changed thus a release date is only
+  shown, if there is a publishing date for a release within a
+  project available. {Andreas Mantke]
+- Update localization template and German translation and Spanish
+  localization file [Andreas Mantke]
+
+
+0.33 (2019-05-30)
+-----------------
+
+- Change fallback email sender and recipient from hard coded to the variable
+  site email address [Andreas Mantke]
+- Remove redundant source code [Andreas Mantke]
+- Update localization template and German translation and Spanish
+  localization file [Andreas Mantke]
+
+
+0.32 (2019-05-12)
+-----------------
+
+- Add a new email form to send feedback to a project author with recaptcha
+  protection and link it from the project and the smallproject
+  view [Andreas Mantke]
+- Pep8 fixes [Andreas Mantke]
+- Update localization template, Spanish localization file and German
+  localization [Andreas Mantke]
+
+
+
+0.30 (2019-04-11)
+-----------------
+
+- Add a missing entry for small extension projects in the search for newest
+  projects [Andreas Mantke]
+- CSS fix [Andreas Mantke]
+- Structure the eupproject edit mode with register [Andreas Mantke]
+- Update German localization [Andreas Mantke]
+- Improve the edit dialog and split it into more register for the release and
+  the linked release module. [Andreas Mantke]
+
+
+
+0.29 (2019-03-28)
+-----------------
+
+- Improve the view and the search features of the eupcenter and include the new
+  module for smalll projects in the search and listing [Andreas Mantke]
+- Add the install instructions to the ressources of the new module for small
+  projects view [Andreas Mantke]
+
+
+0.28 (2019-03-24)
+-----------------
+
+- Add a new module for small extension projects [Andreas Mantke]
+- New function to search and display categories for extension
+  projects and small extension projects [Andreas Mantke]
+- Update German localization [Andreas Mantke]
 
 
 0.27 (2018-12-09)

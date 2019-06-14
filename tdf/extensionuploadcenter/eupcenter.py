@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from Acquisition import aq_inner
 from plone import api
 from plone.app.layout.viewlets import ViewletBase
@@ -45,7 +46,9 @@ class IEUpCenter(model.Schema):
 
     product_title = schema.TextLine(
         title=_(u"Extension Product Name"),
-        description=_(u"Name of the Extension product, e.g. only Extensions or LibreOffice Extensions"),
+        description=_(
+            u"Name of the Extension product, e.g. only Extensions or "
+            u"LibreOffice Extensions"),
     )
 
     model.fieldset('categories_et_all',
@@ -71,18 +74,26 @@ class IEUpCenter(model.Schema):
                                      value_type=schema.TextLine())
 
     available_licenses = schema.List(title=_(u"Available Licenses"),
-                                     default=['GNU-GPL-v2 (GNU General Public License Version 2)',
-                                              'GNU-GPL-v3 (General Public License Version 3)',
-                                              'LGPL-v2.1 (GNU Lesser General Public License Version 2.1)',
-                                              'LGPL-v3+ (GNU Lesser General Public License Version 3 and later)',
-                                              'BSD (BSD License (revised))',
-                                              'MPL-v1.1 (Mozilla Public License Version 1.1)',
-                                              'MPL-v2.0+ (Mozilla Public License Version 2.0 or later)',
-                                              'CC-by-sa-v3 (Creative Commons Attribution-ShareAlike 3.0)',
-                                              'CC-BY-SA-v4 (Creative Commons Attribution-ShareAlike 4.0 International)',
-                                              'AL-v2 (Apache License Version 2.0)',
-                                              'Public Domain',
-                                              'OSI (Other OSI Approved)'],
+                                     default=[
+                                         'GNU-GPL-v2 (GNU General Public '
+                                         'License Version 2)',
+                                         'GNU-GPL-v3 (General Public '
+                                         'License Version 3)',
+                                         'LGPL-v2.1 (GNU Lesser General '
+                                         'Public License Version 2.1)',
+                                         'LGPL-v3+ (GNU Lesser General Public '
+                                         'License Version 3 and later)',
+                                         'BSD (BSD License (revised))',
+                                         'MPL-v1.1 (Mozilla Public License '
+                                         'Version 1.1)',
+                                         'MPL-v2.0+ (Mozilla Public License '
+                                         'Version 2.0 or later)',
+                                         'CC-by-sa-v3 (Creative Commons '
+                                         'Attribution-ShareAlike 3.0)',
+                                         'CC-BY-SA-v4 (Creative Commons '
+                                         'Attribution-ShareAlike 4.0 '
+                                         'International)',
+                                         'AL-v2 (Apache License Version 2.0)',],
                                      value_type=schema.TextLine())
 
     available_versions = schema.List(title=_(u"Available Versions"),
@@ -101,7 +112,8 @@ class IEUpCenter(model.Schema):
                                               'LibreOffice 5.3',
                                               'LibreOffice 5.4',
                                               'LibreOffice 6.0',
-                                              'LibreOffice 6.1'],
+                                              'LibreOffice 6.1',
+                                              'LibreOffice 6.2'],
                                      value_type=schema.TextLine())
 
     available_platforms = schema.List(title=_(u"Available Platforms"),
@@ -134,7 +146,8 @@ class IEUpCenter(model.Schema):
     model.fieldset('disclaimer',
                    label=u'Legal Disclaimer',
                    fields=['title_legaldisclaimer', 'legal_disclaimer',
-                           'title_legaldownloaddisclaimer', 'legal_downloaddisclaimer'])
+                           'title_legaldownloaddisclaimer',
+                           'legal_downloaddisclaimer'])
 
     title_legaldisclaimer = schema.TextLine(
         title=_(u"Title for Legal Disclaimer and Limitations"),
@@ -154,7 +167,8 @@ class IEUpCenter(model.Schema):
     )
 
     title_legaldownloaddisclaimer = schema.TextLine(
-        title=_(u"Title of the Legal Disclaimer and Limitations for Downloads"),
+        title=_(
+            u"Title of the Legal Disclaimer and Limitations for Downloads"),
         default=_(u"Legal Disclaimer and Limitations for Downloads"),
         required=False
     )
@@ -184,13 +198,19 @@ class IEUpCenter(model.Schema):
 
     releaseAllert = schema.ASCIILine(
         title=_(u"EMail address for the messages about new releases"),
-        description=_(u"Enter an email address to which information about a new release should be send."),
+        description=_(
+            u"Enter an email address to which information about a new "
+            u"release should be send."),
         required=False
     )
 
     contactForCenter = schema.ASCIILine(
-        title=_(u"EMail address for communication with the extension center manager and reviewer"),
-        description=_(u"Enter an email address for the communication with extension center manager and reviewer"),
+        title=_(
+            u"EMail address for communication with the extension center "
+            u"manager and reviewer"),
+        description=_(
+            u"Enter an email address for the communication with extension "
+            u"center manager and reviewer"),
         default='extensions@libreoffice.org',
         constraint=validateEmail
     )
@@ -233,7 +253,10 @@ class EUpCenterView(BrowserView):
         context = aq_inner(self.context)
         catalog = api.portal.get_tool(name='portal_catalog')
 
-        return len(catalog(portal_type='tdf.extensionuploadcenter.eupproject'))
+        return len(catalog(
+            portal_type=('tdf.extensionuploadcenter.eupproject',
+                         'tdf.extensionuploadcenter.eupsmallproject'),
+            review_state='published'))
 
     def euprelease_count(self):
         """Return number of downloadable files
@@ -250,7 +273,8 @@ class EUpCenterView(BrowserView):
             'sort_on': sort_on,
             'sort_order': 'reverse',
             'review_state': 'published',
-            'portal_type': 'tdf.extensionuploadcenter.eupproject'}
+            'portal_type': ('tdf.extensionuploadcenter.eupproject',
+                            'tdf.extensionuploadcenter.eupsmallproject')}
         return catalog(**contentFilter)
 
     def get_newest_products(self):
@@ -260,7 +284,8 @@ class EUpCenterView(BrowserView):
             'sort_on': sort_on,
             'sort_order': 'reverse',
             'review_state': 'published',
-            'portal_type': 'tdf.extensionuploadcenter.eupproject'}
+            'portal_type': ('tdf.extensionuploadcenter.eupproject',
+                            'tdf.extensionuploadcenter.eupsmallproject')}
 
         results = self.catalog(**contentFilter)
 
@@ -276,7 +301,8 @@ class EUpCenterView(BrowserView):
             'sort_on': sort_on,
             'SearchableText': SearchableText,
             'sort_order': 'reverse',
-            'portal_type': 'tdf.extensionuploadcenter.eupproject'}
+            'portal_type': ('tdf.extensionuploadcenter.eupproject',
+                            'tdf.extensionuploadcenter.eupsmallproject')}
 
         if version != 'any':
             # We ask to the indexed value on the project (aggregated from
@@ -309,7 +335,8 @@ class EUpCenterOwnProjectsViewlet(ViewletBase):
         current_user = api.user.get_current()
         pc = api.portal.get_tool('portal_catalog')
         return pc.portal_catalog(
-            portal_type='tdf.extensionuploadcenter.eupproject',
+            portal_type=('tdf.extensionuploadcenter.eupproject',
+                         'tdf.extensionuploadcenter.eupsmallproject'),
             sort_on='Date',
             sort_order='reverse',
             Creator=str(current_user)

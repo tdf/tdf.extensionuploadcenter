@@ -68,6 +68,14 @@
       permission="zope2.View"
       />
 
+  <browser:page
+      name="view"
+      for="tdf.extensionuploadcenter.eupsmallproject.IEUpSmallProject"
+      class="tdf.extensionuploadcenter.eupsmallproject.EUpSmallProjectView"
+      template="eupsmallproject_templates/view.pt"
+      permission="zope2.View"
+      />
+
   <browser:viewlet
       name="ownprojects"
       for="tdf.extensionuploadcenter.eupcenter.IEUpCenter"
@@ -142,8 +150,30 @@
     handler="tdf.extensionuploadcenter.eupproject.notifyAboutNewReviewlistentry"
     />
 
+  <subscriber
+    for="tdf.extensionuploadcenter.eupsmallproject.IEUpSmallProject
+               zope.lifecycleevent.interfaces.IObjectAddedEvent"
+    handler="tdf.extensionuploadcenter.eupsmallproject.notifyAboutNewProject"
+    />
+
+  <subscriber
+    for="tdf.extensionuploadcenter.eupsmallproject.IEUpSmallProject
+               Products.CMFCore.interfaces.IActionSucceededEvent"
+    handler="tdf.extensionuploadcenter.eupsmallproject.notifyAboutNewReviewlistentry"
+    />
+
+  <subscriber
+    for="tdf.extensionuploadcenter.eupsmallproject.IEUpSmallProject
+               Products.CMFCore.interfaces.IActionSucceededEvent"
+    handler="tdf.extensionuploadcenter.eupsmallproject.notifyProjectManager"
+    />
+
   <adapter
     factory=".eupproject.ValidateEUpProjectUniqueness"
+    />
+
+  <adapter
+    factory=".eupsmallproject.ValidateEUpSmallProjectUniqueness"
     />
 
   <adapter
@@ -156,6 +186,8 @@
 
   <adapter name="release_number" factory=".euprelease.release_number"/>
   <adapter name="release_number" factory=".eupreleaselink.release_number"/>
+  <adapter name="release_number" factory=".eupsmallproject.release_number" />
+  <adapter name="releases_compat_versions" factory=".eupsmallproject.project_compat_versions" />
 
   <adapter name="releases_compat_versions" factory=".adapter.releases_compat_versions"/>
 
@@ -184,5 +216,27 @@
          zope.lifecycleevent.interfaces.IObjectModifiedEvent"
     handler="tdf.extensionuploadcenter.eupproject.textmodified_project"
     />
+
+  <subscriber
+    for="tdf.extensionuploadcenter.eupsmallproject.IEUpSmallProject
+         zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+    handler="tdf.extensionuploadcenter.eupsmallproject.textmodified_project"
+    />
+
+  <adapter factory=".mailtoauthor.MailToAuthorAdapter"/>
+
+  <browser:page
+        for="Products.CMFCore.interfaces.ISiteRoot"
+        name="mail-to-extensionauthor"
+        class=".mailtoauthor.MailToAuthorForm"
+        permission="zope2.View"
+        />
+
+  <adapter
+      factory=".mailtoauthor.ReCaptcha"
+      for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
+      provides=".mailtoauthor.IReCaptchaForm"
+   />
+
 
 </configure>
