@@ -4,7 +4,7 @@ Changelog
 0.35 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Fix an import in the mailtoauthor module [Andreas Mantke]
 
 
 0.34 (2019-06-12)
