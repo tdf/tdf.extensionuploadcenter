@@ -9,7 +9,7 @@ from zope.interface import Invalid
 from plone import api
 from Products.statusmessages.interfaces import IStatusMessage
 
-from tdf.templateuploadcenter import MessageFactory as _
+from tdf.extensionuploadcenter import MessageFactory as _
 
 import logging
 from z3c.form import field
