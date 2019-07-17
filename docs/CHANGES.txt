@@ -1,7 +1,14 @@
 Changelog
 =========
 
-0.35 (unreleased)
+0.36 (unreleased)
+-----------------
+
+- Nothing changed yet.
+
+
+
+0.35 (2019-07-17)
 -----------------
 
 - Fix an import in the mailtoauthor module [Andreas Mantke]
