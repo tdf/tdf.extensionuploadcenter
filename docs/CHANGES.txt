@@ -5,6 +5,8 @@ Changelog
 -----------------
 
 - Fix an import in the mailtoauthor module [Andreas Mantke]
+- Improve portal_catalog search for projects, if the text search
+  field stays empty [Andreas Mantke]
 
 
 0.34 (2019-06-12)
