@@ -21,19 +21,6 @@ from plone.autoform import directives
 from zope.interface import provider
 from zope.schema.interfaces import IContextAwareDefaultFactory
 
-checkfileextension = re.compile(
-    r"^.*\.(png|PNG|gif|GIF|jpg|JPG)").match
-
-
-def validateImageextension(value):
-    if not checkfileextension(value.filename):
-        raise Invalid(u"You could only add images in the png, gif or jpg file "
-                      u"format to your project.")
-    return True
-
-
-checkdocfileextension = re.compile(
-    r"^.*\.(pdf|PDF|odt|ODT)").match
 
 
 def vocabCategories(context):
