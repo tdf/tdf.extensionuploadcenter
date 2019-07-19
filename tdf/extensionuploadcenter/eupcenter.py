@@ -126,6 +126,14 @@ class IEUpCenter(model.Schema):
                                                'UNIX (other)'],
                                       value_type=schema.TextLine())
 
+    allowed_docfileextension = schema.TextLine(
+        title=_(u'Allowed Image File Extensions'),
+        description=_(u'Fill in the allowed doumenttation file extensions, '
+                      u'seperated by a pipe  \'|\'.'),
+        default=_(u'pdf|odt')
+    )
+
+
     model.fieldset('instructions',
                    label=u'Instructions',
                    fields=['install_instructions', 'reporting_bugs', ])
