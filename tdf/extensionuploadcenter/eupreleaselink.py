@@ -106,7 +106,7 @@ def validatelinkedextensionfileextension(value):
     matches = re.compile(pattern, re.IGNORECASE).match
     if not matches(value):
         raise Invalid(
-            u'You could only link to a file with an allowed template file '
+            u'You could only link to a file with an allowed extension file '
             u'extension. Please try again with to link to a file with the '
             u'correct template file extension.')
     return True
