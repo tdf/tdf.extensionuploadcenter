@@ -108,6 +108,26 @@ def legal_declaration_text(context):
     return context.legal_disclaimer
 
 
+@provider(IContextAwareDefaultFactory)
+def allowedextensionfileextensions(context):
+    context = context.aq_inner.aq_parent
+    return context.allowed_extensionfileextension.replace("|", ", ")
+
+
+def validateextensionfileextension(value):
+    catalog = api.portal.get_tool(name='portal_catalog')
+    result = catalog.uniqueValuesFor('allowedeupextensionfileextensions')
+    pattern = r'^.*\.{0}'.format(result)
+    matches = re.compile(pattern, re.IGNORECASE).match
+    if not matches(value.filename):
+        raise Invalid(
+            u'You could only upload files with an allowed extensions file '
+            u'extension. Please try again with to upload a file with the '
+            u'correct template file extension.')
+    return True
+
+
+
 class AcceptLegalDeclaration(Invalid):
     __doc__ = _(u"It is necessary that you accept the Legal Declaration")
 
@@ -234,14 +254,22 @@ class IEUpRelease(model.Schema):
 
     model.fieldset('fileupload',
                    label=u"Fileupload",
-                   fields=['file', 'platform_choice',
+                   fields=['eupfileextension', 'file', 'platform_choice',
                            'information_further_file_uploads'])
+
+    directives.mode(eupfileextension='display')
+    eupfileextension = schema.TextLine(
+        title=_(u'The following file extensions are allowed for '
+                u'uploaded files (upper case and lower case and mix of '
+                u'both):'),
+        defaultFactory=allowedextensionfileextensions,
+    )
 
     file = NamedBlobFile(
         title=_(u"The first file you want to upload."),
         description=_(u"Please upload your file."),
         required=True,
-        constraint=validatefileextension,
+        constraint=validateextensionfileextension,
     )
 
     directives.widget(platform_choice=CheckBoxFieldWidget)
@@ -267,9 +295,12 @@ class IEUpRelease(model.Schema):
 
     model.fieldset('fileset1',
                    label=u"Further File Uploads",
-                   fields=['filetitlefield1', 'file1', 'platform_choice1',
-                           'filetitlefield2', 'file2', 'platform_choice2',
-                           'filetitlefield3', 'file3', 'platform_choice3']
+                   fields=['filetitlefield1', 'eupfileextension1',
+                           'file1', 'platform_choice1',
+                           'filetitlefield2', 'eupfileextension2',
+                           'file2', 'platform_choice2',
+                           'filetitlefield3', 'eupfileextension3',
+                           'file3', 'platform_choice3']
                    )
 
     directives.mode(filetitlefield1='display')
@@ -277,11 +308,19 @@ class IEUpRelease(model.Schema):
         title=_(u"Second Release File"),
     )
 
+    directives.mode(eupfileextension1='display')
+    eupfileextension1 = schema.TextLine(
+        title=_(u'The following file extensions are allowed for '
+                u'uploaded files (upper case and lower case and mix of '
+                u'both):'),
+        defaultFactory=allowedextensionfileextensions,
+    )
+
     file1 = NamedBlobFile(
         title=_(u"The second file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
         required=False,
-        constraint=validatefileextension,
+        constraint=validateextensionfileextension,
     )
 
     directives.widget(platform_choice1=CheckBoxFieldWidget)
@@ -298,11 +337,19 @@ class IEUpRelease(model.Schema):
         title=_(u"Third Release File"),
     )
 
+    directives.mode(eupfileextension2='display')
+    eupfileextension2 = schema.TextLine(
+        title=_(u'The following file extensions are allowed for '
+                u'uploaded files (upper case and lower case and mix of '
+                u'both):'),
+        defaultFactory=allowedextensionfileextensions,
+    )
+
     file2 = NamedBlobFile(
         title=_(u"The third file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
         required=False,
-        constraint=validatefileextension,
+        constraint=validateextensionfileextension,
     )
 
     directives.widget(platform_choice2=CheckBoxFieldWidget)
@@ -319,11 +366,19 @@ class IEUpRelease(model.Schema):
         title=_(u"Fourth Release File"),
     )
 
+    directives.mode(eupfileextension3='display')
+    eupfileextension3 = schema.TextLine(
+        title=_(u'The following file extensions are allowed for '
+                u'uploaded files (upper case and lower case and mix of '
+                u'both):'),
+        defaultFactory=allowedextensionfileextensions,
+    )
+
     file3 = NamedBlobFile(
         title=_(u"The fourth file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
         required=False,
-        constraint=validatefileextension,
+        constraint=validateextensionfileextension,
     )
 
     directives.widget(platform_choice3=CheckBoxFieldWidget)
@@ -337,8 +392,10 @@ class IEUpRelease(model.Schema):
 
     model.fieldset('fileset2',
                    label=u"Further More File Uploads",
-                   fields=['filetitlefield4', 'file4', 'platform_choice4',
-                           'filetitlefield5', 'file5', 'platform_choice5']
+                   fields=['filetitlefield4', 'eupfileextension4',
+                           'file4', 'platform_choice4',
+                           'filetitlefield5', 'eupfileextension5',
+                           'file5', 'platform_choice5']
                    )
 
     directives.mode(filetitlefield4='display')
@@ -346,11 +403,19 @@ class IEUpRelease(model.Schema):
         title=_(u"Fifth Release File"),
     )
 
+    directives.mode(eupfileextension4='display')
+    eupfileextension4 = schema.TextLine(
+        title=_(u'The following file extensions are allowed for '
+                u'uploaded files (upper case and lower case and mix of '
+                u'both):'),
+        defaultFactory=allowedextensionfileextensions,
+    )
+
     file4 = NamedBlobFile(
         title=_(u"The fifth file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
         required=False,
-        constraint=validatefileextension,
+        constraint=validateextensionfileextension,
     )
 
     directives.widget(platform_choice4=CheckBoxFieldWidget)
@@ -367,11 +432,19 @@ class IEUpRelease(model.Schema):
         title=_(u"Sixth Release File"),
     )
 
+    directives.mode(eupfileextension5='display')
+    eupfileextension5 = schema.TextLine(
+        title=_(u'The following file extensions are allowed for '
+                u'uploaded files (upper case and lower case and mix of '
+                u'both):'),
+        defaultFactory=allowedextensionfileextensions,
+    )
+
     file5 = NamedBlobFile(
         title=_(u"The sixth file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
         required=False,
-        constraint=validatefileextension,
+        constraint=validateextensionfileextension,
     )
 
     directives.widget(platform_choice5=CheckBoxFieldWidget)
