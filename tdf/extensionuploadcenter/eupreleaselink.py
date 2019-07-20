@@ -238,17 +238,17 @@ class IEUpReleaseLink(model.Schema):
 
     model.fieldset('linked_file',
                    label='Linked File',
-                   fields=['eupfileextension',
+                   fields=['euplinkedfileextension',
                            'link_to_file',
                            'external_file_size',
                            'platform_choice',
                            'information_further_file_uploads'])
 
 
-    directives.mode(eupfileextension='display')
-    eupfileextension = schema.TextLine(
+    directives.mode(euplinkedfileextension='display')
+    euplinkedfileextension = schema.TextLine(
         title=_(u'The following file extensions are allowed for linked '
-                u'uploaded files (upper case and lower case and mix of '
+                u'files (upper case and lower case and mix of '
                 u'both):'),
         defaultFactory=allowedextensionfileextensions,
     )
@@ -293,7 +293,7 @@ class IEUpReleaseLink(model.Schema):
 
     model.fieldset('fieldset1',
                    label=_(u"Second linked file"),
-                   fields=['eupfileextension',
+                   fields=['euplinkedfileextension1',
                            'link_to_file1',
                            'external_file_size1',
                            'platform_choice1']
@@ -301,7 +301,7 @@ class IEUpReleaseLink(model.Schema):
 
     model.fieldset('fieldset2',
                    label=_(u"Third linked file"),
-                   fields=['eupfileextension',
+                   fields=['euplinkedfileextension2',
                            'link_to_file2',
                            'external_file_size2',
                            'platform_choice2']
@@ -309,7 +309,7 @@ class IEUpReleaseLink(model.Schema):
 
     model.fieldset('fieldset3',
                    label=_(u"Fourth linked file"),
-                   fields=['eupfileextension',
+                   fields=['euplinkedfileextension3',
                            'link_to_file3',
                            'external_file_size3',
                            'platform_choice3']
@@ -317,7 +317,7 @@ class IEUpReleaseLink(model.Schema):
 
     model.fieldset('fieldset4',
                    label=_(u"Fifth linked file"),
-                   fields=['eupfileextension',
+                   fields=['euplinkedfileextension4',
                            'link_to_file4',
                            'external_file_size4',
                            'platform_choice4']
@@ -325,11 +325,19 @@ class IEUpReleaseLink(model.Schema):
 
     model.fieldset('fieldset5',
                    label=_(u"Sixth linked file"),
-                   fields=['eupfileextension',
+                   fields=['euplinkedfileextension5',
                            'link_to_file5',
                            'external_file_size5',
                            'platform_choice5']
                    )
+
+    directives.mode(euplinkedfileextensio1n='display')
+    euplinkedfileextension1 = schema.TextLine(
+        title=_(u'The following file extensions are allowed for linked '
+                u'files (upper case and lower case and mix of '
+                u'both):'),
+        defaultFactory=allowedextensionfileextensions,
+    )
 
     link_to_file1 = schema.URI(
         title=_(u"The Link to the file of the release"),
@@ -352,6 +360,14 @@ class IEUpReleaseLink(model.Schema):
                       u"linked file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
+    )
+
+    directives.mode(euplinkedfileextension2='display')
+    euplinkedfileextension2 = schema.TextLine(
+        title=_(u'The following file extensions are allowed for linked '
+                u'files (upper case and lower case and mix of '
+                u'both):'),
+        defaultFactory=allowedextensionfileextensions,
     )
 
     link_to_file2 = schema.URI(
@@ -377,6 +393,14 @@ class IEUpReleaseLink(model.Schema):
         required=True
     )
 
+    directives.mode(euplinkedfileextension3='display')
+    euplinkedfileextension3 = schema.TextLine(
+        title=_(u'The following file extensions are allowed for linked '
+                u'files (upper case and lower case and mix of '
+                u'both):'),
+        defaultFactory=allowedextensionfileextensions,
+    )
+
     link_to_file3 = schema.URI(
         title=_(u"The Link to the file of the release"),
         description=_(u"Please insert a link to your extension file."),
@@ -400,6 +424,14 @@ class IEUpReleaseLink(model.Schema):
         required=True,
     )
 
+    directives.mode(euplinkedfileextension4='display')
+    euplinkedfileextension4 = schema.TextLine(
+        title=_(u'The following file extensions are allowed for linked '
+                u'files (upper case and lower case and mix of '
+                u'both):'),
+        defaultFactory=allowedextensionfileextensions,
+    )
+
     link_to_file4 = schema.URI(
         title=_(u"The Link to the file of the release"),
         description=_(u"Please insert a link to your extension file."),
@@ -421,6 +453,14 @@ class IEUpReleaseLink(model.Schema):
                       u"linked file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
+    )
+
+    directives.mode(euplinkedfileextension5='display')
+    euplinkedfileextension5 = schema.TextLine(
+        title=_(u'The following file extensions are allowed for linked '
+                u'files (upper case and lower case and mix of '
+                u'both):'),
+        defaultFactory=allowedextensionfileextensions,
     )
 
     link_to_file5 = schema.URI(
