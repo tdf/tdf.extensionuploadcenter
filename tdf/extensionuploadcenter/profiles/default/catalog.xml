@@ -26,6 +26,6 @@
         <indexed_attr value="allowed_eupimagefileextension" />
     </index>
     <index name="allowedeupextensionfileextensions" meta_type="FieldIndex">
-        <indexed_attr value="allowed_eupextensionfileextension" />
+        <indexed_attr value="allowed_extensionfileextension" />
     </index>
 </object>
