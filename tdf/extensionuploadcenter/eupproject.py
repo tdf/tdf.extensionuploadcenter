@@ -18,27 +18,9 @@ from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from tdf.extensionuploadcenter import quote_chars
 from plone.supermodel.directives import primary
 from plone.autoform import directives
+from zope.interface import provider
+from zope.schema.interfaces import IContextAwareDefaultFactory
 
-checkfileextension = re.compile(
-    r"^.*\.(png|PNG|gif|GIF|jpg|JPG)").match
-
-
-def validateImageextension(value):
-    if not checkfileextension(value.filename):
-        raise Invalid(u"You could only add images in the png, gif or jpg file "
-                      u"format to your project.")
-    return True
-
-
-checkdocfileextension = re.compile(
-    r"^.*\.(pdf|PDF|odt|ODT)").match
-
-
-def validatedocfileextension(value):
-    if not checkdocfileextension(value.filename):
-        raise Invalid(u"You could only add documentation files in the pdf or "
-                      u"odt file format to your project.")
-    return True
 
 
 def vocabCategories(context):
@@ -79,6 +61,42 @@ checkEmail = re.compile(
 def validateEmail(value):
     if not checkEmail(value):
         raise Invalid(_(u"Invalid email address"))
+    return True
+
+
+@provider(IContextAwareDefaultFactory)
+def allowedeupimagefileextensions(context):
+    return context.allowed_eupimagefileextension.replace("|", ", ")
+
+
+def validateimagefileextension(value):
+    catalog = api.portal.get_tool(name='portal_catalog')
+    result=catalog.uniqueValuesFor('allowedeupimagefileextensions')
+    pattern = r'^.*\.{0}'.format(result)
+    matches = re.compile(pattern, re.IGNORECASE).match
+    if not matches(value.filename):
+        raise Invalid(
+            u'You could only upload files with an allowed file extension. '
+            u'Please try again to upload a file with the correct file'
+            u'extension.')
+    return True
+
+
+@provider(IContextAwareDefaultFactory)
+def allowedeupdocfileextensions(context):
+    return context.allowed_docfileextension.replace("|", ", ")
+
+
+def validatedocfileextension(value):
+    catalog = api.portal.get_tool(name='portal_catalog')
+    result=catalog.uniqueValuesFor('allowedeupdocfileextensions')
+    pattern = r'^.*\.{0}'.format(result)
+    matches = re.compile(pattern, re.IGNORECASE).match
+    if not matches(value.filename):
+        raise Invalid(
+            u'You could only upload documentation files with an allowed '
+            u'file extension. Please try again to upload a file with the '
+            u'correct file extension.')
     return True
 
 
@@ -169,6 +187,13 @@ class IEUpProject(model.Schema):
         required=False
     )
 
+    directives.mode(eupdocextension='display')
+    eupdocextension = schema.TextLine(
+        title=_(u'The following file extensions are allowed for documentation '
+                u'files (upper case and lower case and mix of both):'),
+        defaultFactory=allowedeupdocfileextensions,
+    )
+
     documentation_file = NamedBlobFile(
         title=_(u"Dokumentation File"),
         description=_(u"If you have a Documentation in the file format 'PDF' "
@@ -177,13 +202,27 @@ class IEUpProject(model.Schema):
         constraint=validatedocfileextension
     )
 
+    directives.mode(eupimageextension='display')
+    eupimageextension = schema.TextLine(
+        title=_(u'The following file extensions are allowed for project logo '
+                u'files (upper case and lower case and mix of both):'),
+        defaultFactory=allowedeupdocfileextensions,
+    )
+
     project_logo = NamedBlobImage(
         title=_(u"Logo"),
         description=_(u"Add a logo for the project (or organization/company) "
                       u"by clicking the 'Browse' button. You could provide "
                       u"an image of the file format 'png', 'gif' or 'jpg'."),
         required=False,
-        constraint=validateImageextension
+        constraint=validateimagefileextension
+    )
+
+    directives.mode(eupimageextension1='display')
+    eupimageextension1 = schema.TextLine(
+        title=_(u'The following file extensions are allowed for screenshot '
+                u'files (upper case and lower case and mix of both):'),
+        defaultFactory=allowedeupdocfileextensions,
     )
 
     screenshot = NamedBlobImage(
@@ -192,7 +231,7 @@ class IEUpProject(model.Schema):
                       u"could provide an image of the file format 'png', "
                       u"'gif' or 'jpg'."),
         required=False,
-        constraint=validateImageextension
+        constraint=validateimagefileextension
     )
 
     @invariant

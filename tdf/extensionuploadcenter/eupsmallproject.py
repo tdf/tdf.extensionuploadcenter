@@ -24,22 +24,10 @@ from tdf.extensionuploadcenter import quote_chars
 from plone.uuid.interfaces import IUUID
 from Products.validation import V_REQUIRED
 
-checkfileextensionimage = re.compile(
-    r"^.*\.(png|PNG|gif|GIF|jpg|JPG)").match
 
 checkfileextension = re.compile(
     r"^.*\.(oxt|OXT)").match
 
-
-def validateImageextension(value):
-    if not checkfileextensionimage(value.filename):
-        raise Invalid(u"You could only add images in the png, gif or jpg file "
-                      u"format to your project.")
-    return True
-
-
-checkdocfileextension = re.compile(
-    r"^.*\.(pdf|PDF|odt|ODT)").match
 
 checkEmail = re.compile(
     r"[a-zA-Z0-9._%-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}").match
@@ -168,6 +156,42 @@ def legal_declaration_text(context):
     return context.legal_disclaimer
 
 
+@provider(IContextAwareDefaultFactory)
+def allowedeupimagefileextensions(context):
+    return context.allowed_eupimagefileextension.replace("|", ", ")
+
+
+def validateimagefileextension(value):
+    catalog = api.portal.get_tool(name='portal_catalog')
+    result=catalog.uniqueValuesFor('allowedeupimagefileextensions')
+    pattern = r'^.*\.{0}'.format(result)
+    matches = re.compile(pattern, re.IGNORECASE).match
+    if not matches(value.filename):
+        raise Invalid(
+            u'You could only upload files with an allowed file extension. '
+            u'Please try again to upload a file with the correct file'
+            u'extension.')
+    return True
+
+
+@provider(IContextAwareDefaultFactory)
+def allowedeupdocfileextensions(context):
+    return context.allowed_docfileextension.replace("|", ", ")
+
+
+def validatedocfileextension(value):
+    catalog = api.portal.get_tool(name='portal_catalog')
+    result=catalog.uniqueValuesFor('allowedeupdocfileextensions')
+    pattern = r'^.*\.{0}'.format(result)
+    matches = re.compile(pattern, re.IGNORECASE).match
+    if not matches(value.filename):
+        raise Invalid(
+            u'You could only upload documentation files with an allowed '
+            u'file extension. Please try again to upload a file with the '
+            u'correct file extension.')
+    return True
+
+
 class AcceptLegalDeclaration(Invalid):
     __doc__ = _(u"It is necessary that you accept the Legal Declaration")
 
@@ -277,13 +301,20 @@ class IEUpSmallProject(model.Schema):
         constraint=validateEmail
     )
 
+    directives.mode(eupimageextension = 'display')
+    eupimageextension = schema.TextLine(
+        title=_(u'The following file extensions are allowed for screenshot '
+                u'files (upper case and lower case and mix of both):'),
+        defaultFactory=allowedeupdocfileextensions,
+    )
+
     screenshot = NamedBlobImage(
         title=_(u"Screenshot of the Extension"),
         description=_(u"Add a screenshot by clicking the 'Browse' button. "
                       u"You could provide an image of the file format 'png', "
                       u"'gif' or 'jpg'."),
         required=True,
-        constraint=validateImageextension
+        constraint=validateimagefileextension
     )
 
     releasenumber = schema.TextLine(
@@ -319,6 +350,34 @@ class IEUpSmallProject(model.Schema):
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
     )
+    model.fieldset('documentation',
+                   label='Documentation',
+                   fields=['documentation_link', 'documentation_file']
+                   )
+
+    documentation_link = schema.URI(
+        title=_(u"URL of documentation repository "),
+        description=_(u"If the project has externally hosted "
+                      u"documentation, enter its URL "
+                      u"(example: 'http://www.mysite.org')."),
+        required=False
+    )
+
+    directives.mode(eupdocextension='display')
+    eupdocextension = schema.TextLine(
+        title=_(u'The following file extensions are allowed for documentation '
+                u'files (upper case and lower case and mix of both):'),
+        defaultFactory=allowedeupdocfileextensions,
+    )
+
+    documentation_file = NamedBlobFile(
+        title=_(u"Dokumentation File"),
+        description=_(u"If you have a Documentation in the file format 'PDF' "
+                      u"or 'ODT' you could add it here."),
+        required=False,
+        constraint=validatedocfileextension
+    )
+
 
     model.fieldset('fileset1',
                    label=u"File Upload",
