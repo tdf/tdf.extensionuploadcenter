@@ -23,18 +23,6 @@ import re
 from plone.supermodel.directives import primary
 from plone.autoform import directives
 
-checkfileextension = re.compile(
-    r"^.*\.(oxt|OXT)").match
-
-
-def validatelinkedfileextension(value):
-    if not checkfileextension(value):
-        raise Invalid(u'You could only link to an URL (a file) that is a '
-                      u'LibreOffice extension file with a proper file '
-                      u'extension.\nLibreOffice extensions have an '
-                      u'\'oxt\' file extension.')
-    return True
-
 
 def vocabAvailLicenses(context):
     """ pick up licenses list from parent """
@@ -103,6 +91,25 @@ def legal_declaration_title(context):
 def legal_declaration_text(context):
     context = context.aq_inner.aq_parent
     return context.legal_disclaimer
+
+
+@provider(IContextAwareDefaultFactory)
+def allowedextensionfileextensions(context):
+    conext = context.aq_inner.aq_parent
+    return context.allowed_extensionfileextension.replace("|", ", ")
+
+
+def validatelinkedextensionfileextension(value):
+    catalog = api.portal.get_tool(name='portal_catalog')
+    result = catalog.uniqueValuesFor('allowedeupextensionfileextensions')
+    pattern = r'^.*\.{0}'.format(result)
+    matches = re.compile(pattern, re.IGNORECASE).match
+    if not matches(value.filename):
+        raise Invalid(
+            u'You could only link to a file with an allowed template file '
+            u'extension. Please try again with to link to a file with the '
+            u'correct template file extension.')
+    return True
 
 
 class AcceptLegalDeclaration(Invalid):
@@ -231,16 +238,27 @@ class IEUpReleaseLink(model.Schema):
 
     model.fieldset('linked_file',
                    label='Linked File',
-                   fields=['link_to_file',
+                   fields=['eupfileextension',
+                           'link_to_file',
                            'external_file_size',
                            'platform_choice',
                            'information_further_file_uploads'])
+
+
+    directives.mode(eupfileextension='display')
+    eupfileextension = schema.TextLine(
+        title=_(u'The following file extensions are allowed for linked '
+                u'uploaded files (upper case and lower case and mix of '
+                u'both):'),
+        defaultFactory=allowedextensionfileextensions,
+    )
+
 
     link_to_file = schema.URI(
         title=_(u"The Link to the file of the release"),
         description=_(u"Please insert a link to your extension file."),
         required=True,
-        constraint=validatelinkedfileextension
+        constraint=validatelinkedextensionfileextension
     )
 
     external_file_size = schema.Float(
@@ -275,35 +293,40 @@ class IEUpReleaseLink(model.Schema):
 
     model.fieldset('fieldset1',
                    label=_(u"Second linked file"),
-                   fields=['link_to_file1',
+                   fields=['eupfileextension',
+                           'link_to_file1',
                            'external_file_size1',
                            'platform_choice1']
                    )
 
     model.fieldset('fieldset2',
                    label=_(u"Third linked file"),
-                   fields=['link_to_file2',
+                   fields=['eupfileextension',
+                           'link_to_file2',
                            'external_file_size2',
                            'platform_choice2']
                    )
 
     model.fieldset('fieldset3',
                    label=_(u"Fourth linked file"),
-                   fields=['link_to_file3',
+                   fields=['eupfileextension',
+                           'link_to_file3',
                            'external_file_size3',
                            'platform_choice3']
                    )
 
     model.fieldset('fieldset4',
                    label=_(u"Fifth linked file"),
-                   fields=['link_to_file4',
+                   fields=['eupfileextension',
+                           'link_to_file4',
                            'external_file_size4',
                            'platform_choice4']
                    )
 
     model.fieldset('fieldset5',
                    label=_(u"Sixth linked file"),
-                   fields=['link_to_file5',
+                   fields=['eupfileextension',
+                           'link_to_file5',
                            'external_file_size5',
                            'platform_choice5']
                    )
@@ -312,7 +335,7 @@ class IEUpReleaseLink(model.Schema):
         title=_(u"The Link to the file of the release"),
         description=_(u"Please insert a link to your extension file."),
         required=False,
-        constraint=validatelinkedfileextension
+        constraint=validatelinkedextensionfileextension
     )
 
     external_file_size1 = schema.Float(
@@ -335,7 +358,7 @@ class IEUpReleaseLink(model.Schema):
         title=_(u"The Link to the file of the release"),
         description=_(u"Please insert a link to your extension file."),
         required=False,
-        constraint=validatelinkedfileextension
+        constraint=validatelinkedextensionfileextension
     )
 
     external_file_size2 = schema.Float(
@@ -358,7 +381,7 @@ class IEUpReleaseLink(model.Schema):
         title=_(u"The Link to the file of the release"),
         description=_(u"Please insert a link to your extension file."),
         required=False,
-        constraint=validatelinkedfileextension
+        constraint=validatelinkedextensionfileextension
     )
 
     external_file_size3 = schema.Float(
@@ -381,7 +404,7 @@ class IEUpReleaseLink(model.Schema):
         title=_(u"The Link to the file of the release"),
         description=_(u"Please insert a link to your extension file."),
         required=False,
-        constraint=validatelinkedfileextension
+        constraint=validatelinkedextensionfileextension
     )
 
     external_file_size4 = schema.Float(
@@ -404,7 +427,7 @@ class IEUpReleaseLink(model.Schema):
         title=_(u"The Link to the file of the release"),
         description=_(u"Please insert a link to your extension file."),
         required=False,
-        constraint=validatelinkedfileextension
+        constraint=validatelinkedextensionfileextension
     )
 
     external_file_size5 = schema.Float(
