@@ -37,11 +37,11 @@ class IEUpCenter(model.Schema):
     )
 
     description = schema.Text(
-        description=_(u"Description of the Extensions Center"),
+        title=_(u"Description of the Extensions Center"),
     )
 
     product_description = schema.Text(
-        description=_(u"Description of the features of extensions")
+        title=_(u"Description of the features of extensions")
     )
 
     product_title = schema.TextLine(
