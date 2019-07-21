@@ -128,7 +128,7 @@ class IEUpCenter(model.Schema):
 
     allowed_extensionfileextension = schema.TextLine(
         title=_(u'Allowed Extension File Extensions'),
-        description=_(u'Fill in the allowed template file extensions, '
+        description=_(u'Fill in the allowed extension file extensions, '
                       u'seperated by a pipe \'|\'.'),
         default=_(u'ott|ots|otp|otg'),
     )
@@ -137,7 +137,7 @@ class IEUpCenter(model.Schema):
         title=_(u'Allowed Image File Extensions'),
         description=_(u'Fill in the allowed image file extensions, '
                       u'seperated by a pipe \'|\'.'),
-        default=_(u'png|gifjpg'),
+        default=_(u'png|gif|jpg'),
     )
 
 
