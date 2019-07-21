@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-07-21 05:37+0000\n"
+"POT-Creation-Date: 2019-07-21 05:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -340,12 +340,12 @@ msgstr ""
 msgid "Fill in the allowed doumenttation file extensions, seperated by a pipe  '|'."
 msgstr ""
 
-#: ./eupcenter.py:138
-msgid "Fill in the allowed image file extensions, seperated by a pipe '|'."
+#: ./eupcenter.py:131
+msgid "Fill in the allowed extension file extensions, seperated by a pipe '|'."
 msgstr ""
 
-#: ./eupcenter.py:131
-msgid "Fill in the allowed template file extensions, seperated by a pipe '|'."
+#: ./eupcenter.py:138
+msgid "Fill in the allowed image file extensions, seperated by a pipe '|'."
 msgstr ""
 
 #: ./eupcenter.py:187
@@ -1249,7 +1249,7 @@ msgid "please submit your new"
 msgstr ""
 
 #: ./eupcenter.py:140
-msgid "png|gifjpg"
+msgid "png|gif|jpg"
 msgstr ""
 
 #: ./eupcenter_templates/view.pt:233
