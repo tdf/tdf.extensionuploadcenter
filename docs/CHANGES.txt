@@ -4,7 +4,28 @@ Changelog
 0.36 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Add a title to fields description and product_description of the
+  eupcenter and remove their description entry [Andreas Mantke]
+- Add fields to submit allowed image, documentation and extension
+  file extensions instead of formerly hard coded file extensions
+  for them to give more flexibility to the site administrator
+  [Andreas Mantke]
+- Add new indexes to the portal_catalog to hold the values of
+  allowed image, documentation and extension file extensions
+  [Andreas Mantke]
+- Create new validators for image and documentation file extensions
+  inside the eupproject and the eupsmallproject modules and move
+  the validation to this validators [Andreas Mantke]
+- Create new validators for extension file extensions inside the
+  euprelease, the tuplinkedrelease module and the eupsmallproject
+  module. Move the validation to this validators [Andreas Mantke]
+- Add new fields to display the currently allowed image, documentation
+  and extension file extensions to the eupproject, the eupsmallproject,
+  the euprelease and the euplinkedrelease [Andreas Mantke]
+- Remove old and unnecessary functions for the validation of
+  image, documentation and template file extensions [Andreas Mantke]
+- Update localization template, Spanish localization file and
+  German translation file [Andreas Mantke]
 
 
 
