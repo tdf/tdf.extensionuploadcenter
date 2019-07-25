@@ -72,7 +72,7 @@ def allowedeupimagefileextensions(context):
 def validateimagefileextension(value):
     catalog = api.portal.get_tool(name='portal_catalog')
     result=catalog.uniqueValuesFor('allowedeupimagefileextensions')
-    pattern = r'^.*\.{0}'.format(result)
+    pattern = r'^.*\.{0}'.format(result[0])
     matches = re.compile(pattern, re.IGNORECASE).match
     if not matches(value.filename):
         raise Invalid(
@@ -90,7 +90,7 @@ def allowedeupdocfileextensions(context):
 def validatedocfileextension(value):
     catalog = api.portal.get_tool(name='portal_catalog')
     result=catalog.uniqueValuesFor('allowedeupdocfileextensions')
-    pattern = r'^.*\.{0}'.format(result)
+    pattern = r'^.*\.{0}'.format(result[0])
     matches = re.compile(pattern, re.IGNORECASE).match
     if not matches(value.filename):
         raise Invalid(
@@ -147,12 +147,14 @@ class IEUpProject(model.Schema):
 
     model.fieldset('logo_screenshot',
                    label='Logo / Screenshot',
-                   fields=['project_logo', 'screenshot']
+                   fields=['eupimageextension', 'project_logo',
+                           'eupimageextension1', 'screenshot']
                    )
 
     model.fieldset('documentation',
                    label='Documentation',
-                   fields=['documentation_link', 'documentation_file']
+                   fields=['documentation_link', 'eupdocextension',
+                           'documentation_file']
                    )
 
     dexteritytextindexer.searchable('category_choice')
@@ -206,7 +208,7 @@ class IEUpProject(model.Schema):
     eupimageextension = schema.TextLine(
         title=_(u'The following file extensions are allowed for project logo '
                 u'files (upper case and lower case and mix of both):'),
-        defaultFactory=allowedeupdocfileextensions,
+        defaultFactory=allowedeupimagefileextensions,
     )
 
     project_logo = NamedBlobImage(
@@ -222,7 +224,7 @@ class IEUpProject(model.Schema):
     eupimageextension1 = schema.TextLine(
         title=_(u'The following file extensions are allowed for screenshot '
                 u'files (upper case and lower case and mix of both):'),
-        defaultFactory=allowedeupdocfileextensions,
+        defaultFactory=allowedeupimagefileextensions,
     )
 
     screenshot = NamedBlobImage(

@@ -331,7 +331,7 @@ class IEUpReleaseLink(model.Schema):
                            'platform_choice5']
                    )
 
-    directives.mode(euplinkedfileextensio1n='display')
+    directives.mode(euplinkedfileextension1='display')
     euplinkedfileextension1 = schema.TextLine(
         title=_(u'The following file extensions are allowed for linked '
                 u'files (upper case and lower case and mix of '

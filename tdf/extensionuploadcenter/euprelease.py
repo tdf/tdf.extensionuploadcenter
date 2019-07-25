@@ -26,18 +26,6 @@ import re
 import itertools
 from plone.autoform import directives
 
-checkfileextension = re.compile(
-    r"^.*\.(oxt|OXT)").match
-
-
-def validatefileextension(value):
-    if not checkfileextension(value.filename):
-        raise Invalid(u'You could only upload LibreOffice extension files '
-                      u'with a proper file extension.\n'
-                      u'LibreOffice extensions have an \'oxt\' '
-                      u'file extension.')
-    return True
-
 
 def vocabAvailLicenses(context):
     """ pick up licenses list from parent """
@@ -107,23 +95,22 @@ def legal_declaration_text(context):
     context = context.aq_inner.aq_parent
     return context.legal_disclaimer
 
-
 @provider(IContextAwareDefaultFactory)
 def allowedextensionfileextensions(context):
     context = context.aq_inner.aq_parent
     return context.allowed_extensionfileextension.replace("|", ", ")
 
 
-def validateextensionfileextension(value):
+def validateextfileextension(value):
     catalog = api.portal.get_tool(name='portal_catalog')
     result = catalog.uniqueValuesFor('allowedeupextensionfileextensions')
-    pattern = r'^.*\.{0}'.format(result)
+    pattern = r'^.*\.{0}'.format(result[0])
     matches = re.compile(pattern, re.IGNORECASE).match
     if not matches(value.filename):
         raise Invalid(
-            u'You could only upload files with an allowed extensions file '
-            u'extension. Please try again with to upload a file with the '
-            u'correct template file extension.')
+            u'You could only upload files with an allowed file '
+            u'extension. Please try again to upload a file with the '
+            u'correct file extension.')
     return True
 
 
@@ -269,7 +256,7 @@ class IEUpRelease(model.Schema):
         title=_(u"The first file you want to upload."),
         description=_(u"Please upload your file."),
         required=True,
-        constraint=validateextensionfileextension,
+        constraint=validateextfileextension
     )
 
     directives.widget(platform_choice=CheckBoxFieldWidget)
@@ -320,7 +307,7 @@ class IEUpRelease(model.Schema):
         title=_(u"The second file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
         required=False,
-        constraint=validateextensionfileextension,
+        constraint=validateextfileextension
     )
 
     directives.widget(platform_choice1=CheckBoxFieldWidget)
@@ -349,7 +336,7 @@ class IEUpRelease(model.Schema):
         title=_(u"The third file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
         required=False,
-        constraint=validateextensionfileextension,
+        constraint=validateextfileextension
     )
 
     directives.widget(platform_choice2=CheckBoxFieldWidget)
@@ -378,7 +365,7 @@ class IEUpRelease(model.Schema):
         title=_(u"The fourth file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
         required=False,
-        constraint=validateextensionfileextension,
+        constraint=validateextfileextension
     )
 
     directives.widget(platform_choice3=CheckBoxFieldWidget)
@@ -415,7 +402,7 @@ class IEUpRelease(model.Schema):
         title=_(u"The fifth file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
         required=False,
-        constraint=validateextensionfileextension,
+        constraint=validateextfileextension
     )
 
     directives.widget(platform_choice4=CheckBoxFieldWidget)
@@ -444,7 +431,7 @@ class IEUpRelease(model.Schema):
         title=_(u"The sixth file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
         required=False,
-        constraint=validateextensionfileextension,
+        constraint=validateextfileextension
     )
 
     directives.widget(platform_choice5=CheckBoxFieldWidget)
