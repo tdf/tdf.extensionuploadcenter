@@ -164,7 +164,7 @@ def allowedeupimagefileextensions(context):
 def validateimagefileextension(value):
     catalog = api.portal.get_tool(name='portal_catalog')
     result=catalog.uniqueValuesFor('allowedeupimagefileextensions')
-    pattern = r'^.*\.{0}'.format(result)
+    pattern = r'^.*\.{0}'.format(result[0])
     matches = re.compile(pattern, re.IGNORECASE).match
     if not matches(value.filename):
         raise Invalid(
@@ -182,7 +182,7 @@ def allowedeupdocfileextensions(context):
 def validatedocfileextension(value):
     catalog = api.portal.get_tool(name='portal_catalog')
     result=catalog.uniqueValuesFor('allowedeupdocfileextensions')
-    pattern = r'^.*\.{0}'.format(result)
+    pattern = r'^.*\.{0}'.format(result[0])
     matches = re.compile(pattern, re.IGNORECASE).match
     if not matches(value.filename):
         raise Invalid(
@@ -352,7 +352,8 @@ class IEUpSmallProject(model.Schema):
     )
     model.fieldset('documentation',
                    label='Documentation',
-                   fields=['documentation_link', 'documentation_file']
+                   fields=['documentation_link', 'eupdocextension',
+                           'documentation_file']
                    )
 
     documentation_link = schema.URI(
