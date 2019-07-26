@@ -134,14 +134,14 @@ class IEUpCenter(model.Schema):
     )
 
     allowed_eupimagefileextension = schema.TextLine(
-        title=_(u'Allowed Image File Extensions'),
-        description=_(u'Fill in the allowed image file extensions, '
+        title=_(u'Allowed Documentation File Extensions'),
+        description=_(u'Fill in the allowed documentation file extensions, '
                       u'seperated by a pipe \'|\'.'),
         default=_(u'png|gif|jpg'),
     )
 
     allowed_docfileextension = schema.TextLine(
-        title=_(u'Allowed Image File Extensions'),
+        title=_(u'Allowed Documentation File Extensions'),
         description=_(u'Fill in the allowed doumenttation file extensions, '
                       u'seperated by a pipe  \'|\'.'),
         default=_(u'pdf|odt'),
