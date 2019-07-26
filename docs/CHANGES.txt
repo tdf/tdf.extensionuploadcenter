@@ -26,6 +26,8 @@ Changelog
   image, documentation and template file extensions [Andreas Mantke]
 - Update localization template, Spanish localization file and
   German translation file [Andreas Mantke]
+- Add fields and a fieldset for documentation to the
+  smallextensionsproject module [Andreas Mantke]
 
 
 
