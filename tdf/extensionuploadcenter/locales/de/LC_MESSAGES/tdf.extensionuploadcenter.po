@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: 2019-07-29 10:59+0200\n"
+"PO-Revision-Date: 2019-07-31 20:55+0200\n"
 "Last-Translator: Andreas Mantke <maand@gmx.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -676,6 +676,10 @@ msgstr "Bitte validieren Sie das Recaptcha-Feld, bevor Sie das Formular absenden
 #: profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
 msgid "Private"
 msgstr "Privat"
+
+#: eupproject_templates/view.pt:49
+msgid "Project"
+msgstr "Projekt"
 
 #: mailtoauthor.py:83
 msgid "Project Name"

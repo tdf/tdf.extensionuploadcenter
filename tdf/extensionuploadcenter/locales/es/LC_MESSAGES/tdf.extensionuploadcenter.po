@@ -739,6 +739,10 @@ msgstr ""
 msgid "Private"
 msgstr ""
 
+#: ./eupproject_templates/view.pt:49
+msgid "Project"
+msgstr ""
+
 #: ./mailtoauthor.py:83
 msgid "Project Name"
 msgstr ""

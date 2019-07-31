@@ -28,6 +28,7 @@ Changelog
   German translation file [Andreas Mantke]
 - Add fields and a fieldset for documentation to the
   smallextensionsproject module [Andreas Mantke]
+- Fix translation tags in project view [Andreas Mantke]
 
 
 
