@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.36.dev0'
+version = '0.37.dev0'
 
 setup(name='tdf.extensionuploadcenter',
       version=version,
