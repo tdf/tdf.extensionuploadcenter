@@ -139,7 +139,7 @@
                         <tal:loop repeat="platform_choice latestunstablerelease/platform_choice">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
-                        <div class="tucfilesize">
+                        <div class="eucfilesize">
                        <span i18n:translate="">File size: </span> <span tal:content="python:latestunstablerelease.file.size / 1024" /><span> kb</span>
                             </div>
                      </span>
@@ -149,7 +149,7 @@
                         <tal:loop repeat="platform_choice latestunstablerelease/platform_choice">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
-                        <div class="tucfilesize">
+                        <div class="eucfilesize">
                        <span i18n:translate="">File size: </span> <span tal:content="python:latestunstablerelease.file1.size / 1024" /><span> kb</span>
                             </div>
                      </span>
@@ -159,7 +159,7 @@
                         <tal:loop repeat="platform_choice latestunstablerelease/platform_choice">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
-                        <div class="tucfilesize">
+                        <div class="eucfilesize">
                        <span i18n:translate="">File size: </span> <span tal:content="python:latestunstablerelease.file2.size / 1024" /><span> kb</span>
                             </div>
                      </span>
@@ -169,7 +169,7 @@
                         <tal:loop repeat="platform_choice latestunstablerelease/platform_choice">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
-                        <div class="tucfilesize">
+                        <div class="eucfilesize">
                        <span i18n:translate="">File size: </span> <span tal:content="python:latestunstablerelease.file3.size / 1024" /><span> kb</span>
                             </div>
                      </span>
@@ -179,7 +179,7 @@
                         <tal:loop repeat="platform_choice latestunstablerelease/platform_choice">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
-                        <div class="tucfilesize">
+                        <div class="eucfilesize">
                        <span i18n:translate="">File size: </span> <span tal:content="python:latestunstablerelease.file4.size / 1024" /><span> kb</span>
                             </div>
                      </span>
@@ -189,7 +189,7 @@
                         <tal:loop repeat="platform_choice latestunstablerelease/platform_choice">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
-                        <div class="tucfilesize">
+                        <div class="eucfilesize">
                        <span i18n:translate="">File size: </span> <span tal:content="python:latestunstablerelease.file5.size / 1024" /><span> kb</span>
                             </div>
                      </span>
@@ -290,7 +290,7 @@
                         <tal:loop repeat="platform_choice latestRelease/platform_choice">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
-                        <div class="tucfilesize">
+                        <div class="eucfilesize">
                        <span i18n:translate="">File size: </span> <span tal:content="python:latestRelease.file.size / 1024" /><span> kb</span>
                             </div>
                      </span>
