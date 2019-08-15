@@ -102,7 +102,7 @@ def allowedextensionfileextensions(context):
 def validatelinkedextensionfileextension(value):
     catalog = api.portal.get_tool(name='portal_catalog')
     result = catalog.uniqueValuesFor('allowedeupextensionfileextensions')
-    pattern = r'^.*\.{0}'.format(result)
+    pattern = r'^.*\.({0})'.format(result)
     matches = re.compile(pattern, re.IGNORECASE).match
     if not matches(value):
         raise Invalid(
