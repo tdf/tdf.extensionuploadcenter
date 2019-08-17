@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.37 (unreleased)
+0.37 (2019-08-17)
 -----------------
 
 - Fix css classes in project view [Andreas Mantke]
