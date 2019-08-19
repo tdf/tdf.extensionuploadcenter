@@ -492,7 +492,7 @@
                 <h3>Reporting Extension-Bugs</h3>
                 <span tal:content="structure context/reporting_bugs/output" />
             </div>
-            </div>
+
         <div>
                 <h2>Contact The Author</h2>
                 <p>You can send a message to the author of the project and
@@ -504,6 +504,7 @@
                     </a>.
                 </p>
             </div>
+        </div>
   </div>
 </div>
 
