@@ -397,7 +397,7 @@
              <h2 i18n:translate="">All Releases</h2>
 
 
-<table class="eupcenterprojecttable">
+<table class="listing eupcenterprojecttable">
             <thead>
             <tr>
                 <td><h4 i18n:translate="">Version</h4></td>
