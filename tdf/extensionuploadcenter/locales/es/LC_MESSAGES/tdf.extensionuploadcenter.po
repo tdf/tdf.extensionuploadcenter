@@ -74,12 +74,16 @@ msgstr ""
 msgid "All categories"
 msgstr ""
 
-#: ./eupcenter.py:136
-msgid "Allowed Documentation File Extensions"
+#: ./eupcenter.py:130
+msgid "Allowed Extension file extensions"
 msgstr ""
 
-#: ./eupcenter.py:130
-msgid "Allowed Extension File Extensions"
+#: ./eupcenter.py:142
+msgid "Allowed documentation file extensions"
+msgstr ""
+
+#: ./eupcenter.py:136
+msgid "Allowed image file extensions"
 msgstr ""
 
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
@@ -270,17 +274,9 @@ msgstr "Proporcione el texto del aviso legal o de limitaciones que se muestre al
 msgid "Extension Center"
 msgstr ""
 
-#: ./eupcenter.py:153
-msgid "Extension Installation Instructions"
-msgstr "Instrucciones de instalación de la extensión"
-
 #: ./profiles/default/types/tdf.extensionuploadcenter.eupreleaselink.xml
 msgid "Extension Linked Release"
 msgstr ""
-
-#: ./eupcenter.py:48
-msgid "Extension Product Name"
-msgstr "Nombre de producto de la extensión"
 
 #: ./profiles/default/types/tdf.extensionuploadcenter.eupproject.xml
 msgid "Extension Project"
@@ -288,6 +284,14 @@ msgstr ""
 
 #: ./profiles/default/types/tdf.extensionuploadcenter.euprelease.xml
 msgid "Extension Release"
+msgstr ""
+
+#: ./eupcenter.py:153
+msgid "Extension installation instructions"
+msgstr ""
+
+#: ./eupcenter.py:48
+msgid "Extension product name"
 msgstr ""
 
 #: ./configure.zcml:32
@@ -331,16 +335,16 @@ msgstr "El quinto archivo cargado es compatible con las plataformas"
 msgid "File size:"
 msgstr ""
 
-#: ./eupcenter.py:137
-msgid "Fill in the allowed documentation file extensions, seperated by a pipe '|'."
-msgstr ""
-
 #: ./eupcenter.py:143
 msgid "Fill in the allowed doumenttation file extensions, seperated by a pipe  '|'."
 msgstr ""
 
 #: ./eupcenter.py:131
 msgid "Fill in the allowed extension file extensions, seperated by a pipe '|'."
+msgstr ""
+
+#: ./eupcenter.py:137
+msgid "Fill in the allowed image file extensions, seperated by a pipe '|'."
 msgstr ""
 
 #: ./eupcenter.py:182
