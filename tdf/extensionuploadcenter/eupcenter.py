@@ -139,7 +139,7 @@ class IEUpCenter(model.Schema):
     )
 
     allowed_docfileextension = schema.TextLine(
-        title=_(u'Allowed documentation File Extensions'),
+        title=_(u'Allowed documentation file extensions'),
         description=_(u'Fill in the allowed doumenttation file extensions, '
                       u'seperated by a pipe  \'|\'.'),
     )
