@@ -45,7 +45,7 @@ class IEUpCenter(model.Schema):
     )
 
     product_title = schema.TextLine(
-        title=_(u"Extension Product Name"),
+        title=_(u"Extension product name"),
         description=_(
             u"Name of the Extension product, e.g. only Extensions or "
             u"LibreOffice Extensions"),
@@ -127,19 +127,19 @@ class IEUpCenter(model.Schema):
                                       value_type=schema.TextLine())
 
     allowed_extensionfileextension = schema.TextLine(
-        title=_(u'Allowed Extension File Extensions'),
+        title=_(u'Allowed Extension file extensions'),
         description=_(u'Fill in the allowed extension file extensions, '
                       u'seperated by a pipe \'|\'.'),
     )
 
     allowed_eupimagefileextension = schema.TextLine(
-        title=_(u'Allowed Documentation File Extensions'),
-        description=_(u'Fill in the allowed documentation file extensions, '
+        title=_(u'Allowed image file extensions'),
+        description=_(u'Fill in the allowed image file extensions, '
                       u'seperated by a pipe \'|\'.'),
     )
 
     allowed_docfileextension = schema.TextLine(
-        title=_(u'Allowed Documentation File Extensions'),
+        title=_(u'Allowed documentation file extensions'),
         description=_(u'Fill in the allowed doumenttation file extensions, '
                       u'seperated by a pipe  \'|\'.'),
     )
@@ -150,7 +150,7 @@ class IEUpCenter(model.Schema):
 
     primary('install_instructions')
     install_instructions = RichText(
-        title=_(u"Extension Installation Instructions"),
+        title=_(u"Extension installation instructions"),
         description=_(u"Please fill in the install instructions"),
         required=False
     )

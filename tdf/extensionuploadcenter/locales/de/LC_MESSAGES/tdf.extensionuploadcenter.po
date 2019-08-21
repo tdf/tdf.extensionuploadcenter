@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: 2019-07-31 20:55+0200\n"
+"PO-Revision-Date: 2019-08-21 21:18+0200\n"
 "Last-Translator: Andreas Mantke <maand@gmx.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: tdf.extensionuploadcenter\n"
 "Language: de\n"
-"X-Generator: Poedit 2.0.7\n"
+"X-Generator: Poedit 2.2.1\n"
 
 #: eupcenter_templates/view.pt:228
 msgid "${product_title}"
@@ -68,13 +68,17 @@ msgstr "Alle Releases"
 msgid "All categories"
 msgstr "Alle Kategorien"
 
-#: eupcenter.py:136
-msgid "Allowed Documentation File Extensions"
+#: eupcenter.py:130
+msgid "Allowed Extension file extensions"
+msgstr "Erlaubte Extension-Dateierweiterungen"
+
+#: eupcenter.py:142
+msgid "Allowed documentation file extensions"
 msgstr "Erlaubte Dokumentations-Dateierweiterungen"
 
-#: eupcenter.py:130
-msgid "Allowed Extension File Extensions"
-msgstr "Erlaubte Extension-Dateierweiterungen"
+#: eupcenter.py:136
+msgid "Allowed image file extensions"
+msgstr "Erlaubte Bilddatei-Erweiterungen"
 
 #: profiles/default/workflows/tdf_extensionuploadcenter_linked_release_workflow/definition.xml
 #: profiles/default/workflows/tdf_extensionuploadcenter_release_workflow/definition.xml
@@ -250,17 +254,9 @@ msgstr "Fügen Sie den Text der rechtlichen Hinweise und Einschränkungen ein, d
 msgid "Extension Center"
 msgstr "Extension-Center"
 
-#: eupcenter.py:153
-msgid "Extension Installation Instructions"
-msgstr "Installationsanweisungen für Extensions"
-
 #: profiles/default/types/tdf.extensionuploadcenter.eupreleaselink.xml
 msgid "Extension Linked Release"
 msgstr "Verlinktes Extension-Release"
-
-#: eupcenter.py:48
-msgid "Extension Product Name"
-msgstr "Extension-Produktname"
 
 #: profiles/default/types/tdf.extensionuploadcenter.eupproject.xml
 msgid "Extension Project"
@@ -269,6 +265,14 @@ msgstr "Extension-Projekt"
 #: profiles/default/types/tdf.extensionuploadcenter.euprelease.xml
 msgid "Extension Release"
 msgstr "Extension-Release"
+
+#: eupcenter.py:153
+msgid "Extension installation instructions"
+msgstr "Installationsanweisungen für Extensions"
+
+#: eupcenter.py:48
+msgid "Extension product name"
+msgstr "Extension-Produktname"
 
 #: configure.zcml:32
 msgid "Extension profile for TDF Extension Upload Center"
@@ -308,10 +312,6 @@ msgstr "Die fünfte hochgeladene Datei ist kompatibel mit den Plattformen"
 msgid "File size:"
 msgstr "Dateigröße:"
 
-#: eupcenter.py:137
-msgid "Fill in the allowed documentation file extensions, seperated by a pipe '|'."
-msgstr "Fügen Sie die erlaubten Dokumentations- Datei-Erweiterungen ein, getrennt durch einen senkrechten Trennstrich '|'."
-
 #: eupcenter.py:143
 msgid "Fill in the allowed doumenttation file extensions, seperated by a pipe  '|'."
 msgstr "Fügen Sie die erlaubten Dokumentations- Datei-Erweiterungen ein, getrennt durch einen senkrechten Trennstrich '|'."
@@ -319,6 +319,10 @@ msgstr "Fügen Sie die erlaubten Dokumentations- Datei-Erweiterungen ein, getren
 #: eupcenter.py:131
 msgid "Fill in the allowed extension file extensions, seperated by a pipe '|'."
 msgstr "Fügen Sie die erlaubten Extension- Datei-Erweiterungen ein, getrennt durch einen senkrechten Trennstrich '|'."
+
+#: eupcenter.py:137
+msgid "Fill in the allowed image file extensions, seperated by a pipe '|'."
+msgstr "Fügen Sie die erlaubten Grafik-Datei-Erweiterungen ein, getrennt durch einen senkrechten Strich '|'."
 
 #: eupcenter.py:182
 msgid "Fill in the legal disclaimer, that had to be accepted by the project owner."
