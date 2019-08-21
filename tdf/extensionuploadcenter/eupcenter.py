@@ -133,8 +133,8 @@ class IEUpCenter(model.Schema):
     )
 
     allowed_eupimagefileextension = schema.TextLine(
-        title=_(u'Allowed Documentation File Extensions'),
-        description=_(u'Fill in the allowed documentation file extensions, '
+        title=_(u'Allowed image file extensions'),
+        description=_(u'Fill in the allowed image file extensions, '
                       u'seperated by a pipe \'|\'.'),
     )
 
