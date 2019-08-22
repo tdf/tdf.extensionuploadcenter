@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-0.38 (unreleased)
+0.38 (2019-08-22)
 -----------------
 
 - Add a further table class from the Barceloneta theme for
