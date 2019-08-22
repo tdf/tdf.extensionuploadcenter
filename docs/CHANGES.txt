@@ -1,11 +1,21 @@
 Changelog
 =========
 
-
-0.38 (unreleased)
+0.39 (unreleased)
 -----------------
 
 - Nothing changed yet.
+
+
+
+0.38 (2019-08-22)
+-----------------
+
+- Add a further table class from the Barceloneta theme for
+  listing tables to the project view. [Andreas Mantke]
+- Move 'contact the author' to the sidebar [Andreas Mantke]
+- Fix description and title strings in the center module [Andreas Mantke]
+- Update localization for string changes [Andreas Mantke]
 
 
 
