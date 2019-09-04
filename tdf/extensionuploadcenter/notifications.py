@@ -8,7 +8,8 @@ def notifiyAboutNewVersion(eupproject, event):
         for d in event.descriptions:
             if hasattr(d, 'interface') and d.interface is IEUpCenter and \
                     'available_versions' in d.attributes:
-                users = api.user.get_users()
+                catalog = api.portal.get_tool(name='portal_catalog')
+                projectemail = catalog.uniqueValuesFor('extprojectcontact')
                 message = 'We added a new version of LibreOffice to the ' \
                           'list.\n' \
                           'Please add this version to your LibreOffice ' \
@@ -23,8 +24,8 @@ def notifiyAboutNewVersion(eupproject, event):
                           'Kind regards,\n\n' \
                           'The LibreOffice Extension and Template Site ' \
                           'Administration Team'
-                for f in users:
-                    mailaddress = f.getProperty('email')
+                for f in projectemail:
+                    mailaddress = f
                     api.portal.send_email(
                         recipient=mailaddress,
                         sender="noreply@libreoffice.org",
