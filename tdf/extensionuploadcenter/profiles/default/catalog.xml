@@ -28,4 +28,7 @@
     <index name="allowedeupextensionfileextensions" meta_type="FieldIndex">
         <indexed_attr value="allowed_extensionfileextension" />
     </index>
+    <index name="extprojectemail" meta_type="FieldIndex">
+        <indexed_attr value="contactAddress" />
+    </index>
 </object>
