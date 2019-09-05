@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.39 (unreleased)
+0.39 (2019-09-05)
 -----------------
 
 - Improve the message to the sender of the contact to author
