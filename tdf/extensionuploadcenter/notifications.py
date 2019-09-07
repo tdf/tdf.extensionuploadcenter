@@ -9,7 +9,7 @@ def notifiyAboutNewVersion(eupproject, event):
             if hasattr(d, 'interface') and d.interface is IEUpCenter and \
                     'available_versions' in d.attributes:
                 catalog = api.portal.get_tool(name='portal_catalog')
-                projectemail = catalog.uniqueValuesFor('extprojectcontact')
+                projectemail = catalog.uniqueValuesFor('extprojectmail')
                 message = 'We added a new version of LibreOffice to the ' \
                           'list.\n' \
                           'Please add this version to your LibreOffice ' \

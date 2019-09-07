@@ -1,11 +1,17 @@
 Changelog
 =========
 
-0.40 (unreleased)
+0.41 (unreleased)
 -----------------
 
 - Nothing changed yet.
 
+
+0.40 (2019-09-07)
+-----------------
+
+- Fix the name of the searched portal_catalog index in the
+  notifications module [Andreas Mantke]
 
 
 0.39 (2019-09-05)
