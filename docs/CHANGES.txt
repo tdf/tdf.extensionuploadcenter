@@ -4,7 +4,7 @@ Changelog
 0.41 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Fix a typo in the notifications module [Andreas Mantke]
 
 
 0.40 (2019-09-07)
