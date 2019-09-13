@@ -93,7 +93,8 @@ class IEUpCenter(model.Schema):
                                          'CC-BY-SA-v4 (Creative Commons '
                                          'Attribution-ShareAlike 4.0 '
                                          'International)',
-                                         'AL-v2 (Apache License Version 2.0)',],
+                                         'AL-v2 (Apache License Version 2.0)',
+                                     ],
                                      value_type=schema.TextLine())
 
     available_versions = schema.List(title=_(u"Available Versions"),
@@ -327,7 +328,6 @@ class EUpCenterView(BrowserView):
                 'sort_order': 'reverse',
                 'portal_type': ('tdf.extensionuploadcenter.eupproject',
                                 'tdf.extensionuploadcenter.eupsmallproject')}
-
 
         if version != 'any':
             # We ask to the indexed value on the project (aggregated from

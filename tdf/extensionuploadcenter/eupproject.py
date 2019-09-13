@@ -22,7 +22,6 @@ from zope.interface import provider
 from zope.schema.interfaces import IContextAwareDefaultFactory
 
 
-
 def vocabCategories(context):
     # For add forms
 
@@ -71,7 +70,7 @@ def allowedeupimagefileextensions(context):
 
 def validateimagefileextension(value):
     catalog = api.portal.get_tool(name='portal_catalog')
-    result=catalog.uniqueValuesFor('allowedeupimagefileextensions')
+    result = catalog.uniqueValuesFor('allowedeupimagefileextensions')
     pattern = r'^.*\.({0})'.format(result[0])
     matches = re.compile(pattern, re.IGNORECASE).match
     if not matches(value.filename):
@@ -89,7 +88,7 @@ def allowedeupdocfileextensions(context):
 
 def validatedocfileextension(value):
     catalog = api.portal.get_tool(name='portal_catalog')
-    result=catalog.uniqueValuesFor('allowedeupdocfileextensions')
+    result = catalog.uniqueValuesFor('allowedeupdocfileextensions')
     pattern = r'^.*\.({0})'.format(result[0])
     matches = re.compile(pattern, re.IGNORECASE).match
     if not matches(value.filename):
@@ -264,7 +263,8 @@ def notifyProjectManagerReleaseAdd(self, event):
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
-        mailrecipient = api.portal.get_registry_record('plone.email_from_address')
+        mailrecipient = api.portal.get_registry_record(
+            'plone.email_from_address')
     api.portal.send_email(
         recipient=("{}").format(self.contactAddress),
         sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
@@ -278,7 +278,8 @@ def notifyProjectManagerReleaseLinkedAdd(self, event):
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
-        mailrecipient = api.portal.get_registry_record('plone.email_from_address')
+        mailrecipient = api.portal.get_registry_record(
+            'plone.email_from_address')
     api.portal.send_email(
         recipient=("{}").format(self.contactAddress),
         sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
@@ -294,7 +295,8 @@ def notifyAboutNewReviewlistentry(self, event):
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
-        mailrecipient = api.portal.get_registry_record('plone.email_from_address')
+        mailrecipient = api.portal.get_registry_record(
+            'plone.email_from_address')
 
     if state == "pending":
         api.portal.send_email(
@@ -314,7 +316,8 @@ def textmodified_project(self, event):
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
-        mailrecipient = api.portal.get_registry_record('plone.email_from_address')
+        mailrecipient = api.portal.get_registry_record(
+            'plone.email_from_address')
     if state == "published":
         if self.details is not None:
             detailed_description = self.details.output
@@ -339,7 +342,8 @@ def notifyAboutNewProject(self, event):
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter),
     else:
-        mailrecipient = api.portal.get_registry_record('plone.email_from_address')
+        mailrecipient = api.portal.get_registry_record(
+            'plone.email_from_address')
     api.portal.send_email(
         recipient=mailrecipient,
         subject=(u"A Project with the title {} was added").format(self.title),
