@@ -244,7 +244,6 @@ class IEUpReleaseLink(model.Schema):
                            'platform_choice',
                            'information_further_file_uploads'])
 
-
     directives.mode(euplinkedfileextension='display')
     euplinkedfileextension = schema.TextLine(
         title=_(u'The following file extensions are allowed for linked '
@@ -252,7 +251,6 @@ class IEUpReleaseLink(model.Schema):
                 u'both):'),
         defaultFactory=allowedextensionfileextensions,
     )
-
 
     link_to_file = schema.URI(
         title=_(u"The Link to the file of the release"),

@@ -163,7 +163,7 @@ def allowedeupimagefileextensions(context):
 
 def validateimagefileextension(value):
     catalog = api.portal.get_tool(name='portal_catalog')
-    result=catalog.uniqueValuesFor('allowedeupimagefileextensions')
+    result = catalog.uniqueValuesFor('allowedeupimagefileextensions')
     pattern = r'^.*\.({0})'.format(result[0])
     matches = re.compile(pattern, re.IGNORECASE).match
     if not matches(value.filename):
@@ -181,7 +181,7 @@ def allowedeupdocfileextensions(context):
 
 def validatedocfileextension(value):
     catalog = api.portal.get_tool(name='portal_catalog')
-    result=catalog.uniqueValuesFor('allowedeupdocfileextensions')
+    result = catalog.uniqueValuesFor('allowedeupdocfileextensions')
     pattern = r'^.*\.({0})'.format(result[0])
     matches = re.compile(pattern, re.IGNORECASE).match
     if not matches(value.filename):
@@ -301,7 +301,7 @@ class IEUpSmallProject(model.Schema):
         constraint=validateEmail
     )
 
-    directives.mode(eupimageextension = 'display')
+    directives.mode(eupimageextension='display')
     eupimageextension = schema.TextLine(
         title=_(u'The following file extensions are allowed for screenshot '
                 u'files (upper case and lower case and mix of both):'),
@@ -378,7 +378,6 @@ class IEUpSmallProject(model.Schema):
         required=False,
         constraint=validatedocfileextension
     )
-
 
     model.fieldset('fileset1',
                    label=u"File Upload",

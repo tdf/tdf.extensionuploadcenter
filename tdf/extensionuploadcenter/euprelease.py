@@ -95,6 +95,7 @@ def legal_declaration_text(context):
     context = context.aq_inner.aq_parent
     return context.legal_disclaimer
 
+
 @provider(IContextAwareDefaultFactory)
 def allowedextensionfileextensions(context):
     context = context.aq_inner.aq_parent
@@ -112,7 +113,6 @@ def validateextfileextension(value):
             u'extension. Please try again to upload a file with the '
             u'correct file extension.')
     return True
-
 
 
 class AcceptLegalDeclaration(Invalid):
