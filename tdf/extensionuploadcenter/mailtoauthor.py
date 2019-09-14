@@ -28,6 +28,7 @@ def validateemail(value):
         raise Invalid(_(u"Invalid email address"))
     return True
 
+
 def validateprojectname(value):
     catalog = api.portal.get_tool('portal_catalog')
     project = catalog(
@@ -83,7 +84,7 @@ class MailToAuthorSchema(interface.Interface):
         title=_(u"Project Name"),
         description=_(u"The name of the project, to which author you want "
                       u"to send feedback."),
-        constraint= validateprojectname
+        constraint=validateprojectname
     )
 
     inquiry = schema.Text(
@@ -149,8 +150,10 @@ class MailToAuthorForm(AutoExtensibleForm, form.Form):
 
         catalog = api.portal.get_tool('portal_catalog')
         project = catalog(
-                      portal_type=('tdf.extensionuploadcenter.eupproject',
-                         'tdf.extensionuploadcenter.eupsmallproject'),
+                      portal_type=(
+                          'tdf.extensionuploadcenter.eupproject',
+                          'tdf.extensionuploadcenter.eupsmallproject'
+                      ),
                       Title=data['projectname']
         )
 
@@ -161,12 +164,14 @@ class MailToAuthorForm(AutoExtensibleForm, form.Form):
             else:
                 projectemail = 'extensions@libreoffice.org'
 
-        mailrecipient=(u"{}").format(projectemail)
+        mailrecipient = (u"{}").format(projectemail)
         api.portal.send_email(
             recipient=mailrecipient,
-            sender=(u"{} {} <{}>").format(data['inquirerfirstname'],
-                                            data['inquirerfamilyname'],
-                                            data['inquireremailaddress']),
+            sender=(u"{} {} <{}>").format(
+                data['inquirerfirstname'],
+                data['inquirerfamilyname'],
+                data['inquireremailaddress']
+            ),
             subject=(u"Your Project: {}").format(data['projectname']),
             body=(u"{}").format(data['inquiry'])
 
