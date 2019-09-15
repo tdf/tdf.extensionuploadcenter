@@ -5,6 +5,8 @@ Changelog
 -----------------
 
 - Fix a typo in the notifications module [Andreas Mantke]
+- Pep8 fixes [Andreas Mantke]
+- Update localization files and German localization. [Andreas Mantke]
 
 
 0.40 (2019-09-07)
