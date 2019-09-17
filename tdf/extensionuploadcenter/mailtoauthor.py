@@ -164,16 +164,16 @@ class MailToAuthorForm(AutoExtensibleForm, form.Form):
             else:
                 projectemail = 'extensions@libreoffice.org'
 
-        mailrecipient = (u"{}").format(projectemail)
+        mailrecipient = u"{}".format(projectemail)
         api.portal.send_email(
             recipient=mailrecipient,
-            sender=(u"{} {} <{}>").format(
+            sender=u"{} {} <{}>".format(
                 data['inquirerfirstname'],
                 data['inquirerfamilyname'],
                 data['inquireremailaddress']
             ),
-            subject=(u"Your Project: {}").format(data['projectname']),
-            body=(u"{}").format(data['inquiry'])
+            subject=u"Your Project: {}".format(data['projectname']),
+            body=u"{}".format(data['inquiry'])
 
 
         )
