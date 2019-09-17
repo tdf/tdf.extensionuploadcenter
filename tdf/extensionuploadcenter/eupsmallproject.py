@@ -497,9 +497,9 @@ def notifyProjectManager(self, event):
     else:
         mailrecipient = 'extensions@libreoffice.org'
     api.portal.send_email(
-        recipient=("{}").format(self.contactAddress),
-        sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
-        subject=(u"Your Project {}").format(self.title),
+        recipient="{}".format(self.contactAddress),
+        sender=u"{} <{}>".format('Admin of the Website', mailrecipient),
+        subject=u"Your Project {}".format(self.title),
         body=(u"The status of your LibreOffice extension project changed. "
               u"The new status is {}").format(state)
     )
@@ -507,7 +507,7 @@ def notifyProjectManager(self, event):
 
 def notifyAboutNewReviewlistentry(self, event):
     state = api.content.get_state(self)
-    if (self.__parent__.contactForCenter) is not None:
+    if self.__parent__.contactForCenter is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
         mailrecipient = 'extensions@libreoffice.org'
@@ -539,7 +539,7 @@ def textmodified_project(self, event):
 
         api.portal.send_email(
             recipient=mailrecipient,
-            sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
+            sender=u"{} <{}>".format('Admin of the Website', mailrecipient),
             subject=(u"The content of the project {} has "
                      u"changed").format(self.title),
             body=(u"The content of the project {} has changed. Here you get "
@@ -558,7 +558,7 @@ def notifyAboutNewProject(self, event):
         mailrecipient = 'extensions@libreoffice.org'
     api.portal.send_email(
         recipient=mailrecipient,
-        subject=(u"A Project with the title {} was added").format(self.title),
+        subject=u"A Project with the title {} was added".format(self.title),
         body="A member added a new project"
     )
 

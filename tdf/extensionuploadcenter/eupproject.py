@@ -246,43 +246,43 @@ class IEUpProject(model.Schema):
 
 def notifyProjectManager(self, event):
     state = api.content.get_state(self)
-    if (self.__parent__.contactForCenter) is not None:
+    if self.__parent__.contactForCenter is not None:
         mailsender = str(self.__parent__.contactForCenter)
     else:
         mailsender = api.portal.get_registry_record('plone.email_from_address')
     api.portal.send_email(
-        recipient=("{}").format(self.contactAddress),
-        sender=(u"{} <{}>").format('Admin of the Website', mailsender),
-        subject=(u"Your Project {}").format(self.title),
+        recipient="{}".format(self.contactAddress),
+        sender=u"{} <{}>".format('Admin of the Website', mailsender),
+        subject=u"Your Project {}".format(self.title),
         body=(u"The status of your LibreOffice extension project changed. "
               u"The new status is {}").format(state)
     )
 
 
 def notifyProjectManagerReleaseAdd(self, event):
-    if (self.__parent__.contactForCenter) is not None:
+    if self.__parent__.contactForCenter is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
         mailrecipient = api.portal.get_registry_record(
             'plone.email_from_address')
     api.portal.send_email(
-        recipient=("{}").format(self.contactAddress),
-        sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
-        subject=(u"Your Project [{}: new Release added").format(self.title),
+        recipient="{}".format(self.contactAddress),
+        sender=u"{} <{}>".format('Admin of the Website', mailrecipient),
+        subject=u"Your Project [{}: new Release added".format(self.title),
         body=(u"A new release was added to your project: "
               u"'{}'").format(self.title),
     )
 
 
 def notifyProjectManagerReleaseLinkedAdd(self, event):
-    if (self.__parent__.contactForCenter) is not None:
+    if self.__parent__.contactForCenter is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
         mailrecipient = api.portal.get_registry_record(
             'plone.email_from_address')
     api.portal.send_email(
-        recipient=("{}").format(self.contactAddress),
-        sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
+        recipient="{}".format(self.contactAddress),
+        sender=u"{} <{}>".format('Admin of the Website', mailrecipient),
         subject=(u"Your Project {}: new linked Release "
                  u"added").format(self.title),
         body=(u"A new linked release was added to your "
@@ -292,7 +292,7 @@ def notifyProjectManagerReleaseLinkedAdd(self, event):
 
 def notifyAboutNewReviewlistentry(self, event):
     state = api.content.get_state(self)
-    if (self.__parent__.contactForCenter) is not None:
+    if self.__parent__.contactForCenter is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
         mailrecipient = api.portal.get_registry_record(
@@ -313,7 +313,7 @@ def notifyAboutNewReviewlistentry(self, event):
 
 def textmodified_project(self, event):
     state = api.content.get_state(self)
-    if (self.__parent__.contactForCenter) is not None:
+    if self.__parent__.contactForCenter is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
         mailrecipient = api.portal.get_registry_record(
@@ -326,7 +326,7 @@ def textmodified_project(self, event):
 
         api.portal.send_email(
             recipient=mailrecipient,
-            sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
+            sender=u"{} <{}>".format('Admin of the Website', mailrecipient),
             subject=(u"The content of the project {} has "
                      u"changed").format(self.title),
             body=(u"The content of the project {} has changed. Here you get "
@@ -339,14 +339,14 @@ def textmodified_project(self, event):
 
 
 def notifyAboutNewProject(self, event):
-    if (self.__parent__.contactForCenter) is not None:
+    if self.__parent__.contactForCenter is not None:
         mailrecipient = str(self.__parent__.contactForCenter),
     else:
         mailrecipient = api.portal.get_registry_record(
             'plone.email_from_address')
     api.portal.send_email(
         recipient=mailrecipient,
-        subject=(u"A Project with the title {} was added").format(self.title),
+        subject=u"A Project with the title {} was added".format(self.title),
         body="A member added a new project"
     )
 
