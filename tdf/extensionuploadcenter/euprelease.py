@@ -76,7 +76,7 @@ yesnochoice = SimpleVocabulary(
 
 @provider(IContextAwareDefaultFactory)
 def getContainerTitle(self):
-    return (self.aq_inner.title)
+    return self.aq_inner.title
 
 
 @provider(IContextAwareDefaultFactory)
