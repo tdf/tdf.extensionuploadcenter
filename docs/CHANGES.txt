@@ -4,7 +4,8 @@ Changelog
 0.42 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Pep8 fixes [Andreas Mantke]
+- Update localization files [Andreas Mantke]
 
 
 0.41 (2019-09-15)
