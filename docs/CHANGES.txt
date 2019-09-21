@@ -1,7 +1,13 @@
 Changelog
 =========
 
-0.42 (unreleased)
+0.43 (unreleased)
+-----------------
+
+- Nothing changed yet.
+
+
+0.42 (2019-09-21)
 -----------------
 
 - Pep8 fixes [Andreas Mantke]
