@@ -4,7 +4,8 @@ Changelog
 0.43 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Bind project publication workflow to small extension
+  projects too [Andreas Mantke]
 
 
 0.42 (2019-09-21)
