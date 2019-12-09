@@ -1,14 +1,19 @@
-from setuptools import setup, find_packages
-import os
+# -*- coding: utf-8 -*-
+"""Installer for the tdf.extensionuploadcenter package."""
 
-version = '0.43.dev0'
+from setuptools import setup, find_packages
+
+
+long_description = '\n\n'.join([
+    open('README.md').read(),
+    open('CHANGES.txt').read(),
+])
+
 
 setup(name='tdf.extensionuploadcenter',
-      version=version,
+      version='0.43.dev0',
       description="TDF Extension Upload Center",
-      long_description=open("README.md").read() + "\n" +
-                       open(os.path.join("docs", "CHANGES.txt")).read(),
-      long_description_content_type='text/markdown',
+      long_description=long_description,
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
