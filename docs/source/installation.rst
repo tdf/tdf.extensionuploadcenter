@@ -11,6 +11,8 @@ to the URL of your Plone site.
 In the 'Site Setup' page click on 'Add-ons' and you get a list of the Plone
 add-ons which are available in your Plone site.
 
+.. image:: images/install_tdf_extensionuploadcenter.png
+   :width: 600
 
 
 You will get a list like in the above screenshot. Click on the 'install'
@@ -24,6 +26,9 @@ Navigation configuration
 Next you need to go to the 'Navigation' configuration inside the 'Site Setup'.
 Thus click on the corresponding button and you get to the configuration menu
 in the screenshot below.
+
+.. image:: images/navigation_add_extensionuploadcenter.png
+   :width: 600
 
 
 Tick the checkbox in fron of the entry ' TDF Extension Upload Center' and
