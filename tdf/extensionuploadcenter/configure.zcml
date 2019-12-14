@@ -31,6 +31,16 @@
       post_handler=".setuphandlers.post_install"
       />
 
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="tdf.extensionuploadcenter (uninstall)"
+      directory="profiles/uninstall"
+      description="Uninstalls the tdf.extensionuploadcenter add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.uninstall"
+      />
+
+
   <!-- -*- extra stuff goes here -*- -->
 
   <include file="permissions.zcml" />
