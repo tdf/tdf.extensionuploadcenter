@@ -114,7 +114,8 @@ class IEUpCenter(model.Schema):
                                               'LibreOffice 5.4',
                                               'LibreOffice 6.0',
                                               'LibreOffice 6.1',
-                                              'LibreOffice 6.2'],
+                                              'LibreOffice 6.2',
+                                              'Libreoffice 6.3'],
                                      value_type=schema.TextLine())
 
     available_platforms = schema.List(title=_(u"Available Platforms"),
@@ -126,6 +127,12 @@ class IEUpCenter(model.Schema):
                                                'BSD',
                                                'UNIX (other)'],
                                       value_type=schema.TextLine())
+
+    model.fieldset('Allowed File Extensions',
+                   label=u'Allowed file extensions',
+                   fields=['allowed_extensionfileextension',
+                           'allowed_eupimagefileextension',
+                           'allowed_docfileextension'])
 
     allowed_extensionfileextension = schema.TextLine(
         title=_(u'Allowed Extension file extensions'),
