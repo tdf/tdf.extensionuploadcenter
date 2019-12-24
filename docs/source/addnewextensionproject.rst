@@ -8,6 +8,8 @@ projects and fill in the necessary data.
 He has to click with the mouse first on the link in the box on the right
 side (see screenshot below).
 
+.. image:: images/create_extension_project.png
+   :width: 600
 
 This mouse click opens the form for providing new Extensions. The form
 dialog consists of several register. The form fields in the first register
@@ -25,7 +27,8 @@ there is already another extension project with the same title the member
 will get an error message with the appropriate information. Thus he had to
 choose another title for his extension project.
 
-
+.. image:: images/extension_project_form01.png
+   :width: 600
 
 A new project needs also a summary and could get a full description of its
 purpose and features. The latter one is optional (only form fields with a
@@ -55,7 +58,8 @@ categories, the new extension project matches. The list of categories on
 this register had been created by the Plone site administrator within the
 'Extension Center'.
 
-
+.. image:: images/extension_project_form02.png
+   :width: 600
 
 
 The Third Register 'Logo / Screenshot'
@@ -66,7 +70,8 @@ to submit one of them. The allowed file extensions are displayed next to
 the button to call the file dialog. The Plone site administrator choose
 this allowed file extensions within the 'Extension Center'.
 
-
+.. image:: images/extension_project_form03.png
+   :width: 600
 
 
 The Fourth Register 'Documentation'
@@ -78,4 +83,5 @@ allowed file extensions are displayed next to the button to call the file
 dialog.The Plone site administrator choose this allowed file extensions
 within the 'Extension Center'.
 
-
+.. image:: images/extension_project_form04.png
+   :width: 600
