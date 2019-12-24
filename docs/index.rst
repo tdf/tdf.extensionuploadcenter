@@ -9,3 +9,4 @@ User documentation
 
    source/installation.rst
    source/addnewextensioncenter.rst
+   source/addnewextensionproject.rst
