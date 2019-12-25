@@ -10,3 +10,4 @@ User documentation
    source/installation.rst
    source/addnewextensioncenter.rst
    source/addnewextensionproject.rst
+   source/addnewextensionrelease.rst
