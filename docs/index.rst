@@ -11,3 +11,7 @@ User documentation
    source/addnewextensioncenter.rst
    source/addnewextensionproject.rst
    source/addnewextensionrelease.rst
+   source/addnewextensionlinkedrelease.rst
+   source/publishextensionrelease.rst
+   source/publishextensionproject.rst
+   source/messaging.rst
