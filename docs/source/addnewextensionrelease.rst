@@ -59,7 +59,7 @@ The Third Register 'Legal'
 The third register shows the necessary fields for the legal statements about
 the release. It starts with the license for the release. It is possible to
 check more than one license for a release. This declaration need to be in
-accordance with the license declaration inside the extension release (if there
+accordance with the license declaration inside the extension file (if there
 is one inside).
 
 .. image:: images/extension_release_form03.png
