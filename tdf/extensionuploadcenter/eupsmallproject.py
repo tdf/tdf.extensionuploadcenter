@@ -305,7 +305,7 @@ class IEUpSmallProject(model.Schema):
     eupimageextension = schema.TextLine(
         title=_(u'The following file extensions are allowed for screenshot '
                 u'files (upper case and lower case and mix of both):'),
-        defaultFactory=allowedeupdocfileextensions,
+        defaultFactory=allowedeupimagefileextensions,
     )
 
     screenshot = NamedBlobImage(
