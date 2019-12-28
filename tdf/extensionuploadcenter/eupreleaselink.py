@@ -95,14 +95,14 @@ def legal_declaration_text(context):
 
 @provider(IContextAwareDefaultFactory)
 def allowedextensionfileextensions(context):
-    conext = context.aq_inner.aq_parent
+    context = context.aq_inner.aq_parent
     return context.allowed_extensionfileextension.replace("|", ", ")
 
 
 def validatelinkedextensionfileextension(value):
     catalog = api.portal.get_tool(name='portal_catalog')
     result = catalog.uniqueValuesFor('allowedeupextensionfileextensions')
-    pattern = r'^.*\.({0})'.format(result)
+    pattern = r'^.*\.({0})'.format(result[0])
     matches = re.compile(pattern, re.IGNORECASE).match
     if not matches(value):
         raise Invalid(
