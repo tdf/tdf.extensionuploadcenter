@@ -70,7 +70,7 @@ disclaimer that has to be accepted by the extension release owner. The text of
 the legal disclaimer will be set by the site admin inside the 'Extension
 Center'.
 
-If the source code is not inside the extension release (the drop down field
+If the source code is not inside the extension file (the drop down field
 is set to 'No'), it is necessary to fill in the link to the source code in
 the form field at the bottom of the register. If such a link will not be
 submitted the release owner gets an error message.
