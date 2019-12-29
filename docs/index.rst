@@ -10,6 +10,8 @@ User documentation
    source/installation.rst
    source/addnewextensioncenter.rst
    source/addnewextensionprojects.rst
+   source/addnewextensionsmallproject.rst
+   source/publishextensionsmallproject.rst
    source/addnewextensionproject.rst
    source/addnewextensionrelease.rst
    source/addnewextensionlinkedrelease.rst
