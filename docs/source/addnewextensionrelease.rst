@@ -7,6 +7,7 @@ is logged-in to the Plone site. Once he clicked on this link he got an edit
 form to enter the content of the new release.
 
 .. image:: images/create_extension_release.png
+   :width: 750
 
 The owner could make alternatively a mouse click on the menu entry
 'Add new' in the menu bar on the left side and choose from the opening
@@ -28,7 +29,7 @@ title has to be unique inside the Plone site. If the release number is
 already in use, the editor will get an error message about it.
 
 .. image:: images/extension_release_form01.png
-   :width: 600
+   :width: 750
 
 A new release needs also a summary and could get a full release description
 with details about its features. The latter one is optional (only form
@@ -49,7 +50,7 @@ the site admin within the 'Extension Center'. It is possible to choose
 multiple program versions for the release compatibility.
 
 .. image:: images/extension_release_form02.png
-   :width: 600
+   :width: 750
 
 
 
@@ -63,7 +64,7 @@ accordance with the license declaration inside the extension file (if there
 is one inside).
 
 .. image:: images/extension_release_form03.png
-   :width: 600
+   :width: 750
 
 There is also a read-only form field which contains the text of the legal
 disclaimer that has to be accepted by the extension release owner. The text of
@@ -82,7 +83,7 @@ This register is the place to upload the extension release file and declare
 which platform it is compatible with.
 
 .. image:: images/extension_release_form04.png
-   :width: 600
+   :width: 750
 
 If there are versions of the extension release for different platforms
 (e.g. one for MS Windows and another one for Linux only) this further

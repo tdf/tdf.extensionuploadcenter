@@ -9,7 +9,7 @@ He has to click with the mouse first on the link in the box on the right
 side (see screenshot below).
 
 .. image:: images/create_extension_project.png
-   :width: 600
+   :width: 750
 
 This mouse click opens the form for providing new Extensions. The form
 dialog consists of several register. The form fields in the first register
@@ -28,7 +28,7 @@ will get an error message with the appropriate information. Thus he had to
 choose another title for his extension project.
 
 .. image:: images/extension_project_form01.png
-   :width: 600
+   :width: 750
 
 A new project needs also a summary and could get a full description of its
 purpose and features. The latter one is optional (only form fields with a
@@ -59,7 +59,7 @@ this register had been created by the Plone site administrator within the
 'Extension Center'.
 
 .. image:: images/extension_project_form02.png
-   :width: 600
+   :width: 750
 
 
 The Third Register 'Logo / Screenshot'
@@ -71,7 +71,7 @@ the button to call the file dialog. The Plone site administrator choose
 this allowed file extensions within the 'Extension Center'.
 
 .. image:: images/extension_project_form03.png
-   :width: 600
+   :width: 750
 
 
 The Fourth Register 'Documentation'
@@ -84,4 +84,4 @@ dialog.The Plone site administrator choose this allowed file extensions
 within the 'Extension Center'.
 
 .. image:: images/extension_project_form04.png
-   :width: 600
+   :width: 750

@@ -12,7 +12,7 @@ site (logged-in user) click inside the 'Extension Center' with the mouse
 first on the link in the box on the right side (see screenshot below).
 
 .. image:: images/create_extension_small_project.png
-   :width: 600
+   :width: 750
 
 This mouse click opens the form for providing a new Small Extensions Project.
 The form dialog consists of several register. The form fields in the first
@@ -32,7 +32,7 @@ appropriate information. Thus he had to choose another title for his
 small extension project.
 
 .. image:: images/extension_small_project_form01.png
-   :width: 600
+   :width: 750
 
 A new project needs also a summary and could get a full description of its
 purpose and features. The latter one is optional (only form fields with a
@@ -62,7 +62,7 @@ change the value of this field.
 
 
 The Second Register 'Categories / Compatibility'
-*******************************************
+************************************************
 
 The small extension projects were assigned to one or more categories.
 The creator of the extension project could choose on this register one or
@@ -75,7 +75,7 @@ The list of categories and LibreOffice versions on this register had
 been created by the Plone site administrator within the 'Extension Center'.
 
 .. image:: images/extension_small_project_form02.png
-   :width: 600
+   :width: 750
 
 
 The Third Register 'Legal'
@@ -89,7 +89,7 @@ declaration inside the extension file (if there is one inside).
 
 
 .. image:: images/extension_small_project_form03.png
-   :width: 600
+   :width: 750
 
 There is also a read-only form field which contains the text of the legal
 disclaimer that has to be accepted by the small extension project owner.
@@ -113,18 +113,18 @@ dialog.The Plone site administrator choose this allowed file extensions
 within the 'Extension Center'.
 
 .. image:: images/extension_small_project_form04.png
-   :width: 600
+   :width: 750
 
 
 
 The Fifth Register 'File Upload'
-*******************************
+********************************
 
 This register is the place to upload the extension file and declare
 which platform it is compatible with.
 
 .. image:: images/extension_small_project_form05.png
-   :width: 600
+   :width: 750
 
 If there are versions of the extension file for different platforms
 (e.g. one for MS Windows and another one for Linux only) this further

@@ -6,14 +6,14 @@ choose from the Plone menu on the left 'Add new'. You get in this menu an entry 
 'Extension Center' (see the screenshot below).
 
 .. image:: images/create_extension_center.png
-   :width: 600
+   :width: 750
 
 
 Click on this entry and you get the form below. This is the edit form to create and configure a new
 Extension Center in your Plone site.
 
 .. image:: images/extension_center_form01.png
-   :width: 600
+   :width: 750
 
 
 Fill in the fields in the edit form of the Extension Center. All fields has a description of their expected values.
@@ -40,5 +40,5 @@ and you could tick the checkbox 'Can add' for 'logged-in-users' (see screenshot 
 the Plone site to add their extension projects to the center.
 
 .. image:: images/extension_center_sharing.png
-   :width: 600
+   :width: 750
 

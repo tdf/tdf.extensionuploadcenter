@@ -9,7 +9,7 @@ on this link (see screenshot below) he got an edit form to enter the
 content of the new linked release.
 
 .. image:: images/create_extension_linked_release.png
-   :width: 650
+   :width: 750
 
 The owner could make alternatively a mouse click on the menu entry 
 'Add new' in the menu bar on the left side and choose from the opening 
@@ -34,7 +34,7 @@ use, the editor will get an error message about
 it.
 
 .. image:: images/extension_linked_release_form01.png
-   :width: 650
+   :width: 750
 
 A new linked release needs also a summary and could get a full release
 description with details about its features. The latter one is optional
@@ -56,7 +56,7 @@ choose multiple program versions for the release compatibility.
 
 
 .. image:: images/extension_linked_release_form02.png
-   :width: 650
+   :width: 750
 
 
 
@@ -70,7 +70,7 @@ need to be in accordance with the license declaration inside the
 extension linked release (if there is one).
 
 .. image:: images/extension_linked_release_form03.png
-   :width: 650
+   :width: 750
 
 
 There is also a read-only form field which contains the text of the legal
@@ -90,7 +90,7 @@ This register is the place to link to the extension linked release file and
 declare which platform it is compatible with.
 
 .. image:: images/extension_linked_release_form04.png
-   :width: 600
+   :width: 750
 
 If there are versions of the extension linked release for different platforms
 (e.g. one for MS Windows and another one for Linux only) this further linked
