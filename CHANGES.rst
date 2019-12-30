@@ -7,6 +7,15 @@ Changelog
 - Bind project publication workflow to small extension
   projects too [Andreas Mantke]
 - Move CHANGES.txt, README and LICENSE to the main directory [Andreas Mantke]
+- Change CHANGES.txt to rst file type [Andreas Mantke]
+- Add interface module with new interface and browserlayer.xml for
+  install and unistall and use it in configure.zcml [Andreas Mantke]
+- Reorder the edit form of the extension center module with further
+  register [Andreas Mantke]
+- Add user documentation and create a HTML and a PDF version
+  of it [Andreas Mantke]
+- Adapt the MANIFEST.in to the current structure of the add-on [Andreas Mantke]
+
 
 
 0.42 (2019-09-21)
