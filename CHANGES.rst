@@ -1,7 +1,19 @@
 Changelog
 =========
 
-0.43 (unreleased)
+0.45 (unreleased)
+-----------------
+
+- Nothing changed yet.
+
+
+0.44 (2019-12-30)
+-----------------
+
+- Changed list bullets in the readme [Andreas Mantke]
+
+
+0.43 (2019-12-30)
 -----------------
 
 - Bind project publication workflow to small extension
@@ -291,7 +303,6 @@ Changelog
 
 -
 
-
 0.16 (2017-09-18)
 -----------------
 
@@ -368,7 +379,7 @@ Changelog
 ----------------
 
 - Adding German localisation [Andreas Mantke]
-- Update of localisation template file (*.pot) [Andreas Mantke]
+- Update of localisation template file (pot) [Andreas Mantke]
 - Fixes for localisation tags [Andreas Mantke]
 
 
@@ -408,7 +419,7 @@ Changelog
 
 - Reordering of the project view template [Andreas Mantke]
 - Removing the navtree from project and releases view [Andreas Mantke]
-- Update of strings in the internationalisation template file (*.pot) [Andreas Mantke]
+- Update of strings in the internationalisation template file (pot) [Andreas Mantke]
 
 
 0.3 (2016-03-10)

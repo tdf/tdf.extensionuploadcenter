@@ -5,13 +5,13 @@ from setuptools import setup, find_packages
 
 
 long_description = '\n\n'.join([
-    open('README.md').read(),
+    open('README.rst').read(),
     open('CHANGES.rst').read(),
 ])
 
 
 setup(name='tdf.extensionuploadcenter',
-      version='0.43.dev0',
+      version='0.45.dev0',
       description="TDF Extension Upload Center",
       long_description=long_description,
       # Get more strings from
