@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.43 (unreleased)
+0.43 (2019-12-30)
 -----------------
 
 - Bind project publication workflow to small extension
