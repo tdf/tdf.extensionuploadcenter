@@ -4,12 +4,6 @@ Changelog
 0.44 (unreleased)
 -----------------
 
-- Nothing changed yet.
-
-
-0.43 (2019-12-30)
------------------
-
 - Bind project publication workflow to small extension
   projects too [Andreas Mantke]
 - Move CHANGES.txt, README and LICENSE to the main directory [Andreas Mantke]
