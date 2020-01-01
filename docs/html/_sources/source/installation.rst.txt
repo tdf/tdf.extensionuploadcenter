@@ -53,4 +53,4 @@ in the screenshot below.
 Tick the checkbox in fron of the entry ' TDF Extension Upload Center' and
 save your changes. The necessary steps are done to go to the homepage of
 your Plone site (or a subdirectory of the site, where you want to create
-a new add-on center.
+a new Extension center.

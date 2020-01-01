@@ -1,10 +1,18 @@
 Changelog
 =========
 
-0.45 (unreleased)
+0.46 (unreleased)
 -----------------
 
 - Nothing changed yet.
+
+
+0.45 (2020-01-01)
+-----------------
+
+- Changed bullet list style in the readme [Andreas Mantke]
+- Fix typo in installation.rst [Andreas Mantke]
+- Update user documentation in HTML and PDF file format [Andreas Mantke]
 
 
 0.44 (2019-12-30)
