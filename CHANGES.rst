@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.45 (unreleased)
+0.45 (2020-01-01)
 -----------------
 
 - Changed bullet list style in the readme [Andreas Mantke]
