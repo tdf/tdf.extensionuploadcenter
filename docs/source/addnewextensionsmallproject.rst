@@ -1,7 +1,7 @@
 Add A New Small Extension Project To The Extension Center
 #########################################################
 
-A small extension project is an easy and fast way to publish very small
+A small extension project is an easy and fast way to publish a very small
 extension project inside the 'Extensions Center'. This sort of project
 should only be used, if there is not the need to publish releases and
 upload files for a lot of different platforms (operating systems).
