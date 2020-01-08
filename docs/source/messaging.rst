@@ -3,12 +3,12 @@ Messaging
 
 The tdf.extensionuploadcenter Plone add-on use some of the Plone messaging
 implementations to create messages to the site admin, reviewers and the
-owner / creator of extensions.
+owner / creator of extensions / extension projects.
 
 Messages To The Site-Admininstrator / Administrator
 ***************************************************
 
-- The site-administrator / admiinstrator get an e-mail once a new extension
+- The site-administrator / admininstrator get an e-mail once a new extension
   project have been added to the Extension Center.
 - If the project owner submit her / his project for publication, the
   site-administrator / administrator get an e-mail about this event.
