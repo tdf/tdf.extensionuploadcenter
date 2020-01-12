@@ -4,7 +4,9 @@ Changelog
 0.46 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Smaller text fixes in the user documentation and update the
+  documentation in HTML and PDF file format [Andreas Mantke]
+- Update localization files and German localization [Andreas Mantke]
 
 
 0.45 (2020-01-01)
