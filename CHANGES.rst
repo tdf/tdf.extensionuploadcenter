@@ -1,7 +1,13 @@
 Changelog
 =========
 
-0.46 (unreleased)
+0.47 (unreleased)
+-----------------
+
+- Nothing changed yet.
+
+
+0.46 (2020-01-13)
 -----------------
 
 - Smaller text fixes in the user documentation and update the
