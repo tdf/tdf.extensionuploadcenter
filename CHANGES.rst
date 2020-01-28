@@ -4,7 +4,13 @@ Changelog
 0.47 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Add the latest version of LibreOffice to the eupcenter
+  module [Andreas Mantke]
+- Add information about messaging for small extension
+  projects and update the HTML and PDF versions of the user
+  documentation [Andreas Mantke]
+
+
 
 
 0.46 (2020-01-13)
