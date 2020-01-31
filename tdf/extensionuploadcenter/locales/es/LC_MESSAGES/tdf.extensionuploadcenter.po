@@ -74,15 +74,15 @@ msgstr ""
 msgid "All categories"
 msgstr ""
 
-#: ./eupcenter.py:138
+#: ./eupcenter.py:139
 msgid "Allowed Extension file extensions"
 msgstr ""
 
-#: ./eupcenter.py:150
+#: ./eupcenter.py:151
 msgid "Allowed documentation file extensions"
 msgstr ""
 
-#: ./eupcenter.py:144
+#: ./eupcenter.py:145
 msgid "Allowed image file extensions"
 msgstr ""
 
@@ -121,7 +121,7 @@ msgstr ""
 msgid "Available Licenses"
 msgstr "Licencias disponibles"
 
-#: ./eupcenter.py:121
+#: ./eupcenter.py:122
 msgid "Available Platforms"
 msgstr "Plataformas disponibles"
 
@@ -238,11 +238,11 @@ msgstr ""
 msgid "Dokumentation File:"
 msgstr ""
 
-#: ./eupcenter.py:234
+#: ./eupcenter.py:235
 msgid "EMail address for communication with the extension center manager and reviewer"
 msgstr ""
 
-#: ./eupcenter.py:226
+#: ./eupcenter.py:227
 msgid "EMail address for the messages about new releases"
 msgstr "Dirección electrónica para los mensajes sobre emisiones nuevas"
 
@@ -250,23 +250,23 @@ msgstr "Dirección electrónica para los mensajes sobre emisiones nuevas"
 msgid "EUC Project Publication Workflow"
 msgstr ""
 
-#: ./eupcenter.py:237
+#: ./eupcenter.py:238
 msgid "Enter an email address for the communication with extension center manager and reviewer"
 msgstr ""
 
-#: ./eupcenter.py:227
+#: ./eupcenter.py:228
 msgid "Enter an email address to which information about a new release should be send."
 msgstr ""
 
-#: ./eupcenter.py:215
+#: ./eupcenter.py:216
 msgid "Enter an information about the search for older versions of LibreOffice, if they are not on the versions list (compatibility) anymore."
 msgstr ""
 
-#: ./eupcenter.py:205
+#: ./eupcenter.py:206
 msgid "Enter any legal disclaimer and limitations for downloads that should appear on each page for dowloadable files."
 msgstr "Proporcione cualquier aviso legal o de limitaciones en las descargas que aparezca en cada una de las páginas de los archivos descargables."
 
-#: ./eupcenter.py:186
+#: ./eupcenter.py:187
 msgid "Enter the text of the legal disclaimer and limitations that should be displayed to the project creator and should be accepted by the owner of the project."
 msgstr "Proporcione el texto del aviso legal o de limitaciones que se muestre al creador del proyecto y que deba aceptar el propietario del proyecto."
 
@@ -286,7 +286,7 @@ msgstr ""
 msgid "Extension Release"
 msgstr ""
 
-#: ./eupcenter.py:161
+#: ./eupcenter.py:162
 msgid "Extension installation instructions"
 msgstr ""
 
@@ -335,23 +335,23 @@ msgstr "El quinto archivo cargado es compatible con las plataformas"
 msgid "File size:"
 msgstr ""
 
-#: ./eupcenter.py:151
+#: ./eupcenter.py:152
 msgid "Fill in the allowed doumenttation file extensions, seperated by a pipe  '|'."
 msgstr ""
 
-#: ./eupcenter.py:139
+#: ./eupcenter.py:140
 msgid "Fill in the allowed extension file extensions, seperated by a pipe '|'."
 msgstr ""
 
-#: ./eupcenter.py:145
+#: ./eupcenter.py:146
 msgid "Fill in the allowed image file extensions, seperated by a pipe '|'."
 msgstr ""
 
-#: ./eupcenter.py:190
+#: ./eupcenter.py:191
 msgid "Fill in the legal disclaimer, that had to be accepted by the project owner."
 msgstr ""
 
-#: ./eupcenter.py:208
+#: ./eupcenter.py:209
 msgid "Fill in the text for the legal download disclaimer."
 msgstr ""
 
@@ -490,7 +490,7 @@ msgstr ""
 msgid "Information"
 msgstr ""
 
-#: ./eupcenter.py:214
+#: ./eupcenter.py:215
 msgid "Information About Search For Old LibreOffice Versions"
 msgstr ""
 
@@ -500,7 +500,7 @@ msgstr ""
 msgid "Install Instructions"
 msgstr ""
 
-#: ./eupcenter.py:168
+#: ./eupcenter.py:169
 msgid "Instruction how to report Bugs"
 msgstr "Instrucciones para informar de errores"
 
@@ -526,11 +526,11 @@ msgstr "Es necesario que acepte el aviso legal"
 msgid "Latest Not Stable Release"
 msgstr ""
 
-#: ./eupcenter.py:180
+#: ./eupcenter.py:181
 msgid "Legal Disclaimer and Limitations"
 msgstr "Aviso legal y limitaciones"
 
-#: ./eupcenter.py:198
+#: ./eupcenter.py:199
 msgid "Legal Disclaimer and Limitations for Downloads"
 msgstr "Aviso legal y limitaciones para las descargas"
 
@@ -671,7 +671,7 @@ msgstr ""
 msgid "Please fill in the Link (URL) to the Source Code."
 msgstr ""
 
-#: ./eupcenter.py:162
+#: ./eupcenter.py:163
 msgid "Please fill in the install instructions"
 msgstr ""
 
@@ -955,11 +955,11 @@ msgstr ""
 msgid "TDF Extension Upload Center"
 msgstr ""
 
-#: ./eupcenter.py:185
+#: ./eupcenter.py:186
 msgid "Text of the Legal Disclaimer and Limitations"
 msgstr "Texto del aviso legal y limitaciones"
 
-#: ./eupcenter.py:204
+#: ./eupcenter.py:205
 msgid "Text of the Legal Disclaimer and Limitations for Downlaods"
 msgstr "Texto del aviso legal y limitaciones para las descargas"
 
@@ -1110,11 +1110,11 @@ msgstr ""
 msgid "Title"
 msgstr "Título"
 
-#: ./eupcenter.py:179
+#: ./eupcenter.py:180
 msgid "Title for Legal Disclaimer and Limitations"
 msgstr "Titulo del aviso legal y limitaciones"
 
-#: ./eupcenter.py:196
+#: ./eupcenter.py:197
 msgid "Title of the Legal Disclaimer and Limitations for Downloads"
 msgstr "Titulo del aviso legal y limitaciones para las descargas"
 
