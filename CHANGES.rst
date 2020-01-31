@@ -9,6 +9,7 @@ Changelog
 - Add information about messaging for small extension
   projects and update the HTML and PDF versions of the user
   documentation [Andreas Mantke]
+- Update localization files [Andreas Mantke]
 
 
 
