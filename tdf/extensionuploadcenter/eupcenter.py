@@ -9,7 +9,7 @@ from plone.supermodel.directives import primary
 from Products.CMFPlone.browser.search import quote_chars
 from Products.Five import BrowserView
 from Products.ZCTextIndex.ParseTree import ParseError
-from tdf.extensionuploadcenter import MessageFactory as _
+from tdf.extensionuploadcenter import _
 from tdf.extensionuploadcenter.eupproject import IEUpProject
 from zope import schema
 import re

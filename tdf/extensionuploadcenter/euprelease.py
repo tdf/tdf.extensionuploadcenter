@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from tdf.extensionuploadcenter import MessageFactory as _
+from tdf.extensionuploadcenter import _
 from plone.app.textfield import RichText
 from plone.supermodel import model
 from plone.indexer.decorator import indexer
