@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from tdf.extensionuploadcenter import MessageFactory as _
+from tdf.extensionuploadcenter import _
 import re
 from collective import dexteritytextindexer
 from plone.supermodel import model
