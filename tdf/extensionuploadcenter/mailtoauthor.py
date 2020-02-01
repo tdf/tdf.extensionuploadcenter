@@ -15,17 +15,8 @@ from zope.component import getMultiAdapter
 from zope.interface import implementer
 from zope.interface import Invalid
 
-from Products.statusmessages.interfaces import IStatusMessage
-
-
-
 import logging
 import re
-from z3c.form import field
-
-
-
-from zope.component import getMultiAdapter
 
 
 checkemail = re.compile(
