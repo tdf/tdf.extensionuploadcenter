@@ -142,7 +142,7 @@ msgstr "${product_title} nach Kategorie"
 msgid "Browse Extensions by Category"
 msgstr "Suchen Sie Extensions nach Kategorien"
 
-#: ./mailtoauthor.py:192
+#: ./mailtoauthor.py:202
 msgid "Cancel"
 msgstr "Abbrechen"
 
@@ -196,7 +196,7 @@ msgstr "Kontakt-Email-Adresse"
 msgid "Contact email-address for the project."
 msgstr "Kontakt-Email-Adresse für das Projekt.."
 
-#: ./mailtoauthor.py:115
+#: ./mailtoauthor.py:117
 msgid "Contact the project author and send your feedback"
 msgstr "Kontaktieren Sie den Projekt-Autoren und senden Sie Feedback"
 
@@ -555,7 +555,7 @@ msgstr "Link zum Quellcode"
 msgid "Logo"
 msgstr "Logo"
 
-#: ./mailtoauthor.py:114
+#: ./mailtoauthor.py:116
 msgid "Mail To The Project Author"
 msgstr "E-Mail an den Projekt-Autor"
 
@@ -679,15 +679,15 @@ msgstr "Bitte füllen Sie die Installationsanweisungen ein"
 msgid "Please fill in the size in kilobyte of the external hosted file (e.g. 633, if the size is 633 kb)"
 msgstr "Bitte füllen Sie die Größe der extern gehosteten Datei  in Kilobyte (z.B. 633, falls die Größe 633 KB ist) ein."
 
-#: ./mailtoauthor.py:79
+#: ./mailtoauthor.py:80
 msgid "Please fill in your email address."
 msgstr "Bitte tragen Sie Ihre E-Mail-Adresse ein."
 
-#: ./mailtoauthor.py:74
+#: ./mailtoauthor.py:75
 msgid "Please fill in your familiy name"
 msgstr "Bitte tragen Sie Ihren Familiennamen ein"
 
-#: ./mailtoauthor.py:69
+#: ./mailtoauthor.py:70
 msgid "Please fill in your first name(s)"
 msgstr "Bitte tragen Sie Ihre(n) Vornamen ein."
 
@@ -735,7 +735,7 @@ msgstr "Bitte wählen Sie eine passende Kategorie (eine oder mehrere) für ihre 
 msgid "Please upload your file."
 msgstr "Bitte laden Sie Ihre Datei hoch."
 
-#: ./mailtoauthor.py:146
+#: ./mailtoauthor.py:149
 msgid "Please validate the recaptcha field before sending the form."
 msgstr "Bitte validieren Sie das Recaptcha-Feld, bevor Sie das Formular absenden."
 
@@ -747,7 +747,7 @@ msgstr "Privat"
 msgid "Project"
 msgstr "Projekt"
 
-#: ./mailtoauthor.py:84
+#: ./mailtoauthor.py:85
 msgid "Project Name"
 msgstr "Projekt-Name"
 
@@ -903,7 +903,7 @@ msgstr "Die zweite verlinkte Datei ist kompatibel mit den Plattformen"
 msgid "Second uploaded file is compatible with the Platform(s)"
 msgstr "Die zweite hochgeladene Datei ist kompatibel mit den Plattformen"
 
-#: ./mailtoauthor.py:127
+#: ./mailtoauthor.py:130
 msgid "Send Email"
 msgstr "E-Mail senden"
 
@@ -1033,7 +1033,7 @@ msgstr "Die vierte Datei, die Sie hochladen wollen (dies ist optional)"
 msgid "The linked Extension file"
 msgstr "Die verlinkte Extension-Datei"
 
-#: ./mailtoauthor.py:85
+#: ./mailtoauthor.py:86
 msgid "The name of the project, to which author you want to send feedback."
 msgstr "Der Name des Projekts, dessen Autor Sie Feedback senden wollen."
 
@@ -1163,11 +1163,11 @@ msgstr "Version-Nummer"
 msgid "Visible to everyone, editable by the owner."
 msgstr "Für Jedermann sichtbar, durch den Besitzer bearbeitbar."
 
-#: ./mailtoauthor.py:184
+#: ./mailtoauthor.py:193
 msgid "We send your message to the author of the project. It's on her / his choice, if she'll / he'll get back to you."
 msgstr "Wir senden Ihre Nachricht an den Projekt-Autor. Es ist ihre / seine Entscheidung, ob sie / er sich bei Ihnen meldet."
 
-#: ./mailtoauthor.py:92
+#: ./mailtoauthor.py:93
 msgid "What is your message to the author of the project? Your message is limited to 1000 characters."
 msgstr "Wie lautet Ihre Nachricht an den Projekt-Autor? Ihre Nachricht ist auf 1000 Zeichen begrenzt."
 
@@ -1191,19 +1191,19 @@ msgstr "Sie haben noch keine Kategorie für Ihr Projekt gewählt."
 msgid "You need only to upload one file to your project. There are options for further two file uploads if you want to provide files for different platforms."
 msgstr "Sie brauchen nur eine Datei zu Ihrem Projekt hochladen. Es bestehen Möglichkeiten für das Hochladen von zwei weiteren Dateien, falls Sie Dateien für andere Plattformen zur Verfügung stellen wollen."
 
-#: ./mailtoauthor.py:78
+#: ./mailtoauthor.py:79
 msgid "Your Email Address"
 msgstr "Ihre E-Mail-Adresse"
 
-#: ./mailtoauthor.py:73
+#: ./mailtoauthor.py:74
 msgid "Your Family Name"
 msgstr "Ihr Familienname"
 
-#: ./mailtoauthor.py:68
+#: ./mailtoauthor.py:69
 msgid "Your First Name"
 msgstr "Ihr Vorname"
 
-#: ./mailtoauthor.py:91
+#: ./mailtoauthor.py:92
 msgid "Your Message To The Author"
 msgstr "Ihre Nachricht an den Autor"
 
