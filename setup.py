@@ -11,7 +11,7 @@ long_description = '\n\n'.join([
 
 
 setup(name='tdf.extensionuploadcenter',
-      version='0.47.dev0',
+      version='0.48.dev0',
       description="TDF Extension Upload Center",
       long_description=long_description,
       # Get more strings from

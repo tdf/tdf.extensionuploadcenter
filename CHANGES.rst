@@ -1,7 +1,13 @@
 Changelog
 =========
 
-0.47 (unreleased)
+0.48 (unreleased)
+-----------------
+
+- Nothing changed yet.
+
+
+0.47 (2020-02-08)
 -----------------
 
 - Add the latest version of LibreOffice to the eupcenter
