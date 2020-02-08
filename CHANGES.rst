@@ -10,8 +10,12 @@ Changelog
   projects and update the HTML and PDF versions of the user
   documentation [Andreas Mantke]
 - Update localization files [Andreas Mantke]
-
-
+- Change to @implementer in the releasecustomurl module for Python-3
+  compatibility [Andreas Mantke]
+- Change the messagefactory entry for compatiblity to current Plone
+  versions [Andreas Mantke]
+- Update the mailtoauthor module for compatibility with current Plone
+  versions and Python-3
 
 
 0.46 (2020-01-13)
