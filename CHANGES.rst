@@ -1,7 +1,19 @@
 Changelog
 =========
 
-0.48 (unreleased)
+0.50 (unreleased)
+-----------------
+
+- Nothing changed yet.
+
+
+0.49 (2020-03-30)
+-----------------
+
+- Add a missing defaultFactory to mailextprojectowner.py [Andreas Mantke]
+
+
+0.48 (2020-03-30)
 -----------------
 
 - Pep8 fixes
