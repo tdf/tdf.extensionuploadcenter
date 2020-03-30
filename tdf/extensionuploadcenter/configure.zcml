@@ -253,7 +253,7 @@
   <browser:page
       for="tdf.extensionuploadcenter.eupproject.IEUpProject"
       name="contact-extension-project-owner"
-      class=".mailextprojectowner.ReCaptchaForm
+      class=".mailextprojectowner.ReCaptchaForm"
       permission="zope2.View"
       />
 
@@ -261,7 +261,7 @@
       factory=".mailextprojectowner.ReCaptcha"
       for="tdf.extensionuploadcenter.eupproject.IEUpProject"
       provides=".mailextprojectowner.IReCaptchaForm"
-      />
+   />
 
 
 </configure>
