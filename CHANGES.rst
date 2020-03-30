@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.49 (unreleased)
+0.49 (2020-03-30)
 -----------------
 
 - Add a missing defaultFactory to mailextprojectowner.py [Andreas Mantke]
