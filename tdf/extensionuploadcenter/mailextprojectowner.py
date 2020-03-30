@@ -78,7 +78,7 @@ class MailExtProjectOwnerSchema(interface.Interface):
         title=_(safe_unicode('Project Name')),
         description=_(safe_unicode('The name of the project, to which author '
                                    'you want to send feedback.')),
-        constraint=getprojectname
+        defaultFactory=getprojectname
     )
 
     inquiry = schema.Text(
@@ -157,7 +157,7 @@ class MailExtProjectOwnerForm(AutoExtensibleForm, form.Form):
                 'tdf.extensionuploadcenter.eupproject',
                 'tdf.extensionuploadcenter.eupsmallproject'
             ),
-            Title=data['projectname']
+            Title=data['projectname'],
         )
 
         for brain in project[:1]:
