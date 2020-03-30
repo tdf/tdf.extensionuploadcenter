@@ -248,5 +248,20 @@
       provides=".mailtoauthor.IReCaptchaForm"
    />
 
+  <adapter factory=".mailextprojectowner.MailExtProjectOwnerAdapter" />
+
+  <browser:page
+      for="tdf.extensionuploadcenter.eupproject.IEUpProject"
+      name="contact-extension-project-owner"
+      class=".mailextprojectowner.ReCaptchaForm"
+      permission="zope2.View"
+      />
+
+  <adapter
+      factory=".mailextprojectowner.ReCaptcha"
+      for="tdf.extensionuploadcenter.eupproject.IEUpProject"
+      provides=".mailextprojectowner.IReCaptchaForm"
+   />
+
 
 </configure>

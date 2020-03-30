@@ -4,7 +4,11 @@ Changelog
 0.48 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Pep8 fixes
+- Add a new module for a mail form to get in contact with project owner and
+  link it from project pages. Link the mail to project author form from the
+  extension center view [Andreas Mantke]
+- Update localization files and localization into German [Andreas Mantke]
 
 
 0.47 (2020-02-08)

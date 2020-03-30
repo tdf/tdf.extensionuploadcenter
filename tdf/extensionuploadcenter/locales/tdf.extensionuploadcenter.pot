@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-02-04 20:31+0000\n"
+"POT-Creation-Date: 2020-03-30 10:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -149,7 +149,8 @@ msgstr ""
 msgid "Browse Extensions by Category"
 msgstr ""
 
-#: ./mailtoauthor.py:202
+#: ./mailextprojectowner.py:195
+#: ./mailtoauthor.py:199
 msgid "Cancel"
 msgstr ""
 
@@ -203,8 +204,12 @@ msgstr ""
 msgid "Contact email-address for the project."
 msgstr ""
 
-#: ./mailtoauthor.py:117
+#: ./mailtoauthor.py:114
 msgid "Contact the project author and send your feedback"
+msgstr ""
+
+#: ./mailextprojectowner.py:110
+msgid "Contact the project owner and send your feedback"
 msgstr ""
 
 #: ./eupproject_templates/view.pt:107
@@ -562,8 +567,12 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: ./mailtoauthor.py:116
+#: ./mailtoauthor.py:113
 msgid "Mail To The Project Author"
+msgstr ""
+
+#: ./mailextprojectowner.py:109
+msgid "Mail To The Project Owner"
 msgstr ""
 
 #: ./profiles/default/workflows/tdf_extensionuploadcenter_project_workflow/definition.xml
@@ -612,7 +621,7 @@ msgstr ""
 msgid "No stable release available yet."
 msgstr ""
 
-#: ./mailtoauthor.py:42
+#: ./mailtoauthor.py:41
 msgid "Not a valid project name. Please retry."
 msgstr ""
 
@@ -686,15 +695,18 @@ msgstr ""
 msgid "Please fill in the size in kilobyte of the external hosted file (e.g. 633, if the size is 633 kb)"
 msgstr ""
 
-#: ./mailtoauthor.py:80
+#: ./mailextprojectowner.py:73
+#: ./mailtoauthor.py:77
 msgid "Please fill in your email address."
 msgstr ""
 
-#: ./mailtoauthor.py:75
+#: ./mailextprojectowner.py:68
+#: ./mailtoauthor.py:72
 msgid "Please fill in your familiy name"
 msgstr ""
 
-#: ./mailtoauthor.py:70
+#: ./mailextprojectowner.py:63
+#: ./mailtoauthor.py:67
 msgid "Please fill in your first name(s)"
 msgstr ""
 
@@ -742,7 +754,8 @@ msgstr ""
 msgid "Please upload your file."
 msgstr ""
 
-#: ./mailtoauthor.py:149
+#: ./mailextprojectowner.py:142
+#: ./mailtoauthor.py:146
 msgid "Please validate the recaptcha field before sending the form."
 msgstr ""
 
@@ -754,7 +767,8 @@ msgstr ""
 msgid "Project"
 msgstr ""
 
-#: ./mailtoauthor.py:85
+#: ./mailextprojectowner.py:78
+#: ./mailtoauthor.py:82
 msgid "Project Name"
 msgstr ""
 
@@ -915,7 +929,8 @@ msgstr ""
 msgid "Second uploaded file is compatible with the Platform(s)"
 msgstr ""
 
-#: ./mailtoauthor.py:130
+#: ./mailextprojectowner.py:123
+#: ./mailtoauthor.py:127
 msgid "Send Email"
 msgstr ""
 
@@ -1050,7 +1065,8 @@ msgstr ""
 msgid "The linked Extension file"
 msgstr ""
 
-#: ./mailtoauthor.py:86
+#: ./mailextprojectowner.py:79
+#: ./mailtoauthor.py:83
 msgid "The name of the project, to which author you want to send feedback."
 msgstr ""
 
@@ -1185,11 +1201,16 @@ msgid "Waiting for the Review, further editable by
                                            the owner (contributor)."
 msgstr ""
 
-#: ./mailtoauthor.py:193
+#: ./mailtoauthor.py:190
 msgid "We send your message to the author of the project. It's on her / his choice, if she'll / he'll get back to you."
 msgstr ""
 
-#: ./mailtoauthor.py:93
+#: ./mailextprojectowner.py:186
+msgid "We send your message to the owner of the project. It's on her / his choice, if she'll / he'll get back to you."
+msgstr ""
+
+#: ./mailextprojectowner.py:86
+#: ./mailtoauthor.py:90
 msgid "What is your message to the author of the project? Your message is limited to 1000 characters."
 msgstr ""
 
@@ -1213,19 +1234,23 @@ msgstr ""
 msgid "You need only to upload one file to your project. There are options for further two file uploads if you want to provide files for different platforms."
 msgstr ""
 
-#: ./mailtoauthor.py:79
+#: ./mailextprojectowner.py:72
+#: ./mailtoauthor.py:76
 msgid "Your Email Address"
 msgstr ""
 
-#: ./mailtoauthor.py:74
+#: ./mailextprojectowner.py:67
+#: ./mailtoauthor.py:71
 msgid "Your Family Name"
 msgstr ""
 
-#: ./mailtoauthor.py:69
+#: ./mailextprojectowner.py:62
+#: ./mailtoauthor.py:66
 msgid "Your First Name"
 msgstr ""
 
-#: ./mailtoauthor.py:92
+#: ./mailextprojectowner.py:85
+#: ./mailtoauthor.py:89
 msgid "Your Message To The Author"
 msgstr ""
 
