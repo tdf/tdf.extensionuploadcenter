@@ -22,6 +22,7 @@ from z3c.form import validator
 import re
 from plone.supermodel.directives import primary
 from plone.autoform import directives
+from Products.CMFPlone.utils import safe_unicode
 
 
 def vocabAvailLicenses(context):
@@ -66,8 +67,8 @@ def vocabAvailPlatforms(context):
 directlyProvides(vocabAvailPlatforms, IContextSourceBinder)
 
 yesnochoice = SimpleVocabulary(
-    [SimpleTerm(value=0, title=_(u'No')),
-     SimpleTerm(value=1, title=_(u'Yes')), ]
+    [SimpleTerm(value=0, title=_(safe_unicode('No'))),
+     SimpleTerm(value=1, title=_(safe_unicode('Yes'))), ]
 )
 
 
@@ -106,133 +107,144 @@ def validatelinkedextensionfileextension(value):
     matches = re.compile(pattern, re.IGNORECASE).match
     if not matches(value):
         raise Invalid(
-            u'You could only link to a file with an allowed extension file '
-            u'extension. Please try again with to link to a file with the '
-            u'correct template file extension.')
+            safe_unicode(
+                'You could only link to a file with an allowed extension file '
+                'extension. Please try again with to link to a file with the '
+                'correct template file extension.'))
     return True
 
 
 class AcceptLegalDeclaration(Invalid):
-    __doc__ = _(u"It is necessary that you accept the Legal Declaration")
+    __doc__ = _(safe_unicode(
+        "It is necessary that you accept the Legal Declaration"))
 
 
 class IEUpReleaseLink(model.Schema):
     directives.mode(information="display")
     information = schema.Text(
-        title=_(u"Information"),
-        description=_(u"This Dialog to create a new linked release consists "
-                      u"of different register. Please go through this "
-                      u"register and fill in the appropriate data for your "
-                      u"linked release. This register 'Default' provide "
-                      u"fields for general information of your linked "
-                      u"release. The next register 'compatibility is the "
-                      u"place to submit information about the versions with "
-                      u"which your linked release file(s) is / are "
-                      u"compatible. The next register asks for some legal "
-                      u"informations. The next register 'Linked File' "
-                      u"provide a field to link your release file. The "
-                      u"further register are optional. There is the "
-                      u"opportunity to link further release files "
-                      u"(for different platforms).")
+        title=_(safe_unicode("Information")),
+        description=_(safe_unicode(
+            "This Dialog to create a new linked release consists "
+            "of different register. Please go through this "
+            "register and fill in the appropriate data for your "
+            "linked release. This register 'Default' provide "
+            "fields for general information of your linked "
+            "release. The next register 'compatibility is the "
+            "place to submit information about the versions with "
+            "which your linked release file(s) is / are "
+            "compatible. The next register asks for some legal "
+            "informations. The next register 'Linked File' "
+            "provide a field to link your release file. The "
+            "further register are optional. There is the "
+            "opportunity to link further release files "
+            "(for different platforms)."))
     )
 
     directives.mode(projecttitle='hidden')
     projecttitle = schema.TextLine(
-        title=_(u"The Computed Project Title"),
-        description=_(u"The release title will be computed from the parent "
-                      u"project title."),
+        title=_(safe_unicode("The Computed Project Title")),
+        description=_(safe_unicode(
+            "The release title will be computed from the parent "
+            "project title.")),
         defaultFactory=getContainerTitle
     )
 
     releasenumber = schema.TextLine(
-        title=_(u"Release Number"),
-        description=_(u"Release Number (up to twelf chars)"),
-        default=_(u"1.0"),
+        title=_(safe_unicode("Release Number")),
+        description=_(safe_unicode("Release Number (up to twelf chars)")),
+        default=_(safe_unicode("1.0")),
         max_length=12
     )
 
     description = schema.Text(
-        title=_(u"Release Summary"),
+        title=_(safe_unicode("Release Summary")),
     )
 
     primary('details')
     details = RichText(
-        title=_(u"Full Release Description"),
+        title=_(safe_unicode("Full Release Description")),
         required=False
     )
 
     primary('changelog')
     changelog = RichText(
-        title=_(u"Changelog"),
-        description=_(u"A detailed log of what has changed since the "
-                      u"previous release."),
+        title=_(safe_unicode("Changelog")),
+        description=_(safe_unicode(
+            "A detailed log of what has changed since the "
+            "previous release.")),
         required=False,
     )
 
     model.fieldset('compatibility',
-                   label=u"Compatibility",
+                   label=safe_unicode("Compatibility"),
                    fields=['compatibility_choice'])
 
     model.fieldset('legal',
-                   label=u"Legal",
+                   label=safe_unicode("Legal"),
                    fields=['licenses_choice', 'title_declaration_legal',
                            'declaration_legal', 'accept_legal_declaration',
                            'source_code_inside', 'link_to_source'])
 
     directives.widget(licenses_choice=CheckBoxFieldWidget)
     licenses_choice = schema.List(
-        title=_(u'License of the uploaded file'),
-        description=_(u"Please mark one or more licenses you publish your "
-                      u"release."),
+        title=_(safe_unicode('License of the uploaded file')),
+        description=_(safe_unicode(
+            "Please mark one or more licenses you publish your "
+            "release.")),
         value_type=schema.Choice(source=vocabAvailLicenses),
         required=True,
     )
 
     directives.widget(compatibility_choice=CheckBoxFieldWidget)
     compatibility_choice = schema.List(
-        title=_(u"Compatible with versions of LibreOffice"),
-        description=_(u"Please mark one or more program versions with which "
-                      u"this release is compatible with."),
+        title=_(safe_unicode(
+            "Compatible with versions of LibreOffice")),
+        description=_(safe_unicode(
+            "Please mark one or more program versions with which "
+            "this release is compatible with.")),
         value_type=schema.Choice(source=vocabAvailVersions),
         required=True,
     )
 
     directives.mode(title_declaration_legal='display')
     title_declaration_legal = schema.TextLine(
-        title=_(u""),
+        title=_(safe_unicode("")),
         required=False,
         defaultFactory=legal_declaration_title
     )
 
     directives.mode(declaration_legal='display')
     declaration_legal = schema.Text(
-        title=_(u""),
+        title=_(safe_unicode("")),
         required=False,
         defaultFactory=legal_declaration_text
     )
 
     accept_legal_declaration = schema.Bool(
-        title=_(u"Accept the above legal disclaimer"),
-        description=_(u"Please declare that you accept the above legal "
-                      u"disclaimer."),
+        title=_(safe_unicode("Accept the above legal disclaimer")),
+        description=_(safe_unicode(
+            "Please declare that you accept the above legal "
+            "disclaimer.")),
         required=True
     )
 
     contact_address2 = schema.TextLine(
-        title=_(u"Contact email-address"),
-        description=_(u"Contact email-address for the project."),
+        title=_(safe_unicode("Contact email-address")),
+        description=_(safe_unicode(
+            "Contact email-address for the project.")),
         required=False,
         defaultFactory=contactinfoDefault
     )
 
     source_code_inside = schema.Choice(
-        title=_(u"Is the source code inside the extension?"),
+        title=_(safe_unicode("Is the source code inside the extension?")),
         vocabulary=yesnochoice,
         required=True
     )
 
     link_to_source = schema.URI(
-        title=_(u"Please fill in the Link (URL) to the Source Code."),
+        title=_(safe_unicode(
+            "Please fill in the Link (URL) to the Source Code.")),
         required=False
     )
 
@@ -246,32 +258,36 @@ class IEUpReleaseLink(model.Schema):
 
     directives.mode(euplinkedfileextension='display')
     euplinkedfileextension = schema.TextLine(
-        title=_(u'The following file extensions are allowed for linked '
-                u'files (upper case and lower case and mix of '
-                u'both):'),
+        title=_(safe_unicode(
+            'The following file extensions are allowed for linked '
+            'files (upper case and lower case and mix of '
+            'both):')),
         defaultFactory=allowedextensionfileextensions,
     )
 
     link_to_file = schema.URI(
-        title=_(u"The Link to the file of the release"),
-        description=_(u"Please insert a link to your extension file."),
+        title=_(safe_unicode("The Link to the file of the release")),
+        description=_(safe_unicode(
+            "Please insert a link to your extension file.")),
         required=True,
         constraint=validatelinkedextensionfileextension
     )
 
     external_file_size = schema.Float(
-        title=_(u"The size of the external hosted file"),
-        description=_(
-            u"Please fill in the size in kilobyte of the external hosted "
-            u"file (e.g. 633, if the size is 633 kb)"),
+        title=_(safe_unicode("The size of the external hosted file")),
+        description=_(safe_unicode(
+            "Please fill in the size in kilobyte of the external hosted "
+            "file (e.g. 633, if the size is 633 kb)")),
         required=False
     )
 
     directives.widget(platform_choice=CheckBoxFieldWidget)
     platform_choice = schema.List(
-        title=_(u"First linked file is compatible with the Platform(s)"),
-        description=_(u"Please mark one or more platforms with which the "
-                      u"uploaded file is compatible."),
+        title=_(safe_unicode(
+            "First linked file is compatible with the Platform(s)")),
+        description=_(safe_unicode(
+            "Please mark one or more platforms with which the "
+            "uploaded file is compatible.")),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
     )
@@ -279,18 +295,18 @@ class IEUpReleaseLink(model.Schema):
     directives.mode(information_further_file_uploads='display')
     primary('information_further_file_uploads')
     information_further_file_uploads = RichText(
-        title=_(u"Further linked files for this Release"),
-        description=_(
-            u"If you want to link more files for this release, e.g. because "
-            u"there are files for other operating systems, you'll find the "
-            u"fields to link this files on the next registers, e.g. "
-            u"'Second linked file' "
-            u"for this Release'."),
+        title=_(safe_unicode("Further linked files for this Release")),
+        description=_(safe_unicode(
+            "If you want to link more files for this release, e.g. because "
+            "there are files for other operating systems, you'll find the "
+            "fields to link this files on the next registers, e.g. "
+            "'Second linked file' "
+            "for this Release'.")),
         required=False
     )
 
     model.fieldset('fieldset1',
-                   label=_(u"Second linked file"),
+                   label=_(safe_unicode("Second linked file")),
                    fields=['euplinkedfileextension1',
                            'link_to_file1',
                            'external_file_size1',
@@ -298,7 +314,7 @@ class IEUpReleaseLink(model.Schema):
                    )
 
     model.fieldset('fieldset2',
-                   label=_(u"Third linked file"),
+                   label=_(safe_unicode("Third linked file")),
                    fields=['euplinkedfileextension2',
                            'link_to_file2',
                            'external_file_size2',
@@ -306,7 +322,7 @@ class IEUpReleaseLink(model.Schema):
                    )
 
     model.fieldset('fieldset3',
-                   label=_(u"Fourth linked file"),
+                   label=_(safe_unicode("Fourth linked file")),
                    fields=['euplinkedfileextension3',
                            'link_to_file3',
                            'external_file_size3',
@@ -314,7 +330,7 @@ class IEUpReleaseLink(model.Schema):
                    )
 
     model.fieldset('fieldset4',
-                   label=_(u"Fifth linked file"),
+                   label=_(safe_unicode("Fifth linked file")),
                    fields=['euplinkedfileextension4',
                            'link_to_file4',
                            'external_file_size4',
@@ -322,7 +338,7 @@ class IEUpReleaseLink(model.Schema):
                    )
 
     model.fieldset('fieldset5',
-                   label=_(u"Sixth linked file"),
+                   label=_(safe_unicode("Sixth linked file")),
                    fields=['euplinkedfileextension5',
                            'link_to_file5',
                            'external_file_size5',
@@ -331,155 +347,180 @@ class IEUpReleaseLink(model.Schema):
 
     directives.mode(euplinkedfileextension1='display')
     euplinkedfileextension1 = schema.TextLine(
-        title=_(u'The following file extensions are allowed for linked '
-                u'files (upper case and lower case and mix of '
-                u'both):'),
+        title=_(safe_unicode(
+            'The following file extensions are allowed for linked '
+            'files (upper case and lower case and mix of '
+            'both):')),
         defaultFactory=allowedextensionfileextensions,
     )
 
     link_to_file1 = schema.URI(
-        title=_(u"The Link to the file of the release"),
-        description=_(u"Please insert a link to your extension file."),
+        title=_(safe_unicode("The Link to the file of the release")),
+        description=_(safe_unicode(
+            "Please insert a link to your extension file.")),
         required=False,
         constraint=validatelinkedextensionfileextension
     )
 
     external_file_size1 = schema.Float(
-        title=_(u"The size of the external hosted file"),
-        description=_(u"Please fill in the size in kilobyte of the external "
-                      u"hosted file (e.g. 633, if the size is 633 kb)"),
+        title=_(safe_unicode("The size of the external hosted file")),
+        description=_(safe_unicode(
+            "Please fill in the size in kilobyte of the external "
+            "hosted file (e.g. 633, if the size is 633 kb)")),
         required=False
     )
 
     directives.widget(platform_choice1=CheckBoxFieldWidget)
     platform_choice1 = schema.List(
-        title=_(u"Second linked file is compatible with the Platform(s)"),
-        description=_(u"Please mark one or more platforms with which the "
-                      u"linked file is compatible."),
+        title=_(safe_unicode(
+            "Second linked file is compatible with the Platform(s)")),
+        description=_(safe_unicode(
+            "Please mark one or more platforms with which the "
+            "linked file is compatible.")),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
     )
 
     directives.mode(euplinkedfileextension2='display')
     euplinkedfileextension2 = schema.TextLine(
-        title=_(u'The following file extensions are allowed for linked '
-                u'files (upper case and lower case and mix of '
-                u'both):'),
+        title=_(safe_unicode(
+            'The following file extensions are allowed for linked '
+            'files (upper case and lower case and mix of '
+            'both):')),
         defaultFactory=allowedextensionfileextensions,
     )
 
     link_to_file2 = schema.URI(
-        title=_(u"The Link to the file of the release"),
-        description=_(u"Please insert a link to your extension file."),
+        title=_(safe_unicode("The Link to the file of the release")),
+        description=_(safe_unicode(
+            "Please insert a link to your extension file.")),
         required=False,
         constraint=validatelinkedextensionfileextension
     )
 
     external_file_size2 = schema.Float(
-        title=_(u"The size of the external hosted file"),
-        description=_(u"Please fill in the size in kilobyte of the external "
-                      u"hosted file (e.g. 633, if the size is 633 kb)"),
+        title=_(safe_unicode("The size of the external hosted file")),
+        description=_(safe_unicode(
+            "Please fill in the size in kilobyte of the external "
+            "hosted file (e.g. 633, if the size is 633 kb)")),
         required=False
     )
 
     directives.widget(platform_choice2=CheckBoxFieldWidget)
     platform_choice2 = schema.List(
-        title=_(u"Third linked file is compatible with the Platform(s)"),
-        description=_(u"Please mark one or more platforms with which the "
-                      u"linked file is compatible."),
+        title=_(safe_unicode(
+            "Third linked file is compatible with the Platform(s)")),
+        description=_(safe_unicode(
+            "Please mark one or more platforms with which the "
+            "linked file is compatible.")),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True
     )
 
     directives.mode(euplinkedfileextension3='display')
     euplinkedfileextension3 = schema.TextLine(
-        title=_(u'The following file extensions are allowed for linked '
-                u'files (upper case and lower case and mix of '
-                u'both):'),
+        title=_(safe_unicode(
+            'The following file extensions are allowed for linked '
+            'files (upper case and lower case and mix of '
+            'both):')),
         defaultFactory=allowedextensionfileextensions,
     )
 
     link_to_file3 = schema.URI(
-        title=_(u"The Link to the file of the release"),
-        description=_(u"Please insert a link to your extension file."),
+        title=_(safe_unicode("The Link to the file of the release")),
+        description=_(safe_unicode(
+            "Please insert a link to your extension file.")),
         required=False,
         constraint=validatelinkedextensionfileextension
     )
 
     external_file_size3 = schema.Float(
-        title=_(u"The size of the external hosted file"),
-        description=_(u"Please fill in the size in kilobyte of the external "
-                      u"hosted file (e.g. 633, if the size is 633 kb)"),
+        title=_(safe_unicode("The size of the external hosted file")),
+        description=_(safe_unicode(
+            "Please fill in the size in kilobyte of the external "
+            "hosted file (e.g. 633, if the size is 633 kb)")),
         required=False
     )
 
     directives.widget(platform_choice3=CheckBoxFieldWidget)
     platform_choice3 = schema.List(
-        title=_(u"Fourth linked file is compatible with the Platform(s)"),
-        description=_(u"Please mark one or more platforms with which the "
-                      u"linked file is compatible."),
+        title=_(safe_unicode(
+            "Fourth linked file is compatible with the Platform(s)")),
+        description=_(safe_unicode(
+            "Please mark one or more platforms with which the "
+            "linked file is compatible.")),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
     )
 
     directives.mode(euplinkedfileextension4='display')
     euplinkedfileextension4 = schema.TextLine(
-        title=_(u'The following file extensions are allowed for linked '
-                u'files (upper case and lower case and mix of '
-                u'both):'),
+        title=_(safe_unicode(
+            'The following file extensions are allowed for linked '
+            'files (upper case and lower case and mix of '
+            'both):')),
         defaultFactory=allowedextensionfileextensions,
     )
 
     link_to_file4 = schema.URI(
-        title=_(u"The Link to the file of the release"),
-        description=_(u"Please insert a link to your extension file."),
+        title=_(safe_unicode("The Link to the file of the release")),
+        description=_(safe_unicode(
+            "Please insert a link to your extension file.")),
         required=False,
         constraint=validatelinkedextensionfileextension
     )
 
     external_file_size4 = schema.Float(
-        title=_(u"The size of the external hosted file"),
-        description=_(u"Please fill in the size in kilobyte of the external "
-                      u"hosted file (e.g. 633, if the size is 633 kb)"),
+        title=_(safe_unicode("The size of the external hosted file")),
+        description=_(safe_unicode(
+            "Please fill in the size in kilobyte of the external "
+            "hosted file (e.g. 633, if the size is 633 kb)")),
         required=False
     )
 
     directives.widget(platform_choice4=CheckBoxFieldWidget)
     platform_choice4 = schema.List(
-        title=_(u"Fifth linked file is compatible with the Platform(s)"),
-        description=_(u"Please mark one or more platforms with which the "
-                      u"linked file is compatible."),
+        title=_(safe_unicode(
+            "Fifth linked file is compatible with the Platform(s)")),
+        description=_(safe_unicode(
+            "Please mark one or more platforms with which the "
+            "linked file is compatible.")),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
     )
 
     directives.mode(euplinkedfileextension5='display')
     euplinkedfileextension5 = schema.TextLine(
-        title=_(u'The following file extensions are allowed for linked '
-                u'files (upper case and lower case and mix of '
-                u'both):'),
+        title=_(safe_unicode(
+            'The following file extensions are allowed for linked '
+            'files (upper case and lower case and mix of '
+            'both):')),
         defaultFactory=allowedextensionfileextensions,
     )
 
     link_to_file5 = schema.URI(
-        title=_(u"The Link to the file of the release"),
-        description=_(u"Please insert a link to your extension file."),
+        title=_(safe_unicode("The Link to the file of the release")),
+        description=_(safe_unicode(
+            "Please insert a link to your extension file.")),
         required=False,
         constraint=validatelinkedextensionfileextension
     )
 
     external_file_size5 = schema.Float(
-        title=_(u"The size of the external hosted file"),
-        description=_(u"Please fill in the size in kilobyte of the external "
-                      u"hosted file (e.g. 633, if the size is 633 kb)"),
+        title=_(safe_unicode("The size of the external hosted file")),
+        description=_(safe_unicode(
+            "Please fill in the size in kilobyte of the external "
+            "hosted file (e.g. 633, if the size is 633 kb)")),
         required=False
     )
 
     directives.widget(platform_choice5=CheckBoxFieldWidget)
     platform_choice5 = schema.List(
-        title=_(u"Sixth linked file is compatible with the Platform(s)"),
-        description=_(u"Please mark one or more platforms with which the "
-                      u"linked file is compatible."),
+        title=_(safe_unicode(
+            "Sixth linked file is compatible with the Platform(s)")),
+        description=_(safe_unicode(
+            "Please mark one or more platforms with which the "
+            "linked file is compatible.")),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
     )
@@ -487,35 +528,43 @@ class IEUpReleaseLink(model.Schema):
     @invariant
     def licensenotchoosen(value):
         if not value.licenses_choice:
-            raise Invalid(_(u"Please choose a license for your release."))
+            raise Invalid(_(safe_unicode(
+                "Please choose a license for your release.")))
 
     @invariant
     def compatibilitynotchoosen(data):
         if not data.compatibility_choice:
-            raise Invalid(_(u"Please choose one or more compatible product "
-                            u"versions for your release."))
+            raise Invalid(_(safe_unicode(
+                "Please choose one or more compatible product "
+                "versions for your release.")))
 
     @invariant
     def legaldeclarationaccepted(data):
         if data.accept_legal_declaration is not True:
-            raise AcceptLegalDeclaration(_(u"Please accept the Legal "
-                                           u"Declaration about your Release "
-                                           u"and your linked File"))
+            raise AcceptLegalDeclaration(
+                _(safe_unicode(
+                    "Please accept the Legal "
+                    "Declaration about your Release "
+                    "and your linked File")))
 
     @invariant
     def testingvalue(data):
         if data.source_code_inside is not 1 and data.link_to_source is None:
-            raise Invalid(_(u"You answered the question, whether the source "
-                            u"code is inside your extension with no "
-                            u"(default answer). If this is the correct "
-                            u"answer, please fill in the Link (URL) "
-                            u"to the Source Code."))
+            raise Invalid(
+                _(safe_unicode(
+                    "You answered the question, whether the source "
+                    "code is inside your extension with no "
+                    "(default answer). If this is the correct "
+                    "answer, please fill in the Link (URL) "
+                    "to the Source Code.")))
 
     @invariant
     def noOSChosen(data):
         if data.link_to_file is not None and data.platform_choice == []:
-            raise Invalid(_(u"Please choose a compatible platform for the "
-                            u"linked file."))
+            raise Invalid(
+                _(safe_unicode(
+                    "Please choose a compatible platform for the "
+                    "linked file.")))
 
 
 @indexer(IEUpReleaseLink)
@@ -591,8 +640,9 @@ class ValidateEUpReleaseLinkUniqueness(validator.SimpleFieldValidator):
                 'release_number': value})
 
             if len(result) > 0:
-                raise Invalid(_(u"The release number is already in use. "
-                                u"Please choose another one."))
+                raise Invalid(_(safe_unicode(
+                    "The release number is already in use. "
+                    "Please choose another one.")))
 
 
 validator.WidgetValidatorDiscriminators(
