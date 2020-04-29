@@ -192,7 +192,7 @@ def validatedocfileextension(value):
         raise Invalid(safe_unicode(
             'You could only upload documentation files with an allowed '
             'file extension. Please try again to upload a file with the '
-            'correct file extension.')
+            'correct file extension.'))
     return True
 
 
