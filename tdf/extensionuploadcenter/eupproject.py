@@ -1,26 +1,25 @@
 # -*- coding: utf-8 -*-
-from tdf.extensionuploadcenter import _
-from plone.app.textfield import RichText
-from plone.supermodel import model
-from zope import schema
-from plone.dexterity.browser.view import DefaultView
-from plone import api
-from collective import dexteritytextindexer
-from zope.schema.interfaces import IContextSourceBinder
-from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
-from zope.interface import directlyProvides
 import re
-from plone.namedfile.field import NamedBlobImage, NamedBlobFile
-from zope.interface import Invalid, invariant
-from z3c.form import validator
-from plone.uuid.interfaces import IUUID
-from z3c.form.browser.checkbox import CheckBoxFieldWidget
-from tdf.extensionuploadcenter import quote_chars
-from plone.supermodel.directives import primary
-from plone.autoform import directives
-from zope.interface import provider
-from zope.schema.interfaces import IContextAwareDefaultFactory
+
 from Products.CMFPlone.utils import safe_unicode
+from tdf.extensionuploadcenter import _, quote_chars
+
+from collective import dexteritytextindexer
+from plone import api
+from plone.app.textfield import RichText
+from plone.autoform import directives
+from plone.dexterity.browser.view import DefaultView
+from plone.namedfile.field import NamedBlobFile, NamedBlobImage
+from plone.supermodel import model
+from plone.supermodel.directives import primary
+from plone.uuid.interfaces import IUUID
+from z3c.form import validator
+from z3c.form.browser.checkbox import CheckBoxFieldWidget
+from zope import schema
+from zope.interface import Invalid, directlyProvides, invariant, provider
+from zope.schema.interfaces import (IContextAwareDefaultFactory,
+                                    IContextSourceBinder)
+from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
 
 
 def vocabCategories(context):

@@ -1,4 +1,13 @@
 # -*- coding: utf-8 -*-
+import re
+
+from Products.CMFPlone.browser.search import quote_chars
+from Products.CMFPlone.utils import safe_unicode
+from Products.Five import BrowserView
+from Products.ZCTextIndex.ParseTree import ParseError
+from tdf.extensionuploadcenter import _
+from tdf.extensionuploadcenter.eupproject import IEUpProject
+
 from Acquisition import aq_inner
 from plone import api
 from plone.app.layout.viewlets import ViewletBase
@@ -6,15 +15,8 @@ from plone.app.multilingual.dx import directives
 from plone.app.textfield import RichText
 from plone.supermodel import model
 from plone.supermodel.directives import primary
-from Products.CMFPlone.browser.search import quote_chars
-from Products.Five import BrowserView
-from Products.ZCTextIndex.ParseTree import ParseError
-from tdf.extensionuploadcenter import _
-from tdf.extensionuploadcenter.eupproject import IEUpProject
 from zope import schema
-import re
 from zope.interface import Invalid
-from Products.CMFPlone.utils import safe_unicode
 
 MULTISPACE = u'\u3000'.encode('utf-8')
 BAD_CHARS = ('?', '-', '+', '*', MULTISPACE)

@@ -1,30 +1,28 @@
 # -*- coding: utf-8 -*-
-from tdf.extensionuploadcenter import _
 import re
+
+from Products.CMFPlone.utils import safe_unicode
+from Products.validation import V_REQUIRED
+from tdf.extensionuploadcenter import _, quote_chars
+
 from collective import dexteritytextindexer
-from plone.supermodel import model
-from zope import schema
+from plone import api
 from plone.app.textfield import RichText
 from plone.autoform import directives
-from plone.supermodel.directives import primary
-from z3c.form.browser.checkbox import CheckBoxFieldWidget
-from zope.interface import Invalid, invariant
-from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
-from zope.interface import directlyProvides
-from zope.schema.interfaces import IContextSourceBinder
-from plone.namedfile.field import NamedBlobImage, NamedBlobFile
-from zope.interface import provider
-from zope.schema.interfaces import IContextAwareDefaultFactory
-from plone.indexer.decorator import indexer
-from zope.security import checkPermission
-from plone import api
-from z3c.form import validator
 from plone.dexterity.browser.view import DefaultView
-from tdf.extensionuploadcenter import quote_chars
+from plone.indexer.decorator import indexer
+from plone.namedfile.field import NamedBlobFile, NamedBlobImage
+from plone.supermodel import model
+from plone.supermodel.directives import primary
 from plone.uuid.interfaces import IUUID
-from Products.validation import V_REQUIRED
-from Products.CMFPlone.utils import safe_unicode
-
+from z3c.form import validator
+from z3c.form.browser.checkbox import CheckBoxFieldWidget
+from zope import schema
+from zope.interface import Invalid, directlyProvides, invariant, provider
+from zope.schema.interfaces import (IContextAwareDefaultFactory,
+                                    IContextSourceBinder)
+from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
+from zope.security import checkPermission
 
 checkfileextension = re.compile(
     r"^.*\.(oxt|OXT)").match

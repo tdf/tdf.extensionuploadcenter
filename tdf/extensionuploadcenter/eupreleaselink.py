@@ -1,28 +1,26 @@
 # -*- coding: utf-8 -*-
-from tdf.extensionuploadcenter import _
-from plone.app.textfield import RichText
-from plone.supermodel import model
-from zope import schema
-from plone.dexterity.browser.view import DefaultView
-from zope.schema.interfaces import IContextSourceBinder
-from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
-from zope.interface import directlyProvides
-from plone.indexer.decorator import indexer
-
-from zope.security import checkPermission
-from zope.interface import invariant, Invalid
-from Acquisition import aq_inner, aq_parent
-from z3c.form.browser.checkbox import CheckBoxFieldWidget
-
-from zope.interface import provider
-from zope.schema.interfaces import IContextAwareDefaultFactory
-from Products.validation import V_REQUIRED
-from plone import api
-from z3c.form import validator
 import re
-from plone.supermodel.directives import primary
-from plone.autoform import directives
+
 from Products.CMFPlone.utils import safe_unicode
+from Products.validation import V_REQUIRED
+from tdf.extensionuploadcenter import _
+
+from Acquisition import aq_inner, aq_parent
+from plone import api
+from plone.app.textfield import RichText
+from plone.autoform import directives
+from plone.dexterity.browser.view import DefaultView
+from plone.indexer.decorator import indexer
+from plone.supermodel import model
+from plone.supermodel.directives import primary
+from z3c.form import validator
+from z3c.form.browser.checkbox import CheckBoxFieldWidget
+from zope import schema
+from zope.interface import Invalid, directlyProvides, invariant, provider
+from zope.schema.interfaces import (IContextAwareDefaultFactory,
+                                    IContextSourceBinder)
+from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
+from zope.security import checkPermission
 
 
 def vocabAvailLicenses(context):
