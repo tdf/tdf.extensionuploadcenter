@@ -583,8 +583,8 @@ def textmodified_project(self, event):
                 "the text of the description field of the project: "
                 "\n'{}\n\nand this is the text of the details field:"
                 "\n{}'")).format(self.title,
-                                   self.description,
-                                   detailed_description),
+                                 self.description,
+                                 detailed_description),
         )
 
 
