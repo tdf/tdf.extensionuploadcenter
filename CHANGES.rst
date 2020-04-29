@@ -1,10 +1,19 @@
 Changelog
 =========
 
-0.50 (unreleased)
+0.51 (unreleased)
 -----------------
 
 - Nothing changed yet.
+
+
+0.50 (2020-04-29)
+-----------------
+
+- Move strings of tupsmallproject module from unicode to
+  save_unicode [Andreas Mantke]
+- Update localization files [Andreas Mantke]
+- Pep8 fixes [Andreas Mantke]
 
 
 0.49 (2020-03-30)
